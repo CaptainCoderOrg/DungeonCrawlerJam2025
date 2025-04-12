@@ -15,11 +15,13 @@ Shader "Custom/SelectableShader"
     SubShader
     {
         Tags {
-            "RenderType" = "Opaque"
+            "Queue"="Transparent"
+            "RenderType" = "Transparent"
             "RenderPipeLine" = "UniversalPipeline"
             "UniversalMaterialType" = "Lit"
         }
-        ZWrite On
+        ZWrite Off
+        Blend SrcAlpha OneMinusSrcAlpha
 
         Pass
         {
@@ -89,7 +91,7 @@ Shader "Custom/SelectableShader"
                 SurfaceData surfaceData;
                 ZERO_INITIALIZE(SurfaceData, surfaceData);
                 surfaceData.albedo = col.rgb;
-                surfaceData.alpha = 1;
+                surfaceData.alpha = col.a;
                 surfaceData.occlusion = ao.directAmbientOcclusion * ao.indirectAmbientOcclusion;
                 float4 ambient = (unity_AmbientGround + unity_AmbientEquator + unity_AmbientSky + _GlossyEnvironmentColor) * surfaceData.occlusion;
                 return UniversalFragmentPBR(inputData, surfaceData) + ambient * col;
@@ -141,10 +143,12 @@ Shader "Custom/SelectableShader"
             Name "DepthNormals"
             Tags
             {
+                "Queue"="Transparent"
+                "RenderType" = "Transparent"
                 "LightMode" = "DepthNormals"
             }
 
-            ZWrite On
+            ZWrite Off
 
             HLSLPROGRAM
             #pragma target 2.0

@@ -7,6 +7,8 @@ using CaptainCoder.Dungeoneering.DungeonMap.Unity;
 using CaptainCoder.Dungeoneering.Unity.Data;
 using CaptainCoder.Unity.Assertions;
 
+using TMPro;
+
 using UnityEngine;
 namespace CaptainCoder.Dungeoneering.Unity.Editor
 {
@@ -21,6 +23,7 @@ namespace CaptainCoder.Dungeoneering.Unity.Editor
         [AssertIsSet][SerializeField] private TextureLabelController _wallsLabel;
         [AssertIsSet][SerializeField] private TextureLabelController _doorsLabel;
         [AssertIsSet][SerializeField] private TextureLabelController _secretDoorLabel;
+        [AssertIsSet][SerializeField] private TextMeshProUGUI _selectedPosition;
         private WallSelectionData _wallSelectionData = new();
 
         private void HandleTilesChanged(DungeonChangeEvent changes)
@@ -53,6 +56,25 @@ namespace CaptainCoder.Dungeoneering.Unity.Editor
 
         private void RenderTileInfo(ISet<DungeonTile> tiles)
         {
+            if (tiles.Count == 0)
+            {
+                _selectedPosition.text = $"Selected Position: None";
+            }
+            else
+            {
+                int minX = int.MaxValue;
+                int minY = int.MaxValue;
+                int maxX = int.MinValue;
+                int maxY = int.MinValue;
+                foreach (var tile in tiles)
+                {
+                    minX = Mathf.Min(tile.Position.X, minX);
+                    maxX = Mathf.Max(tile.Position.X, maxX);
+                    minY = Mathf.Min(tile.Position.Y, minY);
+                    maxY = Mathf.Max(tile.Position.Y, maxY);
+                    _selectedPosition.text = $"Selected Position: ({minX}, {minY}) - ({maxX}, {maxY})";
+                }
+            }
             (string tileTextureName, TextureReference tileTexture) = TextureLabel(tiles);
             _tilesLabel.Label.text = $"{tiles.Count()} Tiles: {tileTextureName}";
             _tilesLabel.Button.Texture = tileTexture;
@@ -98,35 +120,42 @@ namespace CaptainCoder.Dungeoneering.Unity.Editor
             return ("Multiple textures", null);
         }
 
-        private void SetTileTexture(TextureReference newTexture)
+        private void SetTileTexture(SetTileOptions options)
         {
             if (!_selection.Tiles.Any()) { return; }
             void Perform()
             {
+                Debug.Log(options);
                 foreach (DungeonTile tile in _selection.Tiles)
                 {
+                    if (Random.Range(0, 1f) > options.Chance)
+                    {
+                        Debug.Log("Skipping tile");
+                        continue;
+                    }
                     TileReference tileRef = tile.TileReference;
                     TextureReference originalTexture = _dungeonCrawlerData.GetTexture(tileRef);
-                    _dungeonCrawlerData.SetTexture(tileRef, newTexture);
+                    _dungeonCrawlerData.SetTexture(tileRef, options.Texture);
                 }
             }
 
-            _dungeonCrawlerData.PerformEditSerializeState($"Set Multiple Textures: {newTexture.TextureName}", Perform);
+            _dungeonCrawlerData.PerformEditSerializeState($"Set Multiple Textures: {options.Texture.TextureName}", Perform);
         }
 
-        private void SetSolidTextures(TextureReference newTexture) => SetWallTextures(newTexture, _wallSelectionData.Solid);
-        private void SetDoorTextures(TextureReference newTexture) => SetWallTextures(newTexture, _wallSelectionData.Doors);
-        private void SetSecretTextures(TextureReference newTexture) => SetWallTextures(newTexture, _wallSelectionData.SecretDoors);
+        private void SetSolidTextures(SetTileOptions options) => SetWallTextures(options, _wallSelectionData.Solid);
+        private void SetDoorTextures(SetTileOptions options) => SetWallTextures(options, _wallSelectionData.Doors);
+        private void SetSecretTextures(SetTileOptions options) => SetWallTextures(options, _wallSelectionData.SecretDoors);
 
-        private void SetWallTextures(TextureReference newTexture, ISet<(Position p, Facing f)> walls)
+        private void SetWallTextures(SetTileOptions option, ISet<(Position p, Facing f)> walls)
         {
             (Position p, Facing f)[] cachedWalls = walls.ToArray();
             void Perform()
             {
                 foreach ((Position p, Facing f) in cachedWalls)
                 {
+                    if (Random.Range(0, 1f) > option.Chance) { continue; }
                     WallReference wallRef = new(_dungeonCrawlerData.CurrentDungeon, p, f);
-                    _dungeonCrawlerData.SetTexture(wallRef, newTexture);
+                    _dungeonCrawlerData.SetTexture(wallRef, option.Texture);
                 }
             }
             _dungeonCrawlerData.PerformEditSerializeState("Set Multiple Wall Textures", Perform);
@@ -137,4 +166,6 @@ namespace CaptainCoder.Dungeoneering.Unity.Editor
         public void OpenDoorsTextureSelector() => _tileTextureSelector.ShowWallSelection(SetDoorTextures, WallType.Door, _wallSelectionData.Doors);
         public void OpenSecretDoorsTextureSelector() => _tileTextureSelector.ShowWallSelection(SetSecretTextures, WallType.SecretDoor, _wallSelectionData.SecretDoors);
     }
+
+    public record struct SetTileOptions(TextureReference Texture, float Chance = 1);
 }

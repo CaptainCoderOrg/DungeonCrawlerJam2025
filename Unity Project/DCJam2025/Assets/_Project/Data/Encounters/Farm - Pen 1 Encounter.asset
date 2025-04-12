@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c12bd66080aac434f95af5246eebb5bc, type: 3}
+  m_Name: Farm - Pen 1 Encounter
+  m_EditorClassIdentifier: 
+  <EnemyFigures>k__BackingField:
+  - EnemyEntityTemplate: {fileID: 11400000, guid: b0e15e9c7f4f9a644949e032eab5b56b, type: 2}
+    Position: {x: 3, y: 17}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: e17845345b9eccf4392b51db5e1f311d, type: 2}
+    Position: {x: 4, y: 19}
+  <HeroFigures>k__BackingField:
+  - HeroEntity: {fileID: 11400000, guid: 639c39d7073c6ec42a83ee9d248b2611, type: 2}
+    Position: {x: 8, y: 18}
+  - HeroEntity: {fileID: 11400000, guid: 6f7a6aa7d15bdcb4683d52c349f6a90c, type: 2}
+    Position: {x: 8, y: 17}
+  - HeroEntity: {fileID: 11400000, guid: c8554de155ee39547b21e84b2f7ca8e4, type: 2}
+    Position: {x: 8, y: 16}
+  <DungeonCrawlerData>k__BackingField: {fileID: 11400000, guid: ab74159b5d6b1da4ea6c200032209da6, type: 2}
+  <DungeonName>k__BackingField: Farm
+  <MinX>k__BackingField: 1
+  <MaxX>k__BackingField: 9
+  <MinY>k__BackingField: 12
+  <MaxY>k__BackingField: 21

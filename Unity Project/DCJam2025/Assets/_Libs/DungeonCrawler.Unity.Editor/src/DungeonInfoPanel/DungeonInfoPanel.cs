@@ -57,27 +57,27 @@ namespace CaptainCoder.Dungeoneering.Unity.Editor
         public void PromptDoorTexture() => _dungeonTextureSelector.ShowDialogue(UpdateDoorTexture);
         public void PromptSecretTexture() => _dungeonTextureSelector.ShowDialogue(UpdateSecretTexture);
 
-        private void UpdateWallTexture(TextureReference newTexture)
+        private void UpdateWallTexture(SetTileOptions options)
         {
-            _dungeonCrawlerData.SetDefaultWallTexture(_dungeon, newTexture, WallType.Solid);
-            _wallTexture.Texture = newTexture;
+            _dungeonCrawlerData.SetDefaultWallTexture(_dungeon, options.Texture, WallType.Solid);
+            _wallTexture.Texture = options.Texture;
         }
-        private void UpdateDoorTexture(TextureReference newTexture)
+        private void UpdateDoorTexture(SetTileOptions options)
         {
-            _dungeonCrawlerData.SetDefaultWallTexture(_dungeon, newTexture, WallType.Door);
-            _doorTexture.Texture = newTexture;
-        }
-
-        private void UpdateSecretTexture(TextureReference newTexture)
-        {
-            _dungeonCrawlerData.SetDefaultWallTexture(_dungeon, newTexture, WallType.SecretDoor);
-            _secretTexture.Texture = newTexture;
+            _dungeonCrawlerData.SetDefaultWallTexture(_dungeon, options.Texture, WallType.Door);
+            _doorTexture.Texture = options.Texture;
         }
 
-        private void UpdateTileTexture(TextureReference newTexture)
+        private void UpdateSecretTexture(SetTileOptions options)
         {
-            _dungeonCrawlerData.SetDefaultTileTexture(_dungeon, newTexture);
-            _tileTexture.Texture = newTexture;
+            _dungeonCrawlerData.SetDefaultWallTexture(_dungeon, options.Texture, WallType.SecretDoor);
+            _secretTexture.Texture = options.Texture;
+        }
+
+        private void UpdateTileTexture(SetTileOptions options)
+        {
+            _dungeonCrawlerData.SetDefaultTileTexture(_dungeon, options.Texture);
+            _tileTexture.Texture = options.Texture;
         }
     }
 }

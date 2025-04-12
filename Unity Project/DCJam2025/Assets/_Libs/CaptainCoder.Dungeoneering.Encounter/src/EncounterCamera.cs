@@ -205,5 +205,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
             }
             transform.position = target;
         }
+
+        internal void CenterAt(Vector2Int position)
+        {
+            transform.position = new Vector3(position.y, 0, position.x);
+        }
     }
 }

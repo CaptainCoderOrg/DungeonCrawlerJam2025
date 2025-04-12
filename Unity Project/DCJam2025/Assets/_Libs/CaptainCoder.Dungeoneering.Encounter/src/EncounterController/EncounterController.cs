@@ -30,6 +30,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         public HeroTurnController HeroTurnController => _heroTurnController;
         public Dictionary<Vector2Int, EncounterTileSelector> TileSelectors { get; private set; }
         public event System.Action<EncounterFigureController> OnFigureSelected;
+        public event System.Action<EncounterController> OnEncounterLoaded;
 
         public void Select(EncounterFigureController selected)
         {
@@ -49,6 +50,22 @@ namespace CaptainCoder.Dungeoneering.Encounter
             StartCoroutine(BuildAtEndOfFrame());
         }
 
+        public Vector2Int FindCenter()
+        {
+            int minX = int.MaxValue;
+            int minY = int.MaxValue;
+            int maxX = int.MinValue;
+            int maxY = int.MinValue;
+            foreach (Vector2Int position in TileSelectors.Keys)
+            {
+                minX = Mathf.Min(position.x, minX);
+                maxX = Mathf.Max(position.x, maxX);
+                minY = Mathf.Min(position.y, minY);
+                maxY = Mathf.Max(position.y, maxY);
+            }
+            return new Vector2Int(minX + ((maxX - minX) / 2), minY + ((maxY - minY) / 2));
+        }
+
         private IEnumerator BuildAtEndOfFrame()
         {
             // Cannot load the dungeon until after the scene has started so we must wait 2 frames
@@ -64,6 +81,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _encounterData.DungeonCrawlerData.LoadDungeonByName(_encounterData.DungeonName);
             _builder.BuildOrUpdateTiles(_tileContainer, _tilePrefab, UpdateTile, CreateTile);
             _initializer.Init(_encounterData);
+            EncounterCamera.CenterAt(FindCenter());
         }
 
         private DungeonTile CreateTile(DungeonTile tilePrefab, Transform parent, Position position)

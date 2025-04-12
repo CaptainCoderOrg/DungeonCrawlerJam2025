@@ -29,7 +29,7 @@ namespace CaptainCoder.Dungeoneering.Unity.Editor
         [AssertIsSet][field: SerializeField] public Button AddTextureButton { get; private set; }
         [AssertIsSet][SerializeField] private ConfirmTexturePromptPanel _confirmPanel;
         private Dictionary<TextureReference, DungeonTexturePreview> _textureButtons = new();
-        private System.Action<TextureReference> _onSelectedCallback;
+        private System.Action<SetTileOptions> _onSelectedCallback;
         private System.Action _onCanceledCallback;
 
         void Awake()
@@ -75,6 +75,7 @@ namespace CaptainCoder.Dungeoneering.Unity.Editor
             DungeonTexturePreview preview = DungeonTexturePreview.Instantiate(PreviewPrefab, _grid, texture);
             _textureButtons[texture] = preview;
             preview.SelectButton.OnClick.AddListener(SelectTexture);
+            preview.SelectButton.OnRandomize.AddListener(RandomizeTexture);
             preview.OnDelete.AddListener(OpenTextureInfoPanel);
             return true;
         }
@@ -105,13 +106,20 @@ namespace CaptainCoder.Dungeoneering.Unity.Editor
             _onCanceledCallback?.Invoke();
         }
 
+        private void RandomizeTexture(DungeonTextureButton textureButton)
+        {
+            Debug.Log("Randomizing texture");
+            gameObject.SetActive(false);
+            _onSelectedCallback?.Invoke(new SetTileOptions(textureButton.Texture, 0.25f));
+        }
+
         private void SelectTexture(DungeonTextureButton textureButton)
         {
             gameObject.SetActive(false);
-            _onSelectedCallback?.Invoke(textureButton.Texture);
+            _onSelectedCallback?.Invoke(new SetTileOptions(textureButton.Texture));
         }
 
-        public void ShowDialogue(System.Action<TextureReference> onSelected, System.Action onCanceled = null)
+        public void ShowDialogue(System.Action<SetTileOptions> onSelected, System.Action onCanceled = null)
         {
             _onSelectedCallback = onSelected;
             _onCanceledCallback = onCanceled ?? NoOp;

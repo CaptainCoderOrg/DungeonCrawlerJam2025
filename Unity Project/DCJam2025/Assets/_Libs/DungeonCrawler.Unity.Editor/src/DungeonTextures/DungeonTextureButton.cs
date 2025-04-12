@@ -11,6 +11,7 @@ namespace CaptainCoder.Dungeoneering.Unity.Editor
         private RawImage _image;
         [field: SerializeField]
         public UnityEvent<DungeonTextureButton> OnClick { get; private set; }
+        [field: SerializeField] public UnityEvent<DungeonTextureButton> OnRandomize { get; private set; }
 
         private Button _button;
         private TextureReference _texture;
@@ -56,5 +57,6 @@ namespace CaptainCoder.Dungeoneering.Unity.Editor
         }
 
         private void Clicked() => OnClick.Invoke(this);
+        public void Randomize() => OnRandomize.Invoke(this);
     }
 }

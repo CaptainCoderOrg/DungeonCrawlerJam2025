@@ -33,10 +33,10 @@ namespace CaptainCoder.Dungeoneering.Unity.Editor
         [SerializeField] private Texture2D _multipleTexturesImage;
         private TextureSelectorPanel _textureSelectorPanel;
         private TextureSelectorPanel TextureSelectorPanel => _textureSelectorPanel ??= GetComponent<TextureSelectorPanel>();
-        private System.Action<TextureReference> _onSelected;
+        private System.Action<SetTileOptions> _onSelected;
         private System.Action _useDefault;
 
-        public void ShowTileSelection(System.Action<TextureReference> onSelected)
+        public void ShowTileSelection(System.Action<SetTileOptions> onSelected)
         {
             _onSelected = onSelected;
             _selectedText.text = $"Tiles Selected: {_selectionData.Tiles.Count}";
@@ -73,7 +73,7 @@ namespace CaptainCoder.Dungeoneering.Unity.Editor
             _ => throw new System.Exception($" Unexpected {nameof(WallType)}: {wallType}"),
         };
 
-        public void ShowWallSelection(System.Action<TextureReference> onSelected, WallType wallType, ISet<(Position position, Facing facing)> selection)
+        public void ShowWallSelection(System.Action<SetTileOptions> onSelected, WallType wallType, ISet<(Position position, Facing facing)> selection)
         {
             WallReference[] walls = selection.Select(s => new WallReference(_dungeonCrawlerData.CurrentDungeon, s.position, s.facing)).ToArray();
             _onSelected = onSelected;

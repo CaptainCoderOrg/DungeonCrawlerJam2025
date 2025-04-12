@@ -23,9 +23,9 @@ namespace CaptainCoder.Dungeoneering.DungeonMap.Unity
             Dictionary<Position, DungeonTile> pooledTiles = _tiles;
             _tiles = new(Mathf.Max(_tiles.Count, CellCount));
 
-            for (int x = MinX; x < MaxX; x++)
+            for (int x = MinX; x <= MaxX; x++)
             {
-                for (int y = MinY; y < MaxY; y++)
+                for (int y = MinY; y <= MaxY; y++)
                 {
                     Position position = new(x, y);
                     if (pooledTiles.TryGetValue(position, out DungeonTile tile))
