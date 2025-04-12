@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424a78a2161181e4483984ec22899905, type: 3}
+  m_Name: Chicken (Figure Data)
+  m_EditorClassIdentifier: 
+  <EntityData>k__BackingField: {fileID: 11400000, guid: 7f08e314c50cbcb428ab2701d7be1588, type: 2}
+  <Position>k__BackingField: {x: 6, y: 7}
+  _hasTakenTurn: 0
+  _movment: 0
+  _attacks: 0

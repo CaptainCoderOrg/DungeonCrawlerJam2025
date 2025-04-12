@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 
 using CaptainCoder.Unity.Assertions;
@@ -95,7 +94,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             while (true)
             {
                 Vector3 position = transform.position + (PanSpeed * Time.deltaTime * direction);
-                position.y = 0;
+                position.y = transform.position.y;
                 transform.position = position;
                 yield return null;
             }
@@ -208,7 +207,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         internal void CenterAt(Vector2Int position)
         {
-            transform.position = new Vector3(position.y, 0, position.x);
+            transform.localPosition = new Vector3(position.y, transform.localPosition.y, position.x);
         }
     }
 }

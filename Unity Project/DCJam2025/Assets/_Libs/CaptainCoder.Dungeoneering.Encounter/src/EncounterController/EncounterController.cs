@@ -4,6 +4,7 @@ using System.Linq;
 
 using CaptainCoder.Dungeoneering.DungeonMap;
 using CaptainCoder.Dungeoneering.DungeonMap.Unity;
+using CaptainCoder.Dungeoneering.Unity;
 using CaptainCoder.Dungeoneering.Unity.Data;
 using CaptainCoder.Unity.Assertions;
 
@@ -12,14 +13,14 @@ namespace CaptainCoder.Dungeoneering.Encounter
 {
     public class EncounterController : MonoBehaviour
     {
+        [AssertIsSet][SerializeField] private ScreenHider _screenHider;
         [AssertIsSet][field: SerializeField] public SelectTacticsMenu TacticsMenu { get; private set; }
         [AssertIsSet][field: SerializeField] public HeroFigurePanel[] HeroPanels { get; private set; }
         [AssertIsSet][SerializeField] private EncounterSettingsData _encounterSettingsData;
         [AssertIsSet][SerializeField] private EncounterInitializer _initializer;
         [AssertIsSet][SerializeField] private HeroTurnController _heroTurnController;
         [AssertIsSet][field: SerializeField] public EncounterCamera EncounterCamera { get; private set; }
-        [AssertIsSet][SerializeField] private EncounterData _encounterData;
-        public EncounterData EncounterData => _encounterData;
+        public EncounterData EncounterData => _encounterSettingsData.TargetEncounter;
         private readonly DungeonBuilder _builder = new();
         [AssertIsSet][SerializeField] private Transform _tileContainer;
         [AssertIsSet][SerializeField] private DungeonTile _tilePrefab;
@@ -43,10 +44,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         void Awake()
         {
-            _builder.MinX = _encounterData.MinX;
-            _builder.MaxX = _encounterData.MaxX;
-            _builder.MinY = _encounterData.MinY;
-            _builder.MaxY = _encounterData.MaxY;
+            _builder.MinX = EncounterData.MinX;
+            _builder.MaxX = EncounterData.MaxX;
+            _builder.MinY = EncounterData.MinY;
+            _builder.MaxY = EncounterData.MaxY;
             StartCoroutine(BuildAtEndOfFrame());
         }
 
@@ -72,26 +73,29 @@ namespace CaptainCoder.Dungeoneering.Encounter
             yield return null;
             yield return null;
             Build();
+            yield return null;
+            _screenHider.Show();
         }
 
         private void Build()
         {
             TileSelectors ??= new();
             TileSelectors.Clear();
-            _encounterData.DungeonCrawlerData.LoadDungeonByName(_encounterData.DungeonName);
+            EncounterData.DungeonCrawlerData.LoadDungeonByName(EncounterData.DungeonName);
             _builder.BuildOrUpdateTiles(_tileContainer, _tilePrefab, UpdateTile, CreateTile);
-            _initializer.Init(_encounterData);
+            _initializer.Init(EncounterData);
             EncounterCamera.CenterAt(FindCenter());
         }
 
         private DungeonTile CreateTile(DungeonTile tilePrefab, Transform parent, Position position)
         {
-            DungeonTile created = DungeonTile.Create(tilePrefab, parent, _encounterData.DungeonCrawlerData, position);
+            DungeonTile created = DungeonTile.Create(tilePrefab, parent, EncounterData.DungeonCrawlerData, position);
+            created.transform.localPosition = new Vector3(position.Y, 0, position.X);
             EncounterTileSelector selector = created.GetComponentInChildren<EncounterTileSelector>();
             TileSelectors[new Vector2Int(position.X, position.Y)] = selector;
             return created;
         }
-        private void UpdateTile(DungeonTile tile, Position position) => DungeonTile.UpdateTile(_encounterData.DungeonCrawlerData, position, tile);
+        private void UpdateTile(DungeonTile tile, Position position) => DungeonTile.UpdateTile(EncounterData.DungeonCrawlerData, position, tile);
 
 
         public void HandleMovementEvent(MoveFigureEvent @event)

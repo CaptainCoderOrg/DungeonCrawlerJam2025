@@ -173,7 +173,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
                     yield return ability;
                 }
             }
-            if (_wornArmor != null)
+            if (_wornArmor != null )
             {
                 foreach (var ability in _wornArmor.AttackAbilities)
                 {

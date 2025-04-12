@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Farm - Pen 2 Encounter
   m_EditorClassIdentifier: 
   <EnemyFigures>k__BackingField:
-  - EnemyEntityTemplate: {fileID: 11400000, guid: b0e15e9c7f4f9a644949e032eab5b56b, type: 2}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 7f08e314c50cbcb428ab2701d7be1588, type: 2}
     Position: {x: 20, y: 20}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: e17845345b9eccf4392b51db5e1f311d, type: 2}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 7f08e314c50cbcb428ab2701d7be1588, type: 2}
     Position: {x: 19, y: 21}
   <HeroFigures>k__BackingField:
   - HeroEntity: {fileID: 11400000, guid: 639c39d7073c6ec42a83ee9d248b2611, type: 2}
@@ -26,7 +26,7 @@ MonoBehaviour:
     Position: {x: 18, y: 17}
   <DungeonCrawlerData>k__BackingField: {fileID: 11400000, guid: ab74159b5d6b1da4ea6c200032209da6, type: 2}
   <DungeonName>k__BackingField: Farm
-  <MinX>k__BackingField: 14
+  <MinX>k__BackingField: 10
   <MaxX>k__BackingField: 22
-  <MinY>k__BackingField: 16
+  <MinY>k__BackingField: 12
   <MaxY>k__BackingField: 22

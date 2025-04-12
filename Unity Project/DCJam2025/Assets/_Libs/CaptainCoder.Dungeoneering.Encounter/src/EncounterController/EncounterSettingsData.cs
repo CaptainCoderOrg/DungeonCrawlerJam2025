@@ -29,5 +29,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             base.OnAfterEnterPlayMode();
             WaitForMovement = new WaitForSeconds(MovementSpeed);
         }
+
+        public EncounterData TargetEncounter;
     }
 }

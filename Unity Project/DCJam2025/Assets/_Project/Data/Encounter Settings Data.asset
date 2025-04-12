@@ -16,3 +16,4 @@ MonoBehaviour:
   TargetRotation: 1440
   TargetPitch: 4
   _movementSpeed: 0.25
+  TargetEncounter: {fileID: 11400000, guid: cc165d6ca539a6843a13225aca3a8376, type: 2}

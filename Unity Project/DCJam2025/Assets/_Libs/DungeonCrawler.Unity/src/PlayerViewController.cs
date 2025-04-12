@@ -13,6 +13,7 @@ namespace CaptainCoder.Dungeoneering.Unity
     {
         [field: SerializeField]
         public PlayerViewData PlayerView { get; private set; }
+        [SerializeField] private bool _isInEditor = true;
         [SerializeField]
         private DungeonCrawlerData _dungeonCrawlerData;
         void Awake()
@@ -21,7 +22,7 @@ namespace CaptainCoder.Dungeoneering.Unity
         }
         public void HandleInput(MovementAction action)
         {
-            if (Keyboard.current.shiftKey.isPressed)
+            if (_isInEditor && Keyboard.current.shiftKey.isPressed)
             {
                 HandleInputIgnoringWalls(action);
                 return;
