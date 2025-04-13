@@ -91,7 +91,6 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [Button]
         public void Roll()
         {
-            StopAllCoroutines();
             StartCoroutine(DoRoll());
         }
         private static readonly WaitForFixedUpdate WaitForFixedUpdate = new();

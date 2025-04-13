@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -214,7 +215,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [Button]
         private void Rebuild()
         {
-            StopAllCoroutines();
+            // StopCoroutine(RebuildAtEndOfFrame());
             StartCoroutine(RebuildAtEndOfFrame());
         }
 
@@ -238,7 +239,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             Rebuild();
         }
         public void Hide() => _toggleablePanel.IsEnabled = false;
-        internal void Roll()
+        internal IEnumerator Roll()
         {
             UpdateAbilities();
             _resultLabel.text = "Rolling...";
@@ -246,7 +247,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _accuracyLabel.text = $"?";
             _powerLabel.text = "?/?";
             _splitLabel.text = "?/?";
-            _diceBoxController.Roll();
+            yield return StartCoroutine(_diceBoxController.Roll());
         }
 
         public void AddDamageBonus()
@@ -292,6 +293,21 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _attackInfo.Target.Figure.EntityData.Wounds += _attackResult.Wounds;
             _encounterController.HeroTurnController.CloseAttackPanel();
             Hide();
+        }
+
+        internal IEnumerator AutoApplyBonuses(EncounterSettingsData settings)
+        {
+            int RequiredAccuracyBonus() => AttackInfo.Distance - _accuracy;
+            while (RequiredAccuracyBonus() > 0 && CanAddAccuracyBonus)
+            {
+                AddAccuracyBonus();
+                yield return settings.EnemyDelay;
+            }
+            while (CanAddDamageBonus)
+            {
+                AddDamageBonus();
+                yield return settings.EnemyDelay;
+            }
         }
     }
 

@@ -100,6 +100,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [SerializeField] private Vector3 _startingRotation = new(60, 15, 0);
         private Quaternion _endRotation = Quaternion.Euler(90, 0, 0);
         [SerializeField] private float _animationDuration = 1f;
+        private bool _awaitingResults;
 
         private IEnumerator RotateResults()
         {
@@ -112,6 +113,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 _diceCamera.transform.rotation = Quaternion.Lerp(startRotation, _endRotation, elapsedTime / _animationDuration);
             }
             _diceCamera.transform.rotation = _endRotation;
+            _awaitingResults = false;
         }
 
         void Awake()
@@ -120,12 +122,22 @@ namespace CaptainCoder.Dungeoneering.Encounter
         }
 
         [Button]
-        public void Roll()
+        public IEnumerator Roll()
         {
             _diceCamera.transform.rotation = Quaternion.Euler(_startingRotation);
             foreach (var die in _dice.Where(d => d.isActiveAndEnabled))
             {
                 die.Roll();
+            }
+            _awaitingResults = true;
+            yield return StartCoroutine(WaitForRoll());
+        }
+
+        private IEnumerator WaitForRoll()
+        {
+            while (_awaitingResults)
+            {
+                yield return new WaitForSeconds(0.5f);
             }
         }
     }

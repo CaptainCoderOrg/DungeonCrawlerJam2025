@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -25,6 +24,22 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 var selector = Controller.TileSelectors[position];
                 selector.ClearEvents();
                 selector.Hide();
+            }
+        }
+
+        public void HighlightAttacks(HashSet<AttackInfo> attacks)
+        {
+            ClearAll();
+            foreach (AttackInfo attack in attacks)
+            {
+                if (Controller.TileSelectors.TryGetValue(attack.TargetPosition, out EncounterTileSelector tile))
+                {
+                    if (attack.Target == null) { tile.ShowAttackRange(); }
+                    else
+                    {
+                        tile.ValidAttackTarget();
+                    }
+                }
             }
         }
 
