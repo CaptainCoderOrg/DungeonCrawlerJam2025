@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -290,9 +289,20 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         public void Confirm()
         {
+            if (_isConfirmed) { return; }
             _attackInfo.Target.Figure.EntityData.Wounds += _attackResult.Wounds;
             _encounterController.HeroTurnController.CloseAttackPanel();
             Hide();
+            _isConfirmed = true;
+        }
+
+        private bool _isConfirmed = false;
+        private bool IsConfirmed() => _isConfirmed;
+
+        public IEnumerator WaitForConfirm()
+        {
+            _isConfirmed = false;
+            yield return new WaitUntil(IsConfirmed);
         }
 
         internal IEnumerator AutoApplyBonuses(EncounterSettingsData settings)

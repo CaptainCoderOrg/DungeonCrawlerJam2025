@@ -33,29 +33,60 @@ namespace CaptainCoder.Dungeoneering.Encounter
                     yield return Settings.EnemyDelay;
                     yield return StartCoroutine(TryToMoveToHero(figure, enemyData));
                     yield return StartCoroutine(TryAttackHero(figure, enemyData));
-                    Controller.TileHighlighter.ClearAll();
+                    yield return StartCoroutine(TryMoveAwayFromHero(figure, enemyData));
                 }
+                Controller.TileHighlighter.ClearAll();
             }
         }
 
 
         private IEnumerator TryToMoveToHero(EncounterFigureController figure, EnemyEntityData enemy)
         {
+            if (IsAdjacentHero(figure.Figure.Position, State)) { yield break; }
             HashSet<MoveInfo> possibleMoves = figure.Figure.FindMoves(State, Controller.EncounterData);
-            Controller.TileHighlighter.Highlight(possibleMoves.Select(p => p.Position));
-            yield return Settings.EnemyDelay;
-            IEnumerable<MoveInfo> adjacentHero = possibleMoves.Where(m => IsAdjacentHero(m, State));
-            if (!adjacentHero.Any())
+            if (TryFindClosestMove(possibleMoves, State, out MoveInfo target))
             {
-                Debug.LogWarning("TODO: Implement AI for moving toward hero");
-                yield break;
+                Controller.TileHighlighter.Highlight(possibleMoves.Select(p => p.Position));
+                Controller.TileHighlighter.Selected(target.Path());
+                yield return Settings.EnemyDelay;
+                figure.Figure.Movement -= target.Distance;
+                yield return Controller.HandleMovementEvent(new MoveFigureEvent(figure, target.Path().Reverse()));
+                Controller.TileHighlighter.ClearAll();
             }
-            Debug.LogWarning("TODO: Implement AI for selecting hero target");
-            MoveInfo move = adjacentHero.First();
-            Controller.TileHighlighter.Selected(move.Path());
-            yield return Settings.EnemyDelay;
-            Controller.TileHighlighter.ClearAll();
-            yield return Controller.HandleMovementEvent(new MoveFigureEvent(figure, move.Path().Reverse()));
+        }
+
+        private IEnumerator TryMoveAwayFromHero(EncounterFigureController figure, EnemyEntityData enemy)
+        {
+            HashSet<MoveInfo> possibleMoves = figure.Figure.FindMoves(State, Controller.EncounterData);
+            if (TryFindFurthestMove(possibleMoves, State, out MoveInfo furthest))
+            {
+                Controller.TileHighlighter.Highlight(possibleMoves.Select(p => p.Position));
+                Controller.TileHighlighter.Selected(furthest.Path());
+                yield return Settings.EnemyDelay;
+                Controller.TileHighlighter.ClearAll();
+                figure.Figure.Movement -= furthest.Distance;
+                yield return Controller.HandleMovementEvent(new MoveFigureEvent(figure, furthest.Path().Reverse()));
+            }
+        }
+
+        public static bool TryFindClosestMove(HashSet<MoveInfo> move, EncounterState state, out MoveInfo closest)
+        {
+            IEnumerable<MoveInfo> info = move.OrderBy(m => DistanceToNearestHero(m, state));
+            closest = info.FirstOrDefault();
+            return closest != null;
+        }
+
+        public static bool TryFindFurthestMove(HashSet<MoveInfo> move, EncounterState state, out MoveInfo furthest)
+        {
+            IEnumerable<MoveInfo> info = move.OrderByDescending(m => DistanceToNearestHero(m, state));
+            furthest = info.FirstOrDefault();
+            return furthest != null;
+        }
+
+        public static float DistanceToNearestHero(MoveInfo move, EncounterState state)
+        {
+            IEnumerable<float> distances = state.Figures.Where(k => k.Value.Figure.EntityData is HeroEntityData).Select(k => (k.Key - move.Position).magnitude);
+            return distances.Any() ? distances.Max() : 0;
         }
 
         private IEnumerator TryAttackHero(EncounterFigureController figure, EnemyEntityData enemy)
@@ -72,8 +103,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
             else
             {
                 yield return Settings.EnemyDelay;
-                Controller.TileHighlighter.ClearAll();
             }
+            Controller.TileHighlighter.ClearAll();
         }
 
         private IEnumerator TryEnemyAttackRoll(EncounterFigureController figure, AttackData attackData, AttackInfo attackInfo)
@@ -86,9 +117,9 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _diceHUD.Show();
             yield return StartCoroutine(_diceHUD.Roll());
             yield return _diceHUD.AutoApplyBonuses(Settings);
-            Debug.LogWarning($"TODO: Implement player confirming roll");
-            yield return Settings.EnemyDelay;
-            _diceHUD.Confirm();
+            Debug.Log("Waiting for confirmation");
+            yield return _diceHUD.WaitForConfirm();
+            Debug.Log("Confirmed");
         }
 
         private bool TrySelectTarget(HashSet<AttackInfo> possibleAttacks, out AttackInfo selected)
@@ -102,6 +133,18 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             // TODO: Determine distance to each hero
             return 5;
+        }
+
+        private static bool IsAdjacentHero(Vector2Int move, EncounterState state)
+        {
+            foreach (Vector2Int neighbor in GetNeighbors(move))
+            {
+                if (state.Figures.TryGetValue(neighbor, out EncounterFigureController controller) && controller.Figure.EntityData is HeroEntityData)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private static bool IsAdjacentHero(MoveInfo move, EncounterState state)

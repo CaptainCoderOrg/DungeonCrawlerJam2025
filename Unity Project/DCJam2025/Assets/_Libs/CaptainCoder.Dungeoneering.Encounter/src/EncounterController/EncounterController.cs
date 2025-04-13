@@ -8,11 +8,14 @@ using CaptainCoder.Dungeoneering.Unity;
 using CaptainCoder.Dungeoneering.Unity.Data;
 using CaptainCoder.Unity.Assertions;
 
+using TMPro;
+
 using UnityEngine;
 namespace CaptainCoder.Dungeoneering.Encounter
 {
     public class EncounterController : MonoBehaviour
     {
+        [AssertIsSet][SerializeField] private TextMeshProUGUI _roundInfoText;
         [AssertIsSet][SerializeField] private ScreenHider _screenHider;
         [AssertIsSet][field: SerializeField] public SelectTacticsMenu TacticsMenu { get; private set; }
         [AssertIsSet][field: SerializeField] public HeroFigurePanel[] HeroPanels { get; private set; }
@@ -35,6 +38,18 @@ namespace CaptainCoder.Dungeoneering.Encounter
         public Dictionary<Vector2Int, EncounterTileSelector> TileSelectors { get; private set; }
         public event System.Action<EncounterFigureController> OnFigureSelected;
         public event System.Action<EncounterController> OnEncounterLoaded;
+
+        public void ShowText(string message)
+        {
+            _roundInfoText.text = message;
+            StartCoroutine(HideTextAfter(2));
+        }
+
+        public IEnumerator HideTextAfter(float delay)
+        {
+            yield return new WaitForSecondsRealtime(delay);
+            _roundInfoText.text = string.Empty;
+        }
 
         public void Select(EncounterFigureController selected)
         {
@@ -88,6 +103,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _builder.BuildOrUpdateTiles(_tileContainer, _tilePrefab, UpdateTile, CreateTile);
             _initializer.Init(EncounterData);
             EncounterCamera.CenterAt(FindCenter());
+            ShowText("Round 1");
         }
 
         private DungeonTile CreateTile(DungeonTile tilePrefab, Transform parent, Position position)

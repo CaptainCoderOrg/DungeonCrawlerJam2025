@@ -12,13 +12,6 @@ namespace CaptainCoder.Dungeoneering.Encounter
 {
     public class HeroTurnController : MonoBehaviour
     {
-        private static readonly Facing[] Facings = new[] { Facing.North, Facing.East, Facing.South, Facing.West };
-        private static readonly Vector2Int[] Directions = new Vector2Int[]
-        {
-            new(-1, -1), new( 0, -1), new( 1, -1),
-            new(-1,  0),              new( 1,  0),
-            new(-1,  1), new( 0,  1), new( 1,  1),
-        };
         private EncounterController _controller;
         private EncounterController Controller => _controller = (_controller == null ? GetComponentInParent<EncounterController>() : _controller);
         private EncounterState State => Controller.State;
