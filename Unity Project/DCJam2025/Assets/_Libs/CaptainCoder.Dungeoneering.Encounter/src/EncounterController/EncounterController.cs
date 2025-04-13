@@ -11,10 +11,12 @@ using CaptainCoder.Unity.Assertions;
 using TMPro;
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 namespace CaptainCoder.Dungeoneering.Encounter
 {
     public class EncounterController : MonoBehaviour
     {
+        [AssertIsSet][SerializeField] private PlayerViewData _playerViewData;
         [AssertIsSet][SerializeField] private TextMeshProUGUI _roundInfoText;
         [AssertIsSet][SerializeField] private ScreenHider _screenHider;
         [AssertIsSet][field: SerializeField] public SelectTacticsMenu TacticsMenu { get; private set; }
@@ -196,6 +198,27 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 figure.Figure.HasTakenTurn = false;
             }
             StartCoroutine(ShowText($"Round {_round}"));
+        }
+
+        internal void CheckForEndOfCombat()
+        {
+            // If there is at least one enemy, combat is not over
+            if (State.Figures.Values.Where(f => f.Figure.EntityData is EnemyEntityData).Any()) { return; }
+            StartCoroutine(EndCombatSequence());
+        }
+
+        private IEnumerator EndCombatSequence()
+        {
+            yield return StartCoroutine(ShowText("Victory!"));
+            yield return StartCoroutine(_screenHider.ShowCoroutine());
+            AsyncOperation callback = SceneManager.LoadSceneAsync("DungeonCrawling");
+            while (!callback.isDone) { yield return null; }
+
+            // TODO: This is a hack that ensure there are no left over listeners at the end of combat
+            foreach (var hero in State.Heroes)
+            {
+                hero.ClearListeners();
+            }
         }
     }
 }

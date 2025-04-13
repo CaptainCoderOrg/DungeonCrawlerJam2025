@@ -49,6 +49,11 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [field: Expandable][field: SerializeField] public AnimationData IdleAnimation { get; private set; }
         public event System.Action<LivingEntityChangeEvent> OnChanged;
         protected void Notify(LivingEntityChangeEvent @event) => OnChanged?.Invoke(@event);
+        public void ClearListeners()
+        {
+            Debug.LogWarning($"TODO: Consider not using clear listeners when switching scenes");
+            OnChanged = null;
+        }
         public virtual IEnumerable<TraitEffect> TraitEffects() => Effects.SelectMany(e => e.TraitEffects);
 
         protected static void CopyTo(LivingEntityData original, LivingEntityData copy)

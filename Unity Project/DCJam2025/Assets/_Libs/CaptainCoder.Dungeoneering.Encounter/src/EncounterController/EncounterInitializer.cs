@@ -15,6 +15,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         public void Init(EncounterData encounterData)
         {
             State.Figures.Clear();
+            State.Heroes.Clear();
             foreach (EnemyFigure f in encounterData.EnemyFigures)
             {
                 if (State.Figures.ContainsKey(f.Position))
@@ -39,9 +40,13 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 {
                     Debug.Log($"Illegal configuration, multiple figures in {h.Position}");
                 }
+                State.Heroes.Add(h.HeroEntity);
                 EncounterFigureController controller = Instantiate(_enemyFigurePrefab, _enemyFigureParent);
                 controller.name = $"{h.HeroEntity.Name}'s Figure";
                 controller.Figure = FigureData.Create(h.HeroEntity, h.Position);
+
+                // TODO: This is a hack that ensure there are no left over listeners from the previous scene
+                h.HeroEntity.ClearListeners();
 
                 State.Figures[h.Position] = controller;
                 HeroFigurePanel panel = Controller.HeroPanels[ix];
@@ -62,6 +67,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             {
                 State.Figures.Remove(controller.Figure.Position);
                 Destroy(controller.gameObject);
+                Controller.CheckForEndOfCombat();
             }
         }
     }
