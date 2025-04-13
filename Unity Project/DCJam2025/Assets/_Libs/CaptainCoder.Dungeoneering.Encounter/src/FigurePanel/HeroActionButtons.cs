@@ -35,6 +35,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 AttackButton.Enabled = false;
                 AttackButton.Tooltip.Tooltip = "Attack (0)";
             }
+
+            TakeTurnButton.Enabled = !figureData.HasTakenTurn;
         }
     }
 }

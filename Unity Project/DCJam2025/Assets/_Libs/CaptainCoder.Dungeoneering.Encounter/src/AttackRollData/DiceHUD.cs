@@ -247,6 +247,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _powerLabel.text = "?/?";
             _splitLabel.text = "?/?";
             yield return StartCoroutine(_diceBoxController.Roll());
+            if (Attacker.EntityData is HeroEntityData)
+            {
+                _isConfirmed = false;
+            }
         }
 
         public void AddDamageBonus()

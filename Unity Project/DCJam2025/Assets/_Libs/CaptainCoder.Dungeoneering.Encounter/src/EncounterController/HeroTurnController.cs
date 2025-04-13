@@ -159,7 +159,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             FigureController.Figure.Movement -= moveInfo.Distance;
             ClearTiles();
-            Controller.HandleMovementEvent(new MoveFigureEvent(FigureController, moveInfo.Path().Reverse()));
+            StartCoroutine(Controller.HandleMovementEvent(new MoveFigureEvent(FigureController, moveInfo.Path().Reverse())));
         }
 
         private void ClearMoveInfo(HashSet<Vector2Int> possibleMoves)
@@ -196,6 +196,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             }
             FigureController = null;
             _diceHUD.Hide();
+            Controller.CheckHeroTurns();
         }
 
         internal void StartAttack()
@@ -215,7 +216,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _diceHUD.AttackInfo = attackInfo;
             _diceHUD.SetDice(attackDice);
             _diceHUD.Show();
-            _diceHUD.Roll();
+            StartCoroutine(_diceHUD.Roll());
         }
     }
 

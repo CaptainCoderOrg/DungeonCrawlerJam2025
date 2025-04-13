@@ -37,6 +37,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 }
                 Controller.TileHighlighter.ClearAll();
             }
+            Controller.EndEnemyTurn();
         }
 
 
@@ -50,7 +51,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 Controller.TileHighlighter.Selected(target.Path());
                 yield return Settings.EnemyDelay;
                 figure.Figure.Movement -= target.Distance;
-                yield return Controller.HandleMovementEvent(new MoveFigureEvent(figure, target.Path().Reverse()));
+                yield return StartCoroutine(Controller.HandleMovementEvent(new MoveFigureEvent(figure, target.Path().Reverse())));
                 Controller.TileHighlighter.ClearAll();
             }
         }
@@ -65,7 +66,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 yield return Settings.EnemyDelay;
                 Controller.TileHighlighter.ClearAll();
                 figure.Figure.Movement -= furthest.Distance;
-                yield return Controller.HandleMovementEvent(new MoveFigureEvent(figure, furthest.Path().Reverse()));
+                yield return StartCoroutine(Controller.HandleMovementEvent(new MoveFigureEvent(figure, furthest.Path().Reverse())));
             }
         }
 

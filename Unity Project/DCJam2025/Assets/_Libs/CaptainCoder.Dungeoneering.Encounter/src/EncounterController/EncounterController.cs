@@ -38,11 +38,12 @@ namespace CaptainCoder.Dungeoneering.Encounter
         public Dictionary<Vector2Int, EncounterTileSelector> TileSelectors { get; private set; }
         public event System.Action<EncounterFigureController> OnFigureSelected;
         public event System.Action<EncounterController> OnEncounterLoaded;
+        private int _round = 0;
 
-        public void ShowText(string message)
+        public IEnumerator ShowText(string message)
         {
             _roundInfoText.text = message;
-            StartCoroutine(HideTextAfter(2));
+            yield return StartCoroutine(HideTextAfter(2));
         }
 
         public IEnumerator HideTextAfter(float delay)
@@ -62,6 +63,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         void Awake()
         {
+            _roundInfoText.text = string.Empty;
             _builder.MinX = EncounterData.MinX;
             _builder.MaxX = EncounterData.MaxX;
             _builder.MinY = EncounterData.MinY;
@@ -103,7 +105,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _builder.BuildOrUpdateTiles(_tileContainer, _tilePrefab, UpdateTile, CreateTile);
             _initializer.Init(EncounterData);
             EncounterCamera.CenterAt(FindCenter());
-            ShowText("Round 1");
+            NextRound();
         }
 
         private DungeonTile CreateTile(DungeonTile tilePrefab, Transform parent, Position position)
@@ -165,9 +167,35 @@ namespace CaptainCoder.Dungeoneering.Encounter
             TacticsMenu.SelectAndShow(heroFigurePanel);
         }
 
-        internal void EndPlayerTurn()
+        internal IEnumerator EndPlayerTurn()
         {
+            yield return StartCoroutine(ShowText("Enemy Phase"));
             _enemyTurnController.TakeEnemyTurn();
+        }
+
+        internal void CheckHeroTurns()
+        {
+            foreach (EncounterFigureController figure in State.Figures.Values.Where(f => f.Figure.EntityData is HeroEntityData))
+            {
+                // If any figures still have a turn, don't switch to enemy turn
+                if (!figure.Figure.HasTakenTurn) { return; }
+            }
+            StartCoroutine(EndPlayerTurn());
+        }
+
+        internal void EndEnemyTurn()
+        {
+            NextRound();
+        }
+
+        private void NextRound()
+        {
+            _round++;
+            foreach (EncounterFigureController figure in State.Figures.Values.Where(f => f.Figure.EntityData is HeroEntityData))
+            {
+                figure.Figure.HasTakenTurn = false;
+            }
+            StartCoroutine(ShowText($"Round {_round}"));
         }
     }
 }
