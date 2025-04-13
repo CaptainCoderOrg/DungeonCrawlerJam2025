@@ -19,6 +19,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [AssertIsSet][SerializeField] private EncounterSettingsData _encounterSettingsData;
         [AssertIsSet][SerializeField] private EncounterInitializer _initializer;
         [AssertIsSet][SerializeField] private HeroTurnController _heroTurnController;
+        [AssertIsSet][SerializeField] private EnemyTurnController _enemyTurnController;
+        [AssertIsSet][field: SerializeField] public TileHighlighter TileHighlighter { get; private set; }
         [AssertIsSet][field: SerializeField] public EncounterCamera EncounterCamera { get; private set; }
         public EncounterData EncounterData => _encounterSettingsData.TargetEncounter;
         private readonly DungeonBuilder _builder = new();
@@ -144,6 +146,11 @@ namespace CaptainCoder.Dungeoneering.Encounter
             if (_heroTurnController.FigureController != null) { return; }
             Select(heroFigurePanel.FigureController);
             TacticsMenu.SelectAndShow(heroFigurePanel);
+        }
+
+        internal void EndPlayerTurn()
+        {
+            _enemyTurnController.TakeEnemyTurn();
         }
     }
 }

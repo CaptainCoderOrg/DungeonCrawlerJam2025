@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Peck (Attack Data)
   m_EditorClassIdentifier: 
   <AttackTypeDatabase>k__BackingField: {fileID: 11400000, guid: 91b694b450c8d3d4fbd36877a1ac8f6b, type: 2}
-  <Name>k__BackingField: Stare
+  <Name>k__BackingField: Peck
   <AttackType>k__BackingField: {fileID: 11400000, guid: 4e433a5879078cc47994f25e4b151f7a, type: 2}
   <PowerDice>k__BackingField:
   - {fileID: 11400000, guid: 76a51ee6611969e41be91e50d857bc90, type: 2}

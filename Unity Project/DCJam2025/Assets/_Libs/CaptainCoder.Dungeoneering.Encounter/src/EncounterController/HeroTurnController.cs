@@ -5,6 +5,8 @@ using System.Linq;
 using CaptainCoder.Dungeoneering.DungeonMap;
 using CaptainCoder.Unity.Assertions;
 
+using NaughtyAttributes;
+
 using UnityEngine;
 namespace CaptainCoder.Dungeoneering.Encounter
 {
@@ -151,6 +153,12 @@ namespace CaptainCoder.Dungeoneering.Encounter
             }
         }
 
+        [Button]
+        public void EndPlayerTurn()
+        {
+            Controller.EndPlayerTurn();
+        }
+
         internal void BeginTurn(EncounterFigureController figureController, IEnumerable<TacticData> tactics)
         {
             Controller.TacticsMenu.Cancel();
@@ -168,7 +176,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         internal void ShowMove()
         {
             _currentMoveInfo = null;
-            _possibleMoves = FindMoves(FigureController.Figure, State, Controller.EncounterData);
+            _possibleMoves = FigureController.Figure.FindMoves(State, Controller.EncounterData);
             HashSet<Vector2Int> positions = _possibleMoves.Select(p => p.Position).ToHashSet();
             ClearTiles();
             foreach (MoveInfo moveInfo in _possibleMoves)
@@ -247,48 +255,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             }
         }
 
-        internal static HashSet<MoveInfo> FindMoves(FigureData figure, EncounterState state, EncounterData data)
-        {
-            HashSet<MoveInfo> validMoves = new();
-            HashSet<Vector2Int> visited = new() { figure.Position };
-            Queue<MoveInfo> queue = new();
-            queue.Enqueue(new MoveInfo(figure.Position, null, 0));
-            while (queue.TryDequeue(out MoveInfo currentPosition))
-            {
-                foreach (MoveInfo neighbor in GetNeighbors(currentPosition))
-                {
-                    if (visited.Contains(neighbor.Position)) { continue; }
-                    visited.Add(neighbor.Position);
-                    if (!state.Figures.ContainsKey(neighbor.Position))
-                    {
-                        // If there is no figure in this space, we can end our movement here
-                        validMoves.Add(neighbor);
-                    }
-                    queue.Enqueue(neighbor);
-                }
-            }
-            return validMoves;
-
-            IEnumerable<MoveInfo> GetNeighbors(MoveInfo p)
-            {
-                if (p.Distance >= figure.Movement) { yield break; }
-                int distance = p.Distance + 1;
-                foreach (Facing f in Facings)
-                {
-                    // Cannot pass through walls
-                    if (data.DungeonCrawlerData.CurrentDungeon.IsPassable(p.Position, f))
-                    {
-                        Vector2Int afterStep = p.Position.Step(f);
-                        // Cannot move into space with enemy
-                        if (state.Figures.TryGetValue(afterStep, out EncounterFigureController otherfigure) && otherfigure.Figure.EntityData is EnemyEntityData)
-                        {
-                            continue;
-                        }
-                        yield return p with { Position = afterStep, Distance = distance, PreviousSpace = p };
-                    }
-                }
-            }
-        }
+        
 
         internal void EndTurn()
         {
@@ -326,29 +293,6 @@ namespace CaptainCoder.Dungeoneering.Encounter
         }
     }
 
-    record class MoveInfo(Vector2Int Position, MoveInfo PreviousSpace, int Distance)
-    {
-        public IEnumerable<Vector2Int> Path()
-        {
-            MoveInfo current = this;
-            while (current != null)
-            {
-                yield return current.Position;
-                current = current.PreviousSpace;
-            }
-        }
-    }
-
-    public abstract record class AttackTargetSelectedEvent;
-    public sealed record class ValidAttackTargetSelected(AttackInfo Attack) : AttackTargetSelectedEvent;
-    public sealed record class InvalidAttackTargetSelected(EncounterFigureController Target, string Reason) : AttackTargetSelectedEvent;
-    public sealed record class NoAttackTargetSelected : AttackTargetSelectedEvent
-    {
-        public static readonly NoAttackTargetSelected Instance = new();
-    }
-
-    public sealed record class AttackInfo(Vector2Int StartPosition, Vector2Int TargetPosition, EncounterFigureController Target, int Distance);
-
     public static class DungeonExtensions
     {
         const float FigureRadius = 0.500f;
@@ -373,31 +317,6 @@ namespace CaptainCoder.Dungeoneering.Encounter
             return true;
         }
 
-        public static bool IntersectsCircle(this LineSegment segment, Vector2Int center, float radius)
-        {
-            Vector2 d = segment.End - segment.Start;
-            Vector2 f = segment.Start - center;
-
-            float a = Vector2.Dot(d, d);
-            float b = 2 * Vector2.Dot(f, d);
-            float c = Vector2.Dot(f, f) - radius * radius;
-
-            float discriminant = b * b - 4 * a * c;
-            if (discriminant < 0)
-            {
-                // No intersection
-                return false;
-            }
-
-            discriminant = MathF.Sqrt(discriminant);
-
-            float t1 = (-b - discriminant) / (2 * a);
-            float t2 = (-b + discriminant) / (2 * a);
-
-            // Check if either intersection point lies on the segment
-            return (t1 >= 0 && t1 <= 1) || (t2 >= 0 && t2 <= 1);
-        }
-
         public static bool IsFigureInBetween(this EncounterState state, Vector2Int start, Vector2Int end)
         {
             LineSegment segment = new(start, end);
@@ -412,119 +331,6 @@ namespace CaptainCoder.Dungeoneering.Encounter
             Facing.West => new(position.x - 1, position.y),
             _ => throw new Exception($"Unexpected facing: {f}"),
         };
-    }
-
-    public record struct LineSegment(Vector2 Start, Vector2 End);
-
-    public static class GeometryUtils
-    {
-        const float EdgeDelta = 0.500f;
-        const float CenterOffsetDelta = 0.0001f; // We step slightly to the side to allow attacking around corners
-
-        /// <summary>
-        /// Get a list of line segments between all corners of two positions
-        /// </summary>
-        /// <param name="start"></param>
-        /// <param name="end"></param>
-        /// <returns></returns>
-        public static IEnumerable<LineSegment> CornersToCenter(this Vector2Int start, Vector2Int end)
-        {
-            foreach (var startCorner in start.Corners())
-            {
-                yield return new LineSegment(startCorner, end);
-            }
-        }
-
-        public static IEnumerable<Vector2> Corners(this Vector2Int center)
-        {
-            yield return new(center.x - CenterOffsetDelta, center.y);
-            yield return new(center.x + CenterOffsetDelta, center.y);
-            yield return new(center.x, center.y - CenterOffsetDelta);
-            yield return new(center.x, center.y + CenterOffsetDelta);
-        }
-        public static IEnumerable<Vector2Int> GetGridPositions(this LineSegment segment)
-        {
-            int minX = Mathf.FloorToInt(Mathf.Min(segment.Start.x, segment.End.x));
-            int maxX = Mathf.FloorToInt(Mathf.Max(segment.Start.x, segment.End.x));
-            int minY = Mathf.FloorToInt(Mathf.Min(segment.Start.y, segment.End.y));
-            int maxY = Mathf.FloorToInt(Mathf.Max(segment.Start.y, segment.End.y));
-            for (int x = minX; x <= maxX; x++)
-            {
-                for (int y = minY; y <= maxY; y++)
-                {
-                    yield return new Vector2Int(x, y);
-                }
-            }
-        }
-
-        public static IEnumerable<LineSegment> GetWallSegments(this Dungeon dungeon, IEnumerable<Vector2Int> positions)
-        {
-            return positions
-                .Select(p => (p, new Position(p.x, p.y)))
-                .Select(pair => (pair.p, dungeon.GetTile(pair.Item2).Walls))
-                .SelectMany(GetWallSegments);
-
-            static IEnumerable<LineSegment> GetWallSegments((Vector2Int, TileWalls) pair)
-            {
-                (Vector2Int centerP, TileWalls walls) = pair;
-                if (walls.North is WallType.Solid)
-                {
-                    yield return new LineSegment(new Vector2(centerP.x - EdgeDelta, centerP.y - EdgeDelta),
-                                                 new Vector2(centerP.x + EdgeDelta, centerP.y - EdgeDelta));
-                }
-                if (walls.South is WallType.Solid)
-                {
-                    yield return new LineSegment(new Vector2(centerP.x - EdgeDelta, centerP.y + EdgeDelta),
-                                                 new Vector2(centerP.x + EdgeDelta, centerP.y + EdgeDelta));
-                }
-
-                if (walls.East is WallType.Solid)
-                {
-                    yield return new LineSegment(new Vector2(centerP.x + EdgeDelta, centerP.y - EdgeDelta),
-                                                 new Vector2(centerP.x + EdgeDelta, centerP.y + EdgeDelta));
-                }
-
-                if (walls.West is WallType.Solid)
-                {
-                    yield return new LineSegment(new Vector2(centerP.x - EdgeDelta, centerP.y - EdgeDelta),
-                                                 new Vector2(centerP.x - EdgeDelta, centerP.y + EdgeDelta));
-                }
-            }
-        }
-
-        public static bool Intersects(this LineSegment a, LineSegment b)
-        {
-            int Orientation(Vector2 p, Vector2 q, Vector2 r)
-            {
-                float val = (q.y - p.y) * (r.x - q.x) -
-                            (q.x - p.x) * (r.y - q.y);
-                if (Mathf.Abs(val) == 0) return 0; // colinear
-                return (val > 0) ? 1 : 2; // clockwise or counterclockwise
-            }
-
-            bool OnSegment(Vector2 p, Vector2 q, Vector2 r)
-            {
-                return Mathf.Min(p.x, q.x) <= r.x && r.x <= Mathf.Max(p.x, q.x) &&
-                       Mathf.Min(p.y, q.y) <= r.y && r.y <= Mathf.Max(p.y, q.y);
-            }
-
-            Vector2 p1 = a.Start, p2 = a.End;
-            Vector2 q1 = b.Start, q2 = b.End;
-
-            int o1 = Orientation(p1, p2, q1);
-            int o2 = Orientation(p1, p2, q2);
-            int o3 = Orientation(q1, q2, p1);
-            int o4 = Orientation(q1, q2, p2);
-
-            if (o1 != o2 && o3 != o4) return true;
-
-            if (o1 == 0 && OnSegment(p1, p2, q1)) return true;
-            if (o2 == 0 && OnSegment(p1, p2, q2)) return true;
-            if (o3 == 0 && OnSegment(q1, q2, p1)) return true;
-            if (o4 == 0 && OnSegment(q1, q2, p2)) return true;
-
-            return false;
-        }
     }
 
 }
