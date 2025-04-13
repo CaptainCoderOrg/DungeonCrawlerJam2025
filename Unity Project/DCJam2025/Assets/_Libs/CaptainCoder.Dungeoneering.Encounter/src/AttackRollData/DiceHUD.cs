@@ -33,7 +33,19 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [AssertIsSet][SerializeField] private CanvasGroup _increaseAccuracyButton;
         [AssertIsSet][SerializeField] private CanvasGroup _decreaseAccuracyButton;
         [AssertIsSet][SerializeField] private AttackAbilityRenderer[] _attackAbilityRenderers;
-
+        [AssertIsSet][SerializeField] private CanvasGroup _confirmButton;
+        private bool _isConfirmable = false;
+        private bool IsConfirmable
+        {
+            get => _isConfirmable;
+            set
+            {
+                _isConfirmable = value;
+                _confirmButton.alpha = _isConfirmable ? 1 : 0.5f;
+                _confirmButton.blocksRaycasts = _isConfirmable;
+            }
+        }
+        private bool _isConfirmed = false;
         private bool _isMiss = false;
         private int _damage;
         private int _damageBonus;
@@ -246,10 +258,11 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _accuracyLabel.text = $"?";
             _powerLabel.text = "?/?";
             _splitLabel.text = "?/?";
+            IsConfirmable = false;
             yield return StartCoroutine(_diceBoxController.Roll());
             if (Attacker.EntityData is HeroEntityData)
             {
-                _isConfirmed = false;
+                IsConfirmable = true;
             }
         }
 
@@ -293,19 +306,19 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         public void Confirm()
         {
-            if (_isConfirmed) { return; }
+            if (!IsConfirmable) { return; }
             _attackInfo.Target.Figure.EntityData.Wounds += _attackResult.Wounds;
             _encounterController.HeroTurnController.CloseAttackPanel();
             Hide();
             _isConfirmed = true;
         }
 
-        private bool _isConfirmed = false;
         private bool IsConfirmed() => _isConfirmed;
 
         public IEnumerator WaitForConfirm()
         {
             _isConfirmed = false;
+            IsConfirmable = true;
             yield return new WaitUntil(IsConfirmed);
         }
 

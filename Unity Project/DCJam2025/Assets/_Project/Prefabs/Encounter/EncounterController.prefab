@@ -3807,6 +3807,7 @@ MonoBehaviour:
   - {fileID: 8251440116531053153}
   - {fileID: 7072829913582025051}
   - {fileID: 7947458390325590108}
+  _confirmButton: {fileID: 535667630836743043}
 --- !u!114 &7653303514216045537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5237,6 +5238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 734261157980660415}
   - component: {fileID: 1863450769368317510}
+  - component: {fileID: 535667630836743043}
   m_Layer: 0
   m_Name: Confirm
   m_TagString: Untagged
@@ -5290,6 +5292,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!225 &535667630836743043
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4486791659152782013}
+  m_Enabled: 1
+  m_Alpha: 0.5
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &4532238913446369457
 GameObject:
   m_ObjectHideFlags: 0
