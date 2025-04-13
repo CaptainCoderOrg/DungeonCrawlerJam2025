@@ -17,6 +17,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [AssertIsSet][field: SerializeField] public SelectTacticsMenu TacticsMenu { get; private set; }
         [AssertIsSet][field: SerializeField] public HeroFigurePanel[] HeroPanels { get; private set; }
         [AssertIsSet][SerializeField] private EncounterSettingsData _encounterSettingsData;
+        public EncounterSettingsData EncounterSettingsData => _encounterSettingsData;
         [AssertIsSet][SerializeField] private EncounterInitializer _initializer;
         [AssertIsSet][SerializeField] private HeroTurnController _heroTurnController;
         [AssertIsSet][SerializeField] private EnemyTurnController _enemyTurnController;
@@ -100,7 +101,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         private void UpdateTile(DungeonTile tile, Position position) => DungeonTile.UpdateTile(EncounterData.DungeonCrawlerData, position, tile);
 
 
-        public void HandleMovementEvent(MoveFigureEvent @event)
+        public IEnumerator HandleMovementEvent(MoveFigureEvent @event)
         {
             Vector2Int start = @event.Path.First();
             Vector2Int last = @event.Path.Last();
@@ -119,7 +120,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             State.Figures.Remove(start);
             State.Figures[last] = controller;
             controller.Figure.Position = last;
-            StartCoroutine(AnimateMove(controller, @event.Path));
+            yield return StartCoroutine(AnimateMove(controller, @event.Path));
         }
 
         private IEnumerator<YieldInstruction> AnimateMove(EncounterFigureController controller, IEnumerable<Vector2Int> path)

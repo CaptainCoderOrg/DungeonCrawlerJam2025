@@ -7,6 +7,17 @@ namespace CaptainCoder.Dungeoneering.Encounter
         public float TargetZoom = 5;
         public float TargetRotation = 0;
         public int TargetPitch = 1;
+        [SerializeField] private float _enemyDelay = 1f;
+        public float EnemyDelayTime
+        {
+            get => _enemyDelay;
+            set
+            {
+                _enemyDelay = value;
+                EnemyDelay = new WaitForSecondsRealtime(_enemyDelay);
+            }
+        }
+        public WaitForSecondsRealtime EnemyDelay { get; private set; }
         [SerializeField] private float _movementSpeed = 0.1f;
         public float MovementSpeed
         {
@@ -22,12 +33,14 @@ namespace CaptainCoder.Dungeoneering.Encounter
         void OnValidate()
         {
             WaitForMovement = new WaitForSeconds(_movementSpeed);
+            EnemyDelay = new WaitForSecondsRealtime(_enemyDelay);
         }
 
         public override void OnAfterEnterPlayMode()
         {
             base.OnAfterEnterPlayMode();
             WaitForMovement = new WaitForSeconds(MovementSpeed);
+            EnemyDelay = new WaitForSecondsRealtime(_enemyDelay);
         }
 
         public EncounterData TargetEncounter;

@@ -18,7 +18,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             new(-1, -1), new( 0, -1), new( 1, -1),
             new(-1,  0),              new( 1,  0),
             new(-1,  1), new( 0,  1), new( 1,  1),
-         };
+        };
         private EncounterController _controller;
         private EncounterController Controller => _controller = (_controller == null ? GetComponentInParent<EncounterController>() : _controller);
         private EncounterState State => Controller.State;

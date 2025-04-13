@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -7,7 +8,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
     {
         private EncounterController _controller;
         private EncounterController Controller => _controller = (_controller == null ? GetComponentInParent<EncounterController>() : _controller);
-        public void Clear()
+
+        public void ClearAll()
         {
             foreach (EncounterTileSelector selector in Controller.TileSelectors.Values)
             {
@@ -28,15 +30,25 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         public void Highlight(IEnumerable<Vector2Int> positions)
         {
-            Debug.Log("Highlighting Tiles:");
             foreach (Vector2Int position in positions)
             {
                 if (Controller.TileSelectors.TryGetValue(position, out var selector))
                 {
-                    Debug.Log(position);
                     selector.Highlight();
                 }
             }
         }
+
+        internal void Selected(IEnumerable<Vector2Int> positions)
+        {
+            foreach (Vector2Int position in positions)
+            {
+                if (Controller.TileSelectors.TryGetValue(position, out var selector))
+                {
+                    selector.Selected();
+                }
+            }
+        }
+
     }
 }
