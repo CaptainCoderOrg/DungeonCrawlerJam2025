@@ -7,7 +7,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
     [CreateAssetMenu(menuName = "DC/Events/Action/Start Encounter")]
     public class StartEncounterActionData : EventActionData
     {
-        [field: SerializeField] public EncounterData Encounter { get; private set; }
+        [field: SerializeField] public EncounterData Encounter { get; set; }
 
         public override void Execute(CrawlerLogicController controller)
         {

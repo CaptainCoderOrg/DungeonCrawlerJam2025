@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c12bd66080aac434f95af5246eebb5bc, type: 3}
+  m_Name: Facility Encounter G
+  m_EditorClassIdentifier: 
+  <EnemyFigures>k__BackingField:
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 7f08e314c50cbcb428ab2701d7be1588, type: 2}
+    Position: {x: 10, y: 4}
+  <HeroFigures>k__BackingField:
+  - HeroEntity: {fileID: 11400000, guid: 6f7a6aa7d15bdcb4683d52c349f6a90c, type: 2}
+    Position: {x: 2, y: 0}
+  <DungeonCrawlerData>k__BackingField: {fileID: 11400000, guid: ab74159b5d6b1da4ea6c200032209da6, type: 2}
+  <DungeonName>k__BackingField: Facility
+  <MinX>k__BackingField: 12
+  <MaxX>k__BackingField: 17
+  <MinY>k__BackingField: 8
+  <MaxY>k__BackingField: 16
