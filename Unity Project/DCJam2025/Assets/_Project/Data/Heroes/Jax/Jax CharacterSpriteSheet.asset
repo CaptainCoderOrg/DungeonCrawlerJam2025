@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fe86889bd3874343983eadca9c0ea4f, type: 3}
-  m_Name: Vlad CharacterSpriteSheet
+  m_Name: Jax CharacterSpriteSheet
   m_EditorClassIdentifier: 
   <SpriteSheet>k__BackingField: {fileID: 2800000, guid: cfc78568eb3727f45b1d4e2c1675e5ac, type: 3}
   <Rows>k__BackingField: 4

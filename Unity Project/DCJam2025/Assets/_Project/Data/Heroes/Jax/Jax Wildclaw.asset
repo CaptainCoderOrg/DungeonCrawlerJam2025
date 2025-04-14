@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0983a1d16753cfe439faeedb0aaa5c78, type: 3}
-  m_Name: Vlad Runehand
+  m_Name: Jax Wildclaw
   m_EditorClassIdentifier: 
   <TraitDatabase>k__BackingField: {fileID: 11400000, guid: 4c0b7d2687886aa4cbcc722656a2a10d, type: 2}
-  <Name>k__BackingField: Vlad Runehand
-  <Portrait>k__BackingField: {fileID: 21300000, guid: a5b1ddb442265e94eb12fcedd69bca51, type: 3}
+  <Name>k__BackingField: Jax Wildclaw
+  <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
   <BaseHealth>k__BackingField: 8
   _wounds: 0
   <BaseSpeed>k__BackingField: 4
