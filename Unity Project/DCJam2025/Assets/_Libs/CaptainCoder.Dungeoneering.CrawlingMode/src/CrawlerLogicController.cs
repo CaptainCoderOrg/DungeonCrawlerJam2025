@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 
+using CaptainCoder.Dungeoneering.DungeonMap;
 using CaptainCoder.Dungeoneering.DungeonMap.Unity;
 using CaptainCoder.Dungeoneering.Encounter;
 using CaptainCoder.Dungeoneering.Player;
 using CaptainCoder.Dungeoneering.Unity;
+using CaptainCoder.Dungeoneering.Unity.Data;
 using CaptainCoder.Unity.Assertions;
 
 using NaughtyAttributes;
@@ -23,27 +25,31 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         [AssertIsSet][SerializeField] private PlayerViewData _playerViewData;
         [Expandable][AssertIsSet][SerializeField] private List<CrawlerEventData> _events;
 
+        [Expandable][SerializeField] private EventActionData _testAction;
         void Awake()
         {
             _playerViewData.OnChange.AddListener(HandlePlayerViewChanged);
+            _playerViewData.OnDungeonChanged.AddListener(HandleDungeonChanged);
         }
 
-        private void HandlePlayerViewChanged(PlayerView prev, PlayerView curr)
+        private void HandleDungeonChanged(string dungeonName)
+        {
+            _dungeonController.DungeonCrawlerData.LoadDungeonByName(dungeonName);
+        }
+
+        private void HandlePlayerViewChanged(PlayerView prev, PlayerView curr, PlayerViewData playerViewData)
         {
             if (prev.Position == curr.Position) { return; }
             // TODO: Optimize looking up events
             foreach (CrawlerEventData @event in _events)
             {
-                if (@event is CrawlerEnterTileEventData enterEvent && enterEvent.DungeonName == _dungeonController.DungeonCrawlerData.CurrentDungeon.Name)
+                if (@event is DungeonEvents dungeonEvents)
                 {
-                    foreach (var position in enterEvent.Positions)
+                    if (dungeonEvents.DungeonName == playerViewData.DungeonName)
                     {
-                        if (position.x == curr.Position.X && position.y == curr.Position.Y)
+                        foreach (var action in dungeonEvents.GetEventActionsOnViewChanged(prev, curr, playerViewData))
                         {
-                            foreach (var action in @event.Actions)
-                            {
-                                action.Execute(this);
-                            }
+                            action.Execute(this);
                         }
                     }
                 }
@@ -55,6 +61,18 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             _encounterSettingsData.TargetEncounter = encounterData;
             _hider.OnFinished += StartLoadEncounter;
             _hider.Hide();
+        }
+
+        [Button]
+        public void ExecuteTestAction()
+        {
+            _testAction.Execute(this);
+        }
+
+        public void Teleport(string dungeonName, int x, int y, Facing facing)
+        {
+            _playerViewData.DungeonName = dungeonName;
+            _playerViewData.View = new PlayerView(x, y, facing);
         }
 
         private void StartLoadEncounter()

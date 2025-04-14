@@ -8,7 +8,8 @@ namespace CaptainCoder.Dungeoneering.Unity
     [CreateAssetMenu(menuName = "DC/PlayerView")]
     public class PlayerViewData : ObservableSO
     {
-        public UnityEvent<PlayerView, PlayerView> OnChange { get; private set; } = new();
+        public UnityEvent<PlayerView, PlayerView, PlayerViewData> OnChange { get; private set; } = new();
+        public UnityEvent<string> OnDungeonChanged { get; private set; } = new();
 
         [field: SerializeField]
         public int X { get; private set; }
@@ -16,6 +17,17 @@ namespace CaptainCoder.Dungeoneering.Unity
         public int Y { get; private set; }
         [field: SerializeField]
         public Facing Facing { get; private set; }
+        [SerializeField] private string _dungeonName = "Farm";
+        public string DungeonName
+        {
+            get => _dungeonName;
+            set
+            {
+                if (_dungeonName == value) { return; }
+                _dungeonName = value;
+                OnDungeonChanged?.Invoke(_dungeonName);
+            }
+        }
 
         private PlayerView _view;
         public PlayerView View
@@ -29,7 +41,7 @@ namespace CaptainCoder.Dungeoneering.Unity
                 X = _view.Position.X;
                 Y = _view.Position.Y;
                 Facing = _view.Facing;
-                OnChange.Invoke(exit, _view);
+                OnChange.Invoke(exit, _view, this);
             }
         }
 
@@ -38,17 +50,20 @@ namespace CaptainCoder.Dungeoneering.Unity
         {
             base.OnExitPlayMode();
             OnChange.RemoveAllListeners();
+            OnDungeonChanged.RemoveAllListeners();
         }
 
         public override void OnAfterEnterPlayMode()
         {
             base.OnAfterEnterPlayMode();
             View = new PlayerView(new(X, Y), Facing);
+            OnDungeonChanged?.Invoke(_dungeonName);
         }
 
         public void OnValidate()
         {
             View = new PlayerView(new(X, Y), Facing);
+            OnDungeonChanged?.Invoke(_dungeonName);
         }
 
     }

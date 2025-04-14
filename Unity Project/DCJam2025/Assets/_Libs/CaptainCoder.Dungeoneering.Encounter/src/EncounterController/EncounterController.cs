@@ -207,6 +207,11 @@ namespace CaptainCoder.Dungeoneering.Encounter
             StartCoroutine(EndCombatSequence());
         }
 
+        public void SkipCombat()
+        {
+            StartCoroutine(EndCombatSequence());
+        }
+
         private IEnumerator EndCombatSequence()
         {
             yield return StartCoroutine(ShowText("Victory!"));

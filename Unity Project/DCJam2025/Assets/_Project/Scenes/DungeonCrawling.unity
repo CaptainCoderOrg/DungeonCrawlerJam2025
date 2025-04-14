@@ -1153,10 +1153,8 @@ MonoBehaviour:
   _dungeonController: {fileID: 1362657501}
   _playerViewData: {fileID: 11400000, guid: fcdaf4650b87b1c49b4e3b527249d5a5, type: 2}
   _events:
-  - {fileID: 11400000, guid: 641064f21f23e7945b8cb15bc66a5fc6, type: 2}
-  - {fileID: 11400000, guid: 0c4c8f866df7da847887c0e4cfb4e92c, type: 2}
-  - {fileID: 11400000, guid: f261aabf4eb339d41b4be30b312f932d, type: 2}
-  - {fileID: 11400000, guid: fdf1edef972598e4a8ca55af60a5a69d, type: 2}
+  - {fileID: 11400000, guid: c97441cd25636894d9192123012085d8, type: 2}
+  _testAction: {fileID: 11400000, guid: 85f851830719a254e8e3204ebff73d5b, type: 2}
 --- !u!4 &882004614
 Transform:
   m_ObjectHideFlags: 0

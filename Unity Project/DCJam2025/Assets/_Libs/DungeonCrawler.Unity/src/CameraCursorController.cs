@@ -12,7 +12,7 @@ namespace CaptainCoder.Dungeoneering.Unity
         public void OnEnable()
         {
             PlayerView.OnChange.AddListener(HandlePlayerViewChanged);
-            HandlePlayerViewChanged(PlayerView.View, PlayerView.View);
+            HandlePlayerViewChanged(PlayerView.View, PlayerView.View, PlayerView);
         }
 
         public void OnDisable()
@@ -20,7 +20,7 @@ namespace CaptainCoder.Dungeoneering.Unity
             PlayerView.OnChange.RemoveListener(HandlePlayerViewChanged);
         }
 
-        private void HandlePlayerViewChanged(PlayerView exit, PlayerView enter)
+        private void HandlePlayerViewChanged(PlayerView exit, PlayerView enter, PlayerViewData _)
         {
             transform.localRotation = enter.Facing switch
             {
