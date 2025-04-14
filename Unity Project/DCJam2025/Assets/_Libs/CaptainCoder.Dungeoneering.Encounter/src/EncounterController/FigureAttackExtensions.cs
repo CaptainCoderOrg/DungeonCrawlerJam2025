@@ -46,6 +46,7 @@ public static class FigureAttackExtensions
             {
 
                 Vector2Int afterStep = p.TargetPosition + delta;
+                if (!data.IsInBounds(afterStep)) { continue; }
                 // Cannot pass through walls
                 if (data.DungeonCrawlerData.CurrentDungeon.IntersectsWall(p.StartPosition, afterStep)) { continue; }
 

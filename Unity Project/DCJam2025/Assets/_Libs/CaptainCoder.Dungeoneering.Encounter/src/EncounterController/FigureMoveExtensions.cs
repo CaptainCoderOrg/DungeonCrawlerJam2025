@@ -41,6 +41,7 @@ public static class FigureMoveExtensions
                 if (data.DungeonCrawlerData.CurrentDungeon.IsPassable(p.Position, f))
                 {
                     Vector2Int afterStep = p.Position.Step(f);
+                    if (!data.IsInBounds(afterStep)) { continue; }
                     // Cannot move into space with enemy
                     bool isHero = figure.EntityData is HeroEntityData;
                     bool IsEnemy(EncounterFigureController otherFigure) => isHero ? otherFigure.Figure.EntityData is EnemyEntityData : otherFigure.Figure.EntityData is HeroEntityData;
@@ -53,4 +54,9 @@ public static class FigureMoveExtensions
             }
         }
     }
+}
+
+public static class EncounterDataExtensions
+{
+    public static bool IsInBounds(this EncounterData data, Vector2Int position) => data.MinX <= position.x && data.MaxX >= position.x && data.MinY <= position.y && data.MaxY >= position.y;
 }
