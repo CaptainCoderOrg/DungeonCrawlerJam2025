@@ -1608,9 +1608,11 @@ MonoBehaviour:
   _encounterSettingsData: {fileID: 11400000, guid: d0f3755972dc40245aef2cc864b73ad9, type: 2}
   _dungeonController: {fileID: 1362657501}
   _playerViewData: {fileID: 11400000, guid: fcdaf4650b87b1c49b4e3b527249d5a5, type: 2}
+  _dialogueController: {fileID: 0}
   _events:
   - {fileID: 11400000, guid: c97441cd25636894d9192123012085d8, type: 2}
   - {fileID: 11400000, guid: 0285e6ff6aa717042ac9fa9acefa1c36, type: 2}
+  - {fileID: 11400000, guid: 626bd7884e08e954dbe7d1ebf85eeb40, type: 2}
   _testAction: {fileID: 11400000, guid: 85f851830719a254e8e3204ebff73d5b, type: 2}
 --- !u!4 &882004614
 Transform:
@@ -3136,7 +3138,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621592920}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0

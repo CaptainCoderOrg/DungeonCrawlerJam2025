@@ -23,6 +23,17 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         private Coroutine _printMessageRoutine;
 
         [SerializeField] private string _testMessage;
+
+        public Sprite Portrait
+        {
+            get => _portraitImage.sprite;
+            internal set
+            {
+                _portraitImage.sprite = value;
+                _portrait.IsEnabled = _portraitImage.sprite != null;
+            }
+        }
+
         [Button]
         private void TestMessage() => ShowMessage(_testMessage);
 

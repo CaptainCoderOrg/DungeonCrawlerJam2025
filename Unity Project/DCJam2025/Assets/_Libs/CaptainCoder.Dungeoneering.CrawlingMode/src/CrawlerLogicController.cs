@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -23,6 +24,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         [AssertIsSet][SerializeField] private EncounterSettingsData _encounterSettingsData;
         [AssertIsSet][SerializeField] private DungeonController _dungeonController;
         [AssertIsSet][SerializeField] private PlayerViewData _playerViewData;
+        [AssertIsSet][SerializeField] private DialogueController _dialogueController;
         [Expandable][AssertIsSet][SerializeField] private List<CrawlerEventData> _events;
 
         [Expandable][SerializeField] private EventActionData _testAction;
@@ -30,6 +32,13 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         {
             _playerViewData.OnChange.AddListener(HandlePlayerViewChanged);
             _playerViewData.OnDungeonChanged.AddListener(HandleDungeonChanged);
+            StartCoroutine(ShowScreenAtEndOfFrame());
+        }
+
+        private IEnumerator ShowScreenAtEndOfFrame()
+        {
+            yield return null;
+            _hider.Show();
         }
 
         private void HandleDungeonChanged(string dungeonName)
@@ -88,6 +97,12 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             {
                 yield return null;
             }
+        }
+
+        internal void ShowDialogue(Sprite portrait, string message)
+        {
+            _dialogueController.Portrait = portrait;
+            _dialogueController.ShowMessage(message);
         }
     }
 }
