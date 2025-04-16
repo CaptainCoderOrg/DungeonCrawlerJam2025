@@ -14,7 +14,8 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
 {
     public class DialogueController : MonoBehaviour
     {
-        [AssertIsSet][SerializeField] private TextMeshProUGUI _dialogueLabel;
+        [AssertIsSet][SerializeField] private TextMeshProUGUI _topDialogue;
+        [AssertIsSet][SerializeField] private TextMeshProUGUI _bottomDialouge;
         [AssertIsSet][SerializeField] private Image _portraitImage;
         [AssertIsSet][SerializeField] private ToggleablePanel _portrait;
         [AssertIsSet][SerializeField] private CanvasGroup _canvasGroup;
@@ -45,8 +46,8 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
 
         public void ShowMessage(string message)
         {
-            _dialogueLabel.maxVisibleCharacters = 0;
-            _dialogueLabel.text = message;
+            _topDialogue.maxVisibleCharacters = 0;
+            _topDialogue.text = message;
             StartCoroutine(FadeTo(1));
             if (_printMessageRoutine != null) { StopCoroutine(_printMessageRoutine); }
             _printMessageRoutine = StartCoroutine(PrintMessage());
@@ -55,15 +56,17 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         private IEnumerator PrintMessage()
         {
             float elapsed = 0;
-            int length = _dialogueLabel.text.Length;
+            int length = _topDialogue.text.Length;
             while (elapsed < _messageDisplayDuration)
             {
                 yield return null;
                 elapsed += Time.deltaTime;
                 float percent = elapsed / _messageDisplayDuration;
-                _dialogueLabel.maxVisibleCharacters = (int)(length * percent);
+                _topDialogue.maxVisibleCharacters = (int)(length * percent);
+                _bottomDialouge.maxVisibleCharacters = _topDialogue.maxVisibleCharacters;
             }
-            _dialogueLabel.maxVisibleCharacters = length;
+            _topDialogue.maxVisibleCharacters = length;
+            _bottomDialouge.maxVisibleCharacters = length;
         }
 
         private IEnumerator FadeTo(float targetAlpha)
