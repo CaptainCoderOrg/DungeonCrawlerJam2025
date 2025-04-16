@@ -42,6 +42,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
 
         private bool HandleBeforeMove(PlayerView exiting, PlayerView entering)
         {
+            if (_dialogueController.IsShowing) { return false; }
             // TODO: Needs optimization, we shouldn't need to iterate through all possible events
             bool canceled = false;
             foreach (OnBeforeEnterTileEventData before in BeforeEnterEvents.Where(e => e.AllConditionsMet()))

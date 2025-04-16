@@ -15,6 +15,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
 {
     public class DialogueController : MonoBehaviour
     {
+        public bool IsShowing => _canvasGroup.alpha > 0;
         [AssertIsSet][SerializeField] private CrawlerLogicController _logicController;
         [AssertIsSet][SerializeField] private TextMeshProUGUI _topDialogue;
         [AssertIsSet][SerializeField] private TextMeshProUGUI _bottomDialouge;
