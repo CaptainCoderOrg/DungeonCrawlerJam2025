@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f5bebcf346dc843ad6cf2b51871c10, type: 3}
+  m_Name: Intro Dialogue
+  m_EditorClassIdentifier: 
+  <Entries>k__BackingField:
+  - <Message>k__BackingField: "Somewhere in the Midwest, a chickenhawk, a fox and
+      a weasel are loitering outside of a farm\u2026"
+    <Portrait>k__BackingField: {fileID: 0}
+  - <Message>k__BackingField: "A-are you absolutely sure about this, Fox\u2026? What
+      if we get caught?"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: "Oh, we won\u2019t! Hawk and I have been scoping this
+      place out for a whole week now, and in all that time, we haven\u2019t seen
+      a single human! Ke ke ke\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "But what if they\u2019ve just been on vacation or
+      something, and they come back right when\u2026"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: "Hawk makes a dismissive gesture with her wing.\r"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: They would have hired someone to take care of the animals.
+      Those chickens would have starved by now.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "B-but\u2026 Maybe\u2026 Uh\u2026 maybe they\u2019ve
+      got, like, feeding robots or something\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: "Hawk scoffs. Robots? In that barn? Don\u2019t be ridiculous,
+      Wes."
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "It\u2019s not ridiculous!! My cousin Mike told me
+      the other day\u2026\r"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: "*Groan* Not this again\u2026"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: Your cousin is full of crap, Wes. Do you remember when
+      he kept going on about being probed by aliens?
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: That really happened!! He showed me his scars!
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: Yes. The scars from his Appendectomy.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "Weasel sulks and mutters under his breath. Freaking
+      idiots\u2026 never listen to me\u2026 stupid Beakface-Urk!"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: "With incredible speed, Hawk puts one of her claws
+      around Weasel\u2019s throat.\n\n<color=red>Weasel takes  10 HP choking damage!</color>"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "Don\u2019t call me that! \n\nShe lets go of him.\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "You\u2019re right to be worried though."
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "*Sigh* Not you, too\u2026\r\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "Don\u2019t lump me in with the coward.\r"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: Hey!
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: "I\u2019m merely noting that this whole situation is
+      extremely suspicious. A tiny farm in the middle of nowhere that no one tends
+      to, but the animals all seem perfectly healthy\u2026 Don\u2019t you find that
+      a little strange, Fox?\r"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "Of course it\u2019s strange. Super-strange! But why
+      should I care? All I know is that that barn over there is filled to the brim
+      with succulent chickens and their saucy eggs, and the only thing stopping us
+      from just waltzing in is a rusty old lock. That\u2019s enough info for me.
+      Guys, come on- easy pickings! Ke ke ke\u2026\r"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "This is a mistake.\r"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "Of course it is. Now, help me with the fence!\r"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: Hmph.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  <OnFinished>k__BackingField: {fileID: 11400000, guid: ad3128d00b848d642ac9ab9dd14075f0, type: 2}

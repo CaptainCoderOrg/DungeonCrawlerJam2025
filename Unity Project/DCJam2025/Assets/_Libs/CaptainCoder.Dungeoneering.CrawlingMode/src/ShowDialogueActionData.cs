@@ -1,4 +1,4 @@
-using NaughtyAttributes;
+using System;
 
 using UnityEngine;
 namespace CaptainCoder.Dungeoneering.CrawlingMode
@@ -6,12 +6,20 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
     [CreateAssetMenu(menuName = "DC/Events/Action/Show Dialogue Action")]
     public class ShowDialogueActionData : EventActionData
     {
-        [field: TextArea(3, 5)][field: SerializeField] public string Message { get; private set; }
-        [field: ShowAssetPreview][field: SerializeField] public Sprite Portrait { get; private set; }
+        [field: SerializeField] public DialogueEntry Entry { get; private set; }
+        [field: SerializeField] public DialogueOption[] Options { get; private set; }
+        public EventActionData OnSkip { get; private set; }
 
         public override void Execute(CrawlerLogicController logicController)
         {
-            logicController.ShowDialogue(Portrait, Message);
+            logicController.ShowDialogue(Entry.Portrait, Entry.Message);
         }
+    }
+
+    [Serializable]
+    public struct DialogueOption
+    {
+        public string Text;
+        public EventActionData OnSelected;
     }
 }

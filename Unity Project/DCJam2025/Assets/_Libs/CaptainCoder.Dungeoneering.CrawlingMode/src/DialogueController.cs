@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 
 using CaptainCoder.Dungeoneering.Encounter;
@@ -14,11 +15,15 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
 {
     public class DialogueController : MonoBehaviour
     {
+        [AssertIsSet][SerializeField] private CrawlerLogicController _logicController;
         [AssertIsSet][SerializeField] private TextMeshProUGUI _topDialogue;
         [AssertIsSet][SerializeField] private TextMeshProUGUI _bottomDialouge;
         [AssertIsSet][SerializeField] private Image _portraitImage;
         [AssertIsSet][SerializeField] private ToggleablePanel _portrait;
         [AssertIsSet][SerializeField] private CanvasGroup _canvasGroup;
+        [AssertIsSet][SerializeField] private OptionButton[] _optionButtons;
+        [AssertIsSet][SerializeField] private OptionButton _skipButton;
+
         [SerializeField] private float _fadeDuration = 0.25f;
         [SerializeField] private float _messageDisplayDuration = 1f;
         private Coroutine _printMessageRoutine;
@@ -95,5 +100,54 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             _canvasGroup.alpha = targetAlpha;
         }
 
+        private ChainedDialogueActionData _chainedDialogueActionData;
+        private int _currentChainedIx;
+
+        internal void ShowChainedDialogue(ChainedDialogueActionData chainedDialogueActionData)
+        {
+            _chainedDialogueActionData = chainedDialogueActionData;
+            _currentChainedIx = -1;
+
+
+
+            _optionButtons[0].IsVisible = true;
+            _optionButtons[0].Text = "Next";
+            _optionButtons[0].OnClick.RemoveAllListeners();
+            _optionButtons[0].OnClick.AddListener(NextChained);
+
+            _optionButtons[1].IsVisible = false;
+            _optionButtons[1].Text = "Close";
+            _optionButtons[1].OnClick.RemoveAllListeners();
+            _optionButtons[1].OnClick.AddListener(FinishChainedDialogue);
+
+            _optionButtons[2].Text = "Back";
+            _optionButtons[2].IsVisible = false;
+            _optionButtons[2].OnClick.RemoveAllListeners();
+            _optionButtons[2].OnClick.AddListener(PrevChained);
+
+            _skipButton.IsVisible = true;
+            _skipButton.OnClick.RemoveAllListeners();
+            _skipButton.OnClick.AddListener(FinishChainedDialogue);
+            NextChained();
+        }
+
+        public void PrevChained() => NextChained(-1);
+        public void NextChained() => NextChained(1);
+
+        public void NextChained(int delta)
+        {
+            _currentChainedIx += delta;
+            Portrait = _chainedDialogueActionData.Entries[_currentChainedIx].Portrait;
+            ShowMessage(_chainedDialogueActionData.Entries[_currentChainedIx].Message);
+            _optionButtons[0].IsVisible = _currentChainedIx < _chainedDialogueActionData.Entries.Length - 1;
+            _optionButtons[1].IsVisible = _currentChainedIx == _chainedDialogueActionData.Entries.Length - 1;
+            _optionButtons[2].IsVisible = _currentChainedIx > 0;
+        }
+
+        public void FinishChainedDialogue()
+        {
+            Hide();
+            _chainedDialogueActionData.OnFinished.Execute(_logicController);
+        }
     }
 }

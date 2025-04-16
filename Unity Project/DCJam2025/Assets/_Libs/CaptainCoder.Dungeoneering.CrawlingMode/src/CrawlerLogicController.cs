@@ -104,5 +104,10 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             _dialogueController.Portrait = portrait;
             _dialogueController.ShowMessage(message);
         }
+
+        internal void ShowDialogue(ChainedDialogueActionData chainedDialogueActionData)
+        {
+            _dialogueController.ShowChainedDialogue(chainedDialogueActionData);
+        }
     }
 }

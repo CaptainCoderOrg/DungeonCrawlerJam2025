@@ -13,6 +13,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [AssertIsSet][SerializeField] private CanvasGroup _canvasGroup;
         [AssertIsSet][SerializeField] private LayoutElement _layoutElement;
         [SerializeField] private bool _isEnabled = true;
+        [SerializeField] private bool _ignoreLayoutAlways = false;
         public event System.Action OnChange;
         public bool IsEnabled
         {
@@ -36,7 +37,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         public void Show()
         {
             StopAllCoroutines();
-            _layoutElement.ignoreLayout = false;
+            _layoutElement.ignoreLayout = _ignoreLayoutAlways || false;
             OnChange?.Invoke();
             if (gameObject.activeInHierarchy)
             {
@@ -49,7 +50,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             yield return null;
             _canvasGroup.alpha = 1;
             _canvasGroup.blocksRaycasts = true;
-            _layoutElement.ignoreLayout = false;
+            _layoutElement.ignoreLayout = _ignoreLayoutAlways || false;
         }
 
         public void Hide()
@@ -57,7 +58,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             StopAllCoroutines();
             _canvasGroup.alpha = 0;
             _canvasGroup.blocksRaycasts = false;
-            _layoutElement.ignoreLayout = true;
+            _layoutElement.ignoreLayout = _ignoreLayoutAlways || true;
             OnChange?.Invoke();
         }
 

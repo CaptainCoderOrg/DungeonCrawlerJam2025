@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec99ff395692d1343af448d89a9de525, type: 3}
-  m_Name: DefaultPlayerView
+  m_Script: {fileID: 11500000, guid: b04ecfac92f9c384f9c427da2ae946dc, type: 3}
+  m_Name: Teleport to Barn Entrance
   m_EditorClassIdentifier: 
-  <X>k__BackingField: 9
-  <Y>k__BackingField: 5
-  <Facing>k__BackingField: 3
   _dungeonName: Farm
+  _x: 13
+  _y: 12
+  _facing: 3
