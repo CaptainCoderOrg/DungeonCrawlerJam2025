@@ -48,9 +48,22 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         {
             _topDialogue.maxVisibleCharacters = 0;
             _topDialogue.text = message;
+            StartCoroutine(RebuildAtEndOfFrame());
             StartCoroutine(FadeTo(1));
             if (_printMessageRoutine != null) { StopCoroutine(_printMessageRoutine); }
             _printMessageRoutine = StartCoroutine(PrintMessage());
+        }
+
+        [Button]
+        private void Rebuild()
+        {
+            LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)transform);
+        }
+
+        private IEnumerator RebuildAtEndOfFrame()
+        {
+            yield return null;
+            Rebuild();
         }
 
         private IEnumerator PrintMessage()
