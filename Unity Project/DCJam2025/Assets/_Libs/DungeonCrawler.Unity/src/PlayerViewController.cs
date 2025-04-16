@@ -1,3 +1,5 @@
+using System;
+
 using CaptainCoder.Dungeoneering.DungeonMap;
 using CaptainCoder.Dungeoneering.Player;
 using CaptainCoder.Dungeoneering.Unity.Data;
@@ -16,6 +18,7 @@ namespace CaptainCoder.Dungeoneering.Unity
         [SerializeField] private bool _isInEditor = true;
         [SerializeField]
         private DungeonCrawlerData _dungeonCrawlerData;
+        public Func<PlayerView, PlayerView, bool> ValidateMove;
         void Awake()
         {
             Assertion.NotNull(this, (_dungeonCrawlerData, "Dungeon Crawler Data"));
@@ -27,7 +30,11 @@ namespace CaptainCoder.Dungeoneering.Unity
                 HandleInputIgnoringWalls(action);
                 return;
             }
-            PlayerView.View = PlayerControls.Move(_dungeonCrawlerData.CurrentDungeon, PlayerView.View, action);
+            PlayerView result = PlayerControls.Move(_dungeonCrawlerData.CurrentDungeon, PlayerView.View, action);
+            if (ValidateMove == null || ValidateMove.Invoke(PlayerView.View, result))
+            {
+                PlayerView.View = result;
+            }
         }
 
         private void HandleInputIgnoringWalls(MovementAction action)

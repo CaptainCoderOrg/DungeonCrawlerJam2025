@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 using CaptainCoder.Dungeoneering.DungeonMap;
 using CaptainCoder.Dungeoneering.DungeonMap.Unity;
@@ -13,6 +14,7 @@ using CaptainCoder.Unity.Assertions;
 using NaughtyAttributes;
 
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 namespace CaptainCoder.Dungeoneering.CrawlingMode
@@ -20,19 +22,44 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
 
     public class CrawlerLogicController : MonoBehaviour
     {
+        [AssertIsSet][SerializeField] private PlayerViewController _viewController;
         [AssertIsSet][SerializeField] private ScreenHider _hider;
         [AssertIsSet][SerializeField] private EncounterSettingsData _encounterSettingsData;
         [AssertIsSet][SerializeField] private DungeonController _dungeonController;
         [AssertIsSet][SerializeField] private PlayerViewData _playerViewData;
         [AssertIsSet][SerializeField] private DialogueController _dialogueController;
         [Expandable][AssertIsSet][SerializeField] private List<CrawlerEventData> _events;
+        [field: SerializeField] public UnityEvent<PlayerView, PlayerView, PlayerViewData> OnMove;
 
         [Expandable][SerializeField] private EventActionData _testAction;
         void Awake()
         {
             _playerViewData.OnChange.AddListener(HandlePlayerViewChanged);
             _playerViewData.OnDungeonChanged.AddListener(HandleDungeonChanged);
+            _viewController.ValidateMove = HandleBeforeMove;
             StartCoroutine(ShowScreenAtEndOfFrame());
+        }
+
+        private bool HandleBeforeMove(PlayerView exiting, PlayerView entering)
+        {
+            // TODO: Needs optimization, we shouldn't need to iterate through all possible events
+            bool canceled = false;
+            foreach (OnBeforeEnterTileEventData before in BeforeEnterEvents.Where(e => e.AllConditionsMet()))
+            {
+                foreach (Vector2Int position in before.Positions)
+                {
+                    if (position.x == entering.Position.X && position.y == entering.Position.Y)
+                    {
+                        canceled = canceled || before.CancelMoveIfTriggered;
+                        foreach (var action in before.Actions)
+                        {
+                            action.Execute(this);
+                        }
+
+                    }
+                }
+            }
+            return !canceled;
         }
 
         private IEnumerator ShowScreenAtEndOfFrame()
@@ -45,6 +72,9 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         {
             _dungeonController.DungeonCrawlerData.LoadDungeonByName(dungeonName);
         }
+
+        private IEnumerable<CrawlerEventData> DungeonEvents => _events.Where(e => e is DungeonEvents de && de.DungeonName == _playerViewData.DungeonName).SelectMany(e => ((DungeonEvents)e).Events);
+        private IEnumerable<OnBeforeEnterTileEventData> BeforeEnterEvents => DungeonEvents.Where(e => e is OnBeforeEnterTileEventData).Select(e => e as OnBeforeEnterTileEventData);
 
         private void HandlePlayerViewChanged(PlayerView prev, PlayerView curr, PlayerViewData playerViewData)
         {

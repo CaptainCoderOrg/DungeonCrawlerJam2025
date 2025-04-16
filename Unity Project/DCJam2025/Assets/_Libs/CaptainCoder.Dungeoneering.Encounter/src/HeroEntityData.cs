@@ -69,6 +69,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 base.Notify(EquipmentChangedEvent.Instance);
             }
         }
+        public IEnumerable<EquipmentData> AllItems => Inventory.Concat(Equipped());
         [field: SerializeField] public List<EquipmentData> Inventory { get; private set; }
         [field: SerializeField] public List<DieData> MeleeSkillDice { get; set; }
         [field: SerializeField] public List<DieData> RangeSkillDice { get; set; }

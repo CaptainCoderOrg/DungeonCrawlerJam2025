@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Teleport to Barn Entrance
   m_EditorClassIdentifier: 
   _dungeonName: Farm
-  _x: 13
-  _y: 12
+  _x: 12
+  _y: 5
   _facing: 3

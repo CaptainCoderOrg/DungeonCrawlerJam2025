@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec99ff395692d1343af448d89a9de525, type: 3}
   m_Name: DefaultPlayerView
   m_EditorClassIdentifier: 
-  <X>k__BackingField: 9
-  <Y>k__BackingField: 5
+  <X>k__BackingField: 12
+  <Y>k__BackingField: 13
   <Facing>k__BackingField: 3
   _dungeonName: Farm
