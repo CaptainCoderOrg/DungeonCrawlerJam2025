@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +13,11 @@ using CaptainCoder.Unity.Assertions;
 using TMPro;
 
 using UnityEngine;
-using UnityEngine.SceneManagement;
 namespace CaptainCoder.Dungeoneering.Encounter
 {
     public class EncounterController : MonoBehaviour
     {
+        [AssertIsSet][SerializeField] private WarningModalController _warningModalController;
         [AssertIsSet][SerializeField] private CrawlerLogicController _crawlerLogicController;
         [AssertIsSet][SerializeField] private PlayerViewData _playerViewData;
         [AssertIsSet][SerializeField] private TextMeshProUGUI _roundInfoText;
@@ -221,5 +222,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _encounterSettingsData.FinishedEncounter = EncounterData;
             _crawlerLogicController.EndEncounter();
         }
+
+        internal void ShowConfirmation(string message, Action onConfirm) => _warningModalController.ShowWarning(message, onConfirm);
     }
 }

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe86889bd3874343983eadca9c0ea4f, type: 3}
   m_Name: Nyxie Grimgrin  SpriteSheet
   m_EditorClassIdentifier: 
-  <SpriteSheet>k__BackingField: {fileID: 2800000, guid: bac65867317d9254aba073fa5346a0be, type: 3}
-  <Rows>k__BackingField: 4
-  <Columns>k__BackingField: 9
+  <SpriteSheet>k__BackingField: {fileID: 2800000, guid: 45709788881944548bd83b6e56d80258, type: 3}
+  <Rows>k__BackingField: 1
+  <Columns>k__BackingField: 1

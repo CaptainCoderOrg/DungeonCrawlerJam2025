@@ -105,7 +105,17 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         public void Move() => _encounterController.HeroTurnController.ShowMove();
 
-        public void EndTurn() => _encounterController.HeroTurnController.EndTurn();
+        public void EndTurn()
+        {
+            if (_figureData.Movement > 0 || _figureData.Attacks > 0)
+            {
+                _encounterController.ShowConfirmation($"{_figureData.EntityData.Name} has action points remaining, are you sure you want to end this {_figureData.EntityData.Name}'s turn?", _encounterController.HeroTurnController.EndTurn);
+            }
+            else
+            {
+                _encounterController.HeroTurnController.EndTurn();
+            }
+        }
 
         public void SelectAttack() => _encounterController.HeroTurnController.StartAttack();
 
