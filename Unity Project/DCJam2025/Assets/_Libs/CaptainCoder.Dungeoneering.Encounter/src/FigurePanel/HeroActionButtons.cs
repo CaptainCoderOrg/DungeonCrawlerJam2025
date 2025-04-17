@@ -9,11 +9,20 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [AssertIsSet][field: SerializeField] public HeroActionButton SkillsButton { get; private set; }
         [AssertIsSet][field: SerializeField] public HeroActionButton TakeTurnButton { get; private set; }
         [AssertIsSet][field: SerializeField] public HeroActionButton EndTurnButton { get; private set; }
+        [AssertIsSet][field: SerializeField] public HeroActionButton ExertButton { get; private set; }
         [AssertIsSet][field: SerializeField] public HeroActionButton MovementButton { get; private set; }
         [AssertIsSet][field: SerializeField] public HeroActionButton AttackButton { get; private set; }
 
-        internal void UpdateButtons(FigureData figureData)
+        internal void UpdateButtons(FigureData figureData, bool isActive)
         {
+            if (isActive && figureData.EntityData is HeroEntityData hero && hero.Stamina > 0)
+            {
+                ExertButton.Enabled = true;
+            }
+            else
+            {
+                ExertButton.Enabled = false;
+            }
             if (figureData.Movement > 0)
             {
                 MovementButton.Enabled = true;

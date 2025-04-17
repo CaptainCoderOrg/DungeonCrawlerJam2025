@@ -23,6 +23,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         public event System.Action<HeroFigurePanel> OnMoved;
 
+        public bool IsActive => _encounterController != null && _encounterController.Selected == _figureController;
+
         public EncounterFigureController FigureController
         {
             get => _figureController;
@@ -34,13 +36,13 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 _figureData = _figureController.Figure;
                 _figureData.OnChanged += HandleFigureChanged;
                 UpdateRenderers();
-                _heroActionButtons.UpdateButtons(_figureData);
+                _heroActionButtons.UpdateButtons(_figureData, IsActive);
             }
         }
 
         private void HandleFigureChanged(FigureDataChangedEvent _)
         {
-            _heroActionButtons.UpdateButtons(_figureData);
+            _heroActionButtons.UpdateButtons(_figureData, IsActive);
         }
 
         void Awake()
@@ -77,6 +79,16 @@ namespace CaptainCoder.Dungeoneering.Encounter
             foreach (ILivingEntityRenderer renderer in _entityRenderers)
             {
                 renderer.Render(_figureData.EntityData);
+            }
+        }
+
+        public void Exert()
+        {
+            if (_figureData.EntityData is HeroEntityData hero && hero.Stamina > 0)
+            {
+                hero.Exertion++;
+                _figureData.Movement++;
+                _encounterController.HeroTurnController.ShowMove();
             }
         }
 
