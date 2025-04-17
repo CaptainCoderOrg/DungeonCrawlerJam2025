@@ -178,6 +178,15 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _enemyTurnController.TakeEnemyTurn();
         }
 
+        public void SkipPlayerTurn()
+        {
+            foreach (EncounterFigureController figure in State.Figures.Values.Where(f => f.Figure.EntityData is HeroEntityData))
+            {
+                figure.Figure.HasTakenTurn = true;
+            }
+            CheckHeroTurns();
+        }
+
         internal void CheckHeroTurns()
         {
             foreach (EncounterFigureController figure in State.Figures.Values.Where(f => f.Figure.EntityData is HeroEntityData))
