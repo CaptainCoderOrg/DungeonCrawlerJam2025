@@ -20,6 +20,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [field: SerializeField] public int MaxY { get; private set; }
         [field: SerializeField] public EventActionData[] OnEncounterBegin { get; private set; }
         [field: SerializeField] public EventActionData[] OnEncounterEnd { get; private set; }
+        [field: SerializeField] public EventActionData[] OnExitCombat { get; private set; }
     }
 
     [System.Serializable]

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41230ffc95701804da6cdd78cb303ac3, type: 3}
+  m_Name: Pen 1 - Find Barn Key Dialogue
+  m_EditorClassIdentifier: 
+  <Entry>k__BackingField:
+    <Message>k__BackingField: Aha! We found the key!
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  <Options>k__BackingField:
+  - Text: Take Key
+    OnSelected:
+    - {fileID: 11400000, guid: f52c51e28f2e562439c34f104b035010, type: 2}
+    - {fileID: 11400000, guid: e9c02015757726344b46f14d899b8341, type: 2}

@@ -206,17 +206,18 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             // If there is at least one enemy, combat is not over
             if (State.Figures.Values.Where(f => f.Figure.EntityData is EnemyEntityData).Any()) { return; }
-            StartCoroutine(EndCombatSequence());
+            StartCoroutine(VictorySequence());
         }
 
         public void SkipCombat()
         {
-            StartCoroutine(EndCombatSequence());
+            StartCoroutine(VictorySequence());
         }
 
-        private IEnumerator EndCombatSequence()
+        private IEnumerator VictorySequence()
         {
             yield return StartCoroutine(ShowText("Victory!"));
+            _encounterSettingsData.FinishedEncounter = EncounterData;
             _crawlerLogicController.EndEncounter();
         }
     }

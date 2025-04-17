@@ -40,6 +40,13 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             _encounterController = FindFirstObjectByType<EncounterController>();
             if (_viewController != null) { _viewController.ValidateMove = HandleBeforeMove; }
             StartCoroutine(ShowScreenAtEndOfFrame());
+            if (_encounterSettingsData.FinishedEncounter != null)
+            {
+                foreach (EventActionData actions in _encounterSettingsData.FinishedEncounter.OnExitCombat)
+                {
+                    actions.Execute(this);
+                }
+            }
         }
 
         private bool HandleBeforeMove(PlayerView exiting, PlayerView entering)
@@ -164,6 +171,11 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             {
                 hero.ClearListeners();
             }
+        }
+
+        internal void AnimateReceivingItem(EquipmentData equipment)
+        {
+            Debug.LogWarning($"TODO: Animate receving item");
         }
     }
 }

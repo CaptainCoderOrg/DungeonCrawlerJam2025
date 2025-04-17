@@ -19,6 +19,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [SerializeField] private IFigureRenderer[] _figureRenderers;
         [SerializeField] private ILivingEntityRenderer[] _entityRenderers;
         [AssertIsSet][SerializeField] private HeroActionButtons _heroActionButtons;
+        [SerializeField] private bool _isCrawlingMode = false;
 
         public event System.Action<HeroFigurePanel> OnMoved;
 
@@ -43,10 +44,14 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         void Awake()
         {
-            _encounterController = GetComponentInParent<EncounterController>();
-            Debug.Assert(_encounterController != null, "Could not find Encounter Controller", this);
+            if (!_isCrawlingMode)
+            {
+                _encounterController = GetComponentInParent<EncounterController>();
+                Debug.Assert(_encounterController != null, "Could not find Encounter Controller", this);
+            }
             _figureRenderers ??= GetComponentsInChildren<IFigureRenderer>(true).Where(c => (Object)c != this).ToArray();
             _entityRenderers ??= GetComponentsInChildren<ILivingEntityRenderer>(true).Where(c => (Object)c != this).ToArray();
+            FigureController = _figureController;
         }
 
         void Start()

@@ -41,8 +41,16 @@ namespace CaptainCoder.Dungeoneering.Encounter
             base.OnAfterEnterPlayMode();
             WaitForMovement = new WaitForSeconds(MovementSpeed);
             EnemyDelay = new WaitForSecondsRealtime(_enemyDelay);
+            FinishedEncounter = null;
+        }
+
+        protected override void OnExitPlayMode()
+        {
+            base.OnExitPlayMode();
+            FinishedEncounter = null;
         }
 
         public EncounterData TargetEncounter;
+        public EncounterData FinishedEncounter;
     }
 }
