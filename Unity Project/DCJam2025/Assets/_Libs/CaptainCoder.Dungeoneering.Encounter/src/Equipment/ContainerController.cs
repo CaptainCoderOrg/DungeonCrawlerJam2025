@@ -46,6 +46,11 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _toggleablePanel.Show();
         }
 
+        public void Toggle()
+        {
+            _toggleablePanel.Toggle();
+        }
+
         public void Close()
         {
             _toggleablePanel.Hide();
