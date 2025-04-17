@@ -10,25 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c12bd66080aac434f95af5246eebb5bc, type: 3}
-  m_Name: Farm - Barn Encounter
+  m_Name: Rocko Test AI Encounter
   m_EditorClassIdentifier: 
   <EnemyFigures>k__BackingField:
   - EnemyEntityTemplate: {fileID: 11400000, guid: 3b6a1daf9f88c0a40bda4e7e99cc19fc, type: 2}
     Position: {x: 3, y: 3}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: 7f08e314c50cbcb428ab2701d7be1588, type: 2}
-    Position: {x: 3, y: 6}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: 7f08e314c50cbcb428ab2701d7be1588, type: 2}
-    Position: {x: 8, y: 3}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: 7f08e314c50cbcb428ab2701d7be1588, type: 2}
-    Position: {x: 7, y: 4}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: 7f08e314c50cbcb428ab2701d7be1588, type: 2}
-    Position: {x: 7, y: 5}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: 7f08e314c50cbcb428ab2701d7be1588, type: 2}
-    Position: {x: 8, y: 6}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: 7f08e314c50cbcb428ab2701d7be1588, type: 2}
-    Position: {x: 4, y: 5}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: 7f08e314c50cbcb428ab2701d7be1588, type: 2}
-    Position: {x: 4, y: 4}
   <HeroFigures>k__BackingField:
   - HeroEntity: {fileID: 11400000, guid: 639c39d7073c6ec42a83ee9d248b2611, type: 2}
     Position: {x: 10, y: 4}

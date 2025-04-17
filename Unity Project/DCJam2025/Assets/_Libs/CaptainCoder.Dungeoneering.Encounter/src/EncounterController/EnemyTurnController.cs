@@ -72,27 +72,32 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         public static bool TryFindClosestMove(HashSet<MoveInfo> move, EncounterState state, out MoveInfo closest)
         {
-            IEnumerable<MoveInfo> info = move.OrderBy(m => DistanceToNearestHero(m, state));
-            closest = info.FirstOrDefault();
+            IEnumerable<(MoveInfo, float)> info = move.Select(m => (m, DistanceToNearestHero(m, state))).OrderBy(m => m.Item2);
+            // Debug.Log("Finding closest:");
+            // foreach ((MoveInfo mi, float distance) in info)
+            // {
+            //     Debug.Log($"{mi.Position} Distance: {distance}");
+            // }
+            closest = info.FirstOrDefault().Item1;
             return closest != null;
         }
 
         public static bool TryFindFurthestMove(HashSet<MoveInfo> move, EncounterState state, out MoveInfo furthest)
         {
-            IEnumerable<MoveInfo> info = move.OrderByDescending(m => DistanceToNearestHero(m, state));
-            furthest = info.FirstOrDefault();
+            IEnumerable<(MoveInfo, float)> info = move.Select(m => (m, DistanceToNearestHero(m, state))).OrderByDescending(m => m.Item2);
+            furthest = info.FirstOrDefault().Item1;
             return furthest != null;
         }
 
         public static float DistanceToNearestHero(MoveInfo move, EncounterState state)
         {
             IEnumerable<float> distances = state.Figures.Where(k => k.Value.Figure.EntityData is HeroEntityData).Select(k => (k.Key - move.Position).magnitude);
-            return distances.Any() ? distances.Max() : 0;
+            return distances.Any() ? distances.Min() : 0;
         }
 
         private IEnumerator TryAttackHero(EncounterFigureController figure, EnemyEntityData enemy)
         {
-            AttackData attack = enemy.Attacks[0];
+            AttackData attack = enemy.Attacks[Random.Range(0, enemy.Attacks.Count)];
             HashSet<AttackInfo> possibleAttacks = figure.Figure.FindAttackTargets(attack, State, Controller.EncounterData);
             if (TrySelectTarget(possibleAttacks, out AttackInfo target))
             {
