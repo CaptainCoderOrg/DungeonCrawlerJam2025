@@ -1572,6 +1572,7 @@ MonoBehaviour:
   _canvasGroup: {fileID: 3090158870446186526}
   _layoutElement: {fileID: 4554856670772233521}
   _isEnabled: 0
+  _ignoreLayoutAlways: 0
 --- !u!1 &1847197068216089238
 GameObject:
   m_ObjectHideFlags: 0
@@ -2657,7 +2658,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 188, y: -130.375}
+  m_AnchoredPosition: {x: 188, y: -92.100006}
   m_SizeDelta: {x: 376, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3224536965455556514
@@ -3321,6 +3322,7 @@ MonoBehaviour:
   _canvasGroup: {fileID: 7850557240256313149}
   _layoutElement: {fileID: 5974200621899538960}
   _isEnabled: 1
+  _ignoreLayoutAlways: 0
 --- !u!1 &3283638296055082579
 GameObject:
   m_ObjectHideFlags: 0
@@ -3788,6 +3790,7 @@ MonoBehaviour:
   _canvasGroup: {fileID: 5067506541821751992}
   _layoutElement: {fileID: 2469044391694411622}
   _isEnabled: 0
+  _ignoreLayoutAlways: 0
 --- !u!114 &5845710102669429128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6862,6 +6865,7 @@ MonoBehaviour:
   _canvasGroup: {fileID: 4392187927603705972}
   _layoutElement: {fileID: 6208164329600375883}
   _isEnabled: 1
+  _ignoreLayoutAlways: 0
 --- !u!1 &5630976790350562142
 GameObject:
   m_ObjectHideFlags: 0
@@ -8123,6 +8127,7 @@ MonoBehaviour:
   _canvasGroup: {fileID: 8655859594314393339}
   _layoutElement: {fileID: 5803086715639132986}
   _isEnabled: 0
+  _ignoreLayoutAlways: 0
 --- !u!1 &7511969279796738712
 GameObject:
   m_ObjectHideFlags: 0
@@ -16503,6 +16508,7 @@ MonoBehaviour:
   _canvasGroup: {fileID: 2114749868252681120}
   _layoutElement: {fileID: 1385925278964457927}
   _isEnabled: 0
+  _ignoreLayoutAlways: 0
 --- !u!1001 &2045331347690422656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22564,6 +22570,7 @@ MonoBehaviour:
   _canvasGroup: {fileID: 1635725375777658514}
   _layoutElement: {fileID: 5671234229105545060}
   _isEnabled: 1
+  _ignoreLayoutAlways: 0
 --- !u!224 &2971878645805784967 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
@@ -26525,6 +26532,7 @@ MonoBehaviour:
   _canvasGroup: {fileID: 7415444997593721115}
   _layoutElement: {fileID: 2347224618515756267}
   _isEnabled: 1
+  _ignoreLayoutAlways: 0
 --- !u!114 &7208983848904977018 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3203869756132139069, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}

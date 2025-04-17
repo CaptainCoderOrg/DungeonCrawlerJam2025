@@ -22,10 +22,10 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
 
     public class CrawlerLogicController : MonoBehaviour
     {
-        [AssertIsSet][SerializeField] private PlayerViewController _viewController;
+        [SerializeField] private PlayerViewController _viewController;
         [AssertIsSet][SerializeField] private ScreenHider _hider;
         [AssertIsSet][SerializeField] private EncounterSettingsData _encounterSettingsData;
-        [AssertIsSet][SerializeField] private DungeonController _dungeonController;
+        [AssertIsSet][SerializeField] private DungeonCrawlerData _dungeonCrawlerData;
         [AssertIsSet][SerializeField] private PlayerViewData _playerViewData;
         [AssertIsSet][SerializeField] private DialogueController _dialogueController;
         [Expandable][AssertIsSet][SerializeField] private List<CrawlerEventData> _events;
@@ -36,7 +36,8 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         {
             _playerViewData.OnChange.AddListener(HandlePlayerViewChanged);
             _playerViewData.OnDungeonChanged.AddListener(HandleDungeonChanged);
-            _viewController.ValidateMove = HandleBeforeMove;
+            _viewController = FindFirstObjectByType<PlayerViewController>();
+            if (_viewController != null) { _viewController.ValidateMove = HandleBeforeMove; }
             StartCoroutine(ShowScreenAtEndOfFrame());
         }
 
@@ -71,7 +72,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
 
         private void HandleDungeonChanged(string dungeonName)
         {
-            _dungeonController.DungeonCrawlerData.LoadDungeonByName(dungeonName);
+            _dungeonCrawlerData.LoadDungeonByName(dungeonName);
         }
 
         private IEnumerable<CrawlerEventData> DungeonEvents => _events.Where(e => e is DungeonEvents de && de.DungeonName == _playerViewData.DungeonName).SelectMany(e => ((DungeonEvents)e).Events);
