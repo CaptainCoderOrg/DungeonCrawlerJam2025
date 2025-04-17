@@ -41,12 +41,18 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             }
         }
 
+        void Awake()
+        {
+            _canvasGroup.blocksRaycasts = false;
+        }
+
         [Button]
         private void TestMessage() => ShowMessage(_testMessage);
 
         [Button]
         public void Hide()
         {
+            _canvasGroup.blocksRaycasts = false;
             StartCoroutine(FadeTo(0));
         }
 
@@ -56,6 +62,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             _topDialogue.text = message;
             StartCoroutine(RebuildAtEndOfFrame());
             StartCoroutine(FadeTo(1));
+            _canvasGroup.blocksRaycasts = true;
             if (_printMessageRoutine != null) { StopCoroutine(_printMessageRoutine); }
             _printMessageRoutine = StartCoroutine(PrintMessage());
         }

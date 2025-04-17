@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
+using CaptainCoder.Dungeoneering.CrawlingMode;
 using CaptainCoder.Dungeoneering.DungeonMap;
 using CaptainCoder.Dungeoneering.DungeonMap.Unity;
 using CaptainCoder.Dungeoneering.Unity;
@@ -16,6 +17,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 {
     public class EncounterController : MonoBehaviour
     {
+        [AssertIsSet][SerializeField] private CrawlerLogicController _crawlerLogicController;
         [AssertIsSet][SerializeField] private PlayerViewData _playerViewData;
         [AssertIsSet][SerializeField] private TextMeshProUGUI _roundInfoText;
         [AssertIsSet][SerializeField] private ScreenHider _screenHider;
@@ -215,15 +217,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         private IEnumerator EndCombatSequence()
         {
             yield return StartCoroutine(ShowText("Victory!"));
-            yield return StartCoroutine(_screenHider.ShowCoroutine());
-            AsyncOperation callback = SceneManager.LoadSceneAsync("DungeonCrawling");
-            while (!callback.isDone) { yield return null; }
-
-            // TODO: This is a hack that ensure there are no left over listeners at the end of combat
-            foreach (var hero in State.Heroes)
-            {
-                hero.ClearListeners();
-            }
+            _crawlerLogicController.EndEncounter();
         }
     }
 }

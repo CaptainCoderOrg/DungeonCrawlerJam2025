@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+using CaptainCoder.Dungeoneering.CrawlingMode;
 using CaptainCoder.Dungeoneering.Unity.Data;
 
 using UnityEngine;
@@ -17,6 +18,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [field: SerializeField] public int MaxX { get; private set; }
         [field: SerializeField] public int MinY { get; private set; }
         [field: SerializeField] public int MaxY { get; private set; }
+        [field: SerializeField] public EventActionData[] OnEncounterBegin { get; private set; }
+        [field: SerializeField] public EventActionData[] OnEncounterEnd { get; private set; }
     }
 
     [System.Serializable]

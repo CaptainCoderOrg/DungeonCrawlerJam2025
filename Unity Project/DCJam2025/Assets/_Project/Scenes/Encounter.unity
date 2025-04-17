@@ -4098,6 +4098,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bba3dab81119dea4baabbac9c507f3d8, type: 3}
+--- !u!114 &1532820500 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1706916150870628756, guid: bba3dab81119dea4baabbac9c507f3d8, type: 3}
+  m_PrefabInstance: {fileID: 1532820499}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8846945da77a83142a81e4f2c4c062cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1676446283
 GameObject:
   m_ObjectHideFlags: 0
@@ -11104,6 +11115,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -35.55
       objectReference: {fileID: 0}
+    - target: {fileID: 4867494287452584605, guid: 3d588b0bef83f0141b1edab19b1d76df, type: 3}
+      propertyPath: _crawlerLogicController
+      value: 
+      objectReference: {fileID: 1532820500}
     - target: {fileID: 4880418128331007596, guid: 3d588b0bef83f0141b1edab19b1d76df, type: 3}
       propertyPath: m_Mesh
       value: 

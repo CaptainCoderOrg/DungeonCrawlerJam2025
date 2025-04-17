@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 
 using CaptainCoder.Dungeoneering.DungeonMap;
-using CaptainCoder.Dungeoneering.DungeonMap.Unity;
 using CaptainCoder.Dungeoneering.Encounter;
 using CaptainCoder.Dungeoneering.Player;
 using CaptainCoder.Dungeoneering.Unity;
@@ -23,6 +22,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
     public class CrawlerLogicController : MonoBehaviour
     {
         [SerializeField] private PlayerViewController _viewController;
+        [SerializeField] private EncounterController _encounterController;
         [AssertIsSet][SerializeField] private ScreenHider _hider;
         [AssertIsSet][SerializeField] private EncounterSettingsData _encounterSettingsData;
         [AssertIsSet][SerializeField] private DungeonCrawlerData _dungeonCrawlerData;
@@ -37,6 +37,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             _playerViewData.OnChange.AddListener(HandlePlayerViewChanged);
             _playerViewData.OnDungeonChanged.AddListener(HandleDungeonChanged);
             _viewController = FindFirstObjectByType<PlayerViewController>();
+            _encounterController = FindFirstObjectByType<EncounterController>();
             if (_viewController != null) { _viewController.ValidateMove = HandleBeforeMove; }
             StartCoroutine(ShowScreenAtEndOfFrame());
         }
@@ -146,6 +147,23 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         internal void HideDialogue()
         {
             _dialogueController.Hide();
+        }
+
+        internal void EndEncounter()
+        {
+            StartCoroutine(EndEncounterSequence());
+        }
+        private IEnumerator EndEncounterSequence()
+        {
+            yield return StartCoroutine(_hider.ShowCoroutine());
+            AsyncOperation callback = SceneManager.LoadSceneAsync("DungeonCrawling");
+            while (!callback.isDone) { yield return null; }
+
+            // TODO: This is a hack that ensure there are no left over listeners at the end of combat
+            foreach (var hero in _encounterController.State.Heroes)
+            {
+                hero.ClearListeners();
+            }
         }
     }
 }
