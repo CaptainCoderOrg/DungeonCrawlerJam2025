@@ -16,5 +16,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6f7a6aa7d15bdcb4683d52c349f6a90c, type: 2}
   - {fileID: 11400000, guid: 639c39d7073c6ec42a83ee9d248b2611, type: 2}
   - {fileID: 11400000, guid: c8554de155ee39547b21e84b2f7ca8e4, type: 2}
+  _heroInventory: {fileID: 11400000, guid: 8d7edcd74453f394e8226a70d3562536, type: 2}
   _equipment:
   - {fileID: 11400000, guid: cb89f1aa55049dd4196579907e88f6d2, type: 2}

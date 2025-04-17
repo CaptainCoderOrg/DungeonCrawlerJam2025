@@ -155,7 +155,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         public void FinishChainedDialogue()
         {
             Hide();
-            _chainedDialogueActionData?.OnFinished.Execute(_logicController);
+            _chainedDialogueActionData?.OnFinished?.Execute(_logicController);
         }
 
         internal void SetOptions(DialogueOption[] options)

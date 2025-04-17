@@ -12,10 +12,11 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
     public class HasItemConditionData : EventConditionData
     {
         [SerializeField] private HeroEntityData[] _heroes;
+        [SerializeField] private ContainerData _playerInventory;
         [SerializeField] private EquipmentData[] _equipment;
         public override bool ConditionMet()
         {
-            HashSet<EquipmentData> allItems = _heroes.SelectMany(h => h.AllItems).ToHashSet();
+            HashSet<EquipmentData> allItems = _heroes.SelectMany(h => h.AllItems).Concat(_playerInventory.EquipmentData).ToHashSet();
             foreach (EquipmentData equipment in _equipment)
             {
                 if (!allItems.Contains(equipment)) { return false; }

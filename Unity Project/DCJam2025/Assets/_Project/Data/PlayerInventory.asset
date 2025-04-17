@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf73c6acdd761194fb8d98c1c0135bb0, type: 3}
-  m_Name: Pen 1 Container
+  m_Name: PlayerInventory
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Under Rock
   <EquipmentData>k__BackingField:

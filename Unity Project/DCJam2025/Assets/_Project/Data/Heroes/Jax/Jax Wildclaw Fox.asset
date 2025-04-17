@@ -32,9 +32,9 @@ MonoBehaviour:
   _wornArmor: {fileID: 0}
   _accessory: {fileID: 0}
   <Inventory>k__BackingField:
-  - {fileID: 11400000, guid: f19ae697ad791dc42bc89b3ba6bf0594, type: 2}
-  - {fileID: 11400000, guid: debdbf392a3987e4bb41c62e1a6b1f57, type: 2}
-  - {fileID: 11400000, guid: 21a3804b2ed493d4a9667071b885f2ec, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   <MeleeSkillDice>k__BackingField:
   - {fileID: 11400000, guid: 76a51ee6611969e41be91e50d857bc90, type: 2}
