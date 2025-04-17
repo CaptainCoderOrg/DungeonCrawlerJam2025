@@ -10,6 +10,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 {
     public sealed class EquipmentSlotRenderer : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerClickHandler
     {
+        [SerializeField] private EquipmentDragCanvas _dragCanvas;
         [AssertIsSet][SerializeField] private Image _image;
         [AssertIsSet][SerializeField] private SimpleTooltip _simpleTooltip;
         public EquipmentSlotReference EquipmentSlotReference { get; private set; }
@@ -18,6 +19,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         void Awake()
         {
+            if(_dragCanvas == null) { _dragCanvas = FindFirstObjectByType<EquipmentDragCanvas>(); }
             _equipmentInfoPanel = FindFirstObjectByType<EquipmentInfoPanel>();
             Debug.Assert(_equipmentInfoPanel != null, $"Could not find {nameof(EquipmentInfoPanel)}", this);
         }
@@ -26,7 +28,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             if (EquipmentSlotReference.Data == null) { return; }
             _equipmentInfoPanel.Hide();
-            _dragging = Instantiate(_image, GetComponentsInParent<Canvas>().Last().transform);
+            _dragging = Instantiate(_image, _dragCanvas.transform);
             _dragging.raycastTarget = false;
             Color color = _dragging.color;
             color.a = 0.75f;
@@ -65,6 +67,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 _image.enabled = false;
                 return;
             }
+            Debug.Log($"Redrawing {name}", this);
             _image.enabled = true;
             _image.sprite = EquipmentSlotReference.Data.Sprite;
             _simpleTooltip.Tooltip = EquipmentSlotReference.Data.TooltipText;

@@ -31,6 +31,26 @@ public abstract record class EquipmentSlotReference(HeroEntityData Hero)
         return true;
     }
 }
+
+public sealed record class ContainerSlotReference(int SlotIx, ContainerData Container) : EquipmentSlotReference((HeroEntityData)null)
+{
+    private EquipmentData _data;
+    public override EquipmentData Data
+    {
+        get => Container.EquipmentData[SlotIx];
+        set
+        {
+            Container.EquipmentData[SlotIx] = value;
+            DataChanged?.Invoke();
+        }
+    }
+
+    public override bool CanHold(EquipmentData data, out string result)
+    {
+        result = "Success";
+        return true;
+    }
+}
 public sealed record class BackpackSlotReference(HeroEntityData Hero, int SlotIndex) : EquipmentSlotReference(Hero)
 {
     public override bool CanHold(EquipmentData data, out string result)
