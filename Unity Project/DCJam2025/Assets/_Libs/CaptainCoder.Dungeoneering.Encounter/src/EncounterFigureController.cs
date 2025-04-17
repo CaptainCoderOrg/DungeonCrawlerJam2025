@@ -48,12 +48,12 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         void OnEnable()
         {
-            _controller.EncounterCamera.ObserveCamera(FollowCamera);
+            _controller?.EncounterCamera?.ObserveCamera(FollowCamera);
         }
 
         void OnDisable()
         {
-            _controller.EncounterCamera.RemoveObserver(FollowCamera);
+            _controller?.EncounterCamera?.RemoveObserver(FollowCamera);
         }
 
         private void FollowCamera(Camera camera)

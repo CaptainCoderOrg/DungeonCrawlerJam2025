@@ -30,6 +30,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             {
                 _figureController = value;
                 if (_figureData != null) { _figureData.OnChanged -= HandleFigureChanged; }
+                if (_figureController == null) { return; }
                 _figureData = _figureController.Figure;
                 _figureData.OnChanged += HandleFigureChanged;
                 UpdateRenderers();

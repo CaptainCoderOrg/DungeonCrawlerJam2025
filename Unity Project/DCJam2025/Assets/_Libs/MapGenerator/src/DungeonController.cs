@@ -18,6 +18,15 @@ namespace CaptainCoder.Dungeoneering.DungeonMap.Unity
         [AssertIsSet][field: SerializeField] public DungeonTile TilePrefab { get; private set; } = null!;
         [AssertIsSet][field: SerializeField] public UnityEvent<DungeonTile> OnDungeonTileClicked { get; private set; }
         [AssertIsSet][field: SerializeField] public UnityEvent<DungeonWallController> OnDungeonWallClicked { get; private set; }
+        [AssertIsSet][SerializeField] private Material _ceilingMaterial;
+        public Texture2D CeilingTile
+        {
+            set
+            {
+                _ceilingMaterial.mainTexture = value;
+            }
+        }
+
         private readonly DungeonBuilder _builder = new();
 
         void Awake()

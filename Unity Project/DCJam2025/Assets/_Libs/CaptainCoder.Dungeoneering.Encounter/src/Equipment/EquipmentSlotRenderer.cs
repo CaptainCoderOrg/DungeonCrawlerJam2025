@@ -67,7 +67,6 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 _image.enabled = false;
                 return;
             }
-            Debug.Log($"Redrawing {name}", this);
             _image.enabled = true;
             _image.sprite = EquipmentSlotReference.Data.Sprite;
             _simpleTooltip.Tooltip = EquipmentSlotReference.Data.TooltipText;

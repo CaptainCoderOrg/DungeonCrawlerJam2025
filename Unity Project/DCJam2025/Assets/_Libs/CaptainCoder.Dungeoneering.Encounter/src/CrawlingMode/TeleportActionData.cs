@@ -11,11 +11,12 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         [SerializeField] private int _x;
         [SerializeField] private int _y;
         [SerializeField] private Facing _facing;
+        [field: SerializeField] public Texture2D CeilingTile { get; private set; }
 
         public override void Execute(CrawlerLogicController controller)
         {
             base.Execute(controller);
-            controller.Teleport(_dungeonName, _x, _y, _facing);
+            controller.Teleport(_dungeonName, _x, _y, _facing, CeilingTile);
         }
     }
 }

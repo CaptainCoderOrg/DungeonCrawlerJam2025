@@ -31,7 +31,6 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 EquipmentSlotRenderer renderer = _equipmentSlotRenderers[ix];
                 if (ix < _containerData.EquipmentSlots.Length)
                 {
-                    Debug.Log("Rendering slot!");
                     renderer.Render(_containerData.EquipmentSlots[ix]);
                 }
                 else

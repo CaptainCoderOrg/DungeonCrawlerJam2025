@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using CaptainCoder.Dungeoneering.DungeonMap;
+using CaptainCoder.Dungeoneering.DungeonMap.Unity;
 using CaptainCoder.Dungeoneering.Encounter;
 using CaptainCoder.Dungeoneering.Player;
 using CaptainCoder.Dungeoneering.Unity;
@@ -22,6 +23,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
     public class CrawlerLogicController : MonoBehaviour
     {
         [SerializeField] private PlayerViewController _viewController;
+        [SerializeField] private DungeonController _dungeonController;
         [SerializeField] private EncounterController _encounterController;
         [AssertIsSet][SerializeField] private ScreenHider _hider;
         [AssertIsSet][SerializeField] private EncounterSettingsData _encounterSettingsData;
@@ -30,14 +32,34 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         [AssertIsSet][SerializeField] private DialogueController _dialogueController;
         [Expandable][AssertIsSet][SerializeField] private List<CrawlerEventData> _events;
         [field: SerializeField] public UnityEvent<PlayerView, PlayerView, PlayerViewData> OnMove;
+        [SerializeField] private GameStartEventData _gameStartEvent;
 
         [Expandable][SerializeField] private EventActionData _testAction;
         void Awake()
         {
+
             _playerViewData.OnChange.AddListener(HandlePlayerViewChanged);
             _playerViewData.OnDungeonChanged.AddListener(HandleDungeonChanged);
             _viewController = FindFirstObjectByType<PlayerViewController>();
             _encounterController = FindFirstObjectByType<EncounterController>();
+
+
+            if (_gameStartEvent != null && !_gameStartEvent.HasTriggered)
+            {
+                bool shouldLoad = true;
+#if UNITY_EDITOR
+                shouldLoad = !_gameStartEvent.SkipInPlayMode;
+#endif
+                if (shouldLoad)
+                {
+                    foreach (var action in _gameStartEvent.Actions)
+                    {
+                        action.Execute(this);
+                    }
+                }
+                _gameStartEvent.HasTriggered = true;
+            }
+
             if (_viewController != null) { _viewController.ValidateMove = HandleBeforeMove; }
             StartCoroutine(ShowScreenAtEndOfFrame());
             if (_encounterSettingsData.FinishedEncounter != null)
@@ -48,6 +70,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
                 }
                 _encounterSettingsData.FinishedEncounter = null;
             }
+
         }
 
         private bool HandleBeforeMove(PlayerView exiting, PlayerView entering)
@@ -119,10 +142,11 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             _testAction.Execute(this);
         }
 
-        public void Teleport(string dungeonName, int x, int y, Facing facing)
+        public void Teleport(string dungeonName, int x, int y, Facing facing, Texture2D ceilingTile)
         {
             _playerViewData.DungeonName = dungeonName;
             _playerViewData.View = new PlayerView(x, y, facing);
+            _dungeonController.CeilingTile = ceilingTile;
         }
 
         private void StartLoadEncounter()

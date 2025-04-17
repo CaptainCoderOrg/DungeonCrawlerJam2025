@@ -16,3 +16,4 @@ MonoBehaviour:
   _x: 0
   _y: 0
   _facing: 2
+  <CeilingTile>k__BackingField: {fileID: 2800000, guid: 2c2bf6fdaafbfa641abda84f53d12ad7, type: 3}

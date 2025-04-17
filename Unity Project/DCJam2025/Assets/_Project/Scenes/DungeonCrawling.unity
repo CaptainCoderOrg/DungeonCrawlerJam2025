@@ -6361,6 +6361,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _ceilingMaterial: {fileID: 2100000, guid: f4ce67f3c81cd024eb24500a0476157f, type: 2}
 --- !u!1001 &1385388576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6805,11 +6806,11 @@ RectTransform:
   - {fileID: 598072518}
   m_Father: {fileID: 1630859007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -16}
+  m_SizeDelta: {x: 1440, y: 810}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1460568196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9488,11 +9489,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6620007418374919315, guid: ed5437b20be3cc049b825798b82e668a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 116.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6620007418374919315, guid: ed5437b20be3cc049b825798b82e668a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -33.44
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7345635080826860776, guid: ed5437b20be3cc049b825798b82e668a, type: 3}
       propertyPath: m_AnchorMax.y
@@ -11125,9 +11126,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1621592925}
     - target: {fileID: 1706916150870628756, guid: bba3dab81119dea4baabbac9c507f3d8, type: 3}
+      propertyPath: _gameStartEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: c391756f3fe1dd5468430b63e28a79d3, type: 2}
+    - target: {fileID: 1706916150870628756, guid: bba3dab81119dea4baabbac9c507f3d8, type: 3}
       propertyPath: _viewController
       value: 
       objectReference: {fileID: 491907037}
+    - target: {fileID: 1706916150870628756, guid: bba3dab81119dea4baabbac9c507f3d8, type: 3}
+      propertyPath: _dungeonController
+      value: 
+      objectReference: {fileID: 1362657501}
     - target: {fileID: 1911746647915421580, guid: bba3dab81119dea4baabbac9c507f3d8, type: 3}
       propertyPath: m_PreferredWidth
       value: 128
