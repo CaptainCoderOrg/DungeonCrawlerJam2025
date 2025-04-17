@@ -12,7 +12,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
 
         public override void Execute(CrawlerLogicController logicController)
         {
-            logicController.ShowDialogue(Entry.Portrait, Entry.Message);
+            logicController.ShowDialogue(Entry.Portrait, Entry.Message, Options);
         }
     }
 
@@ -20,6 +20,6 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
     public struct DialogueOption
     {
         public string Text;
-        public EventActionData OnSelected;
+        public EventActionData[] OnSelected;
     }
 }

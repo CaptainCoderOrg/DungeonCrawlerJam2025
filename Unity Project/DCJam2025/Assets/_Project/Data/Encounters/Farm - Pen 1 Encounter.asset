@@ -18,12 +18,8 @@ MonoBehaviour:
   - EnemyEntityTemplate: {fileID: 11400000, guid: 7f08e314c50cbcb428ab2701d7be1588, type: 2}
     Position: {x: 4, y: 19}
   <HeroFigures>k__BackingField:
-  - HeroEntity: {fileID: 11400000, guid: 639c39d7073c6ec42a83ee9d248b2611, type: 2}
-    Position: {x: 8, y: 18}
   - HeroEntity: {fileID: 11400000, guid: 6f7a6aa7d15bdcb4683d52c349f6a90c, type: 2}
     Position: {x: 8, y: 17}
-  - HeroEntity: {fileID: 11400000, guid: c8554de155ee39547b21e84b2f7ca8e4, type: 2}
-    Position: {x: 8, y: 16}
   <DungeonCrawlerData>k__BackingField: {fileID: 11400000, guid: ab74159b5d6b1da4ea6c200032209da6, type: 2}
   <DungeonName>k__BackingField: Farm
   <MinX>k__BackingField: 1

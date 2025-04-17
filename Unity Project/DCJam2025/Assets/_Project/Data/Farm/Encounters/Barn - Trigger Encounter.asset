@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: Barn - Trigger Encounter
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Start Pen Encounter 2
+  <Conditions>k__BackingField: []
   <Actions>k__BackingField:
-  - {fileID: 11400000, guid: 5ec086267c54c6a4a851f1b6585c2412, type: 2}
+  - {fileID: 11400000, guid: a5d4ba4bb303914468b1c843ef18b52d, type: 2}
   <DungeonName>k__BackingField: Farm
   <Positions>k__BackingField:
   - {x: 9, y: 4}
   - {x: 9, y: 5}
+  TopLeft: {x: 0, y: 0}
+  BottomRight: {x: 0, y: 0}

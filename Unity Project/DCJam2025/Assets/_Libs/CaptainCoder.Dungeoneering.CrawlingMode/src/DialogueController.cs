@@ -150,5 +150,32 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             Hide();
             _chainedDialogueActionData?.OnFinished.Execute(_logicController);
         }
+
+        internal void SetOptions(DialogueOption[] options)
+        {
+            for (int ix = 0; ix < _optionButtons.Length; ix++)
+            {
+                if (ix < options.Length)
+                {
+                    _optionButtons[ix].IsVisible = true;
+                    _optionButtons[ix].Text = options[ix].Text;
+                    _optionButtons[ix].OnClick.RemoveAllListeners();
+                    EventActionData[] actions = options[ix].OnSelected;
+                    _optionButtons[ix].OnClick.AddListener(() => Perform(actions));
+                }
+                else
+                {
+                    _optionButtons[ix].IsVisible = false;
+                }
+            }
+        }
+
+        private void Perform(EventActionData[] actions)
+        {
+            foreach (var action in actions)
+            {
+                action.Execute(_logicController);
+            }
+        }
     }
 }
