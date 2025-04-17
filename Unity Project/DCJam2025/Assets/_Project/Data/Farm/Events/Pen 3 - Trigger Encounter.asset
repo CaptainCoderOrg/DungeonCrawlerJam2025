@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bc364ee3b3de224da35680ca3709f62, type: 3}
-  m_Name: Pen 2 - Trigger Encounter
+  m_Name: Pen 3 - Trigger Encounter
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Start Pen Encounter 2
+  <Conditions>k__BackingField: []
   <Actions>k__BackingField:
-  - {fileID: 11400000, guid: 35e2c300e082e0c4db158521a3dd097f, type: 2}
+  - {fileID: 11400000, guid: 6556f7be9147c7c40a60f73da96d4dee, type: 2}
   <DungeonName>k__BackingField: Farm
   <Positions>k__BackingField:
-  - {x: 16, y: 16}
-  - {x: 17, y: 16}
-  - {x: 14, y: 18}
-  - {x: 14, y: 19}
+  - {x: 18, y: 6}
+  - {x: 19, y: 6}
+  TopLeft: {x: 0, y: 0}
+  BottomRight: {x: 0, y: 0}

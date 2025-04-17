@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0983a1d16753cfe439faeedb0aaa5c78, type: 3}
-  m_Name: Nyxie Grimgrin (Hero Entity Data)
+  m_Name: Nyxie Grimgrin (Weasel) (Hero Entity Data)
   m_EditorClassIdentifier: 
   <TraitDatabase>k__BackingField: {fileID: 11400000, guid: 4c0b7d2687886aa4cbcc722656a2a10d, type: 2}
   <Name>k__BackingField: Nyxie Grimgrin

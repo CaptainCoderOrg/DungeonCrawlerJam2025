@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Pen 1 - Dialogue
   m_EditorClassIdentifier: 
   <Entry>k__BackingField:
-    <Message>k__BackingField: I see something shiny in this pen! Should I distract
-      the chickens while you get it?
+    <Message>k__BackingField: I smell something interesting in this pen... Shall
+      I distract the chickens while you search it?
     <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
   <Options>k__BackingField:
   - Text: Fight
