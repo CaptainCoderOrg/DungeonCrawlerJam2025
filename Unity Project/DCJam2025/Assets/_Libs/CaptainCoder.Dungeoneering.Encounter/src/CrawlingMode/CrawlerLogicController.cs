@@ -46,6 +46,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
                 {
                     actions.Execute(this);
                 }
+                _encounterSettingsData.FinishedEncounter = null;
             }
         }
 

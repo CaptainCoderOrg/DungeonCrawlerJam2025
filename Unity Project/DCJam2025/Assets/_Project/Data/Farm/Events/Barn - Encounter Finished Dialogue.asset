@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f5bebcf346dc843ad6cf2b51871c10, type: 3}
+  m_Name: Barn - Encounter Finished Dialogue
+  m_EditorClassIdentifier: 
+  <Entries>k__BackingField:
+  - <Message>k__BackingField: The straw has been stained with chicken blood. Hawk
+      smiles.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: Too easy.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "Hehehehe! Finally, some fresh meat\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: Weasel runs off into the coop and starts stuffing his
+      sack with the spoils of the fight. Fox is digging around in the straw, his
+      nose pressed to the floor.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: What are you doing?
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "Rocko said that the barn\u2019s been locked as long
+      as he can remember. Now I don\u2019t want to give his memory too much credit,
+      but it stands to reason that there\u2019s another entry point into the barn.
+      How else would they have gotten food? Or do you see any feeding robots? Ke
+      ke keeee\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "So now you\u2019re suddenly interested in what\u2019s
+      going on here?"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "Well, now I think we might be getting something out
+      of it. You\u2019ll think I\u2019m joking, but my nose has been picking up the
+      scent of\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "\u2026Gold!"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: Weasel has finished pocketing the loot and comes running
+      back.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: "Alright, that\u2019s everything. Let\u2019s get out
+      of here already!!\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: ' Yep-yep, just give me a minute...'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: 'Huh?
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: "Weasel\u2019s eyes wander from Fox to Hawk."
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "He\u2019s digging for gold."
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: 'Huh?! Fox, are you out of your mind? Gold? In here?!
+      Someone could come in any minute! Stop wasting time!!
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: Fox keeps digging.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "Fox, please!! We\u2019ve just caught ourselves some
+      good freaking food for once!! Do you really want to risk all of it? Do you
+      want to have to burrow through the trash for scraps again? Huh?!\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: Fox keeps digging.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "Don\u2019t ignore me!! Oh, you always do this! You
+      drag us along to follow some stupid hunch of yours, and if someone\u2019s not
+      willing to play ball, you give them the cold shoulder. Is that any way to treat
+      your friends!?\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: Fox pauses.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "His lips are trembling\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: ...
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: ACHOOO! He sneezes! Then continues digging.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "Weasel goes to plop himself down on the floor, arms
+      already crossed, fully prepared to spend the next hour or two pouting, when
+      suddenly\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: '<b><i>click!</i></b>
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: Having unwittingly hit a button with his butt, Weasel
+      barely has time to vocalize his surprise as a hatch opens beneath him, sending
+      him tumbling down miles of metal tubes!
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: "When Weasel opens his eyes, he witnesses a blurry
+      figure slowly descend towards him\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: "An indescribable tangle of limbs and shapes, carried
+      by a proud pair of wings that glide gently through the air\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: "All around is darkness, but behind the figure shines
+      a brilliant light, as if attached to its back. The rays are playing with its
+      feathers\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: 'The creature speaks:'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: Idiot!
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "It\u2019s Fox. Hawk is carrying him in her claws.\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "First you keep whining about wanting to leave, and
+      then you rush ahead! Make up your mind already! Ke ke ke keeee\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "Stop laughing or I\u2019ll wring you out like an old
+      rag. Wes, are you alright?\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: The Fox-Hawk-Chimera lands next to his head.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "Urgh\u2026 Screw you\u2026 Fox\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: "He\u2019s fine. More importantly, where are we?\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: 'The trio looks around. They find themselves surrounded
+      by metal and machinery.
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: Good question.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "INTRUDERS! SOUNDING ALARM\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: 'A strange mechanical being approaches the trio!
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "Despite fighting with all their might, our heroes
+      are quickly subdued and carried away. As they float along the corridors, fox\u2019s
+      nose begins to twitch\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "Painfully, he turns his head to witness a mountain
+      of golden eggs, framed by an open door\u2026 They pass it by, the door closes.\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "The trio is taken out of the building and into another
+      that is just as desolately mechanical. The buff chickens chuck them into a
+      cramped cell, lock the door and strut off\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "Oh Weasus Christ, we\u2019re screwed! They\u2019re
+      gonna cut us up a-and\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: 'I knew this was a bad idea. I told you so.
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: 'Fox rolls his eyes.
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "Yeah, yeah\u2026 Honestly, I\u2019m still reeling
+      from the fact that you let yourself get beaten up by a chicken! You do know
+      which way the food chain goes, right? Ke ke ke ke!\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "Hmph! Well, you don\u2019t know what those roided-up
+      roosters have running through their veins. I\u2019m all natural. It\u2019s
+      hardly a fair comparison.\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: " We need to get out\u2026 We need to get out of here!!\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  <OnFinished>k__BackingField: {fileID: 11400000, guid: 85f851830719a254e8e3204ebff73d5b, type: 2}

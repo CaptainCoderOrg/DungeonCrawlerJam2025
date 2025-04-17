@@ -86,6 +86,11 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _equipmentInfoPanel.Toggle(EquipmentSlotReference, transform.position);
             _simpleTooltip.Hide();
         }
+
+        void OnDestroy()
+        {
+            if (EquipmentSlotReference != null) { EquipmentSlotReference.OnDataChanged -= Redraw; }
+        }
     }
 
 
