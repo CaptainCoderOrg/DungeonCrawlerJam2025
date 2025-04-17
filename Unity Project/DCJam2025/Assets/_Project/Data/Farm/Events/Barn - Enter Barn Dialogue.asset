@@ -15,23 +15,23 @@ MonoBehaviour:
   <Entries>k__BackingField:
   - <Message>k__BackingField: As soon as the door swings open, the barn is <b>aflutter</b>
       with the erratic wing-flapping of hysterical hens.
-    <Portrait>k__BackingField: {fileID: 0}
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 22a18566652b54f46a661b46872dd9dd, type: 3}
   - <Message>k__BackingField: Bawk!! Bawk!! Thieves! Murderers! Marauders! Oh, please
       have mercy!! Bkaawk!!
-    <Portrait>k__BackingField: {fileID: 0}
+    <Portrait>k__BackingField: {fileID: 21300000, guid: bbb052b64d1372b409bd4ec709286fb8, type: 3}
   - <Message>k__BackingField: "Bawk!! Our eggs! Our poor eggs! Don\u2019t we sacrifice
       enough!? Save us, Rocko! Protect us from these scoundrels! Bk-Bk-Bkaawk!!"
-    <Portrait>k__BackingField: {fileID: 0}
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 22a18566652b54f46a661b46872dd9dd, type: 3}
   - <Message>k__BackingField: "\u201CRocko\u201D\u2026?"
     <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
   - <Message>k__BackingField: "No worries, ladies. I\u2019ve got it all under control.
       Yeee-up!"
-    <Portrait>k__BackingField: {fileID: 0}
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 47f300e8c5f5ea14daeed107c0d37751, type: 3}
   - <Message>k__BackingField: "Out of the shadow cast by the roost at the barn\u2019s
       far end emerges one clawed foot, then another, slowly unveiling\u2026"
-    <Portrait>k__BackingField: {fileID: 0}
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 47f300e8c5f5ea14daeed107c0d37751, type: 3}
   - <Message>k__BackingField: The tiniest rooster our heroes have ever seen!
-    <Portrait>k__BackingField: {fileID: 0}
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 1c5b5a5798fb7ae46911e6c02b4eb53c, type: 3}
   - <Message>k__BackingField: What...?
     <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
   - <Message>k__BackingField: "Awwwww, he\u2019s adorable! Beakface, can we keep
@@ -44,12 +44,12 @@ MonoBehaviour:
   - <Message>k__BackingField: "Now, I say, what do ye fellers think ye\u2019re doin
       here? This barn\u2019s been kept locked up for as long as I can remember, and
       ye just waltz on in like you own the place? Yeee-up!"
-    <Portrait>k__BackingField: {fileID: 0}
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 1c5b5a5798fb7ae46911e6c02b4eb53c, type: 3}
   - <Message>k__BackingField: "Now, way I see it, y\u2019all got two options: either
       ye skedaddle, and we can mark this little altercation as a misunderstandin\u2026
       or, ye stay, and - I say! - ol\u2019 Rocko\u2019s gonna show ye what\u2019s
       what! Yeee-up! So, fellers\u2026 What\u2019s it gonna be, hm?"
-    <Portrait>k__BackingField: {fileID: 0}
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 1c5b5a5798fb7ae46911e6c02b4eb53c, type: 3}
   - <Message>k__BackingField: I refuse to dignify that with an answer.
     <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
   - <Message>k__BackingField: "A silence descends upon the assembled as Rocko and
@@ -64,5 +64,5 @@ MonoBehaviour:
     <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
   - <Message>k__BackingField: "I say! Ye leave me with no choice, then\u2026 Ladies,
       watch my back!"
-    <Portrait>k__BackingField: {fileID: 0}
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 1c5b5a5798fb7ae46911e6c02b4eb53c, type: 3}
   <OnFinished>k__BackingField: {fileID: 11400000, guid: 5ec086267c54c6a4a851f1b6585c2412, type: 2}
