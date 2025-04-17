@@ -33,6 +33,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         [Expandable][AssertIsSet][SerializeField] private List<CrawlerEventData> _events;
         [field: SerializeField] public UnityEvent<PlayerView, PlayerView, PlayerViewData> OnMove;
         [SerializeField] private GameStartEventData _gameStartEvent;
+        [SerializeField] private bool _canMove = true;
 
         [Expandable][SerializeField] private EventActionData _testAction;
         void Awake()
@@ -75,6 +76,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
 
         private bool HandleBeforeMove(PlayerView exiting, PlayerView entering)
         {
+            if (!_canMove) { return false; }
             if (_dialogueController.IsShowing) { return false; }
             // TODO: Needs optimization, we shouldn't need to iterate through all possible events
             bool canceled = false;
@@ -131,6 +133,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
 
         public void StartEncounter(EncounterData encounterData)
         {
+            _canMove = false;
             _encounterSettingsData.TargetEncounter = encounterData;
             _hider.OnFinished += StartLoadEncounter;
             _hider.Hide();
