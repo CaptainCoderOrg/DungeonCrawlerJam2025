@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 
 using CaptainCoder.Unity.Assertions;
 
@@ -55,7 +54,6 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 if (result.gameObject.TryGetComponent<EquipmentSlotDropZone>(out var dropZone))
                 {
                     dropZone.SlotRenderer.EquipmentSlotReference.TrySwapEquipment(EquipmentSlotReference, out string _);
-                    // Debug.Log(message, this);
                 }
             }
         }

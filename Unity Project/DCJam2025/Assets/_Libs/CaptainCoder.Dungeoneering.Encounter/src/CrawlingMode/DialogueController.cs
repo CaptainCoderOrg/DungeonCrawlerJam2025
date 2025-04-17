@@ -160,6 +160,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
 
         internal void SetOptions(DialogueOption[] options)
         {
+            _skipButton.IsVisible = false;
             for (int ix = 0; ix < _optionButtons.Length; ix++)
             {
                 if (ix < options.Length)
