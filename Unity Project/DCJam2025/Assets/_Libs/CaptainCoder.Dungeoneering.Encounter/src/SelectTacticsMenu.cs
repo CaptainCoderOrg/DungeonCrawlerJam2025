@@ -5,6 +5,7 @@ using System.Linq;
 using CaptainCoder.Unity.Assertions;
 
 using UnityEngine;
+using UnityEngine.UI;
 namespace CaptainCoder.Dungeoneering.Encounter
 {
     public class SelectTacticsMenu : MonoBehaviour
@@ -106,7 +107,9 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _canvasGroup.alpha = 1;
             _canvasGroup.blocksRaycasts = true;
             transform.position = panel.TopLeftPivot.position;
+            yield return null;
             ((RectTransform)transform).EnsureOnScreen();
+            LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)transform);
         }
 
         public void Hide()
