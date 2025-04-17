@@ -217,6 +217,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         private IEnumerator VictorySequence()
         {
             yield return StartCoroutine(ShowText("Victory!"));
+            EncounterData.IsComplete = true;
             _encounterSettingsData.FinishedEncounter = EncounterData;
             _crawlerLogicController.EndEncounter();
         }

@@ -12,7 +12,10 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         public override void Execute(CrawlerLogicController controller)
         {
             base.Execute(controller);
-            controller.StartEncounter(Encounter);
+            if (!Encounter.IsComplete)
+            {
+                controller.StartEncounter(Encounter);
+            }
         }
     }
 }

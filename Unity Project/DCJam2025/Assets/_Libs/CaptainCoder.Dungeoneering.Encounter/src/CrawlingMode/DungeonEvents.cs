@@ -21,9 +21,12 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         {
             if (_locationBasedEvents.TryGetValue(new Vector2Int(curr.Position.X, curr.Position.Y), out CrawlerEventData eventData))
             {
-                foreach (EventActionData action in eventData.Actions)
+                if (eventData.AllConditionsMet())
                 {
-                    yield return action;
+                    foreach (EventActionData action in eventData.Actions)
+                    {
+                        yield return action;
+                    }
                 }
             }
         }

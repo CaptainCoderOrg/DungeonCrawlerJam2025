@@ -21,6 +21,13 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [field: SerializeField] public EventActionData[] OnEncounterBegin { get; private set; }
         [field: SerializeField] public EventActionData[] OnEncounterEnd { get; private set; }
         [field: SerializeField] public EventActionData[] OnExitCombat { get; private set; }
+        public bool IsComplete = false;
+
+        public override void OnAfterEnterPlayMode()
+        {
+            base.OnAfterEnterPlayMode();
+            IsComplete = false;
+        }
     }
 
     [System.Serializable]
