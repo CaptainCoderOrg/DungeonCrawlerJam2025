@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 2286177619672579550}
   - component: {fileID: 3547702025224675779}
   - component: {fileID: 7826484101925593303}
+  - component: {fileID: 1427894417786661064}
   m_Layer: 0
   m_Name: TextTooltipController
   m_TagString: Untagged
@@ -357,7 +358,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &2409678144949074090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,3 +442,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
+--- !u!114 &1427894417786661064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4037774816762571643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643d138b5d807554c80a3b4343703058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _settings: {fileID: 11400000, guid: 4a69406316e4c024cae400c7cc5141cd, type: 2}
+  _canvas: {fileID: 560918246689187068}

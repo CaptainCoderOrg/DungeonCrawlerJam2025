@@ -11,6 +11,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [SerializeField] private bool _isSelected = false;
         [AssertIsSet][SerializeField] private Transform _figureQuad;
         [SerializeField] private FigureData _figureData;
+        [SerializeField] private bool _isCrawlingMode;
         public FigureData Figure
         {
             get => _figureData;
@@ -36,8 +37,11 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         void Awake()
         {
-            _controller = GetComponentInParent<EncounterController>();
-            Debug.Assert(_controller != null, $"Could not find {nameof(_controller)}", this);
+            if (!_isCrawlingMode)
+            {
+                _controller = GetComponentInParent<EncounterController>();
+                Debug.Assert(_controller != null, $"Could not find {nameof(_controller)}", this);
+            }
         }
 
         private void Initialize()

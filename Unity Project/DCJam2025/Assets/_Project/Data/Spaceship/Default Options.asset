@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec99ff395692d1343af448d89a9de525, type: 3}
-  m_Name: DefaultPlayerView
+  m_Script: {fileID: 11500000, guid: 18c854e7b1f61d648bddcc0d0ecbb31b, type: 3}
+  m_Name: Default Options
   m_EditorClassIdentifier: 
-  <X>k__BackingField: 11
-  <Y>k__BackingField: 16
-  <Facing>k__BackingField: 0
-  _dungeonName: Farm
+  _uiScaling: 1

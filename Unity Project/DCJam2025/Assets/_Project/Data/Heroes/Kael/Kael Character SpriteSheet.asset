@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec99ff395692d1343af448d89a9de525, type: 3}
-  m_Name: DefaultPlayerView
+  m_Script: {fileID: 11500000, guid: 9fe86889bd3874343983eadca9c0ea4f, type: 3}
+  m_Name: Kael Character SpriteSheet
   m_EditorClassIdentifier: 
-  <X>k__BackingField: 11
-  <Y>k__BackingField: 16
-  <Facing>k__BackingField: 0
-  _dungeonName: Farm
+  <SpriteSheet>k__BackingField: {fileID: 2800000, guid: d7cd75ad5286f7c4eab7757bfed48640, type: 3}
+  <Rows>k__BackingField: 1
+  <Columns>k__BackingField: 1
