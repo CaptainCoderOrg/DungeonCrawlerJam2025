@@ -19,7 +19,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         void Awake()
         {
-            if(_dragCanvas == null) { _dragCanvas = FindFirstObjectByType<EquipmentDragCanvas>(); }
+            if (_dragCanvas == null) { _dragCanvas = FindFirstObjectByType<EquipmentDragCanvas>(); }
             _equipmentInfoPanel = FindFirstObjectByType<EquipmentInfoPanel>();
             Debug.Assert(_equipmentInfoPanel != null, $"Could not find {nameof(EquipmentInfoPanel)}", this);
         }
