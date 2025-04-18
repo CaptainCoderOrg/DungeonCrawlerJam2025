@@ -48,6 +48,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             _animator.Play(_figureData.EntityData.SpawnAnimation);
             transform.localPosition = _figureData.LocalPosition;
+            _figureQuad.localScale = new Vector3(_figureData.EntityData.IdleAnimation.SpriteSheet.XRatio, 1, _figureData.EntityData.IdleAnimation.SpriteSheet.YRatio);
         }
 
         void OnEnable()
@@ -67,7 +68,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             eulers.z = 0;
             _figureQuad.rotation = Quaternion.Euler(eulers);
             Vector3 position = _figureQuad.localPosition;
-            position.y = 0.8f + (eulers.x * .01f);
+            position.y = 0.7f + (eulers.x * .01f);
             _figureQuad.localPosition = position;
         }
 

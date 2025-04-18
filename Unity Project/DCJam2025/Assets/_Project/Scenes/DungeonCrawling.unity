@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
+  m_AmbientSkyColor: {r: 0.066037714, g: 0.066037714, b: 0.066037714, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -2839,6 +2839,7 @@ GameObject:
   - component: {fileID: 788068774}
   - component: {fileID: 788068776}
   - component: {fileID: 788068775}
+  - component: {fileID: 788068777}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -2949,6 +2950,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &788068777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788068773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4a31d905042aa4ca3fa25e48e931c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minIntensity: 1
+  _maxIntensity: 1.5
+  _flickerSpeed: 8
+  _light: {fileID: 788068776}
 --- !u!1001 &879826039
 PrefabInstance:
   m_ObjectHideFlags: 0

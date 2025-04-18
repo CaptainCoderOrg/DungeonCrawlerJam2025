@@ -8,6 +8,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [field: SerializeField] public Texture2D SpriteSheet { get; private set; }
         [field: SerializeField] public int Rows { get; private set; }
         [field: SerializeField] public int Columns { get; private set; }
+        [field: SerializeField] public float XRatio { get; private set; } = 1;
+        [field: SerializeField] public float YRatio { get; private set; } = 1;
         public float XScale { get; private set; }
         public float YScale { get; private set; }
 

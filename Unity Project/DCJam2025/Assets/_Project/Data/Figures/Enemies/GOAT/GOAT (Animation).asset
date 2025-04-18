@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9163f5f800004464fbafd1bedfd74723, type: 3}
-  m_Name: Chicken (Animation)
+  m_Name: GOAT (Animation)
   m_EditorClassIdentifier: 
   Name: Chicken Idle
-  SpriteSheet: {fileID: 11400000, guid: ef2e831c8e183934bb7a18495117db5b, type: 2}
+  SpriteSheet: {fileID: 11400000, guid: 738735716830bc948af90c4970475089, type: 2}
   Frames: 00000000
   FramesPerSecond: 6
   Loops: 1

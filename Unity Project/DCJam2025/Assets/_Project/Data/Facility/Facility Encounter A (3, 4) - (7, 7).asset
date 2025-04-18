@@ -13,16 +13,8 @@ MonoBehaviour:
   m_Name: Facility Encounter A (3, 4) - (7, 7)
   m_EditorClassIdentifier: 
   <EnemyFigures>k__BackingField:
-  - EnemyEntityTemplate: {fileID: 11400000, guid: 7f08e314c50cbcb428ab2701d7be1588, type: 2}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: e351e350923eede489957c8906074dc6, type: 2}
     Position: {x: 5, y: 7}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: 7f08e314c50cbcb428ab2701d7be1588, type: 2}
-    Position: {x: 6, y: 6}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: 7f08e314c50cbcb428ab2701d7be1588, type: 2}
-    Position: {x: 3, y: 6}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: 7f08e314c50cbcb428ab2701d7be1588, type: 2}
-    Position: {x: 4, y: 4}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: 7f08e314c50cbcb428ab2701d7be1588, type: 2}
-    Position: {x: 5, y: 6}
   <HeroFigures>k__BackingField:
   - HeroEntity: {fileID: 11400000, guid: 6f7a6aa7d15bdcb4683d52c349f6a90c, type: 2}
     Position: {x: 2, y: 5}
@@ -36,3 +28,7 @@ MonoBehaviour:
   <MaxX>k__BackingField: 8
   <MinY>k__BackingField: 0
   <MaxY>k__BackingField: 8
+  <OnEncounterBegin>k__BackingField: []
+  <OnEncounterEnd>k__BackingField: []
+  <OnExitCombat>k__BackingField: []
+  IsComplete: 0

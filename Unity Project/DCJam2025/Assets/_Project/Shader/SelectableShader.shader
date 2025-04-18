@@ -20,7 +20,7 @@ Shader "Custom/SelectableShader"
             "RenderPipeLine" = "UniversalPipeline"
             "UniversalMaterialType" = "Lit"
         }
-        ZWrite Off
+        ZWrite On
         Blend SrcAlpha OneMinusSrcAlpha
 
         Pass
@@ -148,7 +148,7 @@ Shader "Custom/SelectableShader"
                 "LightMode" = "DepthNormals"
             }
 
-            ZWrite Off
+            ZWrite On
 
             HLSLPROGRAM
             #pragma target 2.0
