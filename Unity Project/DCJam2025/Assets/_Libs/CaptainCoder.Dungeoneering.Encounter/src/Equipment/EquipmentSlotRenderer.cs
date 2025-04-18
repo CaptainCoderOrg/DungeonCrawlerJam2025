@@ -15,6 +15,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         public EquipmentSlotReference EquipmentSlotReference { get; private set; }
         private Image _dragging;
         private EquipmentInfoPanel _equipmentInfoPanel;
+        [SerializeField] public bool CanDrag { get; set; } = true;
 
         void Awake()
         {
@@ -25,6 +26,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         public void OnBeginDrag(PointerEventData eventData)
         {
+            if (!CanDrag) { return; }
             if (EquipmentSlotReference.Data == null) { return; }
             _equipmentInfoPanel.Hide();
             _dragging = Instantiate(_image, _dragCanvas.transform);
@@ -37,6 +39,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         public void OnDrag(PointerEventData eventData)
         {
+            if (!CanDrag) { return; }
             if (_dragging == null) { return; }
             _dragging.transform.position = eventData.position;
         }
@@ -45,6 +48,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         public void OnEndDrag(PointerEventData eventData)
         {
+            if (!CanDrag) { return; }
             if (EquipmentSlotReference.Data == null) { return; }
             Destroy(_dragging.gameObject);
             _dragging = null;
@@ -53,6 +57,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             {
                 if (result.gameObject.TryGetComponent<EquipmentSlotDropZone>(out var dropZone))
                 {
+                    if (!dropZone.SlotRenderer.CanDrag) { continue; }
                     dropZone.SlotRenderer.EquipmentSlotReference.TrySwapEquipment(EquipmentSlotReference, out string _);
                 }
             }

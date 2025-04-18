@@ -86,6 +86,12 @@ namespace CaptainCoder.Dungeoneering.Encounter
             {
                 _encounterController = GetComponentInParent<EncounterController>();
                 Debug.Assert(_encounterController != null, "Could not find Encounter Controller", this);
+                // Do not allow changing equipment during combat.
+                foreach (EquipmentSlotRenderer slot in GetComponentsInChildren<EquipmentSlotRenderer>())
+                {
+                    slot.CanDrag = false;
+                }
+                // CanDrag = FindAnyObjectByType<EncounterController>() == null;
             }
             _figureRenderers ??= GetComponentsInChildren<IFigureRenderer>(true).Where(c => (Object)c != this).ToArray();
             _entityRenderers ??= GetComponentsInChildren<ILivingEntityRenderer>(true).Where(c => (Object)c != this).ToArray();
