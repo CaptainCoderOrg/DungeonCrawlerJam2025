@@ -13,6 +13,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [field: ShowAssetPreview][field: SerializeField] public Sprite Icon { get; private set; }
         [field: SerializeField] public TraitEffect[] TraitEffects { get; private set; }
         [field: SerializeField] public AttackAbilityData[] AttackAbilities { get; private set; }
+        [field: SerializeField] public DefenderAbilityData[] DefenderAbilities { get; private set; }
 
 #if UNITY_EDITOR
         void OnValidate()

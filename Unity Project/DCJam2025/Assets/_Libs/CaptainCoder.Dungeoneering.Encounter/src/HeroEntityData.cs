@@ -158,6 +158,17 @@ namespace CaptainCoder.Dungeoneering.Encounter
             return null;
         }
 
+        internal override IEnumerable<DefenderAbilityData> GetDefenderAbilities()
+        {
+            foreach (var effect in Effects)
+            {
+                foreach (var ability in effect.DefenderAbilities)
+                {
+                    yield return ability;
+                }
+            }
+        }
+
         internal override IEnumerable<AttackAbilityData> GetAttackAbilities()
         {
             if (_leftHand != null)

@@ -24,3 +24,6 @@ MonoBehaviour:
     This effect ends at the start of the next round.'
   <Icon>k__BackingField: {fileID: 1839679803, guid: 66ceb6ab667df55438a1c63c42873b72, type: 3}
   <TraitEffects>k__BackingField: []
+  <AttackAbilities>k__BackingField: []
+  <DefenderAbilities>k__BackingField:
+  - {fileID: 11400000, guid: 5663f504be495a14fbafbaa13ee971d3, type: 2}

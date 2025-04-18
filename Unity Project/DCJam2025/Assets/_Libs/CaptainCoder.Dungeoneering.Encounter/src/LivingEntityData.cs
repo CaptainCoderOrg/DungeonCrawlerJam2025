@@ -138,6 +138,11 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             return Enumerable.Empty<AttackAbilityData>();
         }
+
+        internal virtual IEnumerable<DefenderAbilityData> GetDefenderAbilities()
+        {
+            return Enumerable.Empty<DefenderAbilityData>();
+        }
     }
 
     public abstract record class LivingEntityChangeEvent;

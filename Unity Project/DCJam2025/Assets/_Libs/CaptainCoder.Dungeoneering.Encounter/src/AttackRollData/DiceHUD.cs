@@ -66,6 +66,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
             {
                 _attackInfo = value;
                 _attackingLabel.text = $"Attacking {_attackInfo.Target.Figure.EntityData.Name}";
+                _defenderAbilities.Clear();
+                _defenderAbilities.AddRange(_attackInfo.Target.Figure.EntityData.GetDefenderAbilities());
             }
         }
         private FigureData _attacker;
@@ -77,8 +79,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 _attacker = value;
                 if (_attacker != null)
                 {
-                    _attackAbilities.Clear();
-                    _attackAbilities.AddRange(_attacker.EntityData.GetAttackAbilities().ToHashSet());
+                    _attackerAbilities.Clear();
+                    _attackerAbilities.AddRange(_attacker.EntityData.GetAttackAbilities().ToHashSet());
                 }
             }
         }
@@ -102,7 +104,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
         private AttackResult _attackResult;
         private bool _allowReroll = false;
         private readonly HashSet<DieController> _rerolledDice = new();
-        private readonly List<AttackAbilityData> _attackAbilities = new();
+        private readonly List<AttackAbilityData> _attackerAbilities = new();
+        private readonly List<DefenderAbilityData> _defenderAbilities = new();
 
         void Awake()
         {
@@ -180,10 +183,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
             {
                 AttackAbilityRenderer renderer = _attackAbilityRenderers[ix];
                 renderer.OnSelected -= ApplyAbility;
-                if (_attackAbilities.Count > ix)
+                if (_attackerAbilities.Count > ix)
                 {
-                    AttackAbilityData attackAbility = _attackAbilities[ix];
-                    renderer.AttackAbility = _attackAbilities[ix];
+                    AttackAbilityData attackAbility = _attackerAbilities[ix];
+                    renderer.AttackAbility = _attackerAbilities[ix];
                     renderer.IsEnabled = true;
                     renderer.IsAvailable = !_isMiss && attackAbility.PowerCost <= PowerRemaining;
                     renderer.OnSelected += ApplyAbility;
@@ -282,7 +285,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         internal IEnumerator Roll()
         {
             _allowReroll = false;
-            if (_attackAbilities.Any(a => a.AllowsReroll))
+            if (_attackerAbilities.Any(a => a.AllowsReroll) || _defenderAbilities.Any(d => d.AllowsReroll))
             {
                 StartReroll();
             }
