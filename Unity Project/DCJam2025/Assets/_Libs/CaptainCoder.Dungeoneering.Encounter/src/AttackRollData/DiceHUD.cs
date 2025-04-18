@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +9,6 @@ using NaughtyAttributes;
 using TMPro;
 
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace CaptainCoder.Dungeoneering.Encounter
@@ -98,6 +96,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
         public bool CanAddAccuracyBonus => !_isMiss && RemainingBonus > 0;
         public bool CanRemoveAccuracyBonus => !_isMiss && _accuracyBonus > 0;
         private AttackResult _attackResult;
+        private bool _allowReroll = false;
+        private readonly HashSet<DieController> _rerolledDice = new();
 
         void Awake()
         {
@@ -106,10 +106,20 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _diceBoxController.OnClicked += HandleDieClicked;
         }
 
+        [Button]
+        public void StartReroll()
+        {
+            _allowReroll = true;
+            _rerolledDice.Clear();
+        }
+
         private void HandleDieClicked(DieController controller)
         {
-            Debug.Log(controller.Die, controller);
-            _diceBoxController.ReRoll(controller);
+            if (_allowReroll && _rerolledDice.Add(controller))
+            {
+                _diceBoxController.ReRoll(controller);
+                SetRollingLabels();
+            }
         }
 
         private void HandleDiceResults(IEnumerable<DieResult> result)
@@ -260,15 +270,20 @@ namespace CaptainCoder.Dungeoneering.Encounter
             Rebuild();
         }
         public void Hide() => _toggleablePanel.IsEnabled = false;
-        internal IEnumerator Roll()
+        private void SetRollingLabels()
         {
-            UpdateAbilities();
             _resultLabel.text = "Rolling...";
             _damageLabel.text = "?";
             _accuracyLabel.text = $"?";
             _powerLabel.text = "?/?";
             _splitLabel.text = "?/?";
             IsConfirmable = false;
+        }
+        internal IEnumerator Roll()
+        {
+            _allowReroll = false;
+            UpdateAbilities();
+            SetRollingLabels();
             yield return StartCoroutine(_diceBoxController.Roll());
             if (Attacker.EntityData is HeroEntityData)
             {
@@ -311,6 +326,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 HeroAttacker.Exertion++;
                 _diceBoxController.AddDie(_bonusDie);
                 UpdateResults();
+                SetRollingLabels();
+                // UpdateResults();
             }
         }
 
@@ -347,7 +364,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             }
         }
 
-        
+
 
     }
 
