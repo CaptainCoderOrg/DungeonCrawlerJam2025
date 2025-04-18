@@ -62,7 +62,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
                     _selectAttackLabel.Hide();
                     _attackInformation.Show();
                     _attackDice.Clear();
-                    _attackDice.AddRange(CalculateAttackDice((HeroEntityData)Attacker.EntityData, _attackData));
+                    _attackDice.AddRange(((HeroEntityData)Attacker.EntityData).CalculateAttackDice(_attackData));
                     RenderAttackDice(_attackDice);
                     EncounterController.HeroTurnController.OnAttackTargetSelected += HandleTargetChanged;
                     EncounterController.HeroTurnController.ShowPossibleAttacks(Attacker, Attack);
@@ -129,19 +129,6 @@ namespace CaptainCoder.Dungeoneering.Encounter
         void Awake()
         {
             _encounterController = GetComponentInParent<EncounterController>();
-        }
-
-        private static IEnumerable<DieData> CalculateAttackDice(HeroEntityData attacker, AttackData attack)
-        {
-            yield return attack.AttackType.AttackDie;
-            foreach (var die in attack.PowerDice)
-            {
-                yield return die;
-            }
-            foreach (var die in attacker.GetDice(attack))
-            {
-                yield return die;
-            }
         }
 
         private void RenderAttackDice(IEnumerable<DieData> dice)

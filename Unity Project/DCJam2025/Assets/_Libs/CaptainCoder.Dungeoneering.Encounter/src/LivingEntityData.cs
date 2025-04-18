@@ -48,8 +48,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [field: Expandable][field: SerializeField] public AnimationData SpawnAnimation { get; private set; }
         [field: Expandable][field: SerializeField] public AnimationData AttackAnimation { get; private set; }
         [field: Expandable][field: SerializeField] public AnimationData IdleAnimation { get; private set; }
-        private string _shortName;
-        public string ShortName => _shortName ??= Name.Split(null)[0];
+        [SerializeField] private string _shortName;
+        public string ShortName => _shortName;
 
         public event System.Action<LivingEntityChangeEvent> OnChanged;
         protected void Notify(LivingEntityChangeEvent @event) => OnChanged?.Invoke(@event);
@@ -77,6 +77,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             base.OnBeforeEnterPlayMode();
             OnChanged = null;
+            _shortName = Name?.Split(null)[0];
         }
 
         internal virtual string TraitValueText(TraitTypeData traitTypeData)
@@ -163,6 +164,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             return Enumerable.Empty<DefenderAbilityData>();
         }
+
+        internal static bool IsGuardEffect(EffectData effect) => effect.IsGuard;
     }
 
     public abstract record class LivingEntityChangeEvent;

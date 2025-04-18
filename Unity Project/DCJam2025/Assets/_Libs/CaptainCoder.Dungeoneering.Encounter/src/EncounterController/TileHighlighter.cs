@@ -65,5 +65,20 @@ namespace CaptainCoder.Dungeoneering.Encounter
             }
         }
 
+        internal void Selected(Vector2Int position)
+        {
+            if (Controller.TileSelectors.TryGetValue(position, out var selector))
+            {
+                selector.Selected();
+            }
+        }
+
+        internal void Guard(AttackInfo attackInfo)
+        {
+            if (Controller.TileSelectors.TryGetValue(attackInfo.TargetPosition, out var selector))
+            {
+                selector.ValidAttackTarget();
+            }
+        }
     }
 }

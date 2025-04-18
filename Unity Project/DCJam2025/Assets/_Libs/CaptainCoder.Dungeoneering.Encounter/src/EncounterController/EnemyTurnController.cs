@@ -59,7 +59,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         private IEnumerator CheckGuard(EncounterFigureController attacker, IEnumerable<Vector2Int> positions)
         {
-            IEnumerable<GuardInfo> guardingHeroes = Controller.HeroPanels.Where(h => h.gameObject.activeInHierarchy).Select(p => p.FindGuardPositions(attacker, State, Controller.EncounterData, positions)).Where(g => g.HasTargets());
+            IEnumerable<GuardInfo> guardingHeroes = Controller.HeroPanels
+                                                        .Where(h => h.gameObject.activeInHierarchy && h.FigureController.Figure.EntityData.Effects.Any(e => e.IsGuard))
+                                                        .Select(p => p.FindGuardPositions(attacker, State, Controller.EncounterData, positions))
+                                                        .Where(g => g.HasTargets());
             if (guardingHeroes.Any())
             {
                 Debug.Log($"Guarding: {string.Join(", ", guardingHeroes.Select(g => g.Hero.FigureController.Figure.EntityData.Name))}");

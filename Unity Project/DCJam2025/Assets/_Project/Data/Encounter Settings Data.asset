@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c833b35c06e924a9325bde6f46b719, type: 3}
   m_Name: Encounter Settings Data
   m_EditorClassIdentifier: 
-  TargetZoom: 2.5
+  TargetZoom: 4
   TargetRotation: 1620
   TargetPitch: 0
   _enemyDelay: 1
   _movementSpeed: 0.25
-  TargetEncounter: {fileID: 11400000, guid: fb467f4b7afc4f3458ca58218933a4ae, type: 2}
+  TargetEncounter: {fileID: 11400000, guid: cb736954aafc431479ad47f943aa818e, type: 2}
   FinishedEncounter: {fileID: 0}

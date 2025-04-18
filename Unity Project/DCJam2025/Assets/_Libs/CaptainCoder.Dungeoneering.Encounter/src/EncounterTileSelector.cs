@@ -38,6 +38,12 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _highlightRenderer.material.color = _selectedColor;
         }
 
+        internal void GuardTarget()
+        {
+            _highlightRenderer.enabled = true;
+            _highlightRenderer.material.color = _validAttackTarget;
+        }
+
         public void Hide()
         {
             _highlightRenderer.enabled = false;

@@ -83,11 +83,13 @@ public static class FigureAttackExtensions
         HeroEntityData heroEntity = hero.FigureController.Figure.EntityData as HeroEntityData;
         AttackData attackData = PossibleAttacks(heroEntity).First();
         // Find positions that the enemy will move through
-        IEnumerable<AttackInfo> attacks = hero.FigureController.Figure
+        AttackInfo attackInfo = hero.FigureController.Figure
                                             .FindAttackTargets(attackData, state, encounterData)
                                             .Where(info => positionLookup.Contains(info.TargetPosition))
-                                            .Select(s => s with { Target = target });
-        return new GuardInfo(hero, target, attacks);
+                                            .OrderBy(a => a.Distance)
+                                            .Select(s => s with { Target = target })
+                                            .FirstOrDefault();
+        return new GuardInfo(hero, attackData, target, attackInfo);
     }
 
     public static IEnumerable<AttackData> PossibleAttacks(this HeroEntityData hero)
@@ -103,9 +105,25 @@ public static class FigureAttackExtensions
         }
     }
 
+    public static IEnumerable<DieData> CalculateAttackDice(this HeroEntityData attacker, AttackData attack)
+    {
+        yield return attack.AttackType.AttackDie;
+        foreach (var die in attack.PowerDice)
+        {
+            yield return die;
+        }
+        foreach (var die in attacker.GetDice(attack))
+        {
+            yield return die;
+        }
+    }
+
 }
 
-public record class GuardInfo(HeroFigurePanel Hero, EncounterFigureController Enemy, IEnumerable<AttackInfo> Attacks)
+public record class GuardInfo(HeroFigurePanel Hero, AttackData AttackData, EncounterFigureController Enemy, AttackInfo AttackInfo)
 {
-    public bool HasTargets() => Attacks.Any();
+    public bool HasTargets() => AttackInfo != null;
+    public FigureData Attacker() => Hero.FigureController.Figure;
+
+    internal IEnumerable<DieData> AttackDice() => ((HeroEntityData)Hero.FigureController.Figure.EntityData).CalculateAttackDice(AttackData);
 }
