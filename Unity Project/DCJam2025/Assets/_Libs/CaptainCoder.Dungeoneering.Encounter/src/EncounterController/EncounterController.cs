@@ -17,6 +17,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 {
     public class EncounterController : MonoBehaviour
     {
+        [AssertIsSet][SerializeField] private DiceHUD _diceHUD;
         [AssertIsSet][SerializeField] private WarningModalController _warningModalController;
         [AssertIsSet][SerializeField] private CrawlerLogicController _crawlerLogicController;
         [AssertIsSet][SerializeField] private PlayerViewData _playerViewData;
@@ -233,5 +234,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         }
 
         internal void ShowConfirmation(string message, Action onConfirm) => _warningModalController.ShowWarning(message, onConfirm);
+
+        public bool AwaitingConfirmation => _diceHUD.IsActive;
     }
 }

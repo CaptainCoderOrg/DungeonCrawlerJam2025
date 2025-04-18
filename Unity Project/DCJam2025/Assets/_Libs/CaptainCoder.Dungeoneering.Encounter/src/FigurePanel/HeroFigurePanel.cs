@@ -23,7 +23,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         public event System.Action<HeroFigurePanel> OnMoved;
 
-        public bool IsActive => _encounterController != null && _encounterController.Selected == _figureController;
+        public bool IsActive => _encounterController != null && _encounterController.HeroTurnController.FigureController == _figureController;
 
         public EncounterFigureController FigureController
         {
@@ -84,6 +84,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         public void Exert()
         {
+            if (_encounterController.AwaitingConfirmation) { return; }
             if (_figureData.EntityData is HeroEntityData hero && hero.Stamina > 0)
             {
                 hero.Exertion++;
@@ -94,6 +95,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         public void TakeTurn()
         {
+            if (_encounterController.AwaitingConfirmation) { return; }
             _encounterController.SelectTactics(this);
         }
 
@@ -115,10 +117,15 @@ namespace CaptainCoder.Dungeoneering.Encounter
             OnMoved?.Invoke(this);
         }
 
-        public void Move() => _encounterController.HeroTurnController.ShowMove();
+        public void Move()
+        {
+            if (_encounterController.AwaitingConfirmation) { return; }
+            _encounterController.HeroTurnController.ShowMove();
+        }
 
         public void EndTurn()
         {
+            if (_encounterController.AwaitingConfirmation) { return; }
             if (_figureData.Movement > 0 || _figureData.Attacks > 0)
             {
                 _encounterController.ShowConfirmation($"{_figureData.EntityData.Name} has action points remaining, are you sure you want to end this {_figureData.EntityData.Name}'s turn?", _encounterController.HeroTurnController.EndTurn);

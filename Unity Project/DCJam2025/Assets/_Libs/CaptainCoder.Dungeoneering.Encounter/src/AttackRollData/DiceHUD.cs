@@ -34,11 +34,12 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [AssertIsSet][SerializeField] private CanvasGroup _decreaseAccuracyButton;
         [AssertIsSet][SerializeField] private AttackAbilityRenderer[] _attackAbilityRenderers;
         [AssertIsSet][SerializeField] private CanvasGroup _confirmButton;
+        public bool IsActive => _toggleablePanel.IsEnabled;
         private bool _isConfirmable = false;
-        private bool IsConfirmable
+        public bool IsConfirmable
         {
             get => _isConfirmable;
-            set
+            private set
             {
                 _isConfirmable = value;
                 _confirmButton.alpha = _isConfirmable ? 1 : 0.5f;
