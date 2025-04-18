@@ -12,17 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4342b9f9d527fe43b211ce0b80138a2, type: 3}
   m_Name: Worm (Enemy Entity)
   m_EditorClassIdentifier: 
+  <UnarmedAttack>k__BackingField: {fileID: 11400000, guid: 99f1f7a36f0e0ee479ef5396efa3abfa, type: 2}
   <TraitDatabase>k__BackingField: {fileID: 11400000, guid: 4c0b7d2687886aa4cbcc722656a2a10d, type: 2}
   <Name>k__BackingField: Giant Worm
   <Portrait>k__BackingField: {fileID: 21300000, guid: 2d205952d31107b4b83c5775f50bdc87, type: 3}
   <BaseHealth>k__BackingField: 12
-  <Wounds>k__BackingField: 0
+  _wounds: 0
   <BaseSpeed>k__BackingField: 0
   <BaseArmor>k__BackingField: 4
   <Effects>k__BackingField: []
   <SpawnAnimation>k__BackingField: {fileID: 11400000, guid: 703297e134030604095b1c915e5d7f36, type: 2}
   <AttackAnimation>k__BackingField: {fileID: 11400000, guid: 5feaeee0bc46e8d46929b9c8c2bba3f0, type: 2}
   <IdleAnimation>k__BackingField: {fileID: 11400000, guid: d438562b5b84a3a409bc3f293c09a7c3, type: 2}
+  _shortName: Giant
   <Abilities>k__BackingField:
   - {fileID: 11400000, guid: 11e396d0e195d8f4780afb5725ca4de1, type: 2}
   - {fileID: 11400000, guid: 662d4acdfe3cb4f4abb35994b25d226e, type: 2}

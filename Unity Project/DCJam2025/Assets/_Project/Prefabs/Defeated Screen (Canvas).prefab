@@ -504,7 +504,6 @@ GameObject:
   - component: {fileID: 1144280112749149777}
   - component: {fileID: 4314661812748479223}
   - component: {fileID: 563436805334751767}
-  - component: {fileID: 3933491620041999038}
   - component: {fileID: 4150552956687042474}
   - component: {fileID: 7952665499442980325}
   - component: {fileID: 859964507773192681}
@@ -600,21 +599,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3933491620041999038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6850260277831758348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c96ad651f82cb34c939f121f2e9707a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _settings: {fileID: 11400000, guid: 4a69406316e4c024cae400c7cc5141cd, type: 2}
-  _uiScalingLabel: {fileID: 0}
-  _uiScalingSlider: {fileID: 0}
 --- !u!114 &4150552956687042474
 MonoBehaviour:
   m_ObjectHideFlags: 0

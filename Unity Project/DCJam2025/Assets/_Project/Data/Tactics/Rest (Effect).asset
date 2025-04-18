@@ -26,8 +26,9 @@ MonoBehaviour:
   <AttackAbilities>k__BackingField: []
   <DefenderAbilities>k__BackingField: []
   <RemoveAfterAttacking>k__BackingField: 0
-  <RemoveIfDamaged>k__BackingField: 0
+  <RemoveIfDamaged>k__BackingField: 1
   <RemoveAtStartOfRound>k__BackingField: 1
   <RemoveAfterGuarding>k__BackingField: 0
+  <IsGuard>k__BackingField: 0
   <OnStartOfRound>k__BackingField:
   - {fileID: 11400000, guid: 09aeb1e2dd7c0c44d987e7cec045b217, type: 2}

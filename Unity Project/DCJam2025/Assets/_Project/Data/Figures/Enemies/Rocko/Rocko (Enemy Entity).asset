@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4342b9f9d527fe43b211ce0b80138a2, type: 3}
   m_Name: Rocko (Enemy Entity)
   m_EditorClassIdentifier: 
+  <UnarmedAttack>k__BackingField: {fileID: 11400000, guid: 99f1f7a36f0e0ee479ef5396efa3abfa, type: 2}
   <TraitDatabase>k__BackingField: {fileID: 11400000, guid: 4c0b7d2687886aa4cbcc722656a2a10d, type: 2}
   <Name>k__BackingField: Rocko
   <Portrait>k__BackingField: {fileID: 21300000, guid: 1c5b5a5798fb7ae46911e6c02b4eb53c, type: 3}
@@ -23,6 +24,7 @@ MonoBehaviour:
   <SpawnAnimation>k__BackingField: {fileID: 11400000, guid: 14c0de72dc6dae74ca92c9c21fbf3cd3, type: 2}
   <AttackAnimation>k__BackingField: {fileID: 11400000, guid: 11708c4d97071aa42a51d78af9bb3efd, type: 2}
   <IdleAnimation>k__BackingField: {fileID: 11400000, guid: 11708c4d97071aa42a51d78af9bb3efd, type: 2}
+  _shortName: Rocko
   <Abilities>k__BackingField:
   - {fileID: 11400000, guid: 56a7fe15fbfd50d439ce2cd6da356ecd, type: 2}
   <Attacks>k__BackingField:

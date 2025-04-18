@@ -103,6 +103,7 @@ public static class FigureAttackExtensions
         {
             yield return hero.RightHand.Attack;
         }
+        yield return hero.UnarmedAttack;
     }
 
     public static IEnumerable<DieData> CalculateAttackDice(this HeroEntityData attacker, AttackData attack)

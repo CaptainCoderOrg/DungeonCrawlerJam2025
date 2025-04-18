@@ -12,6 +12,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
     [CreateAssetMenu(menuName = "DC/Living Entity Data")]
     public class LivingEntityData : ObservableSO
     {
+        [field: SerializeField] public AttackData UnarmedAttack { get; private set; }
+        public static bool RemoveEffectOnDamage(EffectData data) => data.RemoveIfDamaged;
         [field: SerializeField] public TraitDatabase TraitDatabase { get; private set; }
         [field: SerializeField] public string Name { get; private set; }
         [field: ShowAssetPreview][field: SerializeField] public Sprite Portrait { get; private set; }
@@ -32,6 +34,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 else if (previous < _wounds)
                 {
                     Notify(new EntityDamagedEvent(_wounds - previous));
+                    RemoveEffectsWhere(RemoveEffectOnDamage);
                 }
                 else if (previous > _wounds)
                 {
@@ -71,6 +74,14 @@ namespace CaptainCoder.Dungeoneering.Encounter
             copy.SpawnAnimation = original.SpawnAnimation;
             copy.AttackAnimation = original.AttackAnimation;
             copy.IdleAnimation = original.IdleAnimation;
+        }
+
+        void OnValidate()
+        {
+            if (UnarmedAttack == null)
+            {
+                Debug.LogWarning($"UnarmedAttack not set on {name}", this);
+            }
         }
 
         public override void OnBeforeEnterPlayMode()

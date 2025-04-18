@@ -12,16 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4342b9f9d527fe43b211ce0b80138a2, type: 3}
   m_Name: Evil Eye (Enemy Entity)
   m_EditorClassIdentifier: 
+  <UnarmedAttack>k__BackingField: {fileID: 11400000, guid: 99f1f7a36f0e0ee479ef5396efa3abfa, type: 2}
   <TraitDatabase>k__BackingField: {fileID: 11400000, guid: 4c0b7d2687886aa4cbcc722656a2a10d, type: 2}
   <Name>k__BackingField: Evil Eye
   <Portrait>k__BackingField: {fileID: 21300000, guid: 3deebda7c293dc649a38c8c84353dd78, type: 3}
   <BaseHealth>k__BackingField: 6
-  <Wounds>k__BackingField: 0
-  <Speed>k__BackingField: 4
-  <Armor>k__BackingField: 0
+  _wounds: 0
+  <BaseSpeed>k__BackingField: 0
+  <BaseArmor>k__BackingField: 0
+  <Effects>k__BackingField: []
   <SpawnAnimation>k__BackingField: {fileID: 11400000, guid: fb7a2adc2ed051e4c8aa258122b852bc, type: 2}
   <AttackAnimation>k__BackingField: {fileID: 11400000, guid: fb7a2adc2ed051e4c8aa258122b852bc, type: 2}
   <IdleAnimation>k__BackingField: {fileID: 11400000, guid: fb7a2adc2ed051e4c8aa258122b852bc, type: 2}
+  _shortName: Evil
   <Abilities>k__BackingField:
   - {fileID: 11400000, guid: e3d43aed646cb3c48a4caaf303f670a7, type: 2}
   <Attacks>k__BackingField:
