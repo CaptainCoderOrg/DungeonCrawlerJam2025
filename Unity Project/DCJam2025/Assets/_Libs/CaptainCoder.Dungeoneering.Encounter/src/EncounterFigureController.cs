@@ -1,3 +1,5 @@
+using System;
+
 using CaptainCoder.Unity.Assertions;
 
 using UnityEngine;
@@ -89,6 +91,14 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             _isSelected = false;
             OnDeselected.Invoke();
+        }
+
+        internal void Hide()
+        {
+            foreach (var renderer in GetComponentsInChildren<MeshRenderer>())
+            {
+                renderer.enabled = false;
+            }
         }
     }
 }

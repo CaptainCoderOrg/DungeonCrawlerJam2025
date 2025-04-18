@@ -214,6 +214,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
                     effect.Apply(figure, this);
                 }
                 figure.Figure.EntityData.RemoveEffectsWhere(RemoveAtStartOfRound);
+                if (figure.Figure.EntityData.Health <= 0)
+                {
+                    figure.Figure.HasTakenTurn = true;
+                }
             }
             StartCoroutine(ShowText($"Round {_round}"));
         }
@@ -241,6 +245,15 @@ namespace CaptainCoder.Dungeoneering.Encounter
         }
 
         internal void ShowConfirmation(string message, Action onConfirm) => _warningModalController.ShowWarning(message, onConfirm);
+
+        internal void EnsureCharacterIsDead(HeroFigurePanel heroFigurePanel)
+        {
+            if (heroFigurePanel.FigureController.Figure.EntityData.Health <= 0)
+            {
+                State.Figures.Remove(heroFigurePanel.FigureController.Figure.Position);
+                heroFigurePanel.FigureController.Hide();
+            }
+        }
 
         public bool AwaitingConfirmation => _diceHUD.IsActive;
     }

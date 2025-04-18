@@ -9,6 +9,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 {
     public class HeroFigurePanel : MonoBehaviour
     {
+        [AssertIsSet][SerializeField] private ToggleablePanel _knockedOutPanel;
         [AssertIsSet][field: SerializeField] public RectTransform TopLeftPivot { get; private set; }
         [SerializeField] private Color _selectedColor;
         [SerializeField] private Color _defaultColor;
@@ -31,13 +32,43 @@ namespace CaptainCoder.Dungeoneering.Encounter
             set
             {
                 _figureController = value;
-                if (_figureData != null) { _figureData.OnChanged -= HandleFigureChanged; }
+                if (_figureData != null)
+                {
+                    _figureData.OnChanged -= HandleFigureChanged;
+                    _figureData.EntityData.OnChanged -= HandleEntityChanged;
+                }
                 if (_figureController == null) { return; }
                 _figureData = _figureController.Figure;
                 _figureData.OnChanged += HandleFigureChanged;
+                _figureData.EntityData.OnChanged += HandleEntityChanged;
                 UpdateRenderers();
                 _heroActionButtons.UpdateButtons(_figureData, IsActive);
+                CheckForDeath();
             }
+        }
+
+        void OnDestroy()
+        {
+            if (_figureData != null)
+            {
+                _figureData.OnChanged -= HandleFigureChanged;
+                _figureData.EntityData.OnChanged -= HandleEntityChanged;
+            }
+        }
+
+        private void CheckForDeath()
+        {
+            if (_figureData.EntityData.Health <= 0)
+            {
+                _knockedOutPanel.IsEnabled = true;
+                _figureData.HasTakenTurn = true;
+                _encounterController.EnsureCharacterIsDead(this);
+            }
+        }
+
+        private void HandleEntityChanged(LivingEntityChangeEvent @event)
+        {
+            CheckForDeath();
         }
 
         private void HandleFigureChanged(FigureDataChangedEvent _)
