@@ -188,6 +188,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
                     yield return ability;
                 }
             }
+            
         }
     }
 }

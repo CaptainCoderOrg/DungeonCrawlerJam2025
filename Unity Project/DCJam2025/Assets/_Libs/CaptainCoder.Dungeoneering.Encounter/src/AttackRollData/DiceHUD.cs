@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,14 @@ using NaughtyAttributes;
 using TMPro;
 
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace CaptainCoder.Dungeoneering.Encounter
 {
     public class DiceHUD : MonoBehaviour
     {
-        [SerializeField] private EncounterController _encounterController;
+        [AssertIsSet][SerializeField] private EncounterController _encounterController;
         [AssertIsSet][SerializeField] private DieData _bonusDie;
         [AssertIsSet][SerializeField] private DiceBoxController _diceBoxController;
         [AssertIsSet][SerializeField] private ToggleablePanel _toggleablePanel;
@@ -101,6 +103,13 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             _encounterController = GetComponentInParent<EncounterController>();
             _diceBoxController.OnResult += HandleDiceResults;
+            _diceBoxController.OnClicked += HandleDieClicked;
+        }
+
+        private void HandleDieClicked(DieController controller)
+        {
+            Debug.Log(controller.Die, controller);
+            _diceBoxController.ReRoll(controller);
         }
 
         private void HandleDiceResults(IEnumerable<DieResult> result)
@@ -337,6 +346,9 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 yield return settings.EnemyDelay;
             }
         }
+
+        
+
     }
 
     public record struct AttackResult(string Message, int Wounds);

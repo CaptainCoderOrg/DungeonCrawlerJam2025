@@ -3008,7 +3008,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec2079c88fb86fc4a8b3a329347486bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _encounterController: {fileID: 0}
+  _diceBoxCamera: {fileID: 2572445722935548389}
+  _encounterController: {fileID: 4867494287452584605}
   _bonusDie: {fileID: 11400000, guid: 76a51ee6611969e41be91e50d857bc90, type: 2}
   _diceBoxController: {fileID: 4784868600116036741}
   _toggleablePanel: {fileID: 3468181980920255660}

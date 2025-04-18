@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         private readonly List<DieResult> _results = new();
 
         public event System.Action<IEnumerable<DieResult>> OnResult;
+        public event System.Action<DieController> OnClicked;
 
         private void CenterCamera()
         {
@@ -87,6 +89,15 @@ namespace CaptainCoder.Dungeoneering.Encounter
             OnResult?.Invoke(_results);
         }
 
+        private void HandleReRollResults(DieResult result)
+        {
+            IEnumerable<DieController> rolled = _dice.Where(d => d.gameObject.activeInHierarchy);
+            if (rolled.Any(d => d.IsRolling)) { return; }
+            _results.Clear();
+            _results.AddRange(rolled.Select(d => d.Result));
+            OnResult?.Invoke(_results);
+        }
+
         private void HandleDieResult(DieResult result)
         {
             _results.Add(result);
@@ -119,6 +130,25 @@ namespace CaptainCoder.Dungeoneering.Encounter
         void Awake()
         {
             _dice = GetComponentsInChildren<DieController>(true);
+            foreach (DieController die in _dice)
+            {
+                die.OnClick += HandleDieClicked;
+            }
+        }
+
+        private void HandleDieClicked(DieController controller)
+        {
+            OnClicked?.Invoke(controller);
+        }
+
+        internal void ReRoll(DieController controller)
+        {
+            controller.gameObject.SetActive(true);
+            controller.OnResult -= HandleDieResult;
+            controller.OnResult += HandleReRollResults;
+            controller.Roll();
+            _count++;
+            CenterCamera();
         }
 
         [Button]

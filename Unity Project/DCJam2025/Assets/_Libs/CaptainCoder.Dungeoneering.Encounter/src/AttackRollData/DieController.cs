@@ -30,10 +30,13 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 InitializeDie();
             }
         }
+        public bool IsRolling { get; private set; }
+        public DieResult Result => new(_dieData, Face);
         [AssertIsSet][SerializeField] private MeshRenderer _dieRenderer;
         [AssertIsSet][SerializeField] private MeshRenderer _dieAlbedoRenderer;
         [AssertIsSet][SerializeField] private Transform _pivot;
         [AssertIsSet][SerializeField] private Rigidbody _rigidbody;
+        public event System.Action<DieController> OnClick;
         private Vector3 _startPosition;
         private Quaternion _targetQuaternion;
         private Coroutine _rollRoutine;
@@ -42,6 +45,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
         public event System.Action<DieResult> OnResult;
 
         void Awake() => InitializeDie();
+
+        public void Click() => OnClick?.Invoke(this);
 
         [Button]
         public void InitializeDie()
@@ -83,6 +88,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             }
             _pivot.transform.rotation = endQ;
             _pivot.transform.position = _startPosition;
+            IsRolling = false;
             OnResult?.Invoke(new DieResult(Die, Face));
         }
         [SerializeField] private float _rollVelocity = 20f;
@@ -97,6 +103,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         private IEnumerator DoRoll()
         {
+            IsRolling = true;
             _rigidbody.constraints = RigidbodyConstraints.None;
             yield return WaitForFixedUpdate;
             _rigidbody.AddForce(Vector3.up * _upForce, ForceMode.Impulse);
