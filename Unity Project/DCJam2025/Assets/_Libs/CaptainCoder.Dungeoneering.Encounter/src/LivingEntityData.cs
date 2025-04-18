@@ -48,6 +48,9 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [field: Expandable][field: SerializeField] public AnimationData SpawnAnimation { get; private set; }
         [field: Expandable][field: SerializeField] public AnimationData AttackAnimation { get; private set; }
         [field: Expandable][field: SerializeField] public AnimationData IdleAnimation { get; private set; }
+        private string _shortName;
+        public string ShortName => _shortName ??= Name.Split(null)[0];
+
         public event System.Action<LivingEntityChangeEvent> OnChanged;
         protected void Notify(LivingEntityChangeEvent @event) => OnChanged?.Invoke(@event);
         public void ClearListeners()

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 using CaptainCoder.Dungeoneering.DungeonMap;
 
@@ -66,4 +67,45 @@ public static class FigureAttackExtensions
         }
     }
 
+
+    /// <summary>
+    /// Given a hero, an enemy that is moving, and the positions that that enemy will traverse, produces a GuardInfo of possible attack positions.
+    /// </summary>
+    /// <param name="hero"></param>
+    /// <param name="target"></param>
+    /// <param name="state"></param>
+    /// <param name="encounterData"></param>
+    /// <param name="positions"></param>
+    /// <returns></returns>
+    public static GuardInfo FindGuardPositions(this HeroFigurePanel hero, EncounterFigureController target, EncounterState state, EncounterData encounterData, IEnumerable<Vector2Int> positions)
+    {
+        HashSet<Vector2Int> positionLookup = positions.ToHashSet();
+        HeroEntityData heroEntity = hero.FigureController.Figure.EntityData as HeroEntityData;
+        AttackData attackData = PossibleAttacks(heroEntity).First();
+        // Find positions that the enemy will move through
+        IEnumerable<AttackInfo> attacks = hero.FigureController.Figure
+                                            .FindAttackTargets(attackData, state, encounterData)
+                                            .Where(info => positionLookup.Contains(info.TargetPosition))
+                                            .Select(s => s with { Target = target });
+        return new GuardInfo(hero, target, attacks);
+    }
+
+    public static IEnumerable<AttackData> PossibleAttacks(this HeroEntityData hero)
+    {
+        if (hero.LeftHand != null && hero.LeftHand.Attack != null)
+        {
+            yield return hero.LeftHand.Attack;
+        }
+
+        if (hero.RightHand != null && hero.RightHand.Attack != null)
+        {
+            yield return hero.RightHand.Attack;
+        }
+    }
+
+}
+
+public record class GuardInfo(HeroFigurePanel Hero, EncounterFigureController Enemy, IEnumerable<AttackInfo> Attacks)
+{
+    public bool HasTargets() => Attacks.Any();
 }

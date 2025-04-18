@@ -161,43 +161,21 @@ namespace CaptainCoder.Dungeoneering.Encounter
             }
         }
 
-        private IEnumerable<AttackData> PossibleAttacks()
-        {
-            if (Attacker.EntityData is HeroEntityData hero)
-            {
-                if (hero.LeftHand != null && hero.LeftHand.Attack != null)
-                {
-                    yield return hero.LeftHand.Attack;
-                }
-
-                if (hero.RightHand != null && hero.RightHand.Attack != null)
-                {
-                    yield return hero.RightHand.Attack;
-                }
-
-            }
-            else
-            {
-                Debug.Log("Not a hero entity");
-            }
-        }
 
         [Button]
         public void SelectAttack()
         {
-            var attacks = PossibleAttacks().ToHashSet();
+            if (Attacker.EntityData is not HeroEntityData hero)
+            {
+                Debug.LogWarning("Not a hero entity");
+                return;
+            }
+            var attacks = hero.PossibleAttacks().ToHashSet();
             if (attacks.Count == 0)
             {
                 Debug.LogWarning("Unarmed attack not implemented", this);
             }
-            else if (attacks.Count == 1)
-            {
-                Attack = attacks.First();
-            }
-            else
-            {
-                Debug.LogWarning("Show attack selection not implemented", this);
-            }
+            Attack = attacks.First();
         }
 
         internal void Show() => _toggleablePanel.IsEnabled = true;

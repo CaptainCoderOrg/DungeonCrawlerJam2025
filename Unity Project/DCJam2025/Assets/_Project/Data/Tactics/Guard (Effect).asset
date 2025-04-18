@@ -24,3 +24,5 @@ MonoBehaviour:
   <RemoveIfDamaged>k__BackingField: 0
   <RemoveAtStartOfRound>k__BackingField: 1
   <RemoveAfterGuarding>k__BackingField: 1
+  <IsGuard>k__BackingField: 1
+  <OnStartOfRound>k__BackingField: []
