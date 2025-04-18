@@ -8,6 +8,7 @@ namespace CaptainCoder.Dungeoneering.Unity
     [CreateAssetMenu(menuName = "DC/PlayerView")]
     public class PlayerViewData : ObservableSO
     {
+        public PlayerView PreviousSpace { get; private set; }
         public UnityEvent<PlayerView, PlayerView, PlayerViewData> OnChange { get; private set; } = new();
         public UnityEvent<string> OnDungeonChanged { get; private set; } = new();
 
@@ -36,12 +37,12 @@ namespace CaptainCoder.Dungeoneering.Unity
             set
             {
                 if (_view == value) { return; }
-                PlayerView exit = _view;
+                PreviousSpace = _view;
                 _view = value;
                 X = _view.Position.X;
                 Y = _view.Position.Y;
                 Facing = _view.Facing;
-                OnChange.Invoke(exit, _view, this);
+                OnChange.Invoke(PreviousSpace, _view, this);
             }
         }
 
@@ -65,5 +66,14 @@ namespace CaptainCoder.Dungeoneering.Unity
             OnDungeonChanged?.Invoke(_dungeonName);
         }
 
+        public void LoadPreviousSpace()
+        {
+            if (PreviousSpace == null) { return; }
+            _view = PreviousSpace;
+            X = _view.Position.X;
+            Y = _view.Position.Y;
+            Facing = _view.Facing;
+            OnChange.Invoke(PreviousSpace, _view, this);
+        }
     }
 }

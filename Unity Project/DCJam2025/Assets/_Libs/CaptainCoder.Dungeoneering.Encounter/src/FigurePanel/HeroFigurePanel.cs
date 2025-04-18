@@ -62,7 +62,11 @@ namespace CaptainCoder.Dungeoneering.Encounter
             {
                 _knockedOutPanel.IsEnabled = true;
                 _figureData.HasTakenTurn = true;
-                _encounterController.EnsureCharacterIsDead(this);
+                _encounterController?.EnsureCharacterIsDead(this);
+            }
+            else
+            {
+                _knockedOutPanel.IsEnabled = false;
             }
         }
 

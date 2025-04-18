@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +29,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         [AssertIsSet][SerializeField] private DungeonCrawlerData _dungeonCrawlerData;
         [AssertIsSet][SerializeField] private PlayerViewData _playerViewData;
         [AssertIsSet][SerializeField] private DialogueController _dialogueController;
+        [AssertIsSet][SerializeField] private PartyData _partyData;
         [Expandable][AssertIsSet][SerializeField] private List<CrawlerEventData> _events;
         [field: SerializeField] public UnityEvent<PlayerView, PlayerView, PlayerViewData> OnMove;
         [SerializeField] private GameStartEventData _gameStartEvent;
@@ -43,6 +43,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             _playerViewData.OnDungeonChanged.AddListener(HandleDungeonChanged);
             _viewController = FindFirstObjectByType<PlayerViewController>();
             _encounterController = FindFirstObjectByType<EncounterController>();
+            _partyData.ReviveAllHeroes();
 
 
             if (_gameStartEvent != null && !_gameStartEvent.HasTriggered)
@@ -198,6 +199,24 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             foreach (var hero in _encounterController.State.Heroes)
             {
                 hero.ClearListeners();
+            }
+        }
+
+        [Button]
+        public void TryAgainFromPreviousSpace()
+        {
+            _hider.Hide();
+            _playerViewData.LoadPreviousSpace();
+            _partyData.RefreshAllHeroes();
+            StartCoroutine(ReloadCrawlerScene());
+        }
+
+        private IEnumerator ReloadCrawlerScene()
+        {
+            AsyncOperation operation = SceneManager.LoadSceneAsync("DungeonCrawling");
+            while (!operation.isDone)
+            {
+                yield return null;
             }
         }
 

@@ -46,11 +46,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _viewController: {fileID: 0}
+  _dungeonController: {fileID: 0}
+  _encounterController: {fileID: 0}
   _hider: {fileID: 0}
   _encounterSettingsData: {fileID: 11400000, guid: d0f3755972dc40245aef2cc864b73ad9, type: 2}
   _dungeonCrawlerData: {fileID: 11400000, guid: ab74159b5d6b1da4ea6c200032209da6, type: 2}
   _playerViewData: {fileID: 11400000, guid: fcdaf4650b87b1c49b4e3b527249d5a5, type: 2}
   _dialogueController: {fileID: 2939894851600467016}
+  _partyData: {fileID: 11400000, guid: be4388fd74f82d04db639fe9b3a524e8, type: 2}
   _events:
   - {fileID: 11400000, guid: c97441cd25636894d9192123012085d8, type: 2}
   - {fileID: 11400000, guid: 0285e6ff6aa717042ac9fa9acefa1c36, type: 2}
@@ -58,6 +61,8 @@ MonoBehaviour:
   OnMove:
     m_PersistentCalls:
       m_Calls: []
+  _gameStartEvent: {fileID: 0}
+  _canMove: 1
   _testAction: {fileID: 11400000, guid: 14c388b55f4c29e49a528c9c37567a87, type: 2}
 --- !u!1001 &549142727177122948
 PrefabInstance:
@@ -121,11 +126,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1223209942048732099, guid: 13c8860861bf6e64cbf1393ebc37d5ff, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 640
+      value: 532.6667
       objectReference: {fileID: 0}
     - target: {fileID: 1223209942048732099, guid: 13c8860861bf6e64cbf1393ebc37d5ff, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -360
+      value: -289.66666
       objectReference: {fileID: 0}
     - target: {fileID: 1839656698485438889, guid: 13c8860861bf6e64cbf1393ebc37d5ff, type: 3}
       propertyPath: m_AnchorMax.y

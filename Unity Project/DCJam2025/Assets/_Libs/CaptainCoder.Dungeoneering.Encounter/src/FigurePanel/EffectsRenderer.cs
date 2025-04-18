@@ -32,5 +32,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 else { renderer.Render(Entity.Effects[ix]); }
             }
         }
+
+        void OnDestroy()
+        {
+            if (_entity != null) { _entity.OnChanged -= HandleChange; }
+        }
     }
 }
