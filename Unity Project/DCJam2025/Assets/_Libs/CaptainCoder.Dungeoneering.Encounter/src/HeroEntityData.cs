@@ -188,7 +188,13 @@ namespace CaptainCoder.Dungeoneering.Encounter
                     yield return ability;
                 }
             }
-            
+            foreach (var effect in Effects)
+            {
+                foreach (var ability in effect.AttackAbilities)
+                {
+                    yield return ability;
+                }
+            }
         }
     }
 }

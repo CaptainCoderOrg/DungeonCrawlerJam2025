@@ -18,3 +18,5 @@ MonoBehaviour:
     at the start of the next round."
   <Icon>k__BackingField: {fileID: -1692338697, guid: 66ceb6ab667df55438a1c63c42873b72, type: 3}
   <TraitEffects>k__BackingField: []
+  <AttackAbilities>k__BackingField:
+  - {fileID: 11400000, guid: 1d61836bfaa43e54aa9ddf4043eb5d0f, type: 2}

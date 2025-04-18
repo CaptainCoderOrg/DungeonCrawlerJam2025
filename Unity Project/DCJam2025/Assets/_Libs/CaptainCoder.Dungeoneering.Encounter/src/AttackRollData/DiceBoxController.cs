@@ -71,8 +71,9 @@ namespace CaptainCoder.Dungeoneering.Encounter
             CenterCamera();
         }
 
-        public void AddDie(DieData die)
+        public bool AddDie(DieData die)
         {
+            if (_count >= _dice.Length) { return false; }
             DieController next = _dice[_count];
             next.Die = die;
             next.gameObject.SetActive(true);
@@ -81,6 +82,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             next.Roll();
             _count++;
             CenterCamera();
+            return true;
         }
 
         private void HandleSingleDieResult(DieResult result)
@@ -147,7 +149,6 @@ namespace CaptainCoder.Dungeoneering.Encounter
             controller.OnResult -= HandleDieResult;
             controller.OnResult += HandleReRollResults;
             controller.Roll();
-            _count++;
             CenterCamera();
         }
 

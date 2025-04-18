@@ -19,7 +19,6 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [AssertIsSet][SerializeField] private DieData _bonusDie;
         [AssertIsSet][SerializeField] private DiceBoxController _diceBoxController;
         [AssertIsSet][SerializeField] private ToggleablePanel _toggleablePanel;
-        [AssertIsSet][SerializeField] private DieFaceRenderer[] _dieFaceRenderers;
         [AssertIsSet][SerializeField] private TextMeshProUGUI _damageLabel;
         [AssertIsSet][SerializeField] private TextMeshProUGUI _accuracyLabel;
         [AssertIsSet][SerializeField] private TextMeshProUGUI _powerLabel;
@@ -76,6 +75,11 @@ namespace CaptainCoder.Dungeoneering.Encounter
             set
             {
                 _attacker = value;
+                if (_attacker != null)
+                {
+                    _attackAbilities.Clear();
+                    _attackAbilities.AddRange(_attacker.EntityData.GetAttackAbilities().ToHashSet());
+                }
             }
         }
 
@@ -98,6 +102,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         private AttackResult _attackResult;
         private bool _allowReroll = false;
         private readonly HashSet<DieController> _rerolledDice = new();
+        private readonly List<AttackAbilityData> _attackAbilities = new();
 
         void Awake()
         {
@@ -137,6 +142,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
             RenderDice(result);
             UpdateResults();
             UpdateAbilities();
+            if (Attacker.EntityData is HeroEntityData)
+            {
+                IsConfirmable = true;
+            }
             Rebuild();
         }
 
@@ -167,15 +176,14 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 Debug.LogWarning("TODO: Hide stamina element when not a hero");
             }
 
-            AttackAbilityData[] attackAbilities = _attacker.EntityData.GetAttackAbilities().ToHashSet().ToArray();
             for (int ix = 0; ix < _attackAbilityRenderers.Length; ix++)
             {
                 AttackAbilityRenderer renderer = _attackAbilityRenderers[ix];
                 renderer.OnSelected -= ApplyAbility;
-                if (attackAbilities.Length > ix)
+                if (_attackAbilities.Count > ix)
                 {
-                    AttackAbilityData attackAbility = attackAbilities[ix];
-                    renderer.AttackAbility = attackAbilities[ix];
+                    AttackAbilityData attackAbility = _attackAbilities[ix];
+                    renderer.AttackAbility = _attackAbilities[ix];
                     renderer.IsEnabled = true;
                     renderer.IsAvailable = !_isMiss && attackAbility.PowerCost <= PowerRemaining;
                     renderer.OnSelected += ApplyAbility;
@@ -232,14 +240,6 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 _power += die.Power;
                 _bonusTotal += die.Split;
                 _isMiss = _isMiss || die.IsMiss;
-                DieFaceRenderer renderer = _dieFaceRenderers[ix++];
-                renderer.RenderDieFace(die.Die, die.Face);
-                renderer.Show();
-            }
-            for (; ix < _dieFaceRenderers.Length; ix++)
-            {
-                DieFaceRenderer renderer = _dieFaceRenderers[ix++];
-                renderer.Hide();
             }
         }
 
@@ -282,13 +282,13 @@ namespace CaptainCoder.Dungeoneering.Encounter
         internal IEnumerator Roll()
         {
             _allowReroll = false;
+            if (_attackAbilities.Any(a => a.AllowsReroll))
+            {
+                StartReroll();
+            }
             UpdateAbilities();
             SetRollingLabels();
             yield return StartCoroutine(_diceBoxController.Roll());
-            if (Attacker.EntityData is HeroEntityData)
-            {
-                IsConfirmable = true;
-            }
         }
 
         public void AddDamageBonus()
@@ -323,11 +323,12 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             if (CanExert)
             {
-                HeroAttacker.Exertion++;
-                _diceBoxController.AddDie(_bonusDie);
-                UpdateResults();
-                SetRollingLabels();
-                // UpdateResults();
+                if (_diceBoxController.AddDie(_bonusDie))
+                {
+                    HeroAttacker.Exertion++;
+                    UpdateResults();
+                    SetRollingLabels();
+                }
             }
         }
 

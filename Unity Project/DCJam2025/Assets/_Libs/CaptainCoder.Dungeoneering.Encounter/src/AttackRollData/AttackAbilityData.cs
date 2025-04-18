@@ -14,6 +14,9 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [field: SerializeField] public int PowerCost { get; private set; }
         [field: SerializeField] public int DamageBonus { get; private set; }
         [field: SerializeField] public int AccuracyBonus { get; private set; }
+        [field: SerializeField] public bool AllowsReroll { get; private set; } = false;
+        [field: SerializeField] public bool IsPassive { get; private set; } = false;
+
     }
 
 }
