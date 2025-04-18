@@ -209,9 +209,16 @@ namespace CaptainCoder.Dungeoneering.Encounter
             foreach (EncounterFigureController figure in State.Figures.Values.Where(f => f.Figure.EntityData is HeroEntityData))
             {
                 figure.Figure.HasTakenTurn = false;
+                foreach (var effect in figure.Figure.EntityData.Effects.SelectMany(e => e.OnStartOfRound))
+                {
+                    effect.Apply(figure, this);
+                }
+                figure.Figure.EntityData.RemoveEffectsWhere(RemoveAtStartOfRound);
             }
             StartCoroutine(ShowText($"Round {_round}"));
         }
+
+        private bool RemoveAtStartOfRound(EffectData e) => e.RemoveAtStartOfRound;
 
         internal void CheckForEndOfCombat()
         {

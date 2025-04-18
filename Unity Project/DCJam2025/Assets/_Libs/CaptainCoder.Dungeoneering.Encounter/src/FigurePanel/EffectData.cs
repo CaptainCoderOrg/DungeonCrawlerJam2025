@@ -17,6 +17,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [field: SerializeField] public bool RemoveAfterAttacking { get; private set; } = false;
         [field: SerializeField] public bool RemoveIfDamaged { get; private set; } = false;
         [field: SerializeField] public bool RemoveAtStartOfRound { get; private set; }
+        [field: SerializeField] public bool RemoveAfterGuarding { get; private set; }
+        [field: SerializeField] public EncounterEffectActionData[] OnStartOfRound { get; private set; }
 
 #if UNITY_EDITOR
         void OnValidate()

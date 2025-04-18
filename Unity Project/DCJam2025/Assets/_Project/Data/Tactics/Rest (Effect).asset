@@ -23,3 +23,11 @@ MonoBehaviour:
     round or if the figure takes damage.'
   <Icon>k__BackingField: {fileID: 1689757341, guid: 66ceb6ab667df55438a1c63c42873b72, type: 3}
   <TraitEffects>k__BackingField: []
+  <AttackAbilities>k__BackingField: []
+  <DefenderAbilities>k__BackingField: []
+  <RemoveAfterAttacking>k__BackingField: 0
+  <RemoveIfDamaged>k__BackingField: 0
+  <RemoveAtStartOfRound>k__BackingField: 1
+  <RemoveAfterGuarding>k__BackingField: 0
+  <OnStartOfRound>k__BackingField:
+  - {fileID: 11400000, guid: 09aeb1e2dd7c0c44d987e7cec045b217, type: 2}

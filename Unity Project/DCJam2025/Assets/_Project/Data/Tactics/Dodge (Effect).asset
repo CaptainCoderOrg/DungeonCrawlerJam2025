@@ -27,3 +27,6 @@ MonoBehaviour:
   <AttackAbilities>k__BackingField: []
   <DefenderAbilities>k__BackingField:
   - {fileID: 11400000, guid: 5663f504be495a14fbafbaa13ee971d3, type: 2}
+  <RemoveAfterAttacking>k__BackingField: 0
+  <RemoveIfDamaged>k__BackingField: 0
+  <RemoveAtStartOfRound>k__BackingField: 1
