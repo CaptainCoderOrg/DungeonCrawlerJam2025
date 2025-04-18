@@ -22,10 +22,10 @@ MonoBehaviour:
   <Effects>k__BackingField:
   - {fileID: 11400000, guid: 85d35bae4900f3249aab4be7512e7444, type: 2}
   - {fileID: 11400000, guid: 7c906c062cbae7c468cb8b1d4c762214, type: 2}
-  - {fileID: 11400000, guid: 905f0f70372d98d4a99b9a908a2e7c25, type: 2}
   <SpawnAnimation>k__BackingField: {fileID: 11400000, guid: 220226c753d546d4f980132e28516dae, type: 2}
   <AttackAnimation>k__BackingField: {fileID: 11400000, guid: 220226c753d546d4f980132e28516dae, type: 2}
   <IdleAnimation>k__BackingField: {fileID: 11400000, guid: 220226c753d546d4f980132e28516dae, type: 2}
+  _shortName: Jax
   <BaseStamina>k__BackingField: 3
   _exertion: 0
   _leftHand: {fileID: 11400000, guid: 387dd2e57087810468a2384ef8cbbe90, type: 2}

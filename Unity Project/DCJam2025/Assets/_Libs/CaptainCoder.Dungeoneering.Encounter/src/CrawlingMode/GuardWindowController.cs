@@ -97,7 +97,6 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             _selectedGuard.Hero.FigureController.Figure.EntityData.RemoveEffectsWhere(LivingEntityData.IsGuardEffect);
             _possibleGuards.Remove(_selectedGuard);
             AttackInfo attack = _selectedGuard.AttackInfo;
-            Debug.Log($"Attack Picked: {attack}");
             if (attack == null) { return; }
             StartCoroutine(PerformAttack(attack, _selectedGuard.AttackData, _selectedGuard.Attacker(), _selectedGuard.AttackDice()));
         }
@@ -112,7 +111,11 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             _toggleablePanel.Hide();
             yield return StartCoroutine(_diceHUD.Roll());
             yield return _diceHUD.WaitForConfirm();
-            // TODO: Check for death
+            if (attackInfo.Target.Figure.EntityData.Health <= 0)
+            {
+                _isFinished = true;
+                yield break;
+            }
             UpdateButtons();
             _toggleablePanel.Show();
         }

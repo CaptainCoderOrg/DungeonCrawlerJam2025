@@ -43,6 +43,11 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         private IEnumerator TryToMoveToHero(EncounterFigureController enemyFigure, EnemyEntityData enemy)
         {
+            if (enemy.Health <= 0)
+            {
+                Controller.TileHighlighter.ClearAll();
+                yield break;
+            }
             if (IsAdjacentHero(enemyFigure.Figure.Position, State)) { yield break; }
             HashSet<MoveInfo> possibleMoves = enemyFigure.Figure.FindMoves(State, Controller.EncounterData);
             if (TryFindClosestMove(possibleMoves, State, out MoveInfo target))
@@ -50,6 +55,11 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 Controller.TileHighlighter.Highlight(possibleMoves.Select(p => p.Position));
                 Controller.TileHighlighter.Selected(target.Path());
                 yield return StartCoroutine(CheckGuard(enemyFigure, target.Path()));
+                if (enemy.Health <= 0)
+                {
+                    Controller.TileHighlighter.ClearAll();
+                    yield break;
+                }
                 yield return Settings.EnemyDelay;
                 enemyFigure.Figure.Movement -= target.Distance;
                 yield return StartCoroutine(Controller.HandleMovementEvent(new MoveFigureEvent(enemyFigure, target.Path().Reverse())));
@@ -73,17 +83,28 @@ namespace CaptainCoder.Dungeoneering.Encounter
         }
 
 
-        private IEnumerator TryMoveAwayFromHero(EncounterFigureController figure, EnemyEntityData enemy)
+        private IEnumerator TryMoveAwayFromHero(EncounterFigureController enemyFigure, EnemyEntityData enemy)
         {
-            HashSet<MoveInfo> possibleMoves = figure.Figure.FindMoves(State, Controller.EncounterData);
+            if (enemy.Health <= 0)
+            {
+                Controller.TileHighlighter.ClearAll();
+                yield break;
+            }
+            HashSet<MoveInfo> possibleMoves = enemyFigure.Figure.FindMoves(State, Controller.EncounterData);
             if (TryFindFurthestMove(possibleMoves, State, out MoveInfo furthest))
             {
                 Controller.TileHighlighter.Highlight(possibleMoves.Select(p => p.Position));
                 Controller.TileHighlighter.Selected(furthest.Path());
+                yield return StartCoroutine(CheckGuard(enemyFigure, furthest.Path()));
+                if (enemy.Health <= 0)
+                {
+                    Controller.TileHighlighter.ClearAll();
+                    yield break;
+                }
                 yield return Settings.EnemyDelay;
                 Controller.TileHighlighter.ClearAll();
-                figure.Figure.Movement -= furthest.Distance;
-                yield return StartCoroutine(Controller.HandleMovementEvent(new MoveFigureEvent(figure, furthest.Path().Reverse())));
+                enemyFigure.Figure.Movement -= furthest.Distance;
+                yield return StartCoroutine(Controller.HandleMovementEvent(new MoveFigureEvent(enemyFigure, furthest.Path().Reverse())));
             }
         }
 
@@ -107,16 +128,27 @@ namespace CaptainCoder.Dungeoneering.Encounter
             return distances.Any() ? distances.Min() : 0;
         }
 
-        private IEnumerator TryAttackHero(EncounterFigureController figure, EnemyEntityData enemy)
+        private IEnumerator TryAttackHero(EncounterFigureController enemyFigure, EnemyEntityData enemy)
         {
+            if (enemy.Health <= 0)
+            {
+                Controller.TileHighlighter.ClearAll();
+                yield break;
+            }
             AttackData attack = enemy.Attacks[Random.Range(0, enemy.Attacks.Count)];
-            HashSet<AttackInfo> possibleAttacks = figure.Figure.FindAttackTargets(attack, State, Controller.EncounterData);
+            HashSet<AttackInfo> possibleAttacks = enemyFigure.Figure.FindAttackTargets(attack, State, Controller.EncounterData);
             if (TrySelectTarget(possibleAttacks, out AttackInfo target))
             {
                 Controller.TileHighlighter.HighlightAttacks(possibleAttacks);
                 Controller.TileHighlighter.Selected(Enumerable.Repeat(target.TargetPosition, 1));
+                yield return StartCoroutine(CheckGuard(enemyFigure, Enumerable.Repeat(enemyFigure.Figure.Position, 1)));
+                if (enemy.Health <= 0)
+                {
+                    Controller.TileHighlighter.ClearAll();
+                    yield break;
+                }
                 yield return Settings.EnemyDelay;
-                yield return StartCoroutine(TryEnemyAttackRoll(figure, attack, target));
+                yield return StartCoroutine(TryEnemyAttackRoll(enemyFigure, attack, target));
             }
             else
             {
