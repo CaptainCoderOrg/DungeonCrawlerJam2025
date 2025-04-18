@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -132,6 +133,22 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             Effects.Add(effect);
             OnChanged.Invoke(StatusChangedEvent.Instance);
+        }
+
+        internal void RemoveEffect(EffectData effect)
+        {
+            if (Effects.Remove(effect))
+            {
+                OnChanged.Invoke(StatusChangedEvent.Instance);
+            }
+        }
+
+        internal void RemoveEffectsWhere(Predicate<EffectData> removeAfterAttacking)
+        {
+            if (Effects.RemoveAll(removeAfterAttacking) > 0)
+            {
+                OnChanged.Invoke(StatusChangedEvent.Instance);
+            }
         }
 
         internal virtual IEnumerable<AttackAbilityData> GetAttackAbilities()

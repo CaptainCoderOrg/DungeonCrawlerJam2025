@@ -14,6 +14,9 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [field: SerializeField] public TraitEffect[] TraitEffects { get; private set; }
         [field: SerializeField] public AttackAbilityData[] AttackAbilities { get; private set; }
         [field: SerializeField] public DefenderAbilityData[] DefenderAbilities { get; private set; }
+        [field: SerializeField] public bool RemoveAfterAttacking { get; private set; } = false;
+        [field: SerializeField] public bool RemoveIfDamaged { get; private set; } = false;
+        [field: SerializeField] public bool RemoveAtStartOfRound { get; private set; }
 
 #if UNITY_EDITOR
         void OnValidate()

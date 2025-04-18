@@ -200,12 +200,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         private void ApplyAbility(AttackAbilityData attackAbility)
         {
-            Debug.Log("ApplyAbility");
             if (attackAbility.PowerCost > PowerRemaining) { return; }
             _powerSpent += attackAbility.PowerCost;
             _damage += attackAbility.DamageBonus;
             _accuracy += attackAbility.AccuracyBonus;
-            Debug.Log("Ability Applied");
             UpdateResults();
         }
 
@@ -340,9 +338,12 @@ namespace CaptainCoder.Dungeoneering.Encounter
             if (!IsConfirmable) { return; }
             _attackInfo.Target.Figure.EntityData.Wounds += _attackResult.Wounds;
             _encounterController.HeroTurnController.CloseAttackPanel();
+            _attacker.EntityData.RemoveEffectsWhere(RemoveAfterAttacking);
             Hide();
             _isConfirmed = true;
         }
+
+        private bool RemoveAfterAttacking(EffectData effectData) => effectData.RemoveAfterAttacking;
 
         private bool IsConfirmed() => _isConfirmed;
 
