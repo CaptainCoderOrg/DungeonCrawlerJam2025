@@ -117,6 +117,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [Button]
         public void StartReroll()
         {
+            Debug.Log("Rerolls are allowed");
             _allowReroll = true;
             _rerolledDice.Clear();
         }
@@ -150,6 +151,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 IsConfirmable = true;
             }
             Rebuild();
+            if (Attacker.EntityData is EnemyEntityData)
+            {
+                StartCoroutine(AutoApplyBonuses(_encounterController.EncounterSettingsData));
+            }
         }
 
         private void UpdateLabels()
@@ -351,6 +356,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             _isConfirmed = false;
             IsConfirmable = true;
+            Show();
             yield return new WaitUntil(IsConfirmed);
         }
 
@@ -367,6 +373,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 AddDamageBonus();
                 yield return settings.EnemyDelay;
             }
+            _isConfirmed = false;
+            IsConfirmable = true;
         }
 
 

@@ -99,6 +99,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
             {
                 renderer.enabled = false;
             }
+            foreach (var collider in GetComponentsInChildren<Collider>())
+            {
+                collider.enabled = false;
+            }
         }
     }
 }

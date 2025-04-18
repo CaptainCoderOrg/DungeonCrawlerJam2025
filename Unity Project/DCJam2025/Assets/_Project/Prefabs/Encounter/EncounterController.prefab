@@ -2225,7 +2225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 188, y: -92.100006}
+  m_AnchoredPosition: {x: 188, y: -130.375}
   m_SizeDelta: {x: 376, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3224536965455556514
@@ -5852,6 +5852,7 @@ GameObject:
   - component: {fileID: 4004228501174409620}
   - component: {fileID: 8551245981076548563}
   - component: {fileID: 7611184874764307080}
+  - component: {fileID: 840863817947029658}
   m_Layer: 0
   m_Name: Dice Camera
   m_TagString: Untagged
@@ -5947,6 +5948,32 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &840863817947029658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7511969279796738712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40297020753bc3040ba288dec344a3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetCamera: {fileID: 2572445722935548389}
+  RenderTextureBase: {fileID: 8400000, guid: 2dc95962cc319cb4f80c9e92cf1a269d, type: 2}
+  <OnScrollEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnDragStart>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnDragged>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnDragEnd>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7642576549257033594
 GameObject:
   m_ObjectHideFlags: 0

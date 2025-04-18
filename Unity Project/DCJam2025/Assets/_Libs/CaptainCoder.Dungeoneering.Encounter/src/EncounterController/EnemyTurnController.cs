@@ -172,7 +172,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _diceHUD.SetDice(Enumerable.Repeat(attackData.AttackType.AttackDie, 1).Concat(attackData.PowerDice));
             _diceHUD.Show();
             yield return StartCoroutine(_diceHUD.Roll());
-            yield return _diceHUD.AutoApplyBonuses(Settings);
+            // yield return _diceHUD.AutoApplyBonuses(Settings);
             Debug.Log("Waiting for confirmation");
             yield return _diceHUD.WaitForConfirm();
             Debug.Log("Confirmed");

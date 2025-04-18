@@ -224,5 +224,10 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         {
             Debug.LogWarning($"TODO: Animate receving item");
         }
+
+        public void TestMethod()
+        {
+            Debug.Log("Test method called");
+        }
     }
 }
