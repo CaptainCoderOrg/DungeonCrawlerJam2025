@@ -862,6 +862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a04d7cb0802654b439771557faf8b07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _defeatPanel: {fileID: 0}
   _diceHUD: {fileID: 5845710102669429128}
   _warningModalController: {fileID: 0}
   _crawlerLogicController: {fileID: 0}

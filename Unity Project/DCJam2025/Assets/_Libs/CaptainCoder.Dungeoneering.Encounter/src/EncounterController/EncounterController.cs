@@ -17,6 +17,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 {
     public class EncounterController : MonoBehaviour
     {
+        [AssertIsSet][SerializeField] private ToggleablePanel _defeatPanel;
         [AssertIsSet][SerializeField] private DiceHUD _diceHUD;
         [AssertIsSet][SerializeField] private WarningModalController _warningModalController;
         [AssertIsSet][SerializeField] private CrawlerLogicController _crawlerLogicController;
@@ -203,6 +204,19 @@ namespace CaptainCoder.Dungeoneering.Encounter
             NextRound();
         }
 
+        public bool CheckForDefeat()
+        {
+            foreach (EncounterFigureController figure in State.Figures.Values.Where(f => f.Figure.EntityData is HeroEntityData))
+            {
+                if (figure.Figure.EntityData.Health > 0)
+                {
+                    return false;
+                }
+            }
+            ShowDefeated();
+            return true;
+        }
+
         private void NextRound()
         {
             _round++;
@@ -219,7 +233,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
                     figure.Figure.HasTakenTurn = true;
                 }
             }
-            StartCoroutine(ShowText($"Round {_round}"));
+            if (!CheckForDefeat())
+            {
+                StartCoroutine(ShowText($"Round {_round}"));
+            }
         }
 
         private bool RemoveAtStartOfRound(EffectData e) => e.RemoveAtStartOfRound;
@@ -253,6 +270,11 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 State.Figures.Remove(heroFigurePanel.FigureController.Figure.Position);
                 heroFigurePanel.FigureController.Hide();
             }
+        }
+
+        public void ShowDefeated()
+        {
+            _defeatPanel.IsEnabled = true;
         }
 
         public bool AwaitingConfirmation => _diceHUD.IsActive;

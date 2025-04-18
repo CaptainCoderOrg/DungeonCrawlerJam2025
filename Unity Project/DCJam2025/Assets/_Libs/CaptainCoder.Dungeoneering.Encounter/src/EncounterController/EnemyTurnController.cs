@@ -33,6 +33,12 @@ namespace CaptainCoder.Dungeoneering.Encounter
                     yield return Settings.EnemyDelay;
                     yield return StartCoroutine(TryToMoveToHero(figure, enemyData));
                     yield return StartCoroutine(TryAttackHero(figure, enemyData));
+                    if (Controller.CheckForDefeat())
+                    {
+                        Controller.TileHighlighter.ClearAll();
+                        Controller.EndEnemyTurn();
+                        yield break;
+                    }
                     yield return StartCoroutine(TryMoveAwayFromHero(figure, enemyData));
                 }
                 Controller.TileHighlighter.ClearAll();
