@@ -87,6 +87,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         internal void BeginTurn(EncounterFigureController figureController, IEnumerable<TacticData> tactics)
         {
+            Controller.Tutorial.HideTutorial();
             Controller.TacticsMenu.Cancel();
             FigureController = figureController;
             foreach (var tactic in tactics)
@@ -96,6 +97,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
             foreach (var panel in Controller.HeroPanels)
             {
                 panel.StartTurn(figureController);
+            }
+            if (figureController.Figure.Movement > 0)
+            {
+                Controller.Tutorial.ShowTutorialIfNeverSeen(TutorialData._02SelectMovement);
             }
         }
 
@@ -116,6 +121,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
                     selector.OnClicked += () => PerformMove(moveInfo);
                 }
             }
+            Controller.Tutorial.ShowTutorialIfNeverSeen(TutorialData._03MoveAdjacentToEnemy);
         }
 
         private void ClearTiles()
@@ -157,6 +163,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         private void PerformMove(MoveInfo moveInfo)
         {
+            Controller.Tutorial.HideTutorial();
             FigureController.Figure.Movement -= moveInfo.Distance;
             ClearTiles();
             StartCoroutine(Controller.HandleMovementEvent(new MoveFigureEvent(FigureController, moveInfo.Path().Reverse())));
@@ -197,10 +204,12 @@ namespace CaptainCoder.Dungeoneering.Encounter
             FigureController = null;
             _diceHUD.Hide();
             Controller.CheckHeroTurns();
+            Controller.Tutorial.HideTutorial();
         }
 
         internal void StartAttack()
         {
+            Controller.Tutorial.ShowTutorialIfNeverSeen(TutorialData._05SelectTarget);
             _attackConfirmationDialogue.ClearTarget();
             _attackConfirmationDialogue.Attacker = FigureController.Figure;
             _attackConfirmationDialogue.Show();

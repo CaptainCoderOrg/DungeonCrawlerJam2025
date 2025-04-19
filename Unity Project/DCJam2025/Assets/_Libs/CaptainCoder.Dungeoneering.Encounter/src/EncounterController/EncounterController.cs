@@ -17,6 +17,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 {
     public class EncounterController : MonoBehaviour
     {
+        [AssertIsSet][field: SerializeField] public EncounterTutorialController Tutorial { get; private set; }
         [AssertIsSet][SerializeField] private ToggleablePanel _defeatPanel;
         [AssertIsSet][SerializeField] private DiceHUD _diceHUD;
         [AssertIsSet][SerializeField] private WarningModalController _warningModalController;
@@ -76,6 +77,13 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _builder.MinY = EncounterData.MinY;
             _builder.MaxY = EncounterData.MaxY;
             StartCoroutine(BuildAtEndOfFrame());
+            StartCoroutine(ShowTakeTurnTutorial());
+        }
+
+        private IEnumerator ShowTakeTurnTutorial()
+        {
+            yield return new WaitForSeconds(3);
+            Tutorial.ShowTutorialIfNeverSeen(TutorialData._00TakeTurn);
         }
 
         public Vector2Int FindCenter()
@@ -146,6 +154,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
             State.Figures[last] = controller;
             controller.Figure.Position = last;
             yield return StartCoroutine(AnimateMove(controller, @event.Path));
+            if (controller.Figure.Attacks > 0)
+            {
+                Tutorial.ShowTutorialIfNeverSeen(TutorialData._04SelectAttackPanel);
+            }
         }
 
         private IEnumerator<YieldInstruction> AnimateMove(EncounterFigureController controller, IEnumerable<Vector2Int> path)

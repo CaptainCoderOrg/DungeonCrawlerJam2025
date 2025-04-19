@@ -42,7 +42,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         public void Open()
         {
-            _toggleablePanel.Show();
+            _toggleablePanel.IsEnabled = true;
         }
 
         public void Toggle()
@@ -52,7 +52,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         public void Close()
         {
-            _toggleablePanel.Hide();
+            _toggleablePanel.IsEnabled = false;
             OnClose?.Invoke();
         }
     }

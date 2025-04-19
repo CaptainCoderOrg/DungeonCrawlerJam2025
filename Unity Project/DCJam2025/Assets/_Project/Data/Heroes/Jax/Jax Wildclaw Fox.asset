@@ -17,7 +17,7 @@ MonoBehaviour:
   <Name>k__BackingField: Jax Wildclaw
   <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
   <BaseHealth>k__BackingField: 8
-  _wounds: 6
+  _wounds: 0
   <BaseSpeed>k__BackingField: 4
   <BaseArmor>k__BackingField: 0
   <Effects>k__BackingField:
@@ -29,7 +29,7 @@ MonoBehaviour:
   _shortName: Jax
   <BaseStamina>k__BackingField: 3
   _exertion: 0
-  _leftHand: {fileID: 11400000, guid: 6f7f84a0af2fec5428fe37a77a035597, type: 2}
+  _leftHand: {fileID: 11400000, guid: 387dd2e57087810468a2384ef8cbbe90, type: 2}
   _rightHand: {fileID: 0}
   _wornArmor: {fileID: 0}
   _accessory: {fileID: 0}

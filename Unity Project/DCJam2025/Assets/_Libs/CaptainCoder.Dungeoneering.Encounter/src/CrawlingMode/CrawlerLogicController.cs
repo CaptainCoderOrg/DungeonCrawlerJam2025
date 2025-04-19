@@ -21,6 +21,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
 
     public class CrawlerLogicController : MonoBehaviour
     {
+        [AssertIsSet][SerializeField] private ContainerController _playerInventory;
         [SerializeField] private PlayerViewController _viewController;
         [SerializeField] private DungeonController _dungeonController;
         [SerializeField] private EncounterController _encounterController;
@@ -222,7 +223,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
 
         internal void AnimateReceivingItem(EquipmentData equipment)
         {
-            Debug.LogWarning($"TODO: Animate receving item");
+            _playerInventory.Open();
         }
 
         public void TestMethod()

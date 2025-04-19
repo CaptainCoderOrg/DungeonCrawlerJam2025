@@ -23,18 +23,27 @@ namespace CaptainCoder.Dungeoneering.Encounter
         public const string _10BonusDie = "BonusDie";
         public const string _11Exert = "Exert";
         public const string _12AbilityPoints = "AbilityPoints";
+        public const string _14EndTurn = "EndTurn";
 
+
+        [SerializeField] private bool _resetOnStart = true;
 
         [field: SerializeField] public bool IsDisabled { get; private set; } = false;
         [field: SerializeField] public List<string> TutorialsSeen { get; private set; }
 
-        public bool HasSeenTutorial(string name) => TutorialsSeen.Contains(name);
+        public bool HasSeenTutorial(string name) => IsDisabled || TutorialsSeen.Contains(name);
         public void AddTutorial(string name) => TutorialsSeen.Add(name);
 
         [Button]
         public void ResetTutorials()
         {
             TutorialsSeen.Clear();
+        }
+
+        public override void OnAfterEnterPlayMode()
+        {
+            base.OnAfterEnterPlayMode();
+            if (_resetOnStart) { ResetTutorials(); }
         }
     }
 }

@@ -105,6 +105,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 _armorLabel.text = entity.Armor.ToString();
                 _aimLabel.text = valid.Attack.Distance.ToString();
                 _confirmButton.Enabled = true;
+                _encounterController.Tutorial.ShowTutorialIfNeverSeen(TutorialData._06TargetInformation);
             }
             else if (attackInfo is InvalidAttackTargetSelected)
             {

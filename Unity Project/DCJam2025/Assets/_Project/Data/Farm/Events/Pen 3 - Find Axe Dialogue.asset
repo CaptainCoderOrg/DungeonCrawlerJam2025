@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41230ffc95701804da6cdd78cb303ac3, type: 3}
+  m_Name: Pen 3 - Find Axe Dialogue
+  m_EditorClassIdentifier: 
+  <Entry>k__BackingField:
+    <Message>k__BackingField: What is this axe doing buried here? Let's take it.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  <Options>k__BackingField:
+  - Text: Take Axe
+    OnSelected:
+    - {fileID: 11400000, guid: f52c51e28f2e562439c34f104b035010, type: 2}
+    - {fileID: 11400000, guid: 0b934ef560d47f84b8547ac7bafdcd2b, type: 2}

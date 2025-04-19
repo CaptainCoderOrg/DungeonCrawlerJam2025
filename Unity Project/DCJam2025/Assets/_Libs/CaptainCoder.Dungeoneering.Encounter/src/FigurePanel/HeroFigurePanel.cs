@@ -138,6 +138,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             if (_encounterController.AwaitingConfirmation) { return; }
             _encounterController.SelectTactics(this);
+            _encounterController.Tutorial.ShowTutorialIfNeverSeen(TutorialData._01AttackAndMove);
         }
 
         public void Select()

@@ -6,12 +6,16 @@ using CaptainCoder.Unity.Assertions;
 using NaughtyAttributes;
 
 using UnityEngine;
+using UnityEngine.EventSystems;
 namespace CaptainCoder.Dungeoneering.Encounter
 {
-    public class EncounterTutorialController : MonoBehaviour
+    public class EncounterTutorialController : MonoBehaviour, IPointerClickHandler
     {
         [AssertIsSet][SerializeField] private TutorialData _tutorialData;
+        public TutorialData TutorialData => _tutorialData;
         [SerializeField] private TutorialEntry[] _entries;
+
+        public event Action OnClick;
 
         [Button]
         private void InitializeEntries()
@@ -33,7 +37,15 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _entries[13] = new() { Name = TutorialData._12AbilityPoints };
         }
 
-        public void ShowTutorial(string tutorial)
+        private ToggleablePanel _currentlyVisible;
+
+        public void HideTutorial()
+        {
+            if (_currentlyVisible == null) { return; }
+            _currentlyVisible.IsEnabled = false;
+        }
+
+        private void ShowTutorial(string tutorial)
         {
             _tutorialData.AddTutorial(tutorial);
             foreach (var entry in _entries)
@@ -41,6 +53,11 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 if (entry.Name == tutorial)
                 {
                     entry.Panel.IsEnabled = true;
+                    _currentlyVisible = entry.Panel;
+                    if (entry.Panel.TryGetComponent<BlockingTutorial>(out var blocker))
+                    {
+                        blocker.Activate();
+                    }
                 }
                 else
                 {
@@ -53,6 +70,11 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             if (_tutorialData.HasSeenTutorial(tutorial)) { return; }
             ShowTutorial(tutorial);
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            OnClick?.Invoke();
         }
 
     }

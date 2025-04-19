@@ -106,6 +106,10 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
                 _canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsed / _fadeDuration);
             }
             _canvasGroup.alpha = targetAlpha;
+            if (_canvasGroup.alpha > 0)
+            {
+                _canvasGroup.blocksRaycasts = true;
+            }
         }
 
         private ChainedDialogueActionData _chainedDialogueActionData;

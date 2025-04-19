@@ -156,6 +156,29 @@ namespace CaptainCoder.Dungeoneering.Encounter
             {
                 StartCoroutine(AutoApplyBonuses(_encounterController.EncounterSettingsData));
             }
+            if (_attacker.EntityData is HeroEntityData)
+            {
+                bool skip = false;
+                if (_isMiss && !_encounterController.Tutorial.TutorialData.HasSeenTutorial(TutorialData._13RollingAMiss))
+                {
+                    _encounterController.Tutorial.ShowTutorialIfNeverSeen(TutorialData._13RollingAMiss);
+                    skip = true;
+                }
+                if (!skip && !_encounterController.Tutorial.TutorialData.HasSeenTutorial(TutorialData._07Accuracy))
+                {
+                    _encounterController.Tutorial.ShowTutorialIfNeverSeen(TutorialData._07Accuracy);
+                    skip = true;
+                }
+                if (!skip && _bonusTotal > 0 && !_encounterController.Tutorial.TutorialData.HasSeenTutorial(TutorialData._10BonusDie))
+                {
+                    _encounterController.Tutorial.ShowTutorialIfNeverSeen(TutorialData._10BonusDie);
+                    skip = true;
+                }
+                if (!skip && _power > 0 && !_encounterController.Tutorial.TutorialData.HasSeenTutorial(TutorialData._12AbilityPoints))
+                {
+                    _encounterController.Tutorial.ShowTutorialIfNeverSeen(TutorialData._12AbilityPoints);
+                }
+            }
         }
 
         private void UpdateLabels()
@@ -239,7 +262,6 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         private void RenderDice(IEnumerable<DieResult> result)
         {
-            int ix = 0;
             foreach (DieResult die in result)
             {
                 _damage += die.Damage;
@@ -347,6 +369,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _attacker.EntityData.RemoveEffectsWhere(RemoveAfterAttacking);
             Hide();
             _isConfirmed = true;
+            _encounterController.Tutorial.ShowTutorialIfNeverSeen(TutorialData._14EndTurn);
         }
 
         private bool RemoveAfterAttacking(EffectData effectData) => effectData.RemoveAfterAttacking;

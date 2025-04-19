@@ -26,3 +26,8 @@ MonoBehaviour:
   <MaxX>k__BackingField: 22
   <MinY>k__BackingField: 12
   <MaxY>k__BackingField: 22
+  <OnEncounterBegin>k__BackingField: []
+  <OnEncounterEnd>k__BackingField: []
+  <OnExitCombat>k__BackingField:
+  - {fileID: 11400000, guid: b381925278df0ea4e9f1e0452e805b42, type: 2}
+  IsComplete: 0
