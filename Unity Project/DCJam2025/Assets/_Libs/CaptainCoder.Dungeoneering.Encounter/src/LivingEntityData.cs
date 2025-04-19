@@ -54,6 +54,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [SerializeField] private string _shortName;
         public string ShortName => _shortName;
 
+        public int Gold { get; internal set; } = 50;
+
         public event System.Action<LivingEntityChangeEvent> OnChanged;
         protected void Notify(LivingEntityChangeEvent @event) => OnChanged?.Invoke(@event);
         public void ClearListeners()

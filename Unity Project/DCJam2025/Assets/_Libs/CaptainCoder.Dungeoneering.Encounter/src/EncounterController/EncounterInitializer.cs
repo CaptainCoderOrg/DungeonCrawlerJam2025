@@ -1,3 +1,4 @@
+using CaptainCoder.Dungeoneering.Unity;
 using CaptainCoder.Unity.Assertions;
 
 using UnityEngine;
@@ -5,6 +6,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 {
     public class EncounterInitializer : MonoBehaviour
     {
+        [AssertIsSet][SerializeField] PartyData _partyData;
         private EncounterController _controller;
         private EncounterController Controller => _controller = (_controller == null ? GetComponentInParent<EncounterController>() : _controller);
         private EncounterState State => Controller.State;
@@ -69,6 +71,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 State.Figures.Remove(controller.Figure.Position);
                 Destroy(controller.gameObject);
                 Controller.CheckForEndOfCombat();
+                _partyData.Gold += controller.Figure.EntityData.Gold;
             }
         }
     }

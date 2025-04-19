@@ -12,6 +12,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         {
             foreach (HeroEntityData hero in _partyData.Heroes)
             {
+                _partyData.Gold = 0;
                 hero.ResetToNewCharacter();
             }
         }
