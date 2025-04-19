@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c12bd66080aac434f95af5246eebb5bc, type: 3}
+  m_Name: Encounter G
+  m_EditorClassIdentifier: 
+  <EnemyFigures>k__BackingField:
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 687ef77fdec2883479e88cf49a0e179a, type: 2}
+    Position: {x: 7, y: 15}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 571630125471d1b4798a79883f169c3d, type: 2}
+    Position: {x: 12, y: 12}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 571630125471d1b4798a79883f169c3d, type: 2}
+    Position: {x: 12, y: 14}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: e351e350923eede489957c8906074dc6, type: 2}
+    Position: {x: 9, y: 13}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: a6eb6134c5a75d64c9eb586d4aae41a6, type: 2}
+    Position: {x: 9, y: 11}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 6a14b93fcb731604ab99396523fbb7b4, type: 2}
+    Position: {x: 10, y: 15}
+  <HeroFigures>k__BackingField:
+  - HeroEntity: {fileID: 11400000, guid: 6f7a6aa7d15bdcb4683d52c349f6a90c, type: 2}
+    Position: {x: 13, y: 13}
+  - HeroEntity: {fileID: 11400000, guid: 639c39d7073c6ec42a83ee9d248b2611, type: 2}
+    Position: {x: 13, y: 14}
+  - HeroEntity: {fileID: 11400000, guid: c8554de155ee39547b21e84b2f7ca8e4, type: 2}
+    Position: {x: 13, y: 12}
+  <DungeonCrawlerData>k__BackingField: {fileID: 11400000, guid: ab74159b5d6b1da4ea6c200032209da6, type: 2}
+  <DungeonName>k__BackingField: Facility
+  <MinX>k__BackingField: 5
+  <MaxX>k__BackingField: 17
+  <MinY>k__BackingField: 10
+  <MaxY>k__BackingField: 16
+  <OnEncounterBegin>k__BackingField: []
+  <OnEncounterEnd>k__BackingField: []
+  <OnExitCombat>k__BackingField:
+  - {fileID: 11400000, guid: 33ffffb56410e184682f9206b1fe6632, type: 2}
+  IsComplete: 0

@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec99ff395692d1343af448d89a9de525, type: 3}
-  m_Name: DefaultPlayerView
+  m_Script: {fileID: 11500000, guid: bb327262a40bd684296b536370989ef6, type: 3}
+  m_Name: Default Refresh All Heroes
   m_EditorClassIdentifier: 
-  <X>k__BackingField: 0
-  <Y>k__BackingField: 14
-  <Facing>k__BackingField: 1
-  _dungeonName: Facility
+  _partyData: {fileID: 11400000, guid: be4388fd74f82d04db639fe9b3a524e8, type: 2}

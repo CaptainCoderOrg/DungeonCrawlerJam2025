@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec99ff395692d1343af448d89a9de525, type: 3}
-  m_Name: DefaultPlayerView
+  m_Script: {fileID: 11500000, guid: d12aec5043dd20047bc3d314ea1a0a60, type: 3}
+  m_Name: Encounter C Start
   m_EditorClassIdentifier: 
-  <X>k__BackingField: 0
-  <Y>k__BackingField: 14
-  <Facing>k__BackingField: 1
-  _dungeonName: Facility
+  <Encounter>k__BackingField: {fileID: 11400000, guid: 500f404512501134ba2257cc4dc0e442, type: 2}

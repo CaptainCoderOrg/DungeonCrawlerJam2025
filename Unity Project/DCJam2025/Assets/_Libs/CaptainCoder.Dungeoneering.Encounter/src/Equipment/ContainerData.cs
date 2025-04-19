@@ -1,3 +1,5 @@
+using NaughtyAttributes;
+
 using UnityEngine;
 
 namespace CaptainCoder.Dungeoneering.Encounter
@@ -8,6 +10,15 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [field: SerializeField] public string Name { get; private set; }
         [field: SerializeField] public EquipmentData[] EquipmentData { get; private set; } = new EquipmentData[16];
         public ContainerSlotReference[] EquipmentSlots { get; private set; }
+
+        [Button]
+        public void Clear()
+        {
+            for (int ix = 0; ix < EquipmentData.Length; ix++)
+            {
+                EquipmentData[ix] = null;
+            }
+        }
 
         public override void OnAfterEnterPlayMode()
         {

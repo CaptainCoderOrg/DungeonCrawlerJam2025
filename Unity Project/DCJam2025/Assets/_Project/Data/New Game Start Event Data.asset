@@ -15,7 +15,10 @@ MonoBehaviour:
   <Name>k__BackingField: 
   <Conditions>k__BackingField: []
   <Actions>k__BackingField:
+  - {fileID: 11400000, guid: f6e3b4dc82ca46c41ae577ed1c1a8210, type: 2}
+  - {fileID: 11400000, guid: 28053dfe48ebb394d915bbf736771b6a, type: 2}
   - {fileID: 11400000, guid: ad3128d00b848d642ac9ab9dd14075f0, type: 2}
   - {fileID: 11400000, guid: 14c388b55f4c29e49a528c9c37567a87, type: 2}
-  SkipInPlayMode: 1
+  - {fileID: 11400000, guid: 14c388b55f4c29e49a528c9c37567a87, type: 2}
+  SkipInPlayMode: 0
   HasTriggered: 0

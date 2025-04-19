@@ -13,6 +13,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         void OnEnable()
         {
+            if (!_settings.HasInitialized)
+            {
+                _settings.Initialize();
+            }
             _settings.OnUIScalingChanged += HandleUIScalingChanged;
             _canvas.scaleFactor = _settings.UIScaling;
         }
