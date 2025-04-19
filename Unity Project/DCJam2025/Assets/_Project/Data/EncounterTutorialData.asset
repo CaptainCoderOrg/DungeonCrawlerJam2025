@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: EncounterTutorialData
   m_EditorClassIdentifier: 
   _resetOnStart: 1
-  <IsDisabled>k__BackingField: 1
+  <IsDisabled>k__BackingField: 0
   <TutorialsSeen>k__BackingField: []
