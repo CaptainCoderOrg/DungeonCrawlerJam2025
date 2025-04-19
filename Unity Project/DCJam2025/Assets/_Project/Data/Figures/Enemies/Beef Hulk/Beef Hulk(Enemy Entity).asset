@@ -19,7 +19,7 @@ MonoBehaviour:
   <BaseHealth>k__BackingField: 8
   _wounds: 0
   <BaseSpeed>k__BackingField: 4
-  <BaseArmor>k__BackingField: 2
+  <BaseArmor>k__BackingField: 0
   <Effects>k__BackingField: []
   <SpawnAnimation>k__BackingField: {fileID: 11400000, guid: a5cce9b65dee06d4092670265806fe69, type: 2}
   <AttackAnimation>k__BackingField: {fileID: 11400000, guid: a5cce9b65dee06d4092670265806fe69, type: 2}
