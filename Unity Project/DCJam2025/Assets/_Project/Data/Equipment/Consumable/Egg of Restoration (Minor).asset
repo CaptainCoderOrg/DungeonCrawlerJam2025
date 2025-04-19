@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 878d66b6814c79444894c890a58d3b90, type: 3}
-  m_Name: Egg of Healing
+  m_Name: Egg of Restoration (Minor)
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Egg of Minor Healing
-  _description: Restores 3 Health
-  <Albedo>k__BackingField: {r: 0.9716981, g: 0.79294235, b: 0.79294235, a: 255}
+  <Name>k__BackingField: Egg of Minor Restoration
+  _description: Restores 2 stamina and 3 Health
+  <Albedo>k__BackingField: {r: 0.9113639, g: 0.71488965, b: 0.990566, a: 255}
   <Sprite>k__BackingField: {fileID: 21300000, guid: be1ab5ebba691d1478c0762fc47f04f3, type: 3}
   <Value>k__BackingField: 50
   <WornTraitEffects>k__BackingField: []
@@ -23,7 +23,7 @@ MonoBehaviour:
   ConsumedEffects:
   - Health: 3
     BaseHealth: 0
-    Stamina: 0
+    Stamina: 2
     BaseStamina: 0
     BaseSpeed: 0
     BaseArmor: 0
