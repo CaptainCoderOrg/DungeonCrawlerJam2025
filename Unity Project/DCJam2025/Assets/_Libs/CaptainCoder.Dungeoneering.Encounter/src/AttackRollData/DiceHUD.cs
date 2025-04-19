@@ -33,6 +33,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [AssertIsSet][SerializeField] private CanvasGroup _decreaseAccuracyButton;
         [AssertIsSet][SerializeField] private AttackAbilityRenderer[] _attackAbilityRenderers;
         [AssertIsSet][SerializeField] private CanvasGroup _confirmButton;
+        [AssertIsSet][SerializeField] private bool _enableInfiniteReroll;
         public bool IsActive => _toggleablePanel.IsEnabled;
         private bool _isConfirmable = false;
         public bool IsConfirmable
@@ -124,7 +125,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         private void HandleDieClicked(DieController controller)
         {
-            if (_allowReroll && _rerolledDice.Add(controller))
+            if (_enableInfiniteReroll || _allowReroll && _rerolledDice.Add(controller))
             {
                 _diceBoxController.ReRoll(controller);
                 SetRollingLabels();
