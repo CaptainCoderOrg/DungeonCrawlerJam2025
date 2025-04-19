@@ -527,6 +527,7 @@ GameObject:
   - component: {fileID: 46937790}
   - component: {fileID: 46937789}
   - component: {fileID: 46937788}
+  - component: {fileID: 46937793}
   m_Layer: 5
   m_Name: Target Information
   m_TagString: Untagged
@@ -648,6 +649,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &46937793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46937786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbbde44e3a2454458042046116658c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _raycastBlocker: {fileID: 46937788}
+  _tutorial: {fileID: 9210286970584300946}
+  _nextTutorial: 
 --- !u!1001 &53196900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2202,6 +2218,7 @@ GameObject:
   - component: {fileID: 207147380}
   - component: {fileID: 207147379}
   - component: {fileID: 207147378}
+  - component: {fileID: 207147383}
   m_Layer: 5
   m_Name: Attack and Move Panel
   m_TagString: Untagged
@@ -2323,6 +2340,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &207147383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207147376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbbde44e3a2454458042046116658c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _raycastBlocker: {fileID: 207147378}
+  _tutorial: {fileID: 9210286970584300946}
+  _nextTutorial: 
 --- !u!1 &208021841
 GameObject:
   m_ObjectHideFlags: 0
@@ -4441,7 +4473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbbbde44e3a2454458042046116658c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _raycastBlocker: {fileID: 8775599592358816554}
+  _raycastBlocker: {fileID: 415821509}
   _tutorial: {fileID: 9210286970584300946}
   _nextTutorial: 
 --- !u!224 &430222994 stripped
@@ -6042,6 +6074,7 @@ GameObject:
   - component: {fileID: 558485242}
   - component: {fileID: 558485241}
   - component: {fileID: 558485240}
+  - component: {fileID: 558485245}
   m_Layer: 5
   m_Name: End Turn Panel
   m_TagString: Untagged
@@ -6163,6 +6196,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &558485245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558485238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbbde44e3a2454458042046116658c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _raycastBlocker: {fileID: 558485240}
+  _tutorial: {fileID: 9210286970584300946}
+  _nextTutorial: 
 --- !u!1 &564312049 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1202267432343799494, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
@@ -7017,6 +7065,7 @@ GameObject:
   - component: {fileID: 664979165}
   - component: {fileID: 664979164}
   - component: {fileID: 664979163}
+  - component: {fileID: 664979168}
   m_Layer: 5
   m_Name: Select Target
   m_TagString: Untagged
@@ -7138,6 +7187,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &664979168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664979161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbbde44e3a2454458042046116658c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _raycastBlocker: {fileID: 664979163}
+  _tutorial: {fileID: 9210286970584300946}
+  _nextTutorial: 
 --- !u!43 &666056725
 Mesh:
   m_ObjectHideFlags: 0
@@ -9715,7 +9779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbbbde44e3a2454458042046116658c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _raycastBlocker: {fileID: 8775599592358816554}
+  _raycastBlocker: {fileID: 890268776}
   _tutorial: {fileID: 9210286970584300946}
   _nextTutorial: 
 --- !u!224 &891111984 stripped
@@ -10811,7 +10875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbbbde44e3a2454458042046116658c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _raycastBlocker: {fileID: 8775599592358816554}
+  _raycastBlocker: {fileID: 1005305600}
   _tutorial: {fileID: 9210286970584300946}
   _nextTutorial: 
 --- !u!4 &1010182579 stripped
@@ -12978,6 +13042,7 @@ GameObject:
   - component: {fileID: 1265119067}
   - component: {fileID: 1265119066}
   - component: {fileID: 1265119065}
+  - component: {fileID: 1265119070}
   m_Layer: 5
   m_Name: Select Attack Panel
   m_TagString: Untagged
@@ -13099,6 +13164,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1265119070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265119063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbbde44e3a2454458042046116658c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _raycastBlocker: {fileID: 1265119065}
+  _tutorial: {fileID: 9210286970584300946}
+  _nextTutorial: 
 --- !u!1001 &1267911515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15870,7 +15950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbbbde44e3a2454458042046116658c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _raycastBlocker: {fileID: 8775599592358816554}
+  _raycastBlocker: {fileID: 1462809777}
   _tutorial: {fileID: 9210286970584300946}
   _nextTutorial: Exert
 --- !u!1001 &1464747198
@@ -16307,11 +16387,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1686391972919232327, guid: bba3dab81119dea4baabbac9c507f3d8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 542.3333
+      value: 1280
       objectReference: {fileID: 0}
     - target: {fileID: 1686391972919232327, guid: bba3dab81119dea4baabbac9c507f3d8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -289.66666
+      value: -720
       objectReference: {fileID: 0}
     - target: {fileID: 1706916150870628756, guid: bba3dab81119dea4baabbac9c507f3d8, type: 3}
       propertyPath: _hider
@@ -16627,6 +16707,7 @@ GameObject:
   - component: {fileID: 1538007448}
   - component: {fileID: 1538007447}
   - component: {fileID: 1538007446}
+  - component: {fileID: 1538007451}
   m_Layer: 5
   m_Name: Move Adjacent to an Enemy
   m_TagString: Untagged
@@ -16748,6 +16829,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1538007451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538007444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbbde44e3a2454458042046116658c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _raycastBlocker: {fileID: 1538007446}
+  _tutorial: {fileID: 9210286970584300946}
+  _nextTutorial: 
 --- !u!1001 &1540959249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17378,7 +17474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbbbde44e3a2454458042046116658c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _raycastBlocker: {fileID: 8775599592358816554}
+  _raycastBlocker: {fileID: 1595765869}
   _tutorial: {fileID: 9210286970584300946}
   _nextTutorial: 
 --- !u!1001 &1610250606
@@ -22176,7 +22272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbbbde44e3a2454458042046116658c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _raycastBlocker: {fileID: 8775599592358816554}
+  _raycastBlocker: {fileID: 1954893623}
   _tutorial: {fileID: 9210286970584300946}
   _nextTutorial: 
 --- !u!224 &1959239714 stripped
@@ -22783,6 +22879,7 @@ GameObject:
   - component: {fileID: 2050589932}
   - component: {fileID: 2050589931}
   - component: {fileID: 2050589930}
+  - component: {fileID: 2050589935}
   m_Layer: 5
   m_Name: Select Movement Panel
   m_TagString: Untagged
@@ -22904,6 +23001,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &2050589935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050589928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbbde44e3a2454458042046116658c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _raycastBlocker: {fileID: 2050589930}
+  _tutorial: {fileID: 9210286970584300946}
+  _nextTutorial: 
 --- !u!1001 &2066085788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23213,7 +23325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbbbde44e3a2454458042046116658c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _raycastBlocker: {fileID: 8775599592358816554}
+  _raycastBlocker: {fileID: 2070333311}
   _tutorial: {fileID: 9210286970584300946}
   _nextTutorial: Damage
 --- !u!1 &2075500131
@@ -24905,6 +25017,7 @@ GameObject:
   - component: {fileID: 7841884484316918333}
   - component: {fileID: 7841884484316918332}
   - component: {fileID: 7841884484316918331}
+  - component: {fileID: 7841884484316918334}
   m_Layer: 5
   m_Name: Take Turn Panel
   m_TagString: Untagged
@@ -33243,7 +33356,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.3001513, g: 0.44390795, b: 0.6698113, a: 0}
+  m_BackGroundColor: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -35504,7 +35617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3268797906096883850, guid: be003efddfc644e449de6cf44cd98b3e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -859
+      value: -2150
       objectReference: {fileID: 0}
     - target: {fileID: 3268797906096883850, guid: be003efddfc644e449de6cf44cd98b3e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -39694,7 +39807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3268797906096883850, guid: be003efddfc644e449de6cf44cd98b3e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -859
+      value: -2150
       objectReference: {fileID: 0}
     - target: {fileID: 3268797906096883850, guid: be003efddfc644e449de6cf44cd98b3e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -43705,7 +43818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3268797906096883850, guid: be003efddfc644e449de6cf44cd98b3e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -859
+      value: -2150
       objectReference: {fileID: 0}
     - target: {fileID: 3268797906096883850, guid: be003efddfc644e449de6cf44cd98b3e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -46729,7 +46842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3268797906096883850, guid: be003efddfc644e449de6cf44cd98b3e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -859
+      value: -2150
       objectReference: {fileID: 0}
     - target: {fileID: 3268797906096883850, guid: be003efddfc644e449de6cf44cd98b3e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -48539,6 +48652,21 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &7841884484316918334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516448219841582366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbbde44e3a2454458042046116658c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _raycastBlocker: {fileID: 7841884484316918331}
+  _tutorial: {fileID: 9210286970584300946}
+  _nextTutorial: 
 --- !u!1001 &7855319299578738879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49479,11 +49607,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8557376379808010192, guid: b073f46bfb8ad43469787083880b2250, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1577
+      value: 3790
       objectReference: {fileID: 0}
     - target: {fileID: 8557376379808010192, guid: b073f46bfb8ad43469787083880b2250, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -819
+      value: -2110
       objectReference: {fileID: 0}
     - target: {fileID: 8714110825738324849, guid: b073f46bfb8ad43469787083880b2250, type: 3}
       propertyPath: m_AnchorMax.y
