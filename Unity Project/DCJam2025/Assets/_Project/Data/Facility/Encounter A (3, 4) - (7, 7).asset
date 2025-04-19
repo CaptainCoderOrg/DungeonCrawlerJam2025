@@ -10,20 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c12bd66080aac434f95af5246eebb5bc, type: 3}
-  m_Name: Facility Encounter A (3, 4) - (7, 7)
+  m_Name: Encounter A (3, 4) - (7, 7)
   m_EditorClassIdentifier: 
   <EnemyFigures>k__BackingField:
   - EnemyEntityTemplate: {fileID: 11400000, guid: 687ef77fdec2883479e88cf49a0e179a, type: 2}
-    Position: {x: 5, y: 7}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: e351e350923eede489957c8906074dc6, type: 2}
-    Position: {x: 5, y: 5}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: 571630125471d1b4798a79883f169c3d, type: 2}
-    Position: {x: 4, y: 6}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: aea62d4d097289b4a996de86134b1ee5, type: 2}
-    Position: {x: 5, y: 6}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: a6eb6134c5a75d64c9eb586d4aae41a6, type: 2}
-    Position: {x: 7, y: 6}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: 97235c8bc8db0984db08fb270b927d32, type: 2}
+    Position: {x: 4, y: 4}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 687ef77fdec2883479e88cf49a0e179a, type: 2}
+    Position: {x: 3, y: 6}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 6a14b93fcb731604ab99396523fbb7b4, type: 2}
     Position: {x: 6, y: 6}
   <HeroFigures>k__BackingField:
   - HeroEntity: {fileID: 11400000, guid: 6f7a6aa7d15bdcb4683d52c349f6a90c, type: 2}
@@ -40,5 +34,6 @@ MonoBehaviour:
   <MaxY>k__BackingField: 8
   <OnEncounterBegin>k__BackingField: []
   <OnEncounterEnd>k__BackingField: []
-  <OnExitCombat>k__BackingField: []
+  <OnExitCombat>k__BackingField:
+  - {fileID: 11400000, guid: 33ffffb56410e184682f9206b1fe6632, type: 2}
   IsComplete: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encounter Settings Data
   m_EditorClassIdentifier: 
   TargetZoom: 3.25
-  TargetRotation: 1530
+  TargetRotation: 1710
   TargetPitch: 0
   _enemyDelay: 1
   _movementSpeed: 0.25

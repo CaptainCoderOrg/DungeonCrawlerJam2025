@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -221,6 +222,20 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             }
         }
 
+        public void GainItem(EquipmentData _equipment)
+        {
+            AnimateReceivingItem(_equipment);
+            foreach (var slot in _playerInventory.ContainerData.EquipmentSlots)
+            {
+                if (slot.Data == null)
+                {
+                    slot.Data = _equipment;
+                    return;
+                }
+            }
+            Debug.LogWarning("TODO: Implement giving item when inventory is full");
+        }
+
         internal void AnimateReceivingItem(EquipmentData equipment)
         {
             _playerInventory.Open();
@@ -229,6 +244,11 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         public void TestMethod()
         {
             Debug.Log("Test method called");
+        }
+
+        internal void MoveBack()
+        {
+            _playerViewData.MoveBack();
         }
     }
 }

@@ -15,17 +15,17 @@ MonoBehaviour:
   <UnarmedAttack>k__BackingField: {fileID: 11400000, guid: 99f1f7a36f0e0ee479ef5396efa3abfa, type: 2}
   <TraitDatabase>k__BackingField: {fileID: 11400000, guid: 4c0b7d2687886aa4cbcc722656a2a10d, type: 2}
   <Name>k__BackingField: Psychick
-  <Portrait>k__BackingField: {fileID: 21300000, guid: 914efb353245c804c83bcdd2e98cd84f, type: 3}
-  <BaseHealth>k__BackingField: 6
+  <Portrait>k__BackingField: {fileID: 21300000, guid: 99a1f1dc0fb600d4e8bf49b206db94b7, type: 3}
+  <BaseHealth>k__BackingField: 4
   _wounds: 0
-  <BaseSpeed>k__BackingField: 3
-  <BaseArmor>k__BackingField: 3
+  <BaseSpeed>k__BackingField: 6
+  <BaseArmor>k__BackingField: 0
   <Effects>k__BackingField: []
   <SpawnAnimation>k__BackingField: {fileID: 11400000, guid: b4ff2f3d61fd1df4dbc8f53886796c01, type: 2}
   <AttackAnimation>k__BackingField: {fileID: 11400000, guid: b4ff2f3d61fd1df4dbc8f53886796c01, type: 2}
   <IdleAnimation>k__BackingField: {fileID: 11400000, guid: b4ff2f3d61fd1df4dbc8f53886796c01, type: 2}
-  _shortName: Nibbler
+  _shortName: Psychick
   <Abilities>k__BackingField:
-  - {fileID: 11400000, guid: 56a7fe15fbfd50d439ce2cd6da356ecd, type: 2}
+  - {fileID: 11400000, guid: 9f365a48b9244414a89e44a5db5e9b55, type: 2}
   <Attacks>k__BackingField:
-  - {fileID: 11400000, guid: f986d0b5ba10d0942bec878f9df2d807, type: 2}
+  - {fileID: 11400000, guid: cd31a975d02fb2e43a13efb9e6390fde, type: 2}

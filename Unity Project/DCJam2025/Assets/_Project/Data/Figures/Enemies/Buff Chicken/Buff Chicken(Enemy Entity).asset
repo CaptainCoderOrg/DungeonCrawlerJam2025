@@ -28,4 +28,5 @@ MonoBehaviour:
   <Abilities>k__BackingField:
   - {fileID: 11400000, guid: 56a7fe15fbfd50d439ce2cd6da356ecd, type: 2}
   <Attacks>k__BackingField:
-  - {fileID: 11400000, guid: f986d0b5ba10d0942bec878f9df2d807, type: 2}
+  - {fileID: 11400000, guid: 4d9fa3ff8c2a6794a8e902af190a24aa, type: 2}
+  - {fileID: 11400000, guid: c3bc40d40e13e78499703e36ca2eabba, type: 2}

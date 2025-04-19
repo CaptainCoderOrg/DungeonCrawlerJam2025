@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c3d56bb97348c4a8f2e4a7c7a4d5bc, type: 3}
+  m_Name: Facility Random Loot
+  m_EditorClassIdentifier: 
+  MinItems: 1
+  MaxItems: 2
+  PossibleItems:
+  - {fileID: 11400000, guid: f19ae697ad791dc42bc89b3ba6bf0594, type: 2}
+  - {fileID: 11400000, guid: debdbf392a3987e4bb41c62e1a6b1f57, type: 2}
+  - {fileID: 11400000, guid: 21a3804b2ed493d4a9667071b885f2ec, type: 2}
+  - {fileID: 11400000, guid: 6f7f84a0af2fec5428fe37a77a035597, type: 2}
+  - {fileID: 11400000, guid: 070ebd9bebcef8f44bc3801c48e58538, type: 2}
+  - {fileID: 11400000, guid: 8854412d913fcb4499d0c247298de2d3, type: 2}
+  - {fileID: 11400000, guid: b1ba5b8d21d0f2b4b841231a5a67b090, type: 2}
+  - {fileID: 11400000, guid: 4107218502d2da146ba0b00d92717fdc, type: 2}
+  - {fileID: 11400000, guid: 37fb4deed852bbe4bb7461864078727b, type: 2}
+  - {fileID: 11400000, guid: fb49bbf683db59441962c15f4497f0c8, type: 2}
+  - {fileID: 11400000, guid: bf2fb0c2ad0b2e544b1aacc17cf6dc45, type: 2}
+  - {fileID: 11400000, guid: 061830f8bd4d8754eb6207025ffa744c, type: 2}
+  - {fileID: 11400000, guid: 81ba2e047495d0e4f8c9d3ee93e366f8, type: 2}
+  Dialogue:
+    <Message>k__BackingField: 
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  Options:
+  - Text: Leave
+    OnSelected:
+    - {fileID: 11400000, guid: f52c51e28f2e562439c34f104b035010, type: 2}

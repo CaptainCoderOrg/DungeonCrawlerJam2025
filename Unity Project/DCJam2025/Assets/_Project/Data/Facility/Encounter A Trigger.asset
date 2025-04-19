@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02ca10d7fd188e4479218951376a01a2, type: 3}
-  m_Name: Facility Encounter A Trigger (3,4) - (7,7)
+  m_Script: {fileID: 11500000, guid: 4bc364ee3b3de224da35680ca3709f62, type: 3}
+  m_Name: Encounter A Trigger
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Facility Encounter A
+  <Name>k__BackingField: Start Pen Encounter 1
+  <Conditions>k__BackingField: []
   <Actions>k__BackingField:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: c651c4d70f5ea30499053747d0b6fa30, type: 2}
   <DungeonName>k__BackingField: Facility
   <Positions>k__BackingField:
   - {x: 3, y: 4}
@@ -22,4 +23,3 @@ MonoBehaviour:
   - {x: 6, y: 7}
   TopLeft: {x: 0, y: 0}
   BottomRight: {x: 0, y: 0}
-  <Encounter>k__BackingField: {fileID: 11400000, guid: fb467f4b7afc4f3458ca58218933a4ae, type: 2}

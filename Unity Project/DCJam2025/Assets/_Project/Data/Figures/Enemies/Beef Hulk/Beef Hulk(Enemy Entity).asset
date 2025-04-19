@@ -16,16 +16,16 @@ MonoBehaviour:
   <TraitDatabase>k__BackingField: {fileID: 11400000, guid: 4c0b7d2687886aa4cbcc722656a2a10d, type: 2}
   <Name>k__BackingField: Beef Hulk
   <Portrait>k__BackingField: {fileID: 21300000, guid: a9f726adb06dd9f47a0788ec6d160881, type: 3}
-  <BaseHealth>k__BackingField: 6
+  <BaseHealth>k__BackingField: 8
   _wounds: 0
-  <BaseSpeed>k__BackingField: 3
-  <BaseArmor>k__BackingField: 3
+  <BaseSpeed>k__BackingField: 4
+  <BaseArmor>k__BackingField: 2
   <Effects>k__BackingField: []
   <SpawnAnimation>k__BackingField: {fileID: 11400000, guid: a5cce9b65dee06d4092670265806fe69, type: 2}
   <AttackAnimation>k__BackingField: {fileID: 11400000, guid: a5cce9b65dee06d4092670265806fe69, type: 2}
   <IdleAnimation>k__BackingField: {fileID: 11400000, guid: a5cce9b65dee06d4092670265806fe69, type: 2}
-  _shortName: Chicken
+  _shortName: Beef
   <Abilities>k__BackingField:
-  - {fileID: 11400000, guid: 56a7fe15fbfd50d439ce2cd6da356ecd, type: 2}
+  - {fileID: 11400000, guid: 9cf4ac37587f09f43b6d40d6616b7d32, type: 2}
   <Attacks>k__BackingField:
-  - {fileID: 11400000, guid: f986d0b5ba10d0942bec878f9df2d807, type: 2}
+  - {fileID: 11400000, guid: 640c0faa3393bfa4db7b1e132da2a45c, type: 2}

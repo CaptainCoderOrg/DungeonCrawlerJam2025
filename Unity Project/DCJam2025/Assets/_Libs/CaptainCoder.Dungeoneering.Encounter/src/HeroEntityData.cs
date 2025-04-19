@@ -201,6 +201,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             }
             foreach (var effect in Effects)
             {
+                Debug.Log(effect);
                 foreach (var ability in effect.AttackAbilities)
                 {
                     yield return ability;

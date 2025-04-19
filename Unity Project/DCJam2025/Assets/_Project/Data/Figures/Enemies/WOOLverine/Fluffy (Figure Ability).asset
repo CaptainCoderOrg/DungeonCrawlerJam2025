@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec99ff395692d1343af448d89a9de525, type: 3}
-  m_Name: DefaultPlayerView
+  m_Script: {fileID: 11500000, guid: 128256b1659b4c143839769f8247465d, type: 3}
+  m_Name: Fluffy (Figure Ability)
   m_EditorClassIdentifier: 
-  <X>k__BackingField: 0
-  <Y>k__BackingField: 0
-  <Facing>k__BackingField: 3
-  _dungeonName: Facility
+  <Name>k__BackingField: Slow
+  _toolTip: 2<sprite name="armor">

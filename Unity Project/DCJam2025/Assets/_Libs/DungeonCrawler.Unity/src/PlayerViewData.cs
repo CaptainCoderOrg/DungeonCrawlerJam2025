@@ -75,5 +75,10 @@ namespace CaptainCoder.Dungeoneering.Unity
             Facing = _view.Facing;
             OnChange.Invoke(PreviousSpace, _view, this);
         }
+
+        public void MoveBack()
+        {
+            View = PreviousSpace;
+        }
     }
 }

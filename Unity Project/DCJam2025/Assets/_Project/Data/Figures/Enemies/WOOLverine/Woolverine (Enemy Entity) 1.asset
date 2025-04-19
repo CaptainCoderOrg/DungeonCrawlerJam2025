@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4342b9f9d527fe43b211ce0b80138a2, type: 3}
-  m_Name: Eggvoker  (Enemy Entity)
+  m_Name: Woolverine (Enemy Entity) 1
   m_EditorClassIdentifier: 
   <UnarmedAttack>k__BackingField: {fileID: 11400000, guid: 99f1f7a36f0e0ee479ef5396efa3abfa, type: 2}
   <TraitDatabase>k__BackingField: {fileID: 11400000, guid: 4c0b7d2687886aa4cbcc722656a2a10d, type: 2}
-  <Name>k__BackingField: Eggvoker
-  <Portrait>k__BackingField: {fileID: 21300000, guid: 2236443b7953d3543a8d17414456b56c, type: 3}
+  <Name>k__BackingField: WOOLverine
+  <Portrait>k__BackingField: {fileID: 21300000, guid: d339f929d7a7a6e4c9e7e28afdc00f8b, type: 3}
   <BaseHealth>k__BackingField: 4
   _wounds: 0
   <BaseSpeed>k__BackingField: 4
-  <BaseArmor>k__BackingField: 0
+  <BaseArmor>k__BackingField: 2
   <Effects>k__BackingField: []
-  <SpawnAnimation>k__BackingField: {fileID: 11400000, guid: 94d475c029070c0499aecf1d949f239f, type: 2}
-  <AttackAnimation>k__BackingField: {fileID: 11400000, guid: 94d475c029070c0499aecf1d949f239f, type: 2}
-  <IdleAnimation>k__BackingField: {fileID: 11400000, guid: 94d475c029070c0499aecf1d949f239f, type: 2}
-  _shortName: Eggvoker
+  <SpawnAnimation>k__BackingField: {fileID: 11400000, guid: 9027f178f9f3a3b4a9ce5edc5fb16d10, type: 2}
+  <AttackAnimation>k__BackingField: {fileID: 11400000, guid: 9027f178f9f3a3b4a9ce5edc5fb16d10, type: 2}
+  <IdleAnimation>k__BackingField: {fileID: 11400000, guid: 9027f178f9f3a3b4a9ce5edc5fb16d10, type: 2}
+  _shortName: Nibbler
   <Abilities>k__BackingField:
-  - {fileID: 11400000, guid: 56a7fe15fbfd50d439ce2cd6da356ecd, type: 2}
+  - {fileID: 11400000, guid: 47f62904e0a171b4e9c56166329f3c87, type: 2}
   <Attacks>k__BackingField:
-  - {fileID: 11400000, guid: f8302386dcfd79f48b5c776f7631b2d3, type: 2}
+  - {fileID: 11400000, guid: 05f5bf7619100004ea827e17c2ea1d45, type: 2}
