@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2269305742752904634}
   - component: {fileID: 5456032098169794008}
   - component: {fileID: 6563879814752131320}
-  - component: {fileID: 580108270418537061}
   m_Layer: 0
   m_Name: Background (DropZone)
   m_TagString: Untagged
@@ -76,19 +75,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &580108270418537061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 148100042545881441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea5887f6abfb74a4ca567555b7075c7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <SlotRenderer>k__BackingField: {fileID: 0}
 --- !u!1 &257481421318429413
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,7 +618,6 @@ GameObject:
   - component: {fileID: 7366111274677616743}
   - component: {fileID: 2190060224970445476}
   - component: {fileID: 8789002325153420204}
-  - component: {fileID: 5423680219649811922}
   m_Layer: 0
   m_Name: Background (DropZone)
   m_TagString: Untagged
@@ -697,19 +682,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5423680219649811922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3116302192134281873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea5887f6abfb74a4ca567555b7075c7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <SlotRenderer>k__BackingField: {fileID: 0}
 --- !u!1 &3465925855488411769
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,7 +804,6 @@ GameObject:
   - component: {fileID: 8000750145508728239}
   - component: {fileID: 4279939317810363521}
   - component: {fileID: 507535366494669649}
-  - component: {fileID: 2204768060857199608}
   m_Layer: 0
   m_Name: Background (DropZone)
   m_TagString: Untagged
@@ -897,19 +868,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2204768060857199608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3522803611374160374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea5887f6abfb74a4ca567555b7075c7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <SlotRenderer>k__BackingField: {fileID: 0}
 --- !u!1 &3538782196935061234
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,6 +1594,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7816790792172868496}
+  - component: {fileID: 3002249605915428849}
   m_Layer: 0
   m_Name: Buy Egg
   m_TagString: Untagged
@@ -1666,6 +1625,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3002249605915428849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6624461500835949700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b76316f4856c440bce6b6f9a9692ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partyData: {fileID: 11400000, guid: be4388fd74f82d04db639fe9b3a524e8, type: 2}
+  _lootTableData: {fileID: 11400000, guid: e103ee0e04d061a42a888fb8eaf3cb31, type: 2}
+  _crawlerLogicController: {fileID: 0}
+  _cost: 50
 --- !u!1 &6792763714538147355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,7 +1652,6 @@ GameObject:
   - component: {fileID: 7132514867642554663}
   - component: {fileID: 8848764003854062574}
   - component: {fileID: 3636844002709377747}
-  - component: {fileID: 1702483009773337919}
   m_Layer: 0
   m_Name: Background (DropZone)
   m_TagString: Untagged
@@ -1742,19 +1716,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1702483009773337919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6792763714538147355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea5887f6abfb74a4ca567555b7075c7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <SlotRenderer>k__BackingField: {fileID: 0}
 --- !u!1 &7004388687865487659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,6 +1725,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 933870870892493900}
+  - component: {fileID: 2981274373076028620}
   m_Layer: 0
   m_Name: Buy Armor
   m_TagString: Untagged
@@ -1794,6 +1756,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2981274373076028620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7004388687865487659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b76316f4856c440bce6b6f9a9692ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partyData: {fileID: 11400000, guid: be4388fd74f82d04db639fe9b3a524e8, type: 2}
+  _lootTableData: {fileID: 11400000, guid: 2cc361e34074d504685102c01da70e67, type: 2}
+  _crawlerLogicController: {fileID: 0}
+  _cost: 200
 --- !u!1 &7135889890759069085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1803,6 +1781,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3474328891928145658}
+  - component: {fileID: 8010844530907320717}
   m_Layer: 0
   m_Name: Buy Weapon
   m_TagString: Untagged
@@ -1833,6 +1812,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8010844530907320717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7135889890759069085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b76316f4856c440bce6b6f9a9692ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partyData: {fileID: 11400000, guid: be4388fd74f82d04db639fe9b3a524e8, type: 2}
+  _lootTableData: {fileID: 11400000, guid: 0e3eb5e0353c2bb4b9a58d9adeb3bf75, type: 2}
+  _crawlerLogicController: {fileID: 0}
+  _cost: 200
 --- !u!1 &7286951697238297492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1919,7 +1914,7 @@ GameObject:
   - component: {fileID: 4241711330847483378}
   - component: {fileID: 2367304298688095386}
   - component: {fileID: 4659829225257738863}
-  - component: {fileID: 2811747642013457947}
+  - component: {fileID: 1553507675233540189}
   m_Layer: 0
   m_Name: Background (DropZone)
   m_TagString: Untagged
@@ -1984,7 +1979,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2811747642013457947
+--- !u!114 &1553507675233540189
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1993,10 +1988,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7521668221584994623}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea5887f6abfb74a4ca567555b7075c7e, type: 3}
+  m_Script: {fileID: 11500000, guid: d1097f32c5157df4492863f26f85649a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SlotRenderer>k__BackingField: {fileID: 0}
+  _partyData: {fileID: 11400000, guid: be4388fd74f82d04db639fe9b3a524e8, type: 2}
 --- !u!1 &7590187437406227322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,6 +2428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2751370704756075478}
+  - component: {fileID: 6711616300445569596}
   m_Layer: 0
   m_Name: Buy Accessory
   m_TagString: Untagged
@@ -2463,6 +2459,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6711616300445569596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369984574771359333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b76316f4856c440bce6b6f9a9692ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partyData: {fileID: 11400000, guid: be4388fd74f82d04db639fe9b3a524e8, type: 2}
+  _lootTableData: {fileID: 11400000, guid: ee792383fef9fcf499befc081a2b4fc1, type: 2}
+  _crawlerLogicController: {fileID: 0}
+  _cost: 200
 --- !u!1 &8439427649586829562
 GameObject:
   m_ObjectHideFlags: 0
@@ -4625,7 +4637,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1202267432343799494, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_Name
-      value: Encounter Text (Azure Text)
+      value: Gold Text(Azure Text)
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_Pivot.x
@@ -4720,7 +4732,21 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1202267432343799494, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8764312759376657512}
+    - targetCorrespondingSourceObject: {fileID: 1202267432343799494, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6103183629169232726}
   m_SourcePrefab: {fileID: 100100000, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
+--- !u!114 &6400325810022398122 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3203869756132139069, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
+  m_PrefabInstance: {fileID: 8405098958341904535}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7209039403411709521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7209039403411709521 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1202267432343799494, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
@@ -4740,6 +4766,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
+--- !u!114 &6103183629169232726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7209039403411709521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: febcfb5b916340e42ba12166e5655a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partyData: {fileID: 11400000, guid: be4388fd74f82d04db639fe9b3a524e8, type: 2}
+  _goldLabel: {fileID: 6400325810022398122}
 --- !u!224 &7685972731207475097 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}

@@ -23,12 +23,13 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [field: SerializeField] public string Name { get; private set; }
         [TextArea(3, 5)][SerializeField] private string _description;
         public string Description => _description;
-        [field: SerializeField] public Sprite Sprite { get; private set; }
+        [field: ShowAssetPreview][field: SerializeField] public Sprite Sprite { get; private set; }
         [field: SerializeField] public int Value { get; private set; }
         [field: SerializeField] public TraitEffect[] WornTraitEffects { get; private set; }
         [field: Expandable][field: SerializeField] public AttackAbilityData[] AttackAbilities { get; private set; }
         public string TooltipText { get; private set; }
         public string PanelText { get; private set; }
+        [field: SerializeField] public bool IsKeyItem { get; private set; }
 
         public static void CopyTo(EquipmentData from, EquipmentData to)
         {

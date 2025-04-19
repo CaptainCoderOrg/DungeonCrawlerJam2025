@@ -222,14 +222,14 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             }
         }
 
-        public void GainItem(EquipmentData _equipment)
+        public void GainItem(EquipmentData equipment)
         {
-            AnimateReceivingItem(_equipment);
             foreach (var slot in _playerInventory.ContainerData.EquipmentSlots)
             {
                 if (slot.Data == null)
                 {
-                    slot.Data = _equipment;
+                    slot.Data = equipment;
+                    AnimateReceivingItem(equipment);
                     return;
                 }
             }

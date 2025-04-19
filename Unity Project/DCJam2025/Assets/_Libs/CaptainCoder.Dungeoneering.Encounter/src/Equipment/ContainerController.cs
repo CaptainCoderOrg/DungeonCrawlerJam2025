@@ -43,6 +43,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         public void Open()
         {
             _toggleablePanel.IsEnabled = true;
+            RenderData();
         }
 
         public void Toggle()

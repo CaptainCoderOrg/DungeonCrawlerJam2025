@@ -60,6 +60,13 @@ namespace CaptainCoder.Dungeoneering.Encounter
                     if (!dropZone.SlotRenderer.CanDrag) { continue; }
                     dropZone.SlotRenderer.EquipmentSlotReference.TrySwapEquipment(EquipmentSlotReference, out string _);
                 }
+                if (result.gameObject.TryGetComponent<EquipmentScrapDropZone>(out var scrapDropZone))
+                {
+                    if (scrapDropZone.ScrapItem(EquipmentSlotReference.Data))
+                    {
+                        EquipmentSlotReference.Data = null;
+                    }
+                }
             }
         }
 

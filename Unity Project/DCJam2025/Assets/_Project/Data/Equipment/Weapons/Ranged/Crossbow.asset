@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7622b905e598a8740ac682815641fbf9, type: 3}
-  m_Name: Short Sword
+  m_Name: Crossbow
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Shortsword
-  _description: Compact blade ideal for swift, one-handed strikes.
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 12d10e3c2b6822c49a36895617062a5f, type: 3}
-  <Value>k__BackingField: 50
+  <Name>k__BackingField: Light Crossbow
+  _description: Compact design, perfect for swift, one-handed shots.
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 9aa447003dd69b546a5ddb15752a0b14, type: 3}
+  <Value>k__BackingField: 100
   <WornTraitEffects>k__BackingField: []
   <AttackAbilities>k__BackingField:
-  - {fileID: 11400000, guid: 6a8255ad23d378e4abbf6dcf86e881c6, type: 2}
+  - {fileID: 11400000, guid: 7b3a716f2e303624b9b03ab46801a96f, type: 2}
+  <IsKeyItem>k__BackingField: 0
   <IsTwoHanded>k__BackingField: 0
-  <Attack>k__BackingField: {fileID: 11400000, guid: b0944b0bb916afb4cba807ab04fd4bf0, type: 2}
+  <Attack>k__BackingField: {fileID: 11400000, guid: ec8cee82ec5128c419cf50b780bc22ee, type: 2}

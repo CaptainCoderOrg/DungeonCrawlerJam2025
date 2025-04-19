@@ -23,3 +23,5 @@ MonoBehaviour:
   - TraitType: {fileID: 11400000, guid: 1393999b02328a34980db8fccc7464fe, type: 2}
     Value: -2
     Source: Plate Armor
+  <AttackAbilities>k__BackingField: []
+  <IsKeyItem>k__BackingField: 0
