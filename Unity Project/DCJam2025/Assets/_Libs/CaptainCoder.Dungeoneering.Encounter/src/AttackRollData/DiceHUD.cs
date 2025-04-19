@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -401,8 +402,18 @@ namespace CaptainCoder.Dungeoneering.Encounter
             IsConfirmable = true;
         }
 
-
-
+        internal IEnumerator WaitForEnemyRollConfirmed()
+        {
+            _isConfirmed = false;
+            IsConfirmable = true;
+            Show();
+            if (!_encounterController.EncounterSettingsData.AutoConfirmEnemy)
+            {
+                yield return WaitForConfirm();
+            }
+            yield return _encounterController.EncounterSettingsData.EnemyDelay;
+            Confirm();
+        }
     }
 
     public record struct AttackResult(string Message, int Wounds);

@@ -173,8 +173,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _diceHUD.Show();
             yield return StartCoroutine(_diceHUD.Roll());
             // yield return _diceHUD.AutoApplyBonuses(Settings);
-            Debug.Log("Waiting for confirmation");
-            yield return _diceHUD.WaitForConfirm();
+            yield return _diceHUD.WaitForEnemyRollConfirmed();
             Debug.Log("Confirmed");
         }
 

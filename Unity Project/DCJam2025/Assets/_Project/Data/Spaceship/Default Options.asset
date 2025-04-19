@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c854e7b1f61d648bddcc0d0ecbb31b, type: 3}
   m_Name: Default Options
   m_EditorClassIdentifier: 
+  HasBeenOpen: 0
+  HasInitialized: 0
   _uiScaling: 1
+  <EncounterSettings>k__BackingField: {fileID: 11400000, guid: d0f3755972dc40245aef2cc864b73ad9, type: 2}

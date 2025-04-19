@@ -1,6 +1,10 @@
 
 using System;
 
+using CaptainCoder.Dungeoneering.Encounter;
+
+using NaughtyAttributes;
+
 using UnityEngine;
 
 namespace CaptainCoder.Dungeoneering.CrawlingMode
@@ -8,8 +12,10 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
     [CreateAssetMenu(menuName = "OptionsSettings")]
     public class OptionsSettings : ObservableSO
     {
+        [field: SerializeField] public bool HasBeenOpen = false;
         [field: SerializeField] public bool HasInitialized = false;
         [field: SerializeField] private float _uiScaling = 1;
+        [field: Expandable][field: SerializeField] public EncounterSettingsData EncounterSettings { get; private set; }
         public float UIScaling
         {
             get => _uiScaling;
@@ -45,6 +51,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             base.OnBeforeEnterPlayMode();
             OnUIScalingChanged = null;
             HasInitialized = false;
+            HasBeenOpen = false;
         }
     }
 }
