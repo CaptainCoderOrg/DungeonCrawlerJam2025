@@ -13,6 +13,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         public void Render(HeroEntityData data)
         {
+            Debug.Log("Rendering Hero Skill Dice");
             RenderDice(_meleeDiceIcons, data.MeleeSkillDice);
             RenderDice(_rangeDiceIcons, data.RangeSkillDice);
             RenderDice(_magicDiceIcons, data.MagicSkillDice);
@@ -25,7 +26,12 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 var controller = icons[ix];
                 if (dice.Count <= ix) { controller.Hide(); }
                 else if (dice[ix] == null) { controller.Hide(); }
-                else { controller.Die = dice[ix]; }
+                else
+                {
+                    controller.Die = dice[ix];
+                    controller.Show();
+
+                }
             }
         }
 

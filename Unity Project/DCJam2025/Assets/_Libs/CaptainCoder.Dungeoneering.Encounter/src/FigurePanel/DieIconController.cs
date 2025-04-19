@@ -28,6 +28,11 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _image.enabled = false;
         }
 
+        internal void Show()
+        {
+            _image.enabled = true;
+        }
+
         void Awake()
         {
             _hoverable.OnHoverStart.AddListener(ShowHover);

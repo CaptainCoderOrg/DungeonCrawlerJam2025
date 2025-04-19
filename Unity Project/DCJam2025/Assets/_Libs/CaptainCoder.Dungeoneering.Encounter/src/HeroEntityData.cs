@@ -8,6 +8,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
     [CreateAssetMenu(menuName = "DC/Hero Entity Data")]
     public sealed class HeroEntityData : LivingEntityData
     {
+        [SerializeField] private HeroEntityData _newCharacterReference;
         [field: SerializeField] public int BaseStamina { get; private set; }
         [SerializeField] private int _exertion;
         public int Exertion
@@ -15,7 +16,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             get => _exertion;
             set
             {
-                _exertion = value;
+                _exertion = Mathf.Clamp(value, 0, MaxStamina);
                 Notify(TraitChangedEvent.Instance);
             }
         }
@@ -103,6 +104,36 @@ namespace CaptainCoder.Dungeoneering.Encounter
             throw new System.Exception($"Could not determin skill dice.");
         }
 
+        public void LevelUp(int health, int speed, int stamina, int armor)
+        {
+            BaseHealth += health;
+            BaseSpeed += speed;
+            BaseStamina += stamina;
+            BaseArmor += armor;
+            Notify(TraitChangedEvent.Instance);
+        }
+
+        public void ResetToNewCharacter()
+        {
+            BaseHealth = _newCharacterReference.BaseHealth;
+            Wounds = 0;
+            BaseSpeed = _newCharacterReference.BaseSpeed;
+            Exertion = 0;
+            BaseStamina = _newCharacterReference.BaseStamina;
+            Effects.Clear();
+            Effects.AddRange(_newCharacterReference.Effects);
+            MeleeSkillDice.Clear();
+            MeleeSkillDice.AddRange(_newCharacterReference.MeleeSkillDice);
+            RangeSkillDice.Clear();
+            RangeSkillDice.AddRange(_newCharacterReference.RangeSkillDice);
+            MagicSkillDice.Clear();
+            MagicSkillDice.AddRange(_newCharacterReference.MagicSkillDice);
+            LeftHandSlot.Data = _newCharacterReference.LeftHandSlot.Data;
+            RightHandSlot.Data = _newCharacterReference.RightHandSlot.Data;
+            WornSlot.Data = _newCharacterReference.WornSlot.Data;
+            AccessorySlot.Data = _newCharacterReference.AccessorySlot.Data;
+        }
+
 
         public override void OnBeforeEnterPlayMode()
         {
@@ -185,7 +216,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
                     yield return ability;
                 }
             }
-            if (_wornArmor != null )
+            if (_wornArmor != null)
             {
                 foreach (var ability in _wornArmor.AttackAbilities)
                 {
@@ -206,6 +237,30 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 {
                     yield return ability;
                 }
+            }
+        }
+
+        internal void AddMeleeDie(DieData die)
+        {
+            if (MeleeSkillDice.Count < 6)
+            {
+                MeleeSkillDice.Add(die);
+            }
+        }
+
+        internal void AddRangedDie(DieData die)
+        {
+            if (RangeSkillDice.Count < 6)
+            {
+                RangeSkillDice.Add(die);
+            }
+        }
+
+        internal void AddMagicDie(DieData die)
+        {
+            if (MagicSkillDice.Count < 6)
+            {
+                MagicSkillDice.Add(die);
             }
         }
     }

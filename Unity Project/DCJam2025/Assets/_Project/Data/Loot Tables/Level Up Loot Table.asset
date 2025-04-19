@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6afb567ba0bc3940b2a7797507145fa, type: 3}
+  m_Name: Level Up Loot Table
+  m_EditorClassIdentifier: 
+  PossibleItems:
+  - {fileID: 11400000, guid: 1275b5a00eaab024bb00e8e0fd52ec54, type: 2}
+  - {fileID: 11400000, guid: 166bb254def235444956d51a0d92ce16, type: 2}
+  - {fileID: 11400000, guid: 4baebd62fc737e540ae5ab388d3c2651, type: 2}
+  - {fileID: 11400000, guid: 1503d14b61d80ad4b9983425d86f34af, type: 2}
+  - {fileID: 11400000, guid: 82bc368c4900b254d98586e22c1a8dee, type: 2}
+  - {fileID: 11400000, guid: 49bf43334d3b1344e9b04ae4abe1cfdb, type: 2}
+  - {fileID: 11400000, guid: 38376eb2b30edb147a27802b381ef925, type: 2}
+  MultipleItems: []

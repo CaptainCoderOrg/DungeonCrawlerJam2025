@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0983a1d16753cfe439faeedb0aaa5c78, type: 3}
-  m_Name: Nyxie Grimgrin (Weasel) (Hero Entity Data)
+  m_Name: Nyxie Grimgrin (Weasel) (Hero Entity Data) (Starter)
   m_EditorClassIdentifier: 
   <UnarmedAttack>k__BackingField: {fileID: 11400000, guid: 99f1f7a36f0e0ee479ef5396efa3abfa, type: 2}
   <TraitDatabase>k__BackingField: {fileID: 11400000, guid: 4c0b7d2687886aa4cbcc722656a2a10d, type: 2}
@@ -27,7 +27,7 @@ MonoBehaviour:
   <AttackAnimation>k__BackingField: {fileID: 11400000, guid: ecc8c7daf5de0b343b17c84d88b48209, type: 2}
   <IdleAnimation>k__BackingField: {fileID: 11400000, guid: ecc8c7daf5de0b343b17c84d88b48209, type: 2}
   _shortName: Nyxie
-  _newCharacterReference: {fileID: 11400000, guid: bf78e1f528afa2e45ac52a845c62cd9a, type: 2}
+  _newCharacterReference: {fileID: 0}
   <BaseStamina>k__BackingField: 4
   _exertion: 0
   _leftHand: {fileID: 11400000, guid: 15cc947609fc41342ad2ddff3155cdfd, type: 2}
@@ -42,6 +42,5 @@ MonoBehaviour:
   <MeleeSkillDice>k__BackingField: []
   <RangeSkillDice>k__BackingField: []
   <MagicSkillDice>k__BackingField:
-  - {fileID: 11400000, guid: 76a51ee6611969e41be91e50d857bc90, type: 2}
   - {fileID: 11400000, guid: 76a51ee6611969e41be91e50d857bc90, type: 2}
   - {fileID: 11400000, guid: 76a51ee6611969e41be91e50d857bc90, type: 2}

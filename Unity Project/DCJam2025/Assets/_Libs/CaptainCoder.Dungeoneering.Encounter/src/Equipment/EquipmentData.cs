@@ -23,6 +23,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [field: SerializeField] public string Name { get; private set; }
         [TextArea(3, 5)][SerializeField] private string _description;
         public string Description => _description;
+        [field: SerializeField] public Color Albedo { get; private set; } = new Color(255, 255, 255, 255);
         [field: ShowAssetPreview][field: SerializeField] public Sprite Sprite { get; private set; }
         [field: SerializeField] public int Value { get; private set; }
         [field: SerializeField] public TraitEffect[] WornTraitEffects { get; private set; }

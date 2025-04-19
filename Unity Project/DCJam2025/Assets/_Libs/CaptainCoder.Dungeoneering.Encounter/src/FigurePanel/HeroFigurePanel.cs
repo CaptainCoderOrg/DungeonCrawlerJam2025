@@ -9,6 +9,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 {
     public class HeroFigurePanel : MonoBehaviour
     {
+        [AssertIsSet][SerializeField] private ConsumableDropZone _consumableDropZone;
         [AssertIsSet][SerializeField] private ToggleablePanel _knockedOutPanel;
         [AssertIsSet][field: SerializeField] public RectTransform TopLeftPivot { get; private set; }
         [SerializeField] private Color _selectedColor;
@@ -38,6 +39,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
                     _figureData.EntityData.OnChanged -= HandleEntityChanged;
                 }
                 if (_figureController == null) { return; }
+                _consumableDropZone.HeroEntityData = (HeroEntityData)_figureController.Figure.EntityData;
                 _figureData = _figureController.Figure;
                 _figureData.OnChanged += HandleFigureChanged;
                 _figureData.EntityData.OnChanged += HandleEntityChanged;
@@ -73,9 +75,19 @@ namespace CaptainCoder.Dungeoneering.Encounter
         private void HandleEntityChanged(LivingEntityChangeEvent @event)
         {
             CheckForDeath();
+            if (@event is TraitChangedEvent)
+            {
+                StartCoroutine(UpdateRenderersAtEndOfFrame());
+            }
         }
 
-        private void HandleFigureChanged(FigureDataChangedEvent _)
+        private IEnumerator UpdateRenderersAtEndOfFrame()
+        {
+            yield return null;
+            UpdateRenderers();
+        }
+
+        private void HandleFigureChanged(FigureDataChangedEvent @event)
         {
             _heroActionButtons.UpdateButtons(_figureData, IsActive);
         }

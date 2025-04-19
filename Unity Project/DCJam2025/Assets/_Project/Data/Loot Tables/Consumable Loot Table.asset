@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6afb567ba0bc3940b2a7797507145fa, type: 3}
   m_Name: Consumable Loot Table
   m_EditorClassIdentifier: 
-  PossibleItems:
-  - {fileID: 11400000, guid: b1ba5b8d21d0f2b4b841231a5a67b090, type: 2}
+  PossibleItems: []
+  MultipleItems:
+  - Item: {fileID: 11400000, guid: f04a65647128a1c449c74c84359170ad, type: 2}
+    Count: 7
+  - Item: {fileID: 11400000, guid: f794d0f3df50d114191ba20d8d339198, type: 2}
+    Count: 7

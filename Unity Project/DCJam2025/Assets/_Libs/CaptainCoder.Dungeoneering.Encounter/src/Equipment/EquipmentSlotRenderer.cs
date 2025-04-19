@@ -67,6 +67,13 @@ namespace CaptainCoder.Dungeoneering.Encounter
                         EquipmentSlotReference.Data = null;
                     }
                 }
+                if (result.gameObject.TryGetComponent<ConsumableDropZone>(out var consumableDropZone))
+                {
+                    if (consumableDropZone.ConsumeItem(EquipmentSlotReference.Data))
+                    {
+                        EquipmentSlotReference.Data = null;
+                    }
+                }
             }
         }
 
@@ -79,6 +86,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             }
             _image.enabled = true;
             _image.sprite = EquipmentSlotReference.Data.Sprite;
+            _image.color = EquipmentSlotReference.Data.Albedo;
             _simpleTooltip.Tooltip = EquipmentSlotReference.Data.TooltipText;
         }
 

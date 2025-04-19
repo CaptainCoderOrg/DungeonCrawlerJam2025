@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 878d66b6814c79444894c890a58d3b90, type: 3}
+  m_Name: Egg of Stamina
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Egg of Stamina
+  _description: Restores all stamina
+  <Albedo>k__BackingField: {r: 0.99411005, g: 1, b: 0.7028302, a: 255}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: be1ab5ebba691d1478c0762fc47f04f3, type: 3}
+  <Value>k__BackingField: 50
+  <WornTraitEffects>k__BackingField: []
+  <AttackAbilities>k__BackingField: []
+  <IsKeyItem>k__BackingField: 0
+  ConsumedEffects:
+  - Health: 0
+    Stamina: 100
+    AddEffect: []
+    MeleeSkill: []
+    MagicSkill: []
+    RangedSkill: []

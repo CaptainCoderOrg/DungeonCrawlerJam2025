@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 878d66b6814c79444894c890a58d3b90, type: 3}
+  m_Name: Egg of Energy
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Egg of Energy
+  _description: +1<sprite name="stamina"> Permanent Upgrade
+  <Albedo>k__BackingField: {r: 1, g: 0.7349904, b: 0.0990566, a: 255}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: be1ab5ebba691d1478c0762fc47f04f3, type: 3}
+  <Value>k__BackingField: 50
+  <WornTraitEffects>k__BackingField: []
+  <AttackAbilities>k__BackingField: []
+  <IsKeyItem>k__BackingField: 0
+  ConsumedEffects:
+  - Health: 0
+    BaseHealth: 0
+    Stamina: 0
+    BaseStamina: 1
+    BaseSpeed: 0
+    BaseArmor: 0
+    AddEffect: []
+    MeleeSkill: []
+    MagicSkill: []
+    RangedSkill: []

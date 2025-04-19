@@ -17,7 +17,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [field: SerializeField] public TraitDatabase TraitDatabase { get; private set; }
         [field: SerializeField] public string Name { get; private set; }
         [field: ShowAssetPreview][field: SerializeField] public Sprite Portrait { get; private set; }
-        [field: SerializeField] public int BaseHealth { get; private set; }
+        [field: SerializeField] public int BaseHealth { get; protected set; }
         public int MaxHealth => BaseHealth + TraitEffects().Where(te => te.TraitType == TraitDatabase.HealthTrait).Sum(te => te.Value);
         [SerializeField] private int _wounds;
         public int Wounds
@@ -43,9 +43,9 @@ namespace CaptainCoder.Dungeoneering.Encounter
             }
         }
         public int Health => MaxHealth - Wounds;
-        [field: SerializeField] public int BaseSpeed { get; private set; }
+        [field: SerializeField] public int BaseSpeed { get; protected set; }
         public int Speed => BaseSpeed + TraitEffects().Where(te => te.TraitType == TraitDatabase.SpeedTrait).Sum(te => te.Value);
-        [field: SerializeField] public int BaseArmor { get; private set; }
+        [field: SerializeField] public int BaseArmor { get; protected set; }
         public int Armor => BaseArmor + TraitEffects().Where(te => te.TraitType == TraitDatabase.ArmorTrait).Sum(te => te.Value);
         [field: SerializeField] public List<EffectData> Effects { get; private set; } = new();
         [field: Expandable][field: SerializeField] public AnimationData SpawnAnimation { get; private set; }

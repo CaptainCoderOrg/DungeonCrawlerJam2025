@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0983a1d16753cfe439faeedb0aaa5c78, type: 3}
-  m_Name: Nyxie Grimgrin (Weasel) (Hero Entity Data)
+  m_Name: Kael Sharpfeather (Hawk) (Starter)
   m_EditorClassIdentifier: 
   <UnarmedAttack>k__BackingField: {fileID: 11400000, guid: 99f1f7a36f0e0ee479ef5396efa3abfa, type: 2}
   <TraitDatabase>k__BackingField: {fileID: 11400000, guid: 4c0b7d2687886aa4cbcc722656a2a10d, type: 2}
-  <Name>k__BackingField: Nyxie Grimgrin
-  <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  <Name>k__BackingField: Kael Sharpfeather
+  <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
   <BaseHealth>k__BackingField: 8
   _wounds: 0
   <BaseSpeed>k__BackingField: 4
   <BaseArmor>k__BackingField: 0
   <Effects>k__BackingField:
-  - {fileID: 11400000, guid: 359736f1273d2eb40a02b1a243906e17, type: 2}
-  - {fileID: 11400000, guid: f27e10be29f66784f81be13dba35346e, type: 2}
-  <SpawnAnimation>k__BackingField: {fileID: 11400000, guid: ecc8c7daf5de0b343b17c84d88b48209, type: 2}
-  <AttackAnimation>k__BackingField: {fileID: 11400000, guid: ecc8c7daf5de0b343b17c84d88b48209, type: 2}
-  <IdleAnimation>k__BackingField: {fileID: 11400000, guid: ecc8c7daf5de0b343b17c84d88b48209, type: 2}
-  _shortName: Nyxie
-  _newCharacterReference: {fileID: 11400000, guid: bf78e1f528afa2e45ac52a845c62cd9a, type: 2}
+  - {fileID: 11400000, guid: 2c4e807652d5ac74cb653276b92565a2, type: 2}
+  - {fileID: 11400000, guid: 29c5fdb2df13e1c45aed2ce424da38ae, type: 2}
+  <SpawnAnimation>k__BackingField: {fileID: 11400000, guid: 2789c133167d06d4cbae9f9ef87391c1, type: 2}
+  <AttackAnimation>k__BackingField: {fileID: 11400000, guid: 2789c133167d06d4cbae9f9ef87391c1, type: 2}
+  <IdleAnimation>k__BackingField: {fileID: 11400000, guid: 2789c133167d06d4cbae9f9ef87391c1, type: 2}
+  _shortName: Kael
+  _newCharacterReference: {fileID: 0}
   <BaseStamina>k__BackingField: 4
   _exertion: 0
-  _leftHand: {fileID: 11400000, guid: 15cc947609fc41342ad2ddff3155cdfd, type: 2}
+  _leftHand: {fileID: 11400000, guid: 6f7f84a0af2fec5428fe37a77a035597, type: 2}
   _rightHand: {fileID: 0}
   _wornArmor: {fileID: 0}
   _accessory: {fileID: 0}
@@ -40,8 +40,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   <MeleeSkillDice>k__BackingField: []
-  <RangeSkillDice>k__BackingField: []
-  <MagicSkillDice>k__BackingField:
+  <RangeSkillDice>k__BackingField:
   - {fileID: 11400000, guid: 76a51ee6611969e41be91e50d857bc90, type: 2}
   - {fileID: 11400000, guid: 76a51ee6611969e41be91e50d857bc90, type: 2}
-  - {fileID: 11400000, guid: 76a51ee6611969e41be91e50d857bc90, type: 2}
+  <MagicSkillDice>k__BackingField: []

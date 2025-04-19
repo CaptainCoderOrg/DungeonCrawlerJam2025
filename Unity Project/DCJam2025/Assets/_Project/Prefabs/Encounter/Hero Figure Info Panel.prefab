@@ -575,6 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0fadac474e5864d81b962eae31ea35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _consumableDropZone: {fileID: 2786928636970848144}
   _knockedOutPanel: {fileID: 9068200385942516576}
   <TopLeftPivot>k__BackingField: {fileID: 4308133655177319180}
   _selectedColor: {r: 1, g: 0.9033382, b: 0.4764151, a: 1}
@@ -982,7 +983,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -44}
+  m_AnchoredPosition: {x: 0, y: -389.55}
   m_SizeDelta: {x: 314, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &5217425235894957922
@@ -1323,8 +1324,9 @@ GameObject:
   - component: {fileID: 3346747748044885842}
   - component: {fileID: 5172004979976276296}
   - component: {fileID: 5084414278145230596}
+  - component: {fileID: 2786928636970848144}
   m_Layer: 0
-  m_Name: Panel Background
+  m_Name: Panel Background (Drop Zone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1408,6 +1410,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2786928636970848144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2509785211236706565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ca0875b42bf9d4a9aae6c6e23de1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partyData: {fileID: 11400000, guid: be4388fd74f82d04db639fe9b3a524e8, type: 2}
+  <HeroEntityData>k__BackingField: {fileID: 0}
 --- !u!1 &2685973089917100322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2441,7 +2457,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 157, y: -144.775}
+  m_AnchoredPosition: {x: 157, y: -194.775}
   m_SizeDelta: {x: 290, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &624556168475263091
