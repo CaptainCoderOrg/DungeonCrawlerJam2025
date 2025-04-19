@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7622b905e598a8740ac682815641fbf9, type: 3}
-  m_Name: Wand of Misslies
+  m_Name: Mage's Staff
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Wand of Missiles
-  _description: A slim wand crackling with arcane energy
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 9fd81cf0eccd0534fa1b5252f1cbfdf4, type: 3}
+  <Name>k__BackingField: Mage Staff
+  _description: Radiates with magical energy
+  <Sprite>k__BackingField: {fileID: 21300000, guid: ff1cad2413f411f49b425ffc748ea7e1, type: 3}
   <Value>k__BackingField: 100
   <WornTraitEffects>k__BackingField: []
   <AttackAbilities>k__BackingField:
   - {fileID: 11400000, guid: 3709b06b53db0ae4d8671540589c2686, type: 2}
   <IsKeyItem>k__BackingField: 0
-  <IsTwoHanded>k__BackingField: 0
-  <Attack>k__BackingField: {fileID: 11400000, guid: 6348fda812f03e3488e520e6ab8d09f1, type: 2}
+  <IsTwoHanded>k__BackingField: 1
+  <Attack>k__BackingField: {fileID: 11400000, guid: 16741e5ae899ada41b6ee308a756a4a6, type: 2}

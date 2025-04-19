@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7622b905e598a8740ac682815641fbf9, type: 3}
-  m_Name: Staff2
+  m_Name: Staff of Ice
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Shortsword
-  _description: Compact blade ideal for swift, one-handed strikes.
+  <Name>k__BackingField: Staff of Ice
+  _description: It is cold to the touch
   <Sprite>k__BackingField: {fileID: 21300000, guid: 8347aac6b869a374ea6c92d6968c5f46, type: 3}
   <Value>k__BackingField: 100
   <WornTraitEffects>k__BackingField: []
@@ -21,4 +21,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6a8255ad23d378e4abbf6dcf86e881c6, type: 2}
   <IsKeyItem>k__BackingField: 0
   <IsTwoHanded>k__BackingField: 0
-  <Attack>k__BackingField: {fileID: 11400000, guid: b0944b0bb916afb4cba807ab04fd4bf0, type: 2}
+  <Attack>k__BackingField: {fileID: 11400000, guid: 566c803388b4a7d429a2084445b7c33a, type: 2}

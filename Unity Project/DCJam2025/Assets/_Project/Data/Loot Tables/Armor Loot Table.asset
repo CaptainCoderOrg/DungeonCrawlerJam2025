@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: Armor Loot Table
   m_EditorClassIdentifier: 
   PossibleItems:
-  - {fileID: 11400000, guid: 21a3804b2ed493d4a9667071b885f2ec, type: 2}
-  - {fileID: 11400000, guid: 070ebd9bebcef8f44bc3801c48e58538, type: 2}
-  - {fileID: 11400000, guid: 593fce6b49fecfa43bd8d7547ba4b0b3, type: 2}
+  - {fileID: 11400000, guid: 227a0478c51fc1f488f27f52cccd23d9, type: 2}
+  - {fileID: 11400000, guid: 4b0c551fec93d9e4186f424d4c21e8f5, type: 2}
+  - {fileID: 11400000, guid: cee4ddd3fdd737845b05ab9deaf5ae24, type: 2}
+  - {fileID: 11400000, guid: 4071c40691e707748af57a825d9b8332, type: 2}
+  - {fileID: 11400000, guid: f4ef91042a29f914d8758a45e6767fd9, type: 2}
+  - {fileID: 11400000, guid: 9ccc950a69768af4392d1233c5299912, type: 2}
+  - {fileID: 11400000, guid: f36c61bec32a1cd4e969b164d4f430a9, type: 2}
+  - {fileID: 11400000, guid: 24e3bc643a127714fb72bedc719f94d8, type: 2}
+  - {fileID: 11400000, guid: 541cd69dd2fa8624a94421fc9c40367f, type: 2}

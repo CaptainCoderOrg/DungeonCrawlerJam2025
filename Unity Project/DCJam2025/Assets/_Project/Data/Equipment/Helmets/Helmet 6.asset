@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d92c92494d7b040b6bb46fbf8b784e, type: 3}
+  m_Name: Helmet 6
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Scary Mask
+  _description: Enemies are scared of you allowing you to reroll attack dice against
+    them.
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 243e7bb01257bc34bbb2b4dd7845cab1, type: 3}
+  <Value>k__BackingField: 100
+  <WornTraitEffects>k__BackingField:
+  - TraitType: {fileID: 11400000, guid: 1393999b02328a34980db8fccc7464fe, type: 2}
+    Value: -1
+    Source: Scary Mask
+  <AttackAbilities>k__BackingField:
+  - {fileID: 11400000, guid: 1d61836bfaa43e54aa9ddf4043eb5d0f, type: 2}
+  <IsKeyItem>k__BackingField: 0
