@@ -16,4 +16,6 @@ MonoBehaviour:
   <Name>k__BackingField: Take Aim
   <AttackType>k__BackingField: {fileID: 11400000, guid: 05b21d4d848d2974f86fc1832725802f, type: 2}
   <PowerDice>k__BackingField:
-  - {fileID: 11400000, guid: b03ce4f193623d04283e21d3c8b1db9c, type: 2}
+  - {fileID: 11400000, guid: 6ff66278692d20f4bbab8724307dc9a8, type: 2}
+  - {fileID: 11400000, guid: 76a51ee6611969e41be91e50d857bc90, type: 2}
+  - {fileID: 11400000, guid: 76a51ee6611969e41be91e50d857bc90, type: 2}

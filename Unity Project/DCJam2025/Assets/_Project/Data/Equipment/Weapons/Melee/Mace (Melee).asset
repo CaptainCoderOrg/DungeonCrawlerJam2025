@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7622b905e598a8740ac682815641fbf9, type: 3}
+  m_Name: Mace (Melee)
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Mace
+  _description: A light mace that can crush an enemies skull.
+  <Albedo>k__BackingField: {r: 255, g: 255, b: 255, a: 255}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 775d28cb74f985946ab187261060d079, type: 3}
+  <Value>k__BackingField: 100
+  <WornTraitEffects>k__BackingField: []
+  <AttackAbilities>k__BackingField:
+  - {fileID: 11400000, guid: 4d11861715cba7d498e5090b28e67797, type: 2}
+  <IsKeyItem>k__BackingField: 0
+  <IsTwoHanded>k__BackingField: 1
+  <Attack>k__BackingField: {fileID: 11400000, guid: 74cd6242026b7bc47883e03a119cb0b6, type: 2}

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7622b905e598a8740ac682815641fbf9, type: 3}
+  m_Name: Earth Wand (Magic)
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Earth Wand
+  _description: It smells earhty
+  <Albedo>k__BackingField: {r: 255, g: 255, b: 255, a: 255}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: f35d43fa4ea0e7d49805acd92c13722f, type: 3}
+  <Value>k__BackingField: 100
+  <WornTraitEffects>k__BackingField: []
+  <AttackAbilities>k__BackingField:
+  - {fileID: 11400000, guid: 183c3cf25a0ab5d4db85fae5aa09328e, type: 2}
+  <IsKeyItem>k__BackingField: 0
+  <IsTwoHanded>k__BackingField: 0
+  <Attack>k__BackingField: {fileID: 11400000, guid: 45074731dcc1c034fa494a553f84e44b, type: 2}

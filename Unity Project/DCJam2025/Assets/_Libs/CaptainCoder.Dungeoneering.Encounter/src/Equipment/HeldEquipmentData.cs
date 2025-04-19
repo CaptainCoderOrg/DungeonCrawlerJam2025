@@ -1,3 +1,5 @@
+using NaughtyAttributes;
+
 using UnityEngine;
 
 namespace CaptainCoder.Dungeoneering.Encounter
@@ -6,6 +8,6 @@ namespace CaptainCoder.Dungeoneering.Encounter
     public sealed class HeldEquipmentData : EquipmentData
     {
         [field: SerializeField] public bool IsTwoHanded { get; private set; }
-        [field: SerializeField] public AttackData Attack { get; private set; }
+        [field: Expandable][field: SerializeField] public AttackData Attack { get; private set; }
     }
 }

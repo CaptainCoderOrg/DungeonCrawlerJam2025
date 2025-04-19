@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7622b905e598a8740ac682815641fbf9, type: 3}
+  m_Name: Scepter (Magic)
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Magic Scepter
+  _description: It sparkles!
+  <Albedo>k__BackingField: {r: 255, g: 255, b: 255, a: 255}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 35cfa4f1d635ac744a19ed75d0ab6759, type: 3}
+  <Value>k__BackingField: 100
+  <WornTraitEffects>k__BackingField: []
+  <AttackAbilities>k__BackingField:
+  - {fileID: 11400000, guid: badcf26261f69a14a8f02e13186a1b7d, type: 2}
+  <IsKeyItem>k__BackingField: 0
+  <IsTwoHanded>k__BackingField: 1
+  <Attack>k__BackingField: {fileID: 11400000, guid: 75c4d8505c76aaf4e8afedd7294cda1a, type: 2}

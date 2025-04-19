@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7622b905e598a8740ac682815641fbf9, type: 3}
+  m_Name: Hammer (Melee)
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Hammer
+  _description: Bash 'em, boil 'em, put 'em in a stew.
+  <Albedo>k__BackingField: {r: 255, g: 255, b: 255, a: 255}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 1abe391d843d11d43a5bed8127300b40, type: 3}
+  <Value>k__BackingField: 100
+  <WornTraitEffects>k__BackingField: []
+  <AttackAbilities>k__BackingField:
+  - {fileID: 11400000, guid: 6e44f81e6159e464db8a3d5c62ad097d, type: 2}
+  <IsKeyItem>k__BackingField: 0
+  <IsTwoHanded>k__BackingField: 0
+  <Attack>k__BackingField: {fileID: 11400000, guid: 7ecc19af31b6ac54a8c1f69996218e9c, type: 2}

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7622b905e598a8740ac682815641fbf9, type: 3}
+  m_Name: Chicken Wand (Magic)
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Chicken Wand of DOOM
+  _description: It is terrifying!
+  <Albedo>k__BackingField: {r: 255, g: 255, b: 255, a: 255}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 4febdacd5a402f145bad7a3cf1719d8f, type: 3}
+  <Value>k__BackingField: 100
+  <WornTraitEffects>k__BackingField: []
+  <AttackAbilities>k__BackingField:
+  - {fileID: 11400000, guid: 81fea4648f1a4574788fd3034351e5be, type: 2}
+  <IsKeyItem>k__BackingField: 0
+  <IsTwoHanded>k__BackingField: 0
+  <Attack>k__BackingField: {fileID: 11400000, guid: 74f7f65b00c98d74a89b8a601b8af490, type: 2}

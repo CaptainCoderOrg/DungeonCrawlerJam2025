@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7622b905e598a8740ac682815641fbf9, type: 3}
+  m_Name: Sling (Ranged)
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Sling
+  _description: Used for slaying goliaths!
+  <Albedo>k__BackingField: {r: 255, g: 255, b: 255, a: 255}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: dfe79a0f7abdda14baae21abb339712e, type: 3}
+  <Value>k__BackingField: 100
+  <WornTraitEffects>k__BackingField:
+  - TraitType: {fileID: 11400000, guid: 1393999b02328a34980db8fccc7464fe, type: 2}
+    Value: 2
+    Source: Sling
+  <AttackAbilities>k__BackingField:
+  - {fileID: 11400000, guid: 83a7932745387474797412165b67f3b7, type: 2}
+  <IsKeyItem>k__BackingField: 0
+  <IsTwoHanded>k__BackingField: 0
+  <Attack>k__BackingField: {fileID: 11400000, guid: 79c62e297ddfd18408ece4db5cef7d52, type: 2}
