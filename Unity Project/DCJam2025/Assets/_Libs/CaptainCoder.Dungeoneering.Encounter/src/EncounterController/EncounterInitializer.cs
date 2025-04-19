@@ -25,6 +25,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 EncounterFigureController controller = Instantiate(_enemyFigurePrefab, _enemyFigureParent);
                 controller.Figure = FigureData.CopyEnemyAndCreate(f.EnemyEntityTemplate, f.Position);
                 controller.Figure.EntityData.OnChanged += @event => HandleEntityChanged(controller, @event);
+                controller.name = $"{f.EnemyEntityTemplate.Name}'s Figure";
 
                 State.Figures[f.Position] = controller;
                 controller.OnSelected.AddListener(() => _enemyFigurePanel.Render(controller.Figure));

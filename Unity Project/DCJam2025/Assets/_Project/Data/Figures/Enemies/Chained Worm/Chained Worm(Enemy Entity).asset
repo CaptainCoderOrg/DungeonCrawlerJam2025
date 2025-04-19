@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4342b9f9d527fe43b211ce0b80138a2, type: 3}
+  m_Name: Chained Worm(Enemy Entity)
+  m_EditorClassIdentifier: 
+  <UnarmedAttack>k__BackingField: {fileID: 11400000, guid: 99f1f7a36f0e0ee479ef5396efa3abfa, type: 2}
+  <TraitDatabase>k__BackingField: {fileID: 11400000, guid: 4c0b7d2687886aa4cbcc722656a2a10d, type: 2}
+  <Name>k__BackingField: Nibbler
+  <Portrait>k__BackingField: {fileID: 21300000, guid: 914efb353245c804c83bcdd2e98cd84f, type: 3}
+  <BaseHealth>k__BackingField: 6
+  _wounds: 0
+  <BaseSpeed>k__BackingField: 3
+  <BaseArmor>k__BackingField: 3
+  <Effects>k__BackingField: []
+  <SpawnAnimation>k__BackingField: {fileID: 11400000, guid: cf4347112c644204793aa0afd4220ca6, type: 2}
+  <AttackAnimation>k__BackingField: {fileID: 11400000, guid: cf4347112c644204793aa0afd4220ca6, type: 2}
+  <IdleAnimation>k__BackingField: {fileID: 11400000, guid: cf4347112c644204793aa0afd4220ca6, type: 2}
+  _shortName: Featherweight
+  <Abilities>k__BackingField:
+  - {fileID: 11400000, guid: 56a7fe15fbfd50d439ce2cd6da356ecd, type: 2}
+  <Attacks>k__BackingField:
+  - {fileID: 11400000, guid: f986d0b5ba10d0942bec878f9df2d807, type: 2}

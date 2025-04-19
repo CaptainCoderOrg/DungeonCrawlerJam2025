@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fe86889bd3874343983eadca9c0ea4f, type: 3}
-  m_Name: GOAT (Sprite Sheet)
+  m_Name: Chained Worm(Sprite Sheet)
   m_EditorClassIdentifier: 
-  <SpriteSheet>k__BackingField: {fileID: 2800000, guid: 0c52a05b8d6f99c4c83697db3fa8a2c5, type: 3}
+  <SpriteSheet>k__BackingField: {fileID: 2800000, guid: 914efb353245c804c83bcdd2e98cd84f, type: 3}
   <Rows>k__BackingField: 1
   <Columns>k__BackingField: 1
-  <XRatio>k__BackingField: 1.5
-  <YRatio>k__BackingField: 1
-  <TileOffset>k__BackingField: {x: -0.1, y: 0, z: 0}
+  <XRatio>k__BackingField: 1
+  <YRatio>k__BackingField: 2
+  <TileOffset>k__BackingField: {x: 0, y: 0, z: -1.25}

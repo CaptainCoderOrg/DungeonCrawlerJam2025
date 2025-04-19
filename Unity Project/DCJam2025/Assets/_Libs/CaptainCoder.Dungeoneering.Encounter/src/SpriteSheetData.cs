@@ -12,6 +12,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [field: SerializeField] public float YRatio { get; private set; } = 1;
         public float XScale { get; private set; }
         public float YScale { get; private set; }
+        [field: SerializeField] public Vector3 TileOffset { get; private set; }
 
         public override void OnAfterEnterPlayMode()
         {

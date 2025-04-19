@@ -2,6 +2,8 @@ using System;
 
 using CaptainCoder.Unity.Assertions;
 
+using NaughtyAttributes;
+
 using UnityEngine;
 using UnityEngine.Events;
 namespace CaptainCoder.Dungeoneering.Encounter
@@ -12,6 +14,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [AssertIsSet][SerializeField] private float _flickerSpeed = 0.5f;
         [SerializeField] private bool _isSelected = false;
         [AssertIsSet][SerializeField] private Transform _figureQuad;
+        [AssertIsSet][SerializeField] private Transform _scalePivot;
         [SerializeField] private FigureData _figureData;
         [SerializeField] private bool _isCrawlingMode;
         public FigureData Figure
@@ -46,11 +49,22 @@ namespace CaptainCoder.Dungeoneering.Encounter
             }
         }
 
+        [Button]
+        public void AdjustPivot()
+        {
+            Debug.Log(Camera.main.transform.rotation.eulerAngles);
+            Vector3 result = Camera.main.transform.rotation * _figureData.EntityData.IdleAnimation.SpriteSheet.TileOffset;
+            Debug.Log(result);
+            result.y = 0;
+            _scalePivot.localPosition = result;
+        }
+
         private void Initialize()
         {
             _animator.Play(_figureData.EntityData.SpawnAnimation);
             transform.localPosition = _figureData.LocalPosition;
-            _figureQuad.localScale = new Vector3(_figureData.EntityData.IdleAnimation.SpriteSheet.XRatio, 1, _figureData.EntityData.IdleAnimation.SpriteSheet.YRatio);
+            _scalePivot.localScale = new Vector3(_figureData.EntityData.IdleAnimation.SpriteSheet.XRatio, _figureData.EntityData.IdleAnimation.SpriteSheet.YRatio, _figureData.EntityData.IdleAnimation.SpriteSheet.XRatio);
+            AdjustPivot();
         }
 
         void OnEnable()
@@ -72,6 +86,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             Vector3 position = _figureQuad.localPosition;
             position.y = 0.7f + (eulers.x * .01f);
             _figureQuad.localPosition = position;
+            AdjustPivot();
         }
 
         public void Update()
