@@ -586,8 +586,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6820110608819691542}
   - component: {fileID: 292811291634707550}
+  - component: {fileID: 7938445271957607913}
   m_Layer: 5
-  m_Name: UI Slider
+  m_Name: Master Volume UI Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -659,17 +660,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 4373798036292296816}
   m_HandleRect: {fileID: 2325701353309057371}
   m_Direction: 0
-  m_MinValue: 0.5
-  m_MaxValue: 2
+  m_MinValue: 0
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.7
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8166753435225585600}
-        m_TargetAssemblyTypeName: CaptainCoder.Dungeoneering.Encounter.SettingsMenuController,
-          DungeonCrawler.Encounter
-        m_MethodName: SetUIScaling
+      - m_Target: {fileID: 7938445271957607913}
+        m_TargetAssemblyTypeName: CaptainCoder.Unity.Audio.VolumeSliderController,
+          CaptainCoder.Unity.Audio
+        m_MethodName: SetValue
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -679,6 +680,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7938445271957607913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781575081615395583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b1343eb705e624cb53e47c5db39c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _volumeControl: {fileID: 11400000, guid: 68fa62339fe67204193148c47d869b85, type: 2}
 --- !u!1 &1973887609856615996
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,8 +703,9 @@ GameObject:
   m_Component:
   - component: {fileID: 86773984065411562}
   - component: {fileID: 3562020195818302441}
+  - component: {fileID: 8762384373017523889}
   m_Layer: 5
-  m_Name: Master Volume Slider
+  m_Name: Music Volume Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -762,17 +777,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 6072237555703101585}
   m_HandleRect: {fileID: 8352093104146879547}
   m_Direction: 0
-  m_MinValue: 0.5
-  m_MaxValue: 2
+  m_MinValue: 0
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.7
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8166753435225585600}
-        m_TargetAssemblyTypeName: CaptainCoder.Dungeoneering.Encounter.SettingsMenuController,
-          DungeonCrawler.Encounter
-        m_MethodName: SetUIScaling
+      - m_Target: {fileID: 8762384373017523889}
+        m_TargetAssemblyTypeName: CaptainCoder.Unity.Audio.VolumeSliderController,
+          CaptainCoder.Unity.Audio
+        m_MethodName: SetValue
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -782,6 +797,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8762384373017523889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973887609856615996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b1343eb705e624cb53e47c5db39c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _volumeControl: {fileID: 11400000, guid: 6edf929e429eff148bf0af80a626f04d, type: 2}
 --- !u!1 &2045041834393335551
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,6 +937,12 @@ MonoBehaviour:
   _enemySpeedLabel: {fileID: 9209643658328697711}
   _enemySpeedSlider: {fileID: 25675238981799120}
   _autoConfirmToggle: {fileID: 3661233311382530548}
+  _masterVolumeLabel: {fileID: 4138830605513125768}
+  _masterVolumeSlider: {fileID: 292811291634707550}
+  _musicVolumeLabel: {fileID: 5342798532380862179}
+  _musicVolumeSlide: {fileID: 3562020195818302441}
+  _soundVolumeLabel: {fileID: 369407820753830214}
+  _soundVolumeSlider: {fileID: 2710798214222266191}
 --- !u!114 &315383333334727592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1032,8 +1066,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 12
-    m_Right: 12
+    m_Left: 50
+    m_Right: 50
     m_Top: 16
     m_Bottom: 16
   m_ChildAlignment: 1
@@ -2607,7 +2641,7 @@ GameObject:
   - component: {fileID: 826696043143138226}
   - component: {fileID: 6316179891451714962}
   m_Layer: 5
-  m_Name: Labeled Slider (2)
+  m_Name: SFX Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2671,7 +2705,7 @@ GameObject:
   - component: {fileID: 3359509468378889959}
   - component: {fileID: 5927233798351882548}
   m_Layer: 5
-  m_Name: Labeled Slider (1)
+  m_Name: Music Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3099,8 +3133,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8042032029783765206}
   - component: {fileID: 2710798214222266191}
+  - component: {fileID: 4481459707244080360}
   m_Layer: 5
-  m_Name: Music Volume Slider
+  m_Name: SFX Volume Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3172,17 +3207,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 2525110012840198697}
   m_HandleRect: {fileID: 7590671184747401915}
   m_Direction: 0
-  m_MinValue: 0.5
-  m_MaxValue: 2
+  m_MinValue: 0
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.7
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8166753435225585600}
-        m_TargetAssemblyTypeName: CaptainCoder.Dungeoneering.Encounter.SettingsMenuController,
-          DungeonCrawler.Encounter
-        m_MethodName: SetUIScaling
+      - m_Target: {fileID: 4481459707244080360}
+        m_TargetAssemblyTypeName: CaptainCoder.Unity.Audio.VolumeSliderController,
+          CaptainCoder.Unity.Audio
+        m_MethodName: SetValue
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3192,6 +3227,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4481459707244080360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7696941822304670498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b1343eb705e624cb53e47c5db39c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _volumeControl: {fileID: 11400000, guid: 7186f1c884d258542851db7dde08ede6, type: 2}
 --- !u!1 &7858917653963228409
 GameObject:
   m_ObjectHideFlags: 0
@@ -3826,14 +3874,48 @@ PrefabInstance:
       value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3203869756132139069, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 2701131776
+      objectReference: {fileID: 0}
+    - target: {fileID: 3203869756132139069, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1202267432343799494, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2010161889847540911}
   m_SourcePrefab: {fileID: 100100000, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
+--- !u!1 &1625037224310600849 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1202267432343799494, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
+  m_PrefabInstance: {fileID: 441921636062360151}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2010161889847540911
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625037224310600849}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2a2257bda4b068241a077c1cfc6022b4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!224 &1742016610086040921 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
@@ -3849,7 +3931,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1202267432343799494, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_Name
-      value: UI Scaling Label (Azure)
+      value: Master Volume(Azure)
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_Pivot.x
@@ -3877,7 +3959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 186.34
+      value: 242.93
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_SizeDelta.y
@@ -3913,7 +3995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 188
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3933,7 +4015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203869756132139069, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_text
-      value: 'UI Scaling: 100%'
+      value: 'Master Volume: 100%'
       objectReference: {fileID: 0}
     - target: {fileID: 3203869756132139069, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_fontSize
@@ -3979,6 +4061,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
   m_PrefabInstance: {fileID: 1515032535334145973}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4138830605513125768 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3203869756132139069, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
+  m_PrefabInstance: {fileID: 1515032535334145973}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407916392719829363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2425108162853929309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4053,7 +4146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 188
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4140,7 +4233,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1202267432343799494, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_Name
-      value: UI Scaling Label (Azure)
+      value: SFX Volume Label (Azure)
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_Pivot.x
@@ -4168,7 +4261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 126.58
+      value: 144.15
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_SizeDelta.y
@@ -4204,7 +4297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 188
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4224,7 +4317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203869756132139069, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_text
-      value: 'Music: 100%'
+      value: 'Sounds: 100%'
       objectReference: {fileID: 0}
     - target: {fileID: 3203869756132139069, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_fontSize
@@ -4246,6 +4339,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6494828386408543284}
   m_SourcePrefab: {fileID: 100100000, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
+--- !u!114 &369407820753830214 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3203869756132139069, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
+  m_PrefabInstance: {fileID: 2978577983957574011}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4177448440311621565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3988200696781170293 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
@@ -4344,7 +4448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 204
+      value: 167.525
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4484,7 +4588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 188
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4571,7 +4675,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1202267432343799494, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_Name
-      value: UI Scaling Label (Azure)
+      value: Music Volume Label (Azure)
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_Pivot.x
@@ -4599,7 +4703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 242.93
+      value: 126.58
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_SizeDelta.y
@@ -4635,7 +4739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 188
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2165923018173073166, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4655,7 +4759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203869756132139069, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_text
-      value: 'Master Volume: 100%'
+      value: 'Music: 100%'
       objectReference: {fileID: 0}
     - target: {fileID: 3203869756132139069, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
       propertyPath: m_fontSize
@@ -4677,6 +4781,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2315595617531041275}
   m_SourcePrefab: {fileID: 100100000, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
+--- !u!114 &5342798532380862179 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3203869756132139069, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}
+  m_PrefabInstance: {fileID: 7373237447483033310}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573815445118386200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8573815445118386200 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1202267432343799494, guid: d3717c91129e7da4ab740df6ce584a4d, type: 3}

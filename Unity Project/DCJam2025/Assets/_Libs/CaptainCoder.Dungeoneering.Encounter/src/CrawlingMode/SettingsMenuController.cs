@@ -18,6 +18,12 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [AssertIsSet][SerializeField] private TextMeshProUGUI _enemySpeedLabel;
         [AssertIsSet][SerializeField] private Slider _enemySpeedSlider;
         [AssertIsSet][SerializeField] private Toggle _autoConfirmToggle;
+        [AssertIsSet][SerializeField] private TextMeshProUGUI _masterVolumeLabel;
+        [AssertIsSet][SerializeField] private Slider _masterVolumeSlider;
+        [AssertIsSet][SerializeField] private TextMeshProUGUI _musicVolumeLabel;
+        [AssertIsSet][SerializeField] private Slider _musicVolumeSlide;
+        [AssertIsSet][SerializeField] private TextMeshProUGUI _soundVolumeLabel;
+        [AssertIsSet][SerializeField] private Slider _soundVolumeSlider;
 
         void Start()
         {
@@ -27,11 +33,22 @@ namespace CaptainCoder.Dungeoneering.Encounter
             HandleUIScalingChanged(_settings.UIScaling);
             HandleEnemySpeedChange(_settings.EncounterSettings.EnemySpeedMultiplier);
             HandleConfirmChanged(_settings.EncounterSettings.AutoConfirmEnemy);
+            _musicVolumeSlide.onValueChanged.AddListener((value) => HandleVolumeChange(value, "Music", _musicVolumeLabel));
+            HandleVolumeChange(_musicVolumeSlide.value, "Music", _musicVolumeLabel);
+            _masterVolumeSlider.onValueChanged.AddListener((value) => HandleVolumeChange(value, "Master Volume", _masterVolumeLabel));
+            HandleVolumeChange(_masterVolumeSlider.value, "Master Volume", _masterVolumeLabel);
+            _soundVolumeSlider.onValueChanged.AddListener((value) => HandleVolumeChange(value, "SFX", _soundVolumeLabel));
+            HandleVolumeChange(_soundVolumeSlider.value, "SFX", _soundVolumeLabel);
             if (!_settings.HasBeenOpen)
             {
                 _toggleablePanel.IsEnabled = true;
                 _settings.HasBeenOpen = true;
             }
+        }
+
+        private void HandleVolumeChange(float value, string prefix, TextMeshProUGUI musicVolumeLabel)
+        {
+            musicVolumeLabel.text = $"{prefix}: {(int)(value * 100)}%";
         }
 
         private void HandleConfirmChanged(bool value) => _autoConfirmToggle.isOn = value;
