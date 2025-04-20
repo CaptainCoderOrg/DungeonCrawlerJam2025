@@ -6,7 +6,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
     {
         public override void Execute(CrawlerLogicController logicController)
         {
-            Debug.LogWarning($"TODO: Load Credits scene");
+            logicController.LoadCredits();
         }
     }
 }

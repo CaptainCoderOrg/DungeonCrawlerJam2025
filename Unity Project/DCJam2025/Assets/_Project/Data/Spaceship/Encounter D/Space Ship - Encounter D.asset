@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c12bd66080aac434f95af5246eebb5bc, type: 3}
   m_Name: Space Ship - Encounter D
   m_EditorClassIdentifier: 
-  <EncounterMusicOverride>k__BackingField: 
+  <EncounterMusicOverride>k__BackingField: FinalBoss
   <EnemyFigures>k__BackingField:
   - EnemyEntityTemplate: {fileID: 11400000, guid: 6185ffd055d05834abfc7cf56e717f7c, type: 2}
     Position: {x: 20, y: 16}

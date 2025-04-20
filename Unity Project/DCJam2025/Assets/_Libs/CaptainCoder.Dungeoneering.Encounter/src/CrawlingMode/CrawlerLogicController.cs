@@ -81,7 +81,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
 
         private void SelectTrack()
         {
-            string trackName =  _playerViewData.DungeonName;
+            string trackName = _playerViewData.DungeonName;
             if (_encounterController != null && _encounterController.EncounterData.EncounterMusicOverride != string.Empty)
             {
                 trackName = _encounterController.EncounterData.EncounterMusicOverride;
@@ -266,6 +266,17 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         internal void MoveBack()
         {
             _playerViewData.MoveBack();
+        }
+
+        internal void LoadCredits()
+        {
+            StartCoroutine(StartCreditsRoutine());
+        }
+        public IEnumerator StartCreditsRoutine()
+        {
+            yield return _hider.HideScreenCoroutine();
+            AsyncOperation operation = SceneManager.LoadSceneAsync("Credits");
+            while (!operation.isDone) { yield return null; }
         }
     }
 
