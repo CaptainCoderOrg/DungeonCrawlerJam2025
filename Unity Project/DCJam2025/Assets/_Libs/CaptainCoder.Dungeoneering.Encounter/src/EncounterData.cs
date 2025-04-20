@@ -10,6 +10,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
     [CreateAssetMenu(menuName = "DC/Encounter Data")]
     public class EncounterData : ObservableSO
     {
+        [field: SerializeField] public string EncounterMusicOverride { get; private set; }
         [field: SerializeField] public List<EnemyFigure> EnemyFigures { get; private set; }
         [field: SerializeField] public List<HeroFigure> HeroFigures { get; private set; }
         [field: SerializeField] public DungeonCrawlerData DungeonCrawlerData { get; private set; }

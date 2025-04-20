@@ -22,6 +22,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
 
     public class CrawlerLogicController : MonoBehaviour
     {
+        [SerializeField] private TrackInfo[] _tracks;
         [AssertIsSet][SerializeField] private ContainerController _playerInventory;
         [SerializeField] private PlayerViewController _viewController;
         [SerializeField] private DungeonController _dungeonController;
@@ -46,7 +47,13 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             _viewController = FindFirstObjectByType<PlayerViewController>();
             _encounterController = FindFirstObjectByType<EncounterController>();
             _partyData.ReviveAllHeroes();
-
+            string trackName =  _playerViewData.DungeonName;
+            if (_encounterController != null && _encounterController.EncounterData.EncounterMusicOverride != string.Empty)
+            {
+                trackName = _encounterController.EncounterData.EncounterMusicOverride;
+            }
+            TrackInfo track = _tracks.FirstOrDefault(t => t.MapName == trackName);
+            track.MusicTrackController?.SetActive(true);
 
             if (_gameStartEvent != null && !_gameStartEvent.HasTriggered)
             {
@@ -250,5 +257,14 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         {
             _playerViewData.MoveBack();
         }
+    }
+
+    [Serializable]
+    public struct TrackInfo
+    {
+        public string MapName;
+        public GameObject MusicTrackController;
+        public GameObject Ambience;
+
     }
 }
