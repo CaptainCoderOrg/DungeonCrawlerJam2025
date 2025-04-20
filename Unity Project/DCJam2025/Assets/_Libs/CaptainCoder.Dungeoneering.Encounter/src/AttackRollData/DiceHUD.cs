@@ -26,6 +26,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [AssertIsSet][SerializeField] private TextMeshProUGUI _splitLabel;
         [AssertIsSet][SerializeField] private TextMeshProUGUI _resultLabel;
         [AssertIsSet][SerializeField] private TextMeshProUGUI _attackingLabel;
+        [AssertIsSet][SerializeField] private ToggleablePanel _exertPanel;
+        [AssertIsSet][SerializeField] private ToggleablePanel _dodgePToggle;
         [AssertIsSet][SerializeField] private TextMeshProUGUI _staminaLabel;
         [AssertIsSet][SerializeField] private CanvasGroup _staminaButton;
         [AssertIsSet][SerializeField] private CanvasGroup _increaseAttackButton;
@@ -201,12 +203,22 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             if (_attacker.EntityData is HeroEntityData)
             {
+                _exertPanel.IsEnabled = true;
                 _staminaLabel.text = $"{HeroAttacker.Stamina}";
                 _staminaButton.alpha = CanExert ? 1 : 0.5f;
             }
             else
             {
-                Debug.LogWarning("TODO: Hide stamina element when not a hero");
+                _exertPanel.IsEnabled = false;
+            }
+
+            if (_defenderAbilities.Any(d => d.AllowsReroll))
+            {
+                _dodgePToggle.IsEnabled = true;
+            }
+            else
+            {
+                _dodgePToggle.IsEnabled = false;
             }
 
             for (int ix = 0; ix < _attackAbilityRenderers.Length; ix++)
@@ -407,7 +419,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _isConfirmed = false;
             IsConfirmable = true;
             Show();
-            if (!_encounterController.EncounterSettingsData.AutoConfirmEnemy)
+            bool waitForDodge = !_isMiss && _allowReroll;
+            if (waitForDodge || !_encounterController.EncounterSettingsData.AutoConfirmEnemy)
             {
                 yield return WaitForConfirm();
             }
