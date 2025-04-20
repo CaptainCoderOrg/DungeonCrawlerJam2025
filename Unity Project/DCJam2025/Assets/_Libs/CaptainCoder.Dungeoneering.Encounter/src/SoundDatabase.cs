@@ -30,7 +30,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         public void Play(string key)
         {
             if (Time.timeSinceLevelLoad < 0.25) { return; }
-            if (SFX != null && _clips.TryGetValue(key, out SoundEntry entry))
+            if (key != null && SFX != null && _clips != null && _clips.TryGetValue(key, out SoundEntry entry))
             {
                 SFX.Play(entry.Clips, entry.Volume);
             }

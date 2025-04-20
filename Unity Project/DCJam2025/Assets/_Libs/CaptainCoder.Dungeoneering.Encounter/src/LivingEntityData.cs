@@ -12,6 +12,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
     [CreateAssetMenu(menuName = "DC/Living Entity Data")]
     public class LivingEntityData : ObservableSO
     {
+        [field: SerializeField] public string DeathSFX { get; private set; }
         [field: SerializeField] public AttackData UnarmedAttack { get; private set; }
         public static bool RemoveEffectOnDamage(EffectData data) => data.RemoveIfDamaged;
         [field: SerializeField] public TraitDatabase TraitDatabase { get; private set; }
@@ -67,6 +68,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         protected static void CopyTo(LivingEntityData original, LivingEntityData copy)
         {
+            copy.DeathSFX = original.DeathSFX;
             copy.Name = original.Name;
             copy.Portrait = original.Portrait;
             copy.BaseHealth = original.BaseHealth;
@@ -76,6 +78,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             copy.SpawnAnimation = original.SpawnAnimation;
             copy.AttackAnimation = original.AttackAnimation;
             copy.IdleAnimation = original.IdleAnimation;
+            copy.Gold = original.Gold;
         }
 
         void OnValidate()

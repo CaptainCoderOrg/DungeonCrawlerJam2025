@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4342b9f9d527fe43b211ce0b80138a2, type: 3}
   m_Name: Porky (Enemy Entity)
   m_EditorClassIdentifier: 
+  <DeathSFX>k__BackingField: mutant-death
   <UnarmedAttack>k__BackingField: {fileID: 11400000, guid: 99f1f7a36f0e0ee479ef5396efa3abfa, type: 2}
   <TraitDatabase>k__BackingField: {fileID: 11400000, guid: 4c0b7d2687886aa4cbcc722656a2a10d, type: 2}
   <Name>k__BackingField: Porky
@@ -24,7 +25,7 @@ MonoBehaviour:
   <SpawnAnimation>k__BackingField: {fileID: 11400000, guid: 9027f178f9f3a3b4a9ce5edc5fb16d10, type: 2}
   <AttackAnimation>k__BackingField: {fileID: 11400000, guid: 9027f178f9f3a3b4a9ce5edc5fb16d10, type: 2}
   <IdleAnimation>k__BackingField: {fileID: 11400000, guid: 9027f178f9f3a3b4a9ce5edc5fb16d10, type: 2}
-  _shortName: WOOLverine
+  _shortName: Porky
   <Gold>k__BackingField: 100
   <Abilities>k__BackingField:
   - {fileID: 11400000, guid: 47f62904e0a171b4e9c56166329f3c87, type: 2}

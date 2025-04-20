@@ -182,6 +182,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         public void EndTurn()
         {
             if (_encounterController.AwaitingConfirmation) { return; }
+            _encounterController.SoundDatabase.Play("end-turn");
             if (_figureData.Movement > 0 || _figureData.Attacks > 0)
             {
                 _encounterController.ShowConfirmation($"{_figureData.EntityData.Name} has action points remaining, are you sure you want to end this {_figureData.EntityData.Name}'s turn?", _encounterController.HeroTurnController.EndTurn);

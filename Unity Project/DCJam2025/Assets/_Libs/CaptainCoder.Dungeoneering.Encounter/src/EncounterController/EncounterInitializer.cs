@@ -68,7 +68,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             if (@event is EntityDeathEvent)
             {
-                _partyData.Gold += controller.Figure.EntityData.Gold;
+                int gold = controller.Figure.EntityData.Gold;
+                _partyData.Gold += gold;
+                string sfx = controller.Figure.EntityData.DeathSFX;
+                Controller.SoundDatabase.Play(sfx);
                 State.Figures.Remove(controller.Figure.Position);
                 Destroy(controller.gameObject);
                 Controller.CheckForEndOfCombat();

@@ -55,7 +55,7 @@ MonoBehaviour:
     Volume: 0.5
   - Key: accept
     Clips:
-    - {fileID: 8300000, guid: 4e36de1d6d052e7489042157a79d0355, type: 3}
+    - {fileID: 8300000, guid: dee5ffe4d997771479ba6c9f8f46c777, type: 3}
     Volume: 0.5
   - Key: enemy-phase
     Clips:
@@ -96,4 +96,34 @@ MonoBehaviour:
   - Key: set-dodge
     Clips:
     - {fileID: 8300000, guid: dee5ffe4d997771479ba6c9f8f46c777, type: 3}
+    Volume: 0.25
+  - Key: end-turn
+    Clips:
+    - {fileID: 8300000, guid: dee5ffe4d997771479ba6c9f8f46c777, type: 3}
+    Volume: 0.25
+  - Key: chicken-death
+    Clips:
+    - {fileID: 8300000, guid: 48c5da29973ba914a9cc3d4775cba23e, type: 3}
+    Volume: 0.25
+  - Key: rocko-death
+    Clips:
+    - {fileID: 8300000, guid: 5b770a7e8cd1e5547929a711eb6e50d4, type: 3}
+    Volume: 0.25
+  - Key: mutant-death
+    Clips:
+    - {fileID: 8300000, guid: fd5239315aec7d34fb44bd12bddf7bd4, type: 3}
+    - {fileID: 8300000, guid: c90e369f0fcc4884ea34ba14d877234a, type: 3}
+    - {fileID: 8300000, guid: 46f05d8bb2442d246adc34c8a590bd79, type: 3}
+    Volume: 0.25
+  - Key: goat-death
+    Clips:
+    - {fileID: 8300000, guid: 79e22bcaa9e3fc8449097829607b617a, type: 3}
+    Volume: 0.25
+  - Key: goose-death
+    Clips:
+    - {fileID: 8300000, guid: 79e22bcaa9e3fc8449097829607b617a, type: 3}
+    Volume: 0.25
+  - Key: goose-move
+    Clips:
+    - {fileID: 8300000, guid: fbdd163e231f547408117e0f93fba3ce, type: 3}
     Volume: 0.25

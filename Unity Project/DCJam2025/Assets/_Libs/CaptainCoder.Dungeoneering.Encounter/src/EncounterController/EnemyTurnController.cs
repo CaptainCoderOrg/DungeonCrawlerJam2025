@@ -10,6 +10,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 {
     public class EnemyTurnController : MonoBehaviour
     {
+        [AssertIsSet][SerializeField] private EnemyEntityData _gooseData;
         [AssertIsSet][SerializeField] private GuardWindowController _guardWindowController;
         [AssertIsSet][SerializeField] private DiceHUD _diceHUD;
         private EncounterSettingsData Settings => Controller.EncounterSettingsData;
@@ -31,6 +32,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
                     figure.Figure.Attacks = 1;
                     figure.Figure.Movement = figure.Figure.EntityData.Speed;
                     yield return Settings.EnemyDelay;
+                    if (figure.Figure.EntityData == _gooseData)
+                    {
+                        Controller.SoundDatabase.Play("goose-move");
+                    }
                     yield return StartCoroutine(TryToMoveToHero(figure, enemyData));
                     yield return StartCoroutine(TryAttackHero(figure, enemyData));
                     if (Controller.CheckForDefeat())
