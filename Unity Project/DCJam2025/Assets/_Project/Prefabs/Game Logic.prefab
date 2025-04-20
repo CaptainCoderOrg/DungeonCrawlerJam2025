@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8846945da77a83142a81e4f2c4c062cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <SoundDatabase>k__BackingField: {fileID: 11400000, guid: a88a6a37ba1ad104ab43627151600012, type: 2}
+  _tracks: []
+  _playerInventory: {fileID: 0}
   _viewController: {fileID: 0}
   _dungeonController: {fileID: 0}
   _encounterController: {fileID: 0}
@@ -126,11 +129,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1223209942048732099, guid: 13c8860861bf6e64cbf1393ebc37d5ff, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 532.6667
+      value: 525
       objectReference: {fileID: 0}
     - target: {fileID: 1223209942048732099, guid: 13c8860861bf6e64cbf1393ebc37d5ff, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -289.66666
+      value: -285.33334
       objectReference: {fileID: 0}
     - target: {fileID: 1839656698485438889, guid: 13c8860861bf6e64cbf1393ebc37d5ff, type: 3}
       propertyPath: m_AnchorMax.y

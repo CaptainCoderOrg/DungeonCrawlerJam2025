@@ -1146,6 +1146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b76316f4856c440bce6b6f9a9692ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundDatabase: {fileID: 11400000, guid: a88a6a37ba1ad104ab43627151600012, type: 2}
   _canvasGroup: {fileID: 1601974117337608493}
   _partyData: {fileID: 11400000, guid: be4388fd74f82d04db639fe9b3a524e8, type: 2}
   _lootTableData: {fileID: 11400000, guid: 0edd8704a1cddfe4991de6812fc9cb18, type: 2}
@@ -1897,6 +1898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b76316f4856c440bce6b6f9a9692ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundDatabase: {fileID: 11400000, guid: a88a6a37ba1ad104ab43627151600012, type: 2}
   _canvasGroup: {fileID: 6981491649661165889}
   _partyData: {fileID: 11400000, guid: be4388fd74f82d04db639fe9b3a524e8, type: 2}
   _lootTableData: {fileID: 11400000, guid: e103ee0e04d061a42a888fb8eaf3cb31, type: 2}
@@ -2043,6 +2045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b76316f4856c440bce6b6f9a9692ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundDatabase: {fileID: 11400000, guid: a88a6a37ba1ad104ab43627151600012, type: 2}
   _canvasGroup: {fileID: 2363625491268966412}
   _partyData: {fileID: 11400000, guid: be4388fd74f82d04db639fe9b3a524e8, type: 2}
   _lootTableData: {fileID: 11400000, guid: 2cc361e34074d504685102c01da70e67, type: 2}
@@ -2114,6 +2117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b76316f4856c440bce6b6f9a9692ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundDatabase: {fileID: 11400000, guid: a88a6a37ba1ad104ab43627151600012, type: 2}
   _canvasGroup: {fileID: 2587575434449688827}
   _partyData: {fileID: 11400000, guid: be4388fd74f82d04db639fe9b3a524e8, type: 2}
   _lootTableData: {fileID: 11400000, guid: 0e3eb5e0353c2bb4b9a58d9adeb3bf75, type: 2}
@@ -2295,6 +2299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _partyData: {fileID: 11400000, guid: be4388fd74f82d04db639fe9b3a524e8, type: 2}
+  _soundDatabase: {fileID: 11400000, guid: a88a6a37ba1ad104ab43627151600012, type: 2}
 --- !u!1 &7590187437406227322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2851,6 +2856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b76316f4856c440bce6b6f9a9692ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundDatabase: {fileID: 11400000, guid: a88a6a37ba1ad104ab43627151600012, type: 2}
   _canvasGroup: {fileID: 6082087674905992011}
   _partyData: {fileID: 11400000, guid: be4388fd74f82d04db639fe9b3a524e8, type: 2}
   _lootTableData: {fileID: 11400000, guid: ee792383fef9fcf499befc081a2b4fc1, type: 2}

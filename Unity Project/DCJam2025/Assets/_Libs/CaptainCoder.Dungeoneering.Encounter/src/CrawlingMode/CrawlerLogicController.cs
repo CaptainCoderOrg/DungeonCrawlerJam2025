@@ -22,6 +22,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
 
     public class CrawlerLogicController : MonoBehaviour
     {
+        [AssertIsSet][field: SerializeField] public SoundDatabase SoundDatabase { get; private set; }
         [SerializeField] private TrackInfo[] _tracks;
         [AssertIsSet][SerializeField] private ContainerController _playerInventory;
         [SerializeField] private PlayerViewController _viewController;
@@ -131,7 +132,12 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
 
         private void HandlePlayerViewChanged(PlayerView prev, PlayerView curr, PlayerViewData playerViewData)
         {
+            if (prev.Facing != curr.Facing)
+            {
+                SoundDatabase.Play("turn");
+            }
             if (prev.Position == curr.Position) { return; }
+            SoundDatabase.Play("step");
             // TODO: Optimize looking up events
             foreach (CrawlerEventData @event in _events)
             {

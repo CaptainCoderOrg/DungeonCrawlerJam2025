@@ -11,6 +11,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 {
     public sealed class BuyEquipmentButton : MonoBehaviour, IPointerClickHandler
     {
+        [AssertIsSet][SerializeField] private SoundDatabase _soundDatabase;
         [AssertIsSet][SerializeField] private CanvasGroup _canvasGroup;
         [AssertIsSet][SerializeField] private PartyData _partyData;
         [AssertIsSet][SerializeField] private LootTableData _lootTableData;
@@ -62,6 +63,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             {
                 _partyData.Gold -= _cost;
                 _crawlerLogicController.GainItem(_lootTableData.GetRandomItem());
+                _soundDatabase.Play("buy");
             }
         }
     }
