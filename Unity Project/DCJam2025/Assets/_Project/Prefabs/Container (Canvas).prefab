@@ -980,7 +980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tooltipElement: {fileID: 11400000, guid: 329256dbe6d30274c8a765bde07135d6, type: 2}
-  _tooltip: Buy Random Armor
+  _tooltip: Buy Random Weapon
 --- !u!1 &3744282272492713756
 GameObject:
   m_ObjectHideFlags: 0

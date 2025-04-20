@@ -18,7 +18,7 @@ namespace CaptainCoder.Dungeoneering.Unity
         [AssertIsSet][SerializeField] private CanvasGroup _southDoor;
         [AssertIsSet][SerializeField] private CanvasGroup _westDoor;
         [AssertIsSet][SerializeField] private CanvasGroup _baseTile;
-        [AssertIsSet][SerializeField] private CanvasGroup _noTile;
+        [AssertIsSet][SerializeField] private CanvasGroup _visitedTile;
 
         private CanvasGroup[] _allImages;
 
@@ -29,14 +29,15 @@ namespace CaptainCoder.Dungeoneering.Unity
 
         public void Render(string dungeonName, Tile tile)
         {
-            if (!_playerViewData.VisitedLocations.Contains(new Visited(dungeonName, tile.Position)))
+            if (_playerViewData.VisitedLocations.Contains(new Visited(dungeonName, tile.Position)))
             {
-                HideAll();
-                return;
+                _visitedTile.alpha = 1;
+            }
+            else
+            {
+                _visitedTile.alpha = 0;
             }
 
-            Debug.Log($"Rendering: {tile.Position}");
-            _noTile.alpha = 0;
             _baseTile.alpha = 1;
             if (tile.Walls.North == WallType.Door)
             {
@@ -105,7 +106,7 @@ namespace CaptainCoder.Dungeoneering.Unity
 
         private void HideAll()
         {
-            _noTile.alpha = 1;
+            _visitedTile.alpha = 1;
             _baseTile.alpha = 0;
             foreach (var image in _allImages)
             {

@@ -12,6 +12,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
     [CreateAssetMenu(menuName = "OptionsSettings")]
     public class OptionsSettings : ObservableSO
     {
+        [field: SerializeField] public bool MapOpen { get; set; } = false;
         [field: SerializeField] public bool HasBeenOpen = false;
         [field: SerializeField] public bool HasInitialized = false;
         [field: SerializeField] private float _uiScaling = 1;

@@ -1,7 +1,9 @@
 
 using System;
 
+using CaptainCoder.Dungeoneering.CrawlingMode;
 using CaptainCoder.Dungeoneering.DungeonMap;
+using CaptainCoder.Dungeoneering.Encounter;
 using CaptainCoder.Dungeoneering.Player;
 using CaptainCoder.Dungeoneering.Unity.Data;
 using CaptainCoder.Unity.Assertions;
@@ -13,24 +15,34 @@ namespace CaptainCoder.Dungeoneering.Unity
 
     public class AutoMapper : MonoBehaviour
     {
-        private int _width = 7;
-        private int _height = 7;
-        private int _center = 3;
+        private int _width = 11;
+        private int _height = 11;
+        private int _center = 5;
         [SerializeField] private AutoMapperTile[] _tiles;
         [AssertIsSet][SerializeField] private PlayerViewData _playerViewData;
         [AssertIsSet][SerializeField] private DungeonCrawlerData _dungeonCrawlerData;
         [AssertIsSet][SerializeField] private Image _playerTriangle;
+        [AssertIsSet][SerializeField] private ToggleablePanel _toggleablePanel;
+        [AssertIsSet][SerializeField] private OptionsSettings _optionSettings;
 
 
         void OnEnable()
         {
+            _toggleablePanel.OnChange += HandleChange;
+            _toggleablePanel.IsEnabled = _optionSettings.MapOpen;
             _playerViewData.OnChange.AddListener(HandleChange);
             Render(_playerViewData.View, _playerViewData);
+        }
+
+        private void HandleChange()
+        {
+            _optionSettings.MapOpen = _toggleablePanel.IsEnabled;
         }
 
         void OnDisable()
         {
             _playerViewData.OnChange.RemoveListener(HandleChange);
+            _toggleablePanel.OnChange -= HandleChange;
         }
 
         private void HandleChange(PlayerView _, PlayerView current, PlayerViewData viewData) => Render(current, viewData);

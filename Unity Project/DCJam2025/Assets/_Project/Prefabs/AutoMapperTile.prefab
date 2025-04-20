@@ -648,7 +648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9529412, b: 0.74509805, a: 0.5019608}
+  m_Color: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1178,7 +1178,7 @@ GameObject:
   - component: {fileID: 1077711876717770389}
   - component: {fileID: 3821838029025662893}
   m_Layer: 0
-  m_Name: No Tile
+  m_Name: visited
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   _southDoor: {fileID: 5273311470390892298}
   _westDoor: {fileID: 8491447872948715030}
   _baseTile: {fileID: 2290350112685066441}
-  _noTile: {fileID: 3821838029025662893}
+  _visitedTile: {fileID: 3821838029025662893}
 --- !u!1 &8415455764325439545
 GameObject:
   m_ObjectHideFlags: 0

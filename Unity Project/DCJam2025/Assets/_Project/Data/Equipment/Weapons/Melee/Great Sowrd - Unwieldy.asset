@@ -16,10 +16,10 @@ MonoBehaviour:
   <Name>k__BackingField: Unwieldy
   <Description>k__BackingField: '<u>Unwieldy</u>
 
-    Spend 1<sprite name="power">
-    to add 1<sprite name="melee"> to your attack'
+    Spend 2<sprite name="power">
+    to add 3<sprite name="melee"> to your attack'
   <PowerCost>k__BackingField: 2
-  <DamageBonus>k__BackingField: 1
+  <DamageBonus>k__BackingField: 3
   <AccuracyBonus>k__BackingField: 0
   <AllowsReroll>k__BackingField: 0
   <IsPassive>k__BackingField: 0
