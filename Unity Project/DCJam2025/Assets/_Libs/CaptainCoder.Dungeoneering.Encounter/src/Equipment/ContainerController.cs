@@ -1,6 +1,9 @@
+using System.Collections;
+
 using CaptainCoder.Unity.Assertions;
 
 using UnityEngine;
+using UnityEngine.UI;
 namespace CaptainCoder.Dungeoneering.Encounter
 {
     public class ContainerController : MonoBehaviour
@@ -44,6 +47,13 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             _toggleablePanel.IsEnabled = true;
             RenderData();
+            StartCoroutine(RebuildAtEndOfFrame());
+        }
+
+        private IEnumerator RebuildAtEndOfFrame()
+        {
+            yield return null;
+            LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)_toggleablePanel.transform);
         }
 
         public void Toggle()

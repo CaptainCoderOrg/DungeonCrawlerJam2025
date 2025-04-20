@@ -52,7 +52,6 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [Button]
         public void AdjustPivot()
         {
-            Debug.Log(Camera.main.transform.rotation.eulerAngles);
             Vector3 result = Camera.main.transform.rotation * _figureData.EntityData.IdleAnimation.SpriteSheet.TileOffset;
             Debug.Log(result);
             result.y = 0;

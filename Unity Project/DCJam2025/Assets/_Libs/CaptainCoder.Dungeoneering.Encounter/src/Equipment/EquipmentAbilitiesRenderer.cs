@@ -15,6 +15,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [AssertIsSet][SerializeField] private ToggleablePanel _toggleablePanel;
         public void Render(EquipmentData data)
         {
+            if (data == null) { return; }
             if (data.AttackAbilities.Length == 0) { _toggleablePanel.Hide(); return; }
             Builder.Clear();
             foreach (var ability in data.AttackAbilities)

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128256b1659b4c143839769f8247465d, type: 3}
   m_Name: Racoon(Figure Ability)
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Fast
-  _toolTip: +4<sprite name="speed">
+  <Name>k__BackingField: Turret
+  _toolTip: Cannot move

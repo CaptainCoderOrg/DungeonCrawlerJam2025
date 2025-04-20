@@ -18,7 +18,15 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         {
             if (_itemQueue.Count == 0)
             {
-                IEnumerable<EquipmentData> shuffled = MultipleItems.SelectMany(e => Enumerable.Repeat(e.Item, e.Count)).Concat(PossibleItems).OrderBy(_ => Random.Range(0f, 1f));
+                IEnumerable<EquipmentData> shuffled;
+                if (MultipleItems.Length > 0)
+                {
+                    shuffled = MultipleItems.SelectMany(e => Enumerable.Repeat(e.Item, e.Count)).Concat(PossibleItems).OrderBy(_ => Random.Range(0f, 1f));
+                }
+                else
+                {
+                    shuffled = PossibleItems.OrderBy(_ => Random.Range(0f, 1f));
+                }
                 foreach (var item in shuffled)
                 {
                     _itemQueue.Enqueue(item);

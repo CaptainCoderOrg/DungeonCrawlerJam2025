@@ -33,6 +33,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         [AssertIsSet][SerializeField] private PlayerViewData _playerViewData;
         [AssertIsSet][SerializeField] private DialogueController _dialogueController;
         [AssertIsSet][SerializeField] private PartyData _partyData;
+        public PartyData PartyData => _partyData;
         [Expandable][AssertIsSet][SerializeField] private List<CrawlerEventData> _events;
         [field: SerializeField] public UnityEvent<PlayerView, PlayerView, PlayerViewData> OnMove;
         [SerializeField] private GameStartEventData _gameStartEvent;
@@ -223,6 +224,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         public void TryAgainFromPreviousSpace()
         {
             _hider.Hide();
+            _partyData.Gold += 500;
             _playerViewData.LoadPreviousSpace();
             _partyData.RefreshAllHeroes();
             StartCoroutine(ReloadCrawlerScene());

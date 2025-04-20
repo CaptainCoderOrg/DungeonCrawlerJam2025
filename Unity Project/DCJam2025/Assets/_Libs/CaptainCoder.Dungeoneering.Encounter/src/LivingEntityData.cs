@@ -44,9 +44,9 @@ namespace CaptainCoder.Dungeoneering.Encounter
         }
         public int Health => MaxHealth - Wounds;
         [field: SerializeField] public int BaseSpeed { get; protected set; }
-        public int Speed => BaseSpeed + TraitEffects().Where(te => te.TraitType == TraitDatabase.SpeedTrait).Sum(te => te.Value);
+        public int Speed => Mathf.Min(BaseSpeed + TraitEffects().Where(te => te.TraitType == TraitDatabase.SpeedTrait).Sum(te => te.Value));
         [field: SerializeField] public int BaseArmor { get; protected set; }
-        public int Armor => BaseArmor + TraitEffects().Where(te => te.TraitType == TraitDatabase.ArmorTrait).Sum(te => te.Value);
+        public int Armor => Mathf.Min(8, BaseArmor + TraitEffects().Where(te => te.TraitType == TraitDatabase.ArmorTrait).Sum(te => te.Value));
         [field: SerializeField] public List<EffectData> Effects { get; private set; } = new();
         [field: Expandable][field: SerializeField] public AnimationData SpawnAnimation { get; private set; }
         [field: Expandable][field: SerializeField] public AnimationData AttackAnimation { get; private set; }

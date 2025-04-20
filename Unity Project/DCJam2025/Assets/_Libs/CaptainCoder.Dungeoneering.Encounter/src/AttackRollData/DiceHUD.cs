@@ -419,7 +419,11 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _isConfirmed = false;
             IsConfirmable = true;
             Show();
-            bool waitForDodge = !_isMiss && _allowReroll;
+            int armor = _attackInfo.Target.Figure.EntityData.Armor;
+            int totalDamage = _damage + _damageBonus;
+            int wounds = Mathf.Max(0, totalDamage - armor);
+            bool isMiss = _isMiss || wounds <= 0 || TotalAccuracy < _attackInfo.Distance;
+            bool waitForDodge = !isMiss && _allowReroll;
             if (waitForDodge || !_encounterController.EncounterSettingsData.AutoConfirmEnemy)
             {
                 yield return WaitForConfirm();

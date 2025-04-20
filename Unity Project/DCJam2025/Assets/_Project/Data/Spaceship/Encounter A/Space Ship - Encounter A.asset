@@ -26,10 +26,14 @@ MonoBehaviour:
     Position: {x: 9, y: 8}
   - EnemyEntityTemplate: {fileID: 11400000, guid: 19ea33b25652b3942a3670ff24c30fdc, type: 2}
     Position: {x: 12, y: 11}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: aea62d4d097289b4a996de86134b1ee5, type: 2}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 97235c8bc8db0984db08fb270b927d32, type: 2}
     Position: {x: 15, y: 5}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: aea62d4d097289b4a996de86134b1ee5, type: 2}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 97235c8bc8db0984db08fb270b927d32, type: 2}
     Position: {x: 15, y: 10}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 97235c8bc8db0984db08fb270b927d32, type: 2}
+    Position: {x: 16, y: 4}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 97235c8bc8db0984db08fb270b927d32, type: 2}
+    Position: {x: 13, y: 8}
   <HeroFigures>k__BackingField:
   - HeroEntity: {fileID: 11400000, guid: 6f7a6aa7d15bdcb4683d52c349f6a90c, type: 2}
     Position: {x: 8, y: 5}
@@ -47,4 +51,4 @@ MonoBehaviour:
   <OnEncounterEnd>k__BackingField: []
   <OnExitCombat>k__BackingField:
   - {fileID: 11400000, guid: f58bd9088b6e8694e92d31ce566a0c65, type: 2}
-  IsComplete: 0
+  IsComplete: 1

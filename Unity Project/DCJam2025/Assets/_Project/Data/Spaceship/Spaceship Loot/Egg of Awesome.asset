@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Egg of Awesome
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Egg of Awesome
-  _description: Permanently Increases All Stats by 2
+  _description: Permanently Increases All Stats by 1
   <Albedo>k__BackingField: {r: 0.85689324, g: 0.31626022, b: 0.9716981, a: 255}
   <Sprite>k__BackingField: {fileID: 21300000, guid: be1ab5ebba691d1478c0762fc47f04f3, type: 3}
   <Value>k__BackingField: 50
@@ -22,11 +22,11 @@ MonoBehaviour:
   <IsKeyItem>k__BackingField: 0
   ConsumedEffects:
   - Health: 100
-    BaseHealth: 2
+    BaseHealth: 1
     Stamina: 100
-    BaseStamina: 2
-    BaseSpeed: 2
-    BaseArmor: 2
+    BaseStamina: 1
+    BaseSpeed: 1
+    BaseArmor: 1
     AddEffect: []
     MeleeSkill:
     - {fileID: 11400000, guid: 76a51ee6611969e41be91e50d857bc90, type: 2}

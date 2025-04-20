@@ -14,14 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <EncounterMusicOverride>k__BackingField: 
   <EnemyFigures>k__BackingField:
-  - EnemyEntityTemplate: {fileID: 11400000, guid: 97235c8bc8db0984db08fb270b927d32, type: 2}
-    Position: {x: 11, y: 5}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: 19ea33b25652b3942a3670ff24c30fdc, type: 2}
-    Position: {x: 10, y: 6}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: aea62d4d097289b4a996de86134b1ee5, type: 2}
-    Position: {x: 12, y: 7}
   - EnemyEntityTemplate: {fileID: 11400000, guid: 6185ffd055d05834abfc7cf56e717f7c, type: 2}
-    Position: {x: 14, y: 6}
+    Position: {x: 20, y: 16}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 19ea33b25652b3942a3670ff24c30fdc, type: 2}
+    Position: {x: 20, y: 23}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 19ea33b25652b3942a3670ff24c30fdc, type: 2}
+    Position: {x: 20, y: 5}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 97235c8bc8db0984db08fb270b927d32, type: 2}
+    Position: {x: 17, y: 16}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: aea62d4d097289b4a996de86134b1ee5, type: 2}
+    Position: {x: 19, y: 14}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: aea62d4d097289b4a996de86134b1ee5, type: 2}
+    Position: {x: 21, y: 18}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 97235c8bc8db0984db08fb270b927d32, type: 2}
+    Position: {x: 23, y: 21}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 97235c8bc8db0984db08fb270b927d32, type: 2}
+    Position: {x: 17, y: 21}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 97235c8bc8db0984db08fb270b927d32, type: 2}
+    Position: {x: 18, y: 5}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 97235c8bc8db0984db08fb270b927d32, type: 2}
+    Position: {x: 22, y: 5}
   <HeroFigures>k__BackingField:
   - HeroEntity: {fileID: 11400000, guid: 6f7a6aa7d15bdcb4683d52c349f6a90c, type: 2}
     Position: {x: 19, y: 16}
