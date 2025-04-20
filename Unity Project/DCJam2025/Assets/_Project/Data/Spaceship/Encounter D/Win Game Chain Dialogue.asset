@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f5bebcf346dc843ad6cf2b51871c10, type: 3}
+  m_Name: Win Game Chain Dialogue
+  m_EditorClassIdentifier: 
+  <Entries>k__BackingField:
+  - <Message>k__BackingField: The goose falls to the floor, honking weakly.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 52360a347f37bc54196caa99b573f43f, type: 3}
+  - <Message>k__BackingField: "I-Impossible\u2026! To be\u2026 bested\u2026 by earthlings\u2026
+      But\u2026 I won\u2019t let you\u2026 have my\u2026 eggs\u2026!\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 52360a347f37bc54196caa99b573f43f, type: 3}
+  - <Message>k__BackingField: 'With its last strength, the goose pulls out a remote
+      control.
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 6661408698f84ec45b8aa42f36b29da7, type: 3}
+  - <Message>k__BackingField: SELF-DESTRUCT SEQUENCE INITIATED. EVACUATE IMMEDIATELY.
+      SHIP WILL DETONATE IN 3 MINUTES.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 47b819f40cdbe364da6981351650c680, type: 3}
+  - <Message>k__BackingField: 'We need to move! Come on, Weasel!
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: Weasel is busy shovelling eggs into his sack.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: 'Ugh, just give it up already!
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: 'Hawk scoops down, grabs Wasel and takes off.
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: 'Fox runs after them.
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: The trio runs to the end of the corridor and enters
+      one of the escape pods.
+    <Portrait>k__BackingField: {fileID: 0}
+  - <Message>k__BackingField: 'How do you operate this thing?
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "How the hell should I know!? Let\u2019s just press
+      all of them!!\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: "No! You\u2019ll blow us up! There must be a system
+      here\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "Guys\u2026 uff\u2026 Wait\u2026!\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "Argh!! We don\u2019t have time to look for a system!\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: 'And whose fault do you think that is!?
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "Don\u2019t\u2026 uff\u2026 Don\u2019t leave\u2026
+      without me!\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: 'Whatever, Beakface!! Just do something already!
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: '10 SECONDS UNTIL SELF DESTRUCT.
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 47b819f40cdbe364da6981351650c680, type: 3}
+  - <Message>k__BackingField: "Fox trips on the escape pod\u2019s doorstep and into
+      Weasel, who is launched into the air\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: 'And lands butt-first on the control panel!
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: 'The door closes, and the pod begins to shake!
+
+'
+    <Portrait>k__BackingField: {fileID: 0}
+  - <Message>k__BackingField: Weasel, did you just-
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: The escape pod launches just as the ship explodes!
+    <Portrait>k__BackingField: {fileID: 0}
+  - <Message>k__BackingField: Finally, we can go home.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: Is anyone else hungry? I really could go for some chicken.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  <OnFinished>k__BackingField: {fileID: 11400000, guid: c07cbe169c7671a4197a3e08bd186053, type: 2}

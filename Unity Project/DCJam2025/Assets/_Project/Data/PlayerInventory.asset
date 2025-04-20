@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Under Rock
   <EquipmentData>k__BackingField:
-  - {fileID: 11400000, guid: 87bbe468ca87dfa438fde34e7f6ae78e, type: 2}
-  - {fileID: 11400000, guid: 99aa6cde9fdeba44587d38f1ab9a8569, type: 2}
-  - {fileID: 11400000, guid: 0242815b64a6ef1499ca0a149ea05fc5, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

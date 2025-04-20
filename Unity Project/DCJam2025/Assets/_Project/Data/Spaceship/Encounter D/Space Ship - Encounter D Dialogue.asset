@@ -22,8 +22,7 @@ MonoBehaviour:
   <Options>k__BackingField:
   - Text: Finish This
     OnSelected:
-    - {fileID: 11400000, guid: 51b26ab05c86b1844923ec535d3c2567, type: 2}
-    - {fileID: 11400000, guid: f52c51e28f2e562439c34f104b035010, type: 2}
+    - {fileID: 11400000, guid: c3a90734dab95854bb9ab59624c123f7, type: 2}
   - Text: Leave
     OnSelected:
     - {fileID: 11400000, guid: f52c51e28f2e562439c34f104b035010, type: 2}

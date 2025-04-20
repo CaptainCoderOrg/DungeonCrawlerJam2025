@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f5bebcf346dc843ad6cf2b51871c10, type: 3}
+  m_Name: Goose Chain Dialogue
+  m_EditorClassIdentifier: 
+  <Entries>k__BackingField:
+  - <Message>k__BackingField: The door slides open, revealing a giant stack of golden
+      eggs!
+    <Portrait>k__BackingField: {fileID: 0}
+  - <Message>k__BackingField: "WHOA!! S-so much\u2026 Ahhhh!! Hehehehehehe\u2026"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: 'Weasel does a swan dive into the pile whilst laughing
+      maniacally.
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: "I can\u2019t believe you didn\u2019t make this up.\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: See, this is why I make the decisions in this group!
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: You might want to rethink a few of those.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 52360a347f37bc54196caa99b573f43f, type: 3}
+  - <Message>k__BackingField: The trio swivels around. Infront of them stands a giant
+      goose. Its plump golden body reflects their faces as distorted grimaces.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 6661408698f84ec45b8aa42f36b29da7, type: 3}
+  - <Message>k__BackingField: " Good evening. I see that you have made it past all
+      my Guards. Impressive, I must admit. I will have to revise their training schedule.
+      DND-Fridays may have made them too soft\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 52360a347f37bc54196caa99b573f43f, type: 3}
+  - <Message>k__BackingField: 'Who are you?!
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: The goose honks maliciously.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 6661408698f84ec45b8aa42f36b29da7, type: 3}
+  - <Message>k__BackingField: 'I am Goose Golden: Emperor of Goosetopia, Soon-to-be
+      ruler of Earth, and the one who popped out aaaall of those eggs.'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 52360a347f37bc54196caa99b573f43f, type: 3}
+  - <Message>k__BackingField: Gross!
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: 'Wait, those are real eggs?
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "Yes. Not in their current state, however. See, I have
+      found out that when I swallow the eggs of your puny planet\u2019s chickens,
+      they undergo a transformation within my digestive track. This is how they come
+      out: egg-shaped nuggets of solid gold."
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 52360a347f37bc54196caa99b573f43f, type: 3}
+  - <Message>k__BackingField: "So that\u2019s why you\u2019re hiding out under that
+      barn! You were taking the eggs from those chickens-\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "To turn them into gold, yes. It\u2019s a great way
+      to acquire the funds needed for my\u2026 ventures. But that is only part of
+      it\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 52360a347f37bc54196caa99b573f43f, type: 3}
+  - <Message>k__BackingField: 'Goose Golden waddles over to the pile, picks up one
+      of the eggs and turns it around in its hand.
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 6661408698f84ec45b8aa42f36b29da7, type: 3}
+  - <Message>k__BackingField: " If I were to incubate one of these gold nuggets\u2026
+      Tell me, what do you think would happen?\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 52360a347f37bc54196caa99b573f43f, type: 3}
+  - <Message>k__BackingField: 'Goose Golden is looking expectantly at Fox.
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "Uh\u2026 It would get warm\u2026?\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "Ha! How simple-minded! No, my dear vulpine friend.
+      Would you believe me if I told you that it would\u2026 hatch?\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 52360a347f37bc54196caa99b573f43f, type: 3}
+  - <Message>k__BackingField: Without looking, Goose flicks the egg back at the pile.
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 6661408698f84ec45b8aa42f36b29da7, type: 3}
+  - <Message>k__BackingField: "Surely, you must have noticed that the chickens which
+      you have been fighting were a bit\u2026 physically amplified."
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 52360a347f37bc54196caa99b573f43f, type: 3}
+  - <Message>k__BackingField: "Fox\u2019s eyes widen in horror."
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: 'We just thought they were on steroids!
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "Oh, we do inject them with those, too. Anything to
+      make them more powerful. More capable of achieving my\u2026 goals."
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 52360a347f37bc54196caa99b573f43f, type: 3}
+  - <Message>k__BackingField: "Which would be\u2026?\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "Isn\u2019t it obvious? There are hundreds of facilities
+      just like this all over the world, each housing an entire army of my children
+      just waiting for my signal to strike\u2026 Before the humans even realize what
+      happened, we will have toppled every major government, and the planet will
+      be like putty in my hand!"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 52360a347f37bc54196caa99b573f43f, type: 3}
+  - <Message>k__BackingField: 'I knew it!
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "That\u2019s terrible!!"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "I don\u2019t really care about all that. I\u2019m
+      not letting go of these eggs, though! Nu-uh!!\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: 'Foolish earthlings! Fine! Perish at my beak!
+
+'
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 52360a347f37bc54196caa99b573f43f, type: 3}
+  <OnFinished>k__BackingField: {fileID: 11400000, guid: 51b26ab05c86b1844923ec535d3c2567, type: 2}
