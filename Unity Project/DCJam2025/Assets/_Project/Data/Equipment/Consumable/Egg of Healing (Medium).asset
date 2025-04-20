@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 878d66b6814c79444894c890a58d3b90, type: 3}
   m_Name: Egg of Healing (Medium)
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Egg of Meium Healing
+  <Name>k__BackingField: Egg of Medium Healing
   _description: Restores 6 Health
   <Albedo>k__BackingField: {r: 1, g: 0.5613208, b: 0.5613208, a: 255}
   <Sprite>k__BackingField: {fileID: 21300000, guid: be1ab5ebba691d1478c0762fc47f04f3, type: 3}

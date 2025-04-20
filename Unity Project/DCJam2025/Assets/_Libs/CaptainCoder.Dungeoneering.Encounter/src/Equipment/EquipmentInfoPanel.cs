@@ -94,6 +94,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         public void Hide()
         {
+            _current = null;
             _canvasGroup.alpha = 0;
             _canvasGroup.blocksRaycasts = false;
         }
