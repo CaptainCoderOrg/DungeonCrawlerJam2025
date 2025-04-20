@@ -27,6 +27,14 @@ namespace CaptainCoder.Dungeoneering.DungeonMap.Unity
             }
         }
 
+        public Color Albedo
+        {
+            set
+            {
+                _ceilingMaterial.color = value;
+            }
+        }
+
         private readonly DungeonBuilder _builder = new();
 
         void Awake()

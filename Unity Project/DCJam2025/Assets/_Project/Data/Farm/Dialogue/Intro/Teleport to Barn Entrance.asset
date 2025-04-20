@@ -17,3 +17,5 @@ MonoBehaviour:
   _y: 5
   _facing: 3
   <CeilingTile>k__BackingField: {fileID: 2800000, guid: 595014e7f9f8be843adbc19a78c6eb0d, type: 3}
+  <Albedo>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+  <LightingAlbedo>k__BackingField: {r: 1, g: 1, b: 1, a: 1}

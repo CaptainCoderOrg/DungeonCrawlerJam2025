@@ -1,4 +1,5 @@
 using System.Collections;
+
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,9 +9,11 @@ namespace CaptainCoder.Unity.Audio
     public class MusicTrackController : MonoBehaviour
     {
         [SerializeField] private AudioSource _introSource;
+        [SerializeField] private AudioSource _ambienceSource;
         [SerializeField]
         private MusicTrackManager _trackManager;
         [SerializeField] private AudioClip _introClip;
+        [SerializeField] private AudioClip _ambienceClip;
         public bool BecomeTrackOnStart = true;
         public UnityEvent OnFadeOutFinished;
         [field: SerializeField]
@@ -24,10 +27,14 @@ namespace CaptainCoder.Unity.Audio
             if (_introClip != null)
             {
                 _introSource.clip = _introClip;
-                _introSource.playOnAwake = true;
                 _introSource.loop = false;
                 _audioSource.playOnAwake = false;
                 _audioSource.Stop();
+            }
+            if (_ambienceClip != null)
+            {
+                Debug.Log("Ambience detected");
+                _ambienceSource.clip = _ambienceClip;
             }
         }
 
@@ -41,7 +48,15 @@ namespace CaptainCoder.Unity.Audio
 
         private IEnumerator ChangeVolume(float startVolume, float endVolume, UnityEvent callback = null)
         {
-            if (!_audioSource.isPlaying && _introClip == null) { _audioSource.Play(); }
+            if (_ambienceClip != null)
+            {
+                _ambienceSource.Play();
+            }
+            if (!_audioSource.isPlaying && _introClip == null)
+            {
+                _audioSource.Play();
+
+            }
             else if (_introClip != null)
             {
                 _introSource.Play();
@@ -54,6 +69,7 @@ namespace CaptainCoder.Unity.Audio
                 percent = Mathf.Clamp01((Time.time - startTime) / FadeDuration);
                 _audioSource.volume = Mathf.Lerp(startVolume, endVolume, percent);
                 _introSource.volume = Mathf.Lerp(startVolume, endVolume, percent);
+                _ambienceSource.volume = Mathf.Lerp(startVolume, endVolume, percent);
                 yield return null;
             }
             _audioSource.volume = endVolume;

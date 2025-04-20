@@ -47,13 +47,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             _viewController = FindFirstObjectByType<PlayerViewController>();
             _encounterController = FindFirstObjectByType<EncounterController>();
             _partyData.ReviveAllHeroes();
-            string trackName =  _playerViewData.DungeonName;
-            if (_encounterController != null && _encounterController.EncounterData.EncounterMusicOverride != string.Empty)
-            {
-                trackName = _encounterController.EncounterData.EncounterMusicOverride;
-            }
-            TrackInfo track = _tracks.FirstOrDefault(t => t.MapName == trackName);
-            track.MusicTrackController?.SetActive(true);
+            SelectTrack();
 
             if (_gameStartEvent != null && !_gameStartEvent.HasTriggered)
             {
@@ -82,6 +76,17 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
                 _encounterSettingsData.FinishedEncounter = null;
             }
 
+        }
+
+        private void SelectTrack()
+        {
+            string trackName =  _playerViewData.DungeonName;
+            if (_encounterController != null && _encounterController.EncounterData.EncounterMusicOverride != string.Empty)
+            {
+                trackName = _encounterController.EncounterData.EncounterMusicOverride;
+            }
+            TrackInfo track = _tracks.FirstOrDefault(t => t.MapName == trackName);
+            track.MusicTrackController?.SetActive(true);
         }
 
         private bool HandleBeforeMove(PlayerView exiting, PlayerView entering)
@@ -117,6 +122,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         private void HandleDungeonChanged(string dungeonName)
         {
             _dungeonCrawlerData.LoadDungeonByName(dungeonName);
+            SelectTrack();
         }
 
         private IEnumerable<CrawlerEventData> DungeonEvents => _events.Where(e => e is DungeonEvents de && de.DungeonName == _playerViewData.DungeonName).SelectMany(e => ((DungeonEvents)e).Events);
@@ -155,11 +161,13 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             _testAction.Execute(this);
         }
 
-        public void Teleport(string dungeonName, int x, int y, Facing facing, Texture2D ceilingTile)
+        public void Teleport(string dungeonName, int x, int y, Facing facing, Texture2D ceilingTile, Color albedo, Color lightingAlbedo)
         {
             _playerViewData.DungeonName = dungeonName;
             _playerViewData.View = new PlayerView(x, y, facing);
             _dungeonController.CeilingTile = ceilingTile;
+            _dungeonController.Albedo = albedo;
+            RenderSettings.ambientLight = lightingAlbedo;
         }
 
         private void StartLoadEncounter()
