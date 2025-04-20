@@ -36,3 +36,64 @@ MonoBehaviour:
     Clips:
     - {fileID: 8300000, guid: 56ebd45061478904e94312490755b751, type: 3}
     Volume: 0.25
+  - Key: victory
+    Clips:
+    - {fileID: 8300000, guid: 7b4baa8e82f257049bb79580890e6861, type: 3}
+    Volume: 1
+  - Key: damage
+    Clips:
+    - {fileID: 8300000, guid: eccabd9f2682b404e9d7da03c2c7fdcf, type: 3}
+    - {fileID: 8300000, guid: b52ac2b774b1d2a43ad4ee8629fcc808, type: 3}
+    - {fileID: 8300000, guid: 8685f35853114c04db134908eaee8178, type: 3}
+    - {fileID: 8300000, guid: f4959347539c1a14999c18a3942e40ea, type: 3}
+    - {fileID: 8300000, guid: f4959347539c1a14999c18a3942e40ea, type: 3}
+    - {fileID: 8300000, guid: 8f1fa62413c09b14883d75240b0d4e3b, type: 3}
+    Volume: 0.5
+  - Key: win-combat
+    Clips:
+    - {fileID: 8300000, guid: 7b4baa8e82f257049bb79580890e6861, type: 3}
+    Volume: 0.5
+  - Key: accept
+    Clips:
+    - {fileID: 8300000, guid: 4e36de1d6d052e7489042157a79d0355, type: 3}
+    Volume: 0.5
+  - Key: enemy-phase
+    Clips:
+    - {fileID: 8300000, guid: 75baf71527658c642830c3c9babb98c8, type: 3}
+    Volume: 0.5
+  - Key: ko
+    Clips:
+    - {fileID: 8300000, guid: feb1dd8a248ed2c448dd778bee0156d7, type: 3}
+    Volume: 0.5
+  - Key: add-bonus
+    Clips:
+    - {fileID: 8300000, guid: 437f0228462693d48bfa68fa90279fd0, type: 3}
+    Volume: 0.25
+  - Key: remove-bonus
+    Clips:
+    - {fileID: 8300000, guid: a8577ce257b5cb24e8b0c8d256ce578d, type: 3}
+    Volume: 0.25
+  - Key: set-attack
+    Clips:
+    - {fileID: 8300000, guid: dee5ffe4d997771479ba6c9f8f46c777, type: 3}
+    Volume: 0.25
+  - Key: set-move
+    Clips:
+    - {fileID: 8300000, guid: dee5ffe4d997771479ba6c9f8f46c777, type: 3}
+    Volume: 0.25
+  - Key: set-guard
+    Clips:
+    - {fileID: 8300000, guid: dee5ffe4d997771479ba6c9f8f46c777, type: 3}
+    Volume: 0.25
+  - Key: set-rest
+    Clips:
+    - {fileID: 8300000, guid: dee5ffe4d997771479ba6c9f8f46c777, type: 3}
+    Volume: 0.25
+  - Key: set-aim
+    Clips:
+    - {fileID: 8300000, guid: dee5ffe4d997771479ba6c9f8f46c777, type: 3}
+    Volume: 0.25
+  - Key: set-dodge
+    Clips:
+    - {fileID: 8300000, guid: dee5ffe4d997771479ba6c9f8f46c777, type: 3}
+    Volume: 0.25

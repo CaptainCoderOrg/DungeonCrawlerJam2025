@@ -205,6 +205,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _diceHUD.Hide();
             Controller.CheckHeroTurns();
             Controller.Tutorial.HideTutorial();
+            Controller.SoundDatabase.Play("accept");
         }
 
         internal void StartAttack()

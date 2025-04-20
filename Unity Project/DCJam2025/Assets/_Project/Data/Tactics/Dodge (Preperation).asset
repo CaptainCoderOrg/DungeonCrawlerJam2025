@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca65c2c8adb03674694cf8b30569422b, type: 3}
   m_Name: Dodge (Preperation)
   m_EditorClassIdentifier: 
+  <SFX>k__BackingField: set-dodge
   <Name>k__BackingField: 'Status: Dodge'
   <BackgroundAlbedo>k__BackingField: {r: 0.5219412, g: 1, b: 0.495283, a: 0.5}
   <Sprite>k__BackingField: {fileID: 1839679803, guid: 66ceb6ab667df55438a1c63c42873b72, type: 3}

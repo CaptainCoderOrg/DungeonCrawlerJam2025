@@ -74,6 +74,11 @@ namespace CaptainCoder.Dungeoneering.Encounter
             {
                 _selectedOptions[_selectedOptions.Length - 1].TacticData = data;
             }
+            if (data == null) { return; }
+            else
+            {
+                _encounterController.SoundDatabase.Play(data.SFX);
+            }
         }
 
         public void Clear()
@@ -125,6 +130,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
             Hide();
         }
 
-        public void Confirm() => _encounterController.HeroTurnController.BeginTurn(_attachedPanel.FigureController, _selectedOptions.Select(o => o.TacticData));
+        public void Confirm()
+        {
+            _encounterController.SoundDatabase.Play("accept");
+            _encounterController.HeroTurnController.BeginTurn(_attachedPanel.FigureController, _selectedOptions.Select(o => o.TacticData));
+        }
     }
 }

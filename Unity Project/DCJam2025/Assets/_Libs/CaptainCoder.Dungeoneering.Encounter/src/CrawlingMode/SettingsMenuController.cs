@@ -49,7 +49,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         private void HandleVolumeChange(float value, string prefix, TextMeshProUGUI musicVolumeLabel)
         {
-            if (prefix == "SFX" && Time.time > 0.1 && !_soundCheck.isPlaying)
+            if (prefix == "SFX" && Time.timeSinceLevelLoad > 0.1 && !_soundCheck.isPlaying)
             {
                 _soundCheck.Play();
             }

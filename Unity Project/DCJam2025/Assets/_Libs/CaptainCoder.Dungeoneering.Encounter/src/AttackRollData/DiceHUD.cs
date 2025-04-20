@@ -336,6 +336,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         public void AddDamageBonus()
         {
             if (!CanAddDamageBonus) { return; }
+            _encounterController.SoundDatabase.Play("add-bonus");
             _damageBonus++;
             UpdateResults();
         }
@@ -343,6 +344,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         public void RemoveDamageBonus()
         {
             if (!CanRemoveDamageBonus) { return; }
+            _encounterController.SoundDatabase.Play("remove-bonus");
             _damageBonus--;
             UpdateResults();
         }
@@ -351,12 +353,14 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             if (!CanAddAccuracyBonus) { return; }
             _accuracyBonus++;
+            _encounterController.SoundDatabase.Play("add-bonus");
             UpdateResults();
         }
 
         public void RemoveAccuracyBonus()
         {
             if (!CanRemoveAccuracyBonus) { return; }
+            _encounterController.SoundDatabase.Play("remove-bonus");
             _accuracyBonus--;
             UpdateResults();
         }
@@ -367,6 +371,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             {
                 if (_diceBoxController.AddDie(_bonusDie))
                 {
+                    _encounterController.SoundDatabase.Play("add-bonus");
                     HeroAttacker.Exertion++;
                     UpdateResults();
                     SetRollingLabels();
@@ -377,6 +382,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
         public void Confirm()
         {
             if (!IsConfirmable) { return; }
+            if (_attackResult.Wounds > 0)
+            {
+                _encounterController.SoundDatabase.Play("damage");
+            }
             _attackInfo.Target.Figure.EntityData.Wounds += _attackResult.Wounds;
             _encounterController.HeroTurnController.CloseAttackPanel();
             _attacker.EntityData.RemoveEffectsWhere(RemoveAfterAttacking);

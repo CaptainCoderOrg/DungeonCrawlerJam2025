@@ -9,6 +9,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 {
     public sealed class EquipmentSlotRenderer : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerClickHandler
     {
+        [AssertIsSet][SerializeField] private SoundDatabase _soundDatabase;
         [SerializeField] private EquipmentDragCanvas _dragCanvas;
         [AssertIsSet][SerializeField] private Image _image;
         [AssertIsSet][SerializeField] private SimpleTooltip _simpleTooltip;
@@ -59,6 +60,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
                 {
                     if (!dropZone.SlotRenderer.CanDrag) { continue; }
                     dropZone.SlotRenderer.EquipmentSlotReference.TrySwapEquipment(EquipmentSlotReference, out string _);
+                    _soundDatabase.Play("equip");
                 }
                 if (result.gameObject.TryGetComponent<EquipmentScrapDropZone>(out var scrapDropZone))
                 {

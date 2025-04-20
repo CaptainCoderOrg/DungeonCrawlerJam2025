@@ -261,6 +261,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
 
         internal void AnimateReceivingItem(EquipmentData equipment)
         {
+            SoundDatabase.Play("victory");
             _playerInventory.Open();
         }
 

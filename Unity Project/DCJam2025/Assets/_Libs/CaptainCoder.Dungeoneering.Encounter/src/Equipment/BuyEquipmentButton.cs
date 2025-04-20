@@ -1,6 +1,4 @@
 
-using System;
-
 using CaptainCoder.Dungeoneering.CrawlingMode;
 using CaptainCoder.Dungeoneering.Unity;
 using CaptainCoder.Unity.Assertions;

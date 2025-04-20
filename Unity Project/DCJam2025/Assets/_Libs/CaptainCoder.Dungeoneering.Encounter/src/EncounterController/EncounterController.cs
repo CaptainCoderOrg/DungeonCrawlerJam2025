@@ -17,6 +17,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 {
     public class EncounterController : MonoBehaviour
     {
+        [AssertIsSet][field: SerializeField] public SoundDatabase SoundDatabase { get; private set; }
         [AssertIsSet][field: SerializeField] public EncounterTutorialController Tutorial { get; private set; }
         [AssertIsSet][SerializeField] private ToggleablePanel _defeatPanel;
         [AssertIsSet][SerializeField] private DiceHUD _diceHUD;
@@ -188,6 +189,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         internal IEnumerator EndPlayerTurn()
         {
+            SoundDatabase.Play("enemy-phase");
             yield return StartCoroutine(ShowText("Enemy Phase"));
             _enemyTurnController.TakeEnemyTurn();
         }
@@ -257,6 +259,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             // If there is at least one enemy, combat is not over
             if (State.Figures.Values.Where(f => f.Figure.EntityData is EnemyEntityData).Any()) { return; }
+            SoundDatabase.Play("win-combat");
             StartCoroutine(VictorySequence());
         }
 

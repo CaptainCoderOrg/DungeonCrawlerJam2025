@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0476e293d8c374bb5abadd5c831486, type: 3}
   m_Name: Default Party Data
   m_EditorClassIdentifier: 
-  _gold: 7300
+  _gold: 9650
   <Heroes>k__BackingField:
   - {fileID: 11400000, guid: 6f7a6aa7d15bdcb4683d52c349f6a90c, type: 2}
   - {fileID: 11400000, guid: 639c39d7073c6ec42a83ee9d248b2611, type: 2}

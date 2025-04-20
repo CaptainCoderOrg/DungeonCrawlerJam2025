@@ -62,6 +62,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             if (_figureData.EntityData.Health <= 0)
             {
+                _encounterController.SoundDatabase.Play("ko");
                 _knockedOutPanel.IsEnabled = true;
                 _figureData.HasTakenTurn = true;
                 _encounterController?.EnsureCharacterIsDead(this);
@@ -149,6 +150,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         public void TakeTurn()
         {
             if (_encounterController.AwaitingConfirmation) { return; }
+            _encounterController.SoundDatabase.Play("accept");
             _encounterController.SelectTactics(this);
             _encounterController.Tutorial.ShowTutorialIfNeverSeen(TutorialData._01AttackAndMove);
         }

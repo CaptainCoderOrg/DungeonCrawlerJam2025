@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca65c2c8adb03674694cf8b30569422b, type: 3}
   m_Name: Move (Preperation)
   m_EditorClassIdentifier: 
+  <SFX>k__BackingField: set-move
   <Name>k__BackingField: Move
   <BackgroundAlbedo>k__BackingField: {r: 0, g: 0, b: 0, a: 0.5}
   <Sprite>k__BackingField: {fileID: -942551176, guid: 66ceb6ab667df55438a1c63c42873b72, type: 3}

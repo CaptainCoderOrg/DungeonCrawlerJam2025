@@ -13,6 +13,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
     [CreateAssetMenu(menuName = "DC/TacticData")]
     public class TacticData : ObservableSO
     {
+        [field: SerializeField] public string SFX { get; private set; }
         [field: SerializeField] public string Name { get; private set; }
         [field: SerializeField] public Color BackgroundAlbedo { get; private set; } = new Color(0, 0, 0, 0.5f);
         [field: ShowAssetPreview][field: SerializeField] public Sprite Sprite { get; private set; }

@@ -398,5 +398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f296f83e6ebb0e14a8e1a52ed395bbdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundDatabase: {fileID: 11400000, guid: a88a6a37ba1ad104ab43627151600012, type: 2}
+  _dragCanvas: {fileID: 0}
   _image: {fileID: 2817195672543018269}
   _simpleTooltip: {fileID: 2291333489341068586}
