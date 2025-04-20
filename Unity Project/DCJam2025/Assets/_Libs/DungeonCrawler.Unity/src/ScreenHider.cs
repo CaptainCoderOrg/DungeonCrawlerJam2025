@@ -39,7 +39,8 @@ namespace CaptainCoder.Dungeoneering.Unity
             StartCoroutine(FadeTo(0f));
         }
 
-        public IEnumerator ShowCoroutine()
+
+        public IEnumerator HideScreenCoroutine()
         {
             yield return StartCoroutine(FadeTo(1f));
         }

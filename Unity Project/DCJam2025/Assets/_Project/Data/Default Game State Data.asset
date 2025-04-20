@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b4d3c6e8c8b491448925f0fa386f7c6, type: 3}
+  m_Name: Default Game State Data
+  m_EditorClassIdentifier: 
+  PartyData: {fileID: 11400000, guid: be4388fd74f82d04db639fe9b3a524e8, type: 2}
+  OptionsSettings: {fileID: 11400000, guid: 4a69406316e4c024cae400c7cc5141cd, type: 2}
+  DungeonEvents:
+  - {fileID: 11400000, guid: c97441cd25636894d9192123012085d8, type: 2}
+  - {fileID: 11400000, guid: 626bd7884e08e954dbe7d1ebf85eeb40, type: 2}
+  - {fileID: 11400000, guid: 0285e6ff6aa717042ac9fa9acefa1c36, type: 2}

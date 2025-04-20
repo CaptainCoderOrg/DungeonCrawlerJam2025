@@ -193,7 +193,7 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         }
         private IEnumerator EndEncounterSequence()
         {
-            yield return StartCoroutine(_hider.ShowCoroutine());
+            yield return StartCoroutine(_hider.HideScreenCoroutine());
             AsyncOperation callback = SceneManager.LoadSceneAsync("DungeonCrawling");
             while (!callback.isDone) { yield return null; }
 

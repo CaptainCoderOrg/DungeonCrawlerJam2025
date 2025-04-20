@@ -24,6 +24,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         public const string _11Exert = "Exert";
         public const string _12AbilityPoints = "AbilityPoints";
         public const string _14EndTurn = "EndTurn";
+        public const string _15OpenSettings = "OpenSettings";
 
 
         [SerializeField] private bool _resetOnStart = true;

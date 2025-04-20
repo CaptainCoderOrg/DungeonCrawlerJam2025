@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Project/Scenes/Title Screen.unity
+    guid: a88aeac141f2de543ab4fe2d56459d17
+  - enabled: 1
     path: Assets/_Project/Scenes/DungeonCrawling.unity
     guid: 82cfd1f6b249fad4c8cce49cca59ac71
   - enabled: 1

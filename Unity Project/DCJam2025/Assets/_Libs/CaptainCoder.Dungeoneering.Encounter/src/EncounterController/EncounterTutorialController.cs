@@ -35,6 +35,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
             _entries[11] = new() { Name = TutorialData._10BonusDie };
             _entries[12] = new() { Name = TutorialData._11Exert };
             _entries[13] = new() { Name = TutorialData._12AbilityPoints };
+            _entries[14] = new() { Name = TutorialData._15OpenSettings };
         }
 
         private ToggleablePanel _currentlyVisible;
