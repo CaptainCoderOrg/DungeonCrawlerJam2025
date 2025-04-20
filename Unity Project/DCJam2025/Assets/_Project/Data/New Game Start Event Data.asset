@@ -20,5 +20,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 28053dfe48ebb394d915bbf736771b6a, type: 2}
   - {fileID: 11400000, guid: ad3128d00b848d642ac9ab9dd14075f0, type: 2}
   - {fileID: 11400000, guid: 14c388b55f4c29e49a528c9c37567a87, type: 2}
-  SkipInPlayMode: 1
+  SkipInPlayMode: 0
   HasTriggered: 0

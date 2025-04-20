@@ -642,11 +642,11 @@ PrefabInstance:
     - target: {fileID: 7057955629259658454, guid: 6a59d891df44e114cb919d5191c15132, type: 3}
       propertyPath: m_Resource
       value: 
-      objectReference: {fileID: 8300000, guid: 3cf8f816477b88f4da36a391f813ea13, type: 3}
+      objectReference: {fileID: 8300000, guid: 3aafda3349306c345a8d1e9eaa0b134f, type: 3}
     - target: {fileID: 7057955629259658454, guid: 6a59d891df44e114cb919d5191c15132, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 3cf8f816477b88f4da36a391f813ea13, type: 3}
+      objectReference: {fileID: 8300000, guid: 3aafda3349306c345a8d1e9eaa0b134f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8637,6 +8637,75 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2169118883426229189, guid: 30b3f2d0ed365e94d93f4bbc41af65ef, type: 3}
   m_PrefabInstance: {fileID: 45288512629515587}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1773017415
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4385652582710480103, guid: 6a59d891df44e114cb919d5191c15132, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.179052
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385652582710480103, guid: 6a59d891df44e114cb919d5191c15132, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.1987987
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385652582710480103, guid: 6a59d891df44e114cb919d5191c15132, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.479009
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385652582710480103, guid: 6a59d891df44e114cb919d5191c15132, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385652582710480103, guid: 6a59d891df44e114cb919d5191c15132, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385652582710480103, guid: 6a59d891df44e114cb919d5191c15132, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385652582710480103, guid: 6a59d891df44e114cb919d5191c15132, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385652582710480103, guid: 6a59d891df44e114cb919d5191c15132, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385652582710480103, guid: 6a59d891df44e114cb919d5191c15132, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385652582710480103, guid: 6a59d891df44e114cb919d5191c15132, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6359848792991011121, guid: 6a59d891df44e114cb919d5191c15132, type: 3}
+      propertyPath: m_Name
+      value: Final Boss Track
+      objectReference: {fileID: 0}
+    - target: {fileID: 6359848792991011121, guid: 6a59d891df44e114cb919d5191c15132, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7057955629259658454, guid: 6a59d891df44e114cb919d5191c15132, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 87323a254cc403849bea3d8e712316bc, type: 3}
+    - target: {fileID: 7057955629259658454, guid: 6a59d891df44e114cb919d5191c15132, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 87323a254cc403849bea3d8e712316bc, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6a59d891df44e114cb919d5191c15132, type: 3}
 --- !u!1001 &1778665072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39930,3 +39999,4 @@ SceneRoots:
   - {fileID: 1756835346}
   - {fileID: 513872987}
   - {fileID: 145706729}
+  - {fileID: 1773017415}

@@ -18,11 +18,29 @@ namespace CaptainCoder.Dungeoneering.Encounter
         }
 
         public void StartCrawling() => StartCoroutine(StartCrawlerRoutine());
+        public void TitleScreen() => StartCoroutine(StartTitleScreenRoutine());
+        public void Credits() => StartCoroutine(StartCreditsRoutine());
+
+        public IEnumerator StartCreditsRoutine()
+        {
+            yield return _screenHider.HideScreenCoroutine();
+            AsyncOperation operation = SceneManager.LoadSceneAsync("Credits");
+            while (!operation.isDone) { yield return null; }
+        }
+
+        public IEnumerator StartTitleScreenRoutine()
+        {
+            yield return _screenHider.HideScreenCoroutine();
+            AsyncOperation operation = SceneManager.LoadSceneAsync("Title Screen");
+            while (!operation.isDone) { yield return null; }
+        }
         public IEnumerator StartCrawlerRoutine()
         {
             yield return _screenHider.HideScreenCoroutine();
             AsyncOperation operation = SceneManager.LoadSceneAsync("DungeonCrawling");
             while (!operation.isDone) { yield return null; }
         }
+
+        
     }
 }
