@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d99dfbb4b455f314ba529cf70d218f14, type: 3}
-  m_Name: EncounterTutorialData
+  m_Script: {fileID: 11500000, guid: 8fffe693c9356d448b47934988481675, type: 3}
+  m_Name: Facility - Key 2 (Gain Item Event)
   m_EditorClassIdentifier: 
-  _resetOnStart: 1
-  <IsDisabled>k__BackingField: 1
-  <TutorialsSeen>k__BackingField: []
+  _playerInventory: {fileID: 11400000, guid: 8d7edcd74453f394e8226a70d3562536, type: 2}
+  _equipment: {fileID: 11400000, guid: 99aa6cde9fdeba44587d38f1ab9a8569, type: 2}

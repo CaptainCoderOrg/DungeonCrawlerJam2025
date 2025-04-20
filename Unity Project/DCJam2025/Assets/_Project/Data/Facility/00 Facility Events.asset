@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Facility Events
   <Conditions>k__BackingField: []
-  <Actions>k__BackingField: []
+  <Actions>k__BackingField:
+  - {fileID: 0}
   <DungeonName>k__BackingField: Facility
   <Events>k__BackingField:
   - {fileID: 11400000, guid: 03cc4041ba6067e47a7041a3aba38b65, type: 2}
@@ -22,4 +23,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4a12954d8874b5348b266c92d33a243e, type: 2}
   - {fileID: 11400000, guid: 6bd2336ca4040f5488a4e3258eb3753c, type: 2}
   - {fileID: 11400000, guid: 6758be5773bfe524bbd146f148c470ad, type: 2}
-  - {fileID: 11400000, guid: 04ff81efa89a15843ab1ad4a53d823a1, type: 2}
+  - {fileID: 11400000, guid: 7fa0f90b1b3461747909d4bb24c041e2, type: 2}
+  - {fileID: 11400000, guid: b8104670d288c1f4e914e02db2739a61, type: 2}
+  - {fileID: 11400000, guid: 72ab5708fbff7fa4ca27ed5aad82a902, type: 2}
+  - {fileID: 11400000, guid: a6d99d9326f05644ab4de93926864752, type: 2}
+  - {fileID: 11400000, guid: 6e73642722ee00e488b9901dcc36553f, type: 2}

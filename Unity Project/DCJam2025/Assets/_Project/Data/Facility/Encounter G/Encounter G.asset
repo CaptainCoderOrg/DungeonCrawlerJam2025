@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c12bd66080aac434f95af5246eebb5bc, type: 3}
   m_Name: Encounter G
   m_EditorClassIdentifier: 
+  <EncounterMusicOverride>k__BackingField: 
   <EnemyFigures>k__BackingField:
   - EnemyEntityTemplate: {fileID: 11400000, guid: 687ef77fdec2883479e88cf49a0e179a, type: 2}
     Position: {x: 7, y: 15}
@@ -25,21 +26,29 @@ MonoBehaviour:
     Position: {x: 9, y: 11}
   - EnemyEntityTemplate: {fileID: 11400000, guid: 6a14b93fcb731604ab99396523fbb7b4, type: 2}
     Position: {x: 10, y: 15}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 6a14b93fcb731604ab99396523fbb7b4, type: 2}
+    Position: {x: 15, y: 9}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 687ef77fdec2883479e88cf49a0e179a, type: 2}
+    Position: {x: 11, y: 5}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 571630125471d1b4798a79883f169c3d, type: 2}
+    Position: {x: 16, y: 3}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: a6eb6134c5a75d64c9eb586d4aae41a6, type: 2}
+    Position: {x: 11, y: 7}
   <HeroFigures>k__BackingField:
   - HeroEntity: {fileID: 11400000, guid: 6f7a6aa7d15bdcb4683d52c349f6a90c, type: 2}
-    Position: {x: 13, y: 13}
+    Position: {x: 15, y: 8}
   - HeroEntity: {fileID: 11400000, guid: 639c39d7073c6ec42a83ee9d248b2611, type: 2}
-    Position: {x: 13, y: 14}
+    Position: {x: 14, y: 8}
   - HeroEntity: {fileID: 11400000, guid: c8554de155ee39547b21e84b2f7ca8e4, type: 2}
-    Position: {x: 13, y: 12}
+    Position: {x: 16, y: 8}
   <DungeonCrawlerData>k__BackingField: {fileID: 11400000, guid: ab74159b5d6b1da4ea6c200032209da6, type: 2}
   <DungeonName>k__BackingField: Facility
-  <MinX>k__BackingField: 5
+  <MinX>k__BackingField: 4
   <MaxX>k__BackingField: 17
-  <MinY>k__BackingField: 10
+  <MinY>k__BackingField: 3
   <MaxY>k__BackingField: 16
   <OnEncounterBegin>k__BackingField: []
   <OnEncounterEnd>k__BackingField: []
   <OnExitCombat>k__BackingField:
-  - {fileID: 11400000, guid: 33ffffb56410e184682f9206b1fe6632, type: 2}
-  IsComplete: 0
+  - {fileID: 11400000, guid: 55ad43f59191ed24dbc6f1752242c5aa, type: 2}
+  IsComplete: 1

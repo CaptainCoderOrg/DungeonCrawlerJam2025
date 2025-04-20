@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02ca10d7fd188e4479218951376a01a2, type: 3}
-  m_Name: Facility Encounter E Trigger
+  m_Script: {fileID: 11500000, guid: e22c181a2574cb14190f7700aca746f7, type: 3}
+  m_Name: Prevent Encounter G
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Facility Encounter B
+  <Name>k__BackingField: 
+  <Conditions>k__BackingField:
+  - {fileID: 11400000, guid: 43eb0410ac4af7c4f891ebc5aced1f16, type: 2}
   <Actions>k__BackingField:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: bd693310dcb68e547a4d735509329cb4, type: 2}
   <DungeonName>k__BackingField: Facility
   <Positions>k__BackingField:
-  - {x: 12, y: 13}
-  TopLeft: {x: 0, y: 0}
-  BottomRight: {x: 0, y: 0}
-  <Encounter>k__BackingField: {fileID: 11400000, guid: e3013ace5f20fc04a9a63626446cdb9c, type: 2}
+  - {x: 15, y: 9}
+  <CancelMoveIfTriggered>k__BackingField: 1

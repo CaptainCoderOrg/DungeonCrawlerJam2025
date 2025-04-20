@@ -9,19 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7cdb577110fe754c89f0a2c4cec8823, type: 3}
-  m_Name: Encounter G Dialogue
+  m_Script: {fileID: 11500000, guid: 41230ffc95701804da6cdd78cb303ac3, type: 3}
+  m_Name: Start Encounter G Dialouge
   m_EditorClassIdentifier: 
-  <Encounter>k__BackingField: {fileID: 11400000, guid: 466c933d89dd60f4eb8f88b0724e7fee, type: 2}
   <Entry>k__BackingField:
-    <Message>k__BackingField: Shhh... there are some guards in this room.
+    <Message>k__BackingField: We have all the eggmeralds. Are we ready?
     <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
   <Options>k__BackingField:
-  - Text: Fight
+  - Text: Unlock Door
     OnSelected:
-    - {fileID: 11400000, guid: 78847090e33e6394698c173cd0222238, type: 2}
-    - {fileID: 11400000, guid: f52c51e28f2e562439c34f104b035010, type: 2}
+    - {fileID: 11400000, guid: 358cb02c816c48d4c9868cddd1b9724f, type: 2}
   - Text: Leave
     OnSelected:
     - {fileID: 11400000, guid: f52c51e28f2e562439c34f104b035010, type: 2}
-    - {fileID: 11400000, guid: 8e7bb9108fa4c4a40a1d82e9597894e7, type: 2}

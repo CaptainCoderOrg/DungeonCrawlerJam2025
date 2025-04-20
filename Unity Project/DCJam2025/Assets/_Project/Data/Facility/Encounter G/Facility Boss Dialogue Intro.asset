@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f5bebcf346dc843ad6cf2b51871c10, type: 3}
+  m_Name: Facility Boss Dialogue Intro
+  m_EditorClassIdentifier: 
+  <Entries>k__BackingField:
+  - <Message>k__BackingField: Finally! Maybe we can get back to the surface!
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: "Hold on!\r"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "Oh, not again\u2026"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "Please, listen! I was right about the gold. I saw
+      it when they were carrying us away- an entire room filled to the brim with
+      golden eggs! Can you imagine what we could do with those!?\r"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "Fox, I don\u2019t have any energy left to deal with
+      your delusions\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: "If you want to run away, fine! I\u2019m not stopping
+      you. But I just know that if I don\u2019t follow up on this, I\u2019ll be seeing
+      that pile in my dreams every night until I die! I\u2019m going down!"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "You\u2019re insane, Fox!! I\u2019m done. Do what you
+      want. I\u2019m not dying down here! Nu-uh!! Come on, Hawk!\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: "Hawk hesitates. Sorry, Wes. I can\u2019t just let
+      this loser act all brave while I turn heel. Plus, I have a score to settle
+      with those guards...\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "Ke ke ke! That\u2019s the spirit!\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: b95d84c774d054087a7a9e61e3d7d9f9, type: 3}
+  - <Message>k__BackingField: "Also. I\u2019m pretty sure these chickens are trying
+      to take over the world or something. We probably shouldn\u2019t let that happen.\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9071ace2186e85c418b8f9b71fb6fb6b, type: 3}
+  - <Message>k__BackingField: "Urgh\u2026 Stupid reckless little\u2026 Freaking peer
+      pressure\u2026 Freaking group dynamics\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: "Ah, to hell with it\u2026! I can\u2019t leave you
+      guys down there on your own! What will you do without my spells?"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: Nyxie places the eggs in the door...
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: Suddenly, the walls begin to shake!
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: "LAUNCH SEQUENCE INITIATED. CREW MEMBERS ARE ADVISED
+      TO FOLLOW SAFETY INSTRUCTIONS. SHIP LAUNCHING IN T MINUS 10, 9, 8\u2026\r\n"
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 47b819f40cdbe364da6981351650c680, type: 3}
+  - <Message>k__BackingField: Ship!? Ow!!
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  - <Message>k__BackingField: The trio is pressed to the ground as the entire complex
+      rises into the air!
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 67eacae7108c8af4d81bb0d76f96625f, type: 3}
+  <OnFinished>k__BackingField: {fileID: 11400000, guid: 78847090e33e6394698c173cd0222238, type: 2}

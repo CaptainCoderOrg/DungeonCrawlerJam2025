@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc364ee3b3de224da35680ca3709f62, type: 3}
+  m_Name: Facility - Key 2 - (Find Key Trigger)
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: 
+  <Conditions>k__BackingField:
+  - {fileID: 11400000, guid: 6ca3b8ac357663d4d9383838fbba5a37, type: 2}
+  <Actions>k__BackingField:
+  - {fileID: 11400000, guid: 5a958942d3540314cae152c19d1a193b, type: 2}
+  <DungeonName>k__BackingField: Facility
+  <Positions>k__BackingField:
+  - {x: 5, y: 12}
+  - {x: 5, y: 13}
+  - {x: 6, y: 12}
+  - {x: 6, y: 13}
+  - {x: 7, y: 12}
+  - {x: 7, y: 13}
+  TopLeft: {x: 5, y: 12}
+  BottomRight: {x: 8, y: 14}

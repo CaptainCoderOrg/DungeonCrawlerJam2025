@@ -27,6 +27,7 @@ MonoBehaviour:
   <AttackAnimation>k__BackingField: {fileID: 11400000, guid: 220226c753d546d4f980132e28516dae, type: 2}
   <IdleAnimation>k__BackingField: {fileID: 11400000, guid: 220226c753d546d4f980132e28516dae, type: 2}
   _shortName: Jax
+  <Gold>k__BackingField: 50
   _newCharacterReference: {fileID: 11400000, guid: 2eebb5280ef4e804a91011a0f8aabaa8, type: 2}
   <BaseStamina>k__BackingField: 3
   _exertion: 0
@@ -43,5 +44,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 76a51ee6611969e41be91e50d857bc90, type: 2}
   - {fileID: 11400000, guid: 76a51ee6611969e41be91e50d857bc90, type: 2}
   <RangeSkillDice>k__BackingField: []
-  <MagicSkillDice>k__BackingField:
-  - {fileID: 11400000, guid: 76a51ee6611969e41be91e50d857bc90, type: 2}
+  <MagicSkillDice>k__BackingField: []

@@ -19,7 +19,7 @@ MonoBehaviour:
   <BaseHealth>k__BackingField: 8
   _wounds: 0
   <BaseSpeed>k__BackingField: 4
-  <BaseArmor>k__BackingField: 0
+  <BaseArmor>k__BackingField: 1
   <Effects>k__BackingField:
   - {fileID: 11400000, guid: 2c4e807652d5ac74cb653276b92565a2, type: 2}
   - {fileID: 11400000, guid: 29c5fdb2df13e1c45aed2ce424da38ae, type: 2}
@@ -27,6 +27,7 @@ MonoBehaviour:
   <AttackAnimation>k__BackingField: {fileID: 11400000, guid: 2789c133167d06d4cbae9f9ef87391c1, type: 2}
   <IdleAnimation>k__BackingField: {fileID: 11400000, guid: 2789c133167d06d4cbae9f9ef87391c1, type: 2}
   _shortName: Kael
+  <Gold>k__BackingField: 50
   _newCharacterReference: {fileID: 11400000, guid: 38c231989cda0824bb463c9389aae999, type: 2}
   <BaseStamina>k__BackingField: 4
   _exertion: 0
@@ -41,7 +42,6 @@ MonoBehaviour:
   - {fileID: 0}
   <MeleeSkillDice>k__BackingField: []
   <RangeSkillDice>k__BackingField:
-  - {fileID: 11400000, guid: 76a51ee6611969e41be91e50d857bc90, type: 2}
   - {fileID: 11400000, guid: 76a51ee6611969e41be91e50d857bc90, type: 2}
   - {fileID: 11400000, guid: 76a51ee6611969e41be91e50d857bc90, type: 2}
   <MagicSkillDice>k__BackingField: []

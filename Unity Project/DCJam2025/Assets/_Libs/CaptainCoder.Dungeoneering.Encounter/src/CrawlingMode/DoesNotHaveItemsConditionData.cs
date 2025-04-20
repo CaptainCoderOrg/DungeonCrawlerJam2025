@@ -16,12 +16,12 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
         [SerializeField] private EquipmentData[] _equipment;
         public override bool ConditionMet()
         {
-            HashSet<EquipmentData> allItems = _heroes.SelectMany(h => h.AllItems).Concat(_heroInventory.EquipmentData).ToHashSet();
-            foreach (EquipmentData equipment in _equipment)
+            HashSet<EquipmentData> allItems = _equipment.ToHashSet();
+            foreach (EquipmentData equipment in _heroes.SelectMany(h => h.AllItems).Concat(_heroInventory.EquipmentData).ToHashSet())
             {
-                if (allItems.Contains(equipment)) { return false; }
+                allItems.Remove(equipment);
             }
-            return true;
+            return allItems.Count > 0;
         }
-}
+    }
 }
