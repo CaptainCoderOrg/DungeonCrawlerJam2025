@@ -21,5 +21,5 @@ MonoBehaviour:
   <AttackAbilities>k__BackingField:
   - {fileID: 11400000, guid: badcf26261f69a14a8f02e13186a1b7d, type: 2}
   <IsKeyItem>k__BackingField: 0
-  <IsTwoHanded>k__BackingField: 1
+  <IsTwoHanded>k__BackingField: 0
   <Attack>k__BackingField: {fileID: 11400000, guid: 75c4d8505c76aaf4e8afedd7294cda1a, type: 2}

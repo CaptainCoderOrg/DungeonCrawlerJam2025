@@ -17,7 +17,7 @@ MonoBehaviour:
   <Description>k__BackingField: '<u>Ninjitsu</u>
 
     Attacks with nunchucks are
-    always aimed attacks'
+    always aimed attacks. Click a die to reroll it during an attack.'
   <PowerCost>k__BackingField: 0
   <DamageBonus>k__BackingField: 0
   <AccuracyBonus>k__BackingField: 0

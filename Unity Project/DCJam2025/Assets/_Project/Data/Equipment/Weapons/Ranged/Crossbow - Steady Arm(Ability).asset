@@ -21,5 +21,5 @@ MonoBehaviour:
   <PowerCost>k__BackingField: 0
   <DamageBonus>k__BackingField: 0
   <AccuracyBonus>k__BackingField: 0
-  <AllowsReroll>k__BackingField: 1
-  <IsPassive>k__BackingField: 1
+  <AllowsReroll>k__BackingField: 0
+  <IsPassive>k__BackingField: 0

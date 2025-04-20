@@ -1901,7 +1901,7 @@ MonoBehaviour:
   _partyData: {fileID: 11400000, guid: be4388fd74f82d04db639fe9b3a524e8, type: 2}
   _lootTableData: {fileID: 11400000, guid: e103ee0e04d061a42a888fb8eaf3cb31, type: 2}
   _crawlerLogicController: {fileID: 0}
-  _cost: 50
+  _cost: 100
 --- !u!225 &6981491649661165889
 CanvasGroup:
   m_ObjectHideFlags: 0

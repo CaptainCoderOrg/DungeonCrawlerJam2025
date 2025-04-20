@@ -16,10 +16,10 @@ MonoBehaviour:
   <Name>k__BackingField: Missile
   <Description>k__BackingField: '<u>Missile</u>
 
-    Spend 1<sprite name="power">
-    to add 1<sprite name="melee">'
-  <PowerCost>k__BackingField: 1
-  <DamageBonus>k__BackingField: 1
+    Spend 2<sprite name="power">
+    to add 2<sprite name="melee">'
+  <PowerCost>k__BackingField: 2
+  <DamageBonus>k__BackingField: 2
   <AccuracyBonus>k__BackingField: 0
   <AllowsReroll>k__BackingField: 0
   <IsPassive>k__BackingField: 0

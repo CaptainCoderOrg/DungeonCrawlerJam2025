@@ -68,10 +68,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
         {
             if (@event is EntityDeathEvent)
             {
+                _partyData.Gold += controller.Figure.EntityData.Gold;
                 State.Figures.Remove(controller.Figure.Position);
                 Destroy(controller.gameObject);
                 Controller.CheckForEndOfCombat();
-                _partyData.Gold += controller.Figure.EntityData.Gold;
             }
         }
     }

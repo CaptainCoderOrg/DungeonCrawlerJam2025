@@ -17,3 +17,4 @@ MonoBehaviour:
   <AttackType>k__BackingField: {fileID: 11400000, guid: 05b21d4d848d2974f86fc1832725802f, type: 2}
   <PowerDice>k__BackingField:
   - {fileID: 11400000, guid: 6ff66278692d20f4bbab8724307dc9a8, type: 2}
+  - {fileID: 11400000, guid: 6ff66278692d20f4bbab8724307dc9a8, type: 2}

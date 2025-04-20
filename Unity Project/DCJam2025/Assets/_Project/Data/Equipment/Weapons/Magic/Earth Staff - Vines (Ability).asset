@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Icon>k__BackingField: {fileID: 21300000, guid: 5f809031d04097a42934db5c490e3b73, type: 3}
   <Name>k__BackingField: Vines
-  <Description>k__BackingField: '<u>Shiver</u>
+  <Description>k__BackingField: '<u>Vines</u>
 
-    Spend 1<sprite name="power">
-    to add 2<sprite name="melee">'
+    Spend 1<sprite name="power"> to
+    add 2<sprite name="melee">'
   <PowerCost>k__BackingField: 1
   <DamageBonus>k__BackingField: 2
   <AccuracyBonus>k__BackingField: 0

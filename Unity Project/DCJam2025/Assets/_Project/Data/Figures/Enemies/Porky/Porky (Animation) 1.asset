@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9163f5f800004464fbafd1bedfd74723, type: 3}
-  m_Name: Woolerine (Animation) 1
+  m_Name: Porky (Animation) 1
   m_EditorClassIdentifier: 
   Name: Chicken Idle
   SpriteSheet: {fileID: 11400000, guid: d2721230c76a6bc48b40c0215629d76f, type: 2}

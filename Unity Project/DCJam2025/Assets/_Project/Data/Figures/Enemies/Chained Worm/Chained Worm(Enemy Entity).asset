@@ -25,6 +25,7 @@ MonoBehaviour:
   <AttackAnimation>k__BackingField: {fileID: 11400000, guid: cf4347112c644204793aa0afd4220ca6, type: 2}
   <IdleAnimation>k__BackingField: {fileID: 11400000, guid: cf4347112c644204793aa0afd4220ca6, type: 2}
   _shortName: Nibbler
+  <Gold>k__BackingField: 150
   <Abilities>k__BackingField:
   - {fileID: 11400000, guid: 023764e5f5cc90249932fe8fe0b95208, type: 2}
   <Attacks>k__BackingField:

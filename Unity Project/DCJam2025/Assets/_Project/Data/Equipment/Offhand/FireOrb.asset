@@ -9,16 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62d92c92494d7b040b6bb46fbf8b784e, type: 3}
-  m_Name: Standard2
+  m_Script: {fileID: 11500000, guid: 7622b905e598a8740ac682815641fbf9, type: 3}
+  m_Name: FireOrb
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Egg Flag
-  _description: Raises spritis
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 541ab1271fe75c74b9703ef0bfa94419, type: 3}
+  <Name>k__BackingField: Fire Orb
+  _description: It radiates heat
+  <Albedo>k__BackingField: {r: 255, g: 255, b: 255, a: 255}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 4e37305640ca4254d9a2da2ca3fb9400, type: 3}
   <Value>k__BackingField: 100
   <WornTraitEffects>k__BackingField:
+  - TraitType: {fileID: 11400000, guid: 1393999b02328a34980db8fccc7464fe, type: 2}
+    Value: 1
+    Source: Fire Orb
   - TraitType: {fileID: 11400000, guid: 415032e52697c8c45960139df73d4aef, type: 2}
     Value: 2
-    Source: Egg Flag
+    Source: Fire Orb
   <AttackAbilities>k__BackingField: []
   <IsKeyItem>k__BackingField: 0
+  <IsTwoHanded>k__BackingField: 0
+  <Attack>k__BackingField: {fileID: 0}

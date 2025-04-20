@@ -23,6 +23,7 @@ MonoBehaviour:
     Source: Throwing Axes
   <AttackAbilities>k__BackingField:
   - {fileID: 11400000, guid: c7013057ef957ff42a81b2748f726a4f, type: 2}
+  - {fileID: 11400000, guid: 1d61836bfaa43e54aa9ddf4043eb5d0f, type: 2}
   <IsKeyItem>k__BackingField: 0
   <IsTwoHanded>k__BackingField: 0
   <Attack>k__BackingField: {fileID: 11400000, guid: 6a8d828d0c8bfbe45ac8ee4c3db59660, type: 2}

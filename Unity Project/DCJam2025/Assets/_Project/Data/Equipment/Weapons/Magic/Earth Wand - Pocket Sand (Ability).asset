@@ -17,7 +17,7 @@ MonoBehaviour:
   <Description>k__BackingField: '<u>Pocket Sand</u>
 
     Blind your enemy! Attacks
-    with this weapon are always aimed.'
+    with this weapon are always aimed. Click a die to reroll during an attack.'
   <PowerCost>k__BackingField: 0
   <DamageBonus>k__BackingField: 0
   <AccuracyBonus>k__BackingField: 0

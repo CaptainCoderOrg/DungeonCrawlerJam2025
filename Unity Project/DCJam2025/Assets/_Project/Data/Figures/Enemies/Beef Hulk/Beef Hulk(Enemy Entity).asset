@@ -25,6 +25,7 @@ MonoBehaviour:
   <AttackAnimation>k__BackingField: {fileID: 11400000, guid: a5cce9b65dee06d4092670265806fe69, type: 2}
   <IdleAnimation>k__BackingField: {fileID: 11400000, guid: a5cce9b65dee06d4092670265806fe69, type: 2}
   _shortName: Beef
+  <Gold>k__BackingField: 100
   <Abilities>k__BackingField:
   - {fileID: 11400000, guid: 9cf4ac37587f09f43b6d40d6616b7d32, type: 2}
   <Attacks>k__BackingField:

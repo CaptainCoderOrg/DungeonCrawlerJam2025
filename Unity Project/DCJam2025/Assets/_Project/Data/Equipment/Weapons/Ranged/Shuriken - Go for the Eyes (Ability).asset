@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shuriken - Go for the Eyes (Ability)
   m_EditorClassIdentifier: 
   <Icon>k__BackingField: {fileID: 21300000, guid: 7239db22a970fa14f86f57530fa29dee, type: 3}
-  <Name>k__BackingField: Go for th Eyes
+  <Name>k__BackingField: Go for the Eyes
   <Description>k__BackingField: '<u>Go for th Eyes</u>
 
     Spend 2<sprite name="power">

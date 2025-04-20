@@ -25,6 +25,7 @@ MonoBehaviour:
   <AttackAnimation>k__BackingField: {fileID: 11400000, guid: 11708c4d97071aa42a51d78af9bb3efd, type: 2}
   <IdleAnimation>k__BackingField: {fileID: 11400000, guid: 11708c4d97071aa42a51d78af9bb3efd, type: 2}
   _shortName: Rocko
+  <Gold>k__BackingField: 1000
   <Abilities>k__BackingField:
   - {fileID: 11400000, guid: 56a7fe15fbfd50d439ce2cd6da356ecd, type: 2}
   <Attacks>k__BackingField:

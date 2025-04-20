@@ -25,6 +25,7 @@ MonoBehaviour:
   <AttackAnimation>k__BackingField: {fileID: 11400000, guid: b4ff2f3d61fd1df4dbc8f53886796c01, type: 2}
   <IdleAnimation>k__BackingField: {fileID: 11400000, guid: b4ff2f3d61fd1df4dbc8f53886796c01, type: 2}
   _shortName: Psychick
+  <Gold>k__BackingField: 150
   <Abilities>k__BackingField:
   - {fileID: 11400000, guid: 9f365a48b9244414a89e44a5db5e9b55, type: 2}
   <Attacks>k__BackingField:

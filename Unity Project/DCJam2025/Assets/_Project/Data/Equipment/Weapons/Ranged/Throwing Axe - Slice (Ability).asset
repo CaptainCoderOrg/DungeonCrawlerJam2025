@@ -16,10 +16,10 @@ MonoBehaviour:
   <Name>k__BackingField: Slice
   <Description>k__BackingField: '<u>Slice</u>
 
-    Spend 1<sprite name="power"> to
-    gain 2<sprite name="melee">'
-  <PowerCost>k__BackingField: 1
-  <DamageBonus>k__BackingField: 2
+    Spend 3<sprite name="power"> to
+    gain 3<sprite name="melee">'
+  <PowerCost>k__BackingField: 3
+  <DamageBonus>k__BackingField: 3
   <AccuracyBonus>k__BackingField: 0
-  <AllowsReroll>k__BackingField: 1
-  <IsPassive>k__BackingField: 1
+  <AllowsReroll>k__BackingField: 0
+  <IsPassive>k__BackingField: 0

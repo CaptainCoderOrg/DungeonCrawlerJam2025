@@ -25,6 +25,7 @@ MonoBehaviour:
   <AttackAnimation>k__BackingField: {fileID: 11400000, guid: ddb2050b5fa4f824c9bac4bd9c0a8cd6, type: 2}
   <IdleAnimation>k__BackingField: {fileID: 11400000, guid: ddb2050b5fa4f824c9bac4bd9c0a8cd6, type: 2}
   _shortName: G.O.A.T.
+  <Gold>k__BackingField: 1000
   <Abilities>k__BackingField:
   - {fileID: 11400000, guid: fb1d90bf27c083d4d95958c204bbd465, type: 2}
   <Attacks>k__BackingField:

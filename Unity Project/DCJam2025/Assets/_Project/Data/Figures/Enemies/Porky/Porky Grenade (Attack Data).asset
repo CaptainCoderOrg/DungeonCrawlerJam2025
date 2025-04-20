@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0463992ffb71d64c8466770b0d47a00, type: 3}
-  m_Name: Fluff Barrage (Attack Data) 1
+  m_Name: Porky Grenade (Attack Data)
   m_EditorClassIdentifier: 
   <AttackTypeDatabase>k__BackingField: {fileID: 11400000, guid: 91b694b450c8d3d4fbd36877a1ac8f6b, type: 2}
-  <Name>k__BackingField: Fluff Barrage
+  <Name>k__BackingField: Makin' Bacon
   <AttackType>k__BackingField: {fileID: 11400000, guid: 05b21d4d848d2974f86fc1832725802f, type: 2}
   <PowerDice>k__BackingField:
   - {fileID: 11400000, guid: b03ce4f193623d04283e21d3c8b1db9c, type: 2}
