@@ -24,6 +24,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
         [AssertIsSet][SerializeField] private Slider _musicVolumeSlide;
         [AssertIsSet][SerializeField] private TextMeshProUGUI _soundVolumeLabel;
         [AssertIsSet][SerializeField] private Slider _soundVolumeSlider;
+        [AssertIsSet][SerializeField] private AudioSource _soundCheck;
 
         void Start()
         {
@@ -48,6 +49,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         private void HandleVolumeChange(float value, string prefix, TextMeshProUGUI musicVolumeLabel)
         {
+            if (prefix == "SFX" && Time.time > 0.1 && !_soundCheck.isPlaying)
+            {
+                _soundCheck.Play();
+            }
             musicVolumeLabel.text = $"{prefix}: {(int)(value * 100)}%";
         }
 
