@@ -10,31 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c12bd66080aac434f95af5246eebb5bc, type: 3}
-  m_Name: Encounter A (3, 4) - (7, 7)
+  m_Name: Space Ship - Encounter B
   m_EditorClassIdentifier: 
   <EncounterMusicOverride>k__BackingField: 
   <EnemyFigures>k__BackingField:
-  - EnemyEntityTemplate: {fileID: 11400000, guid: 687ef77fdec2883479e88cf49a0e179a, type: 2}
-    Position: {x: 4, y: 4}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: 687ef77fdec2883479e88cf49a0e179a, type: 2}
-    Position: {x: 3, y: 6}
-  - EnemyEntityTemplate: {fileID: 11400000, guid: 6a14b93fcb731604ab99396523fbb7b4, type: 2}
-    Position: {x: 6, y: 6}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 97235c8bc8db0984db08fb270b927d32, type: 2}
+    Position: {x: 11, y: 5}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 19ea33b25652b3942a3670ff24c30fdc, type: 2}
+    Position: {x: 10, y: 6}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: aea62d4d097289b4a996de86134b1ee5, type: 2}
+    Position: {x: 12, y: 7}
+  - EnemyEntityTemplate: {fileID: 11400000, guid: 6185ffd055d05834abfc7cf56e717f7c, type: 2}
+    Position: {x: 14, y: 6}
   <HeroFigures>k__BackingField:
   - HeroEntity: {fileID: 11400000, guid: 6f7a6aa7d15bdcb4683d52c349f6a90c, type: 2}
-    Position: {x: 2, y: 5}
+    Position: {x: 6, y: 16}
   - HeroEntity: {fileID: 11400000, guid: 639c39d7073c6ec42a83ee9d248b2611, type: 2}
-    Position: {x: 2, y: 6}
+    Position: {x: 8, y: 16}
   - HeroEntity: {fileID: 11400000, guid: c8554de155ee39547b21e84b2f7ca8e4, type: 2}
-    Position: {x: 2, y: 4}
+    Position: {x: 7, y: 16}
   <DungeonCrawlerData>k__BackingField: {fileID: 11400000, guid: ab74159b5d6b1da4ea6c200032209da6, type: 2}
-  <DungeonName>k__BackingField: Facility
+  <DungeonName>k__BackingField: Spaceship
   <MinX>k__BackingField: 0
   <MaxX>k__BackingField: 8
-  <MinY>k__BackingField: 0
-  <MaxY>k__BackingField: 8
+  <MinY>k__BackingField: 9
+  <MaxY>k__BackingField: 23
   <OnEncounterBegin>k__BackingField: []
   <OnEncounterEnd>k__BackingField: []
   <OnExitCombat>k__BackingField:
-  - {fileID: 11400000, guid: 33ffffb56410e184682f9206b1fe6632, type: 2}
-  IsComplete: 0
+  - {fileID: 11400000, guid: f58bd9088b6e8694e92d31ce566a0c65, type: 2}
+  IsComplete: 1

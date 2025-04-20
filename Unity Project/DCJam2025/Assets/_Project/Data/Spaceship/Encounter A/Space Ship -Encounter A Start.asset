@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec99ff395692d1343af448d89a9de525, type: 3}
-  m_Name: DefaultPlayerView
+  m_Script: {fileID: 11500000, guid: d12aec5043dd20047bc3d314ea1a0a60, type: 3}
+  m_Name: Space Ship -Encounter A Start
   m_EditorClassIdentifier: 
-  <X>k__BackingField: 3
-  <Y>k__BackingField: 6
-  <Facing>k__BackingField: 0
-  _dungeonName: Spaceship
+  <Encounter>k__BackingField: {fileID: 11400000, guid: a07cc45b6592a784ab1cc3e466b22eed, type: 2}

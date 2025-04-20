@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: 00 Spaceship Events
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Spaceship Events
+  <Conditions>k__BackingField: []
   <Actions>k__BackingField: []
   <DungeonName>k__BackingField: Spaceship
   <Events>k__BackingField:
-  - {fileID: 11400000, guid: a4a8e9d7ed0bf7041883f1f29bc1e675, type: 2}
+  - {fileID: 11400000, guid: 2feda501939a81448ada8dc56e20641c, type: 2}
+  - {fileID: 11400000, guid: 0e84d9c6c2fc545458e0453a09228786, type: 2}
+  - {fileID: 11400000, guid: 12ce3c5615185e6438bfe911d5332de0, type: 2}
+  - {fileID: 11400000, guid: bc75ff43ecbfa6e4aa2ee5868569f417, type: 2}

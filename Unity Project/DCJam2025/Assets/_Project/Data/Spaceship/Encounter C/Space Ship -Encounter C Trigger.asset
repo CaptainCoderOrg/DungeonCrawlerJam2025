@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02ca10d7fd188e4479218951376a01a2, type: 3}
-  m_Name: Spaceship Encounter A Trigger
+  m_Script: {fileID: 11500000, guid: 4bc364ee3b3de224da35680ca3709f62, type: 3}
+  m_Name: Space Ship -Encounter C Trigger
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Spaceship Encounter A
+  <Name>k__BackingField: Start Pen Encounter 1
+  <Conditions>k__BackingField: []
   <Actions>k__BackingField:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: efe748276fb55d346b1beb974589e630, type: 2}
   <DungeonName>k__BackingField: Spaceship
   <Positions>k__BackingField:
-  - {x: 7, y: 5}
+  - {x: 11, y: 21}
   TopLeft: {x: 0, y: 0}
   BottomRight: {x: 0, y: 0}
-  <Encounter>k__BackingField: {fileID: 11400000, guid: 90ddbe62665381d42821157d82c4078f, type: 2}

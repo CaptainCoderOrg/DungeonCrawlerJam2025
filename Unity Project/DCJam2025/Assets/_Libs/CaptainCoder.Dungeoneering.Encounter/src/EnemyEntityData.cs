@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 
+using NaughtyAttributes;
+
 using UnityEngine;
 
 namespace CaptainCoder.Dungeoneering.Encounter
@@ -8,8 +10,8 @@ namespace CaptainCoder.Dungeoneering.Encounter
     [CreateAssetMenu(menuName = "DC/Enemy Entity Data")]
     public class EnemyEntityData : LivingEntityData
     {
-        [field: SerializeField] public List<FigureAbilityData> Abilities { get; private set; }
-        [field: SerializeField] public List<AttackData> Attacks { get; private set; }
+        [field: Expandable][field: SerializeField] public List<FigureAbilityData> Abilities { get; private set; }
+        [field: Expandable][field: SerializeField] public List<AttackData> Attacks { get; private set; }
 
         internal EnemyEntityData Copy()
         {
