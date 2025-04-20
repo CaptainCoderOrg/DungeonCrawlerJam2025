@@ -285,6 +285,11 @@ namespace CaptainCoder.Dungeoneering.CrawlingMode
             AsyncOperation operation = SceneManager.LoadSceneAsync("Credits");
             while (!operation.isDone) { yield return null; }
         }
+
+        internal void Panic()
+        {
+            TryAgainFromPreviousSpace();
+        }
     }
 
     [Serializable]

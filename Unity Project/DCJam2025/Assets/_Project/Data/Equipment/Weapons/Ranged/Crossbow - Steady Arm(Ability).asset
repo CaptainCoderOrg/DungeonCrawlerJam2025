@@ -18,8 +18,8 @@ MonoBehaviour:
 
     Spend 1<sprite name="power">
     to gain 1<sprite name="accuracy">'
-  <PowerCost>k__BackingField: 0
+  <PowerCost>k__BackingField: 1
   <DamageBonus>k__BackingField: 0
-  <AccuracyBonus>k__BackingField: 0
+  <AccuracyBonus>k__BackingField: 1
   <AllowsReroll>k__BackingField: 0
   <IsPassive>k__BackingField: 0

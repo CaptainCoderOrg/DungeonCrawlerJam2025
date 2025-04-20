@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 using CaptainCoder.Dungeoneering.DungeonMap;
 using CaptainCoder.Dungeoneering.Player;
 
@@ -8,6 +10,7 @@ namespace CaptainCoder.Dungeoneering.Unity
     [CreateAssetMenu(menuName = "DC/PlayerView")]
     public class PlayerViewData : ObservableSO
     {
+        public HashSet<Visited> VisitedLocations { get; private set; } = new();
         public PlayerView PreviousSpace { get; private set; }
         public UnityEvent<PlayerView, PlayerView, PlayerViewData> OnChange { get; private set; } = new();
         public UnityEvent<string> OnDungeonChanged { get; private set; } = new();
@@ -39,6 +42,7 @@ namespace CaptainCoder.Dungeoneering.Unity
                 if (_view == value) { return; }
                 PreviousSpace = _view;
                 _view = value;
+                VisitedLocations.Add(new Visited(_dungeonName, value.Position));
                 X = _view.Position.X;
                 Y = _view.Position.Y;
                 Facing = _view.Facing;
@@ -51,6 +55,7 @@ namespace CaptainCoder.Dungeoneering.Unity
             base.OnExitPlayMode();
             OnChange.RemoveAllListeners();
             OnDungeonChanged.RemoveAllListeners();
+            VisitedLocations.Clear();
         }
 
         public override void OnAfterEnterPlayMode()
@@ -81,4 +86,6 @@ namespace CaptainCoder.Dungeoneering.Unity
             View = PreviousSpace;
         }
     }
+
+    public record struct Visited(string DungeonName, Position Position);
 }

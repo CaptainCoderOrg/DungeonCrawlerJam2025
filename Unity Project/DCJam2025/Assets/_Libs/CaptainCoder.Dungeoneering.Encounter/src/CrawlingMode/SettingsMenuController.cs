@@ -11,6 +11,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 {
     public class SettingsMenuController : MonoBehaviour
     {
+        private CrawlerLogicController _crawlerLogicController;
         [AssertIsSet][SerializeField] private OptionsSettings _settings;
         [AssertIsSet][SerializeField] private ToggleablePanel _toggleablePanel;
         [AssertIsSet][SerializeField] private TextMeshProUGUI _uiScalingLabel;
@@ -28,6 +29,7 @@ namespace CaptainCoder.Dungeoneering.Encounter
 
         void Start()
         {
+            _crawlerLogicController = FindFirstObjectByType<CrawlerLogicController>();
             _settings.OnUIScalingChanged += HandleUIScalingChanged;
             _settings.EncounterSettings.OnEnemySpeedChanged += HandleEnemySpeedChange;
             _settings.EncounterSettings.OnAutoConfirmChanged += HandleConfirmChanged;
@@ -72,5 +74,10 @@ namespace CaptainCoder.Dungeoneering.Encounter
         }
         public void SetEnemySpeed(float value) => _settings.EncounterSettings.EnemySpeedMultiplier = value;
         public void SetUIScaling(float value) => _settings.UIScaling = value;
+
+        public void Panic()
+        {
+            _crawlerLogicController?.Panic();
+        }
     }
 }

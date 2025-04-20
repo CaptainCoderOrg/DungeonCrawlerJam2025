@@ -8153,6 +8153,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -7.055
       objectReference: {fileID: 0}
+    - target: {fileID: 4130497002193033770, guid: 6fae2fae79233a143b0fead237f4855e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130497002193033770, guid: 6fae2fae79233a143b0fead237f4855e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4240651157576707279, guid: 6fae2fae79233a143b0fead237f4855e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8382,6 +8390,26 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6968027306423777241, guid: 6fae2fae79233a143b0fead237f4855e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421489281280885140, guid: 6fae2fae79233a143b0fead237f4855e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421489281280885140, guid: 6fae2fae79233a143b0fead237f4855e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421489281280885140, guid: 6fae2fae79233a143b0fead237f4855e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421489281280885140, guid: 6fae2fae79233a143b0fead237f4855e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421489281280885140, guid: 6fae2fae79233a143b0fead237f4855e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -23665,7 +23693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!225 &5887062262791909166
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -26716,7 +26744,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6557946050466122780
 RectTransform:
   m_ObjectHideFlags: 0
